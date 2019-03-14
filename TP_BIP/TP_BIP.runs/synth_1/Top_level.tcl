@@ -18,6 +18,7 @@ proc create_report { reportName command } {
   }
 }
 set_param synth.incrementalSynthesisCache ./.Xil/Vivado-2491-lenovo/incrSyn
+set_param xicom.use_bs_reader 1
 set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000

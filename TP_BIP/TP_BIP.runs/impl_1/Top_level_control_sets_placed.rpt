@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date         : Thu Mar 14 13:53:55 2019
+| Date         : Thu Mar 14 19:54:48 2019
 | Host         : lenovo running 64-bit Manjaro Linux
 | Command      : report_control_sets -verbose -file Top_level_control_sets_placed.rpt
 | Design       : Top_level
@@ -47,11 +47,11 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               4 |            2 |
-| No           | No                    | Yes                    |              12 |            2 |
-| No           | Yes                   | No                     |              14 |            2 |
+| No           | No                    | No                     |               4 |            1 |
+| No           | No                    | Yes                    |              12 |            3 |
+| No           | Yes                   | No                     |              14 |            1 |
 | Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |               8 |            3 |
+| Yes          | No                    | Yes                    |               8 |            1 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -62,10 +62,10 @@ Table of Contents
 +----------------+--------------------+-----------------------------+------------------+----------------+
 |  Clock Signal  |    Enable Signal   |       Set/Reset Signal      | Slice Load Count | Bel Load Count |
 +----------------+--------------------+-----------------------------+------------------+----------------+
-|  clk_IBUF_BUFG |                    |                             |                2 |              4 |
-|  clk_IBUF_BUFG | uart/tx_mod/s_next | reset_IBUF                  |                3 |              8 |
-|  clk_IBUF_BUFG |                    | reset_IBUF                  |                2 |             12 |
-|  clk_IBUF_BUFG |                    | uart/br_g/ciclos[7]_i_1_n_0 |                2 |             14 |
+|  clk_IBUF_BUFG |                    |                             |                1 |              4 |
+|  clk_IBUF_BUFG | uart/tx_mod/s_next | reset_IBUF                  |                1 |              8 |
+|  clk_IBUF_BUFG |                    | reset_IBUF                  |                3 |             12 |
+|  clk_IBUF_BUFG |                    | uart/br_g/ciclos[7]_i_1_n_0 |                1 |             14 |
 +----------------+--------------------+-----------------------------+------------------+----------------+
 
 

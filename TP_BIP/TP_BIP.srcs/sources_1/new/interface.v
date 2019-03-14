@@ -18,7 +18,9 @@ module interface
 	receive = 3'b001,
 	idle_tx = 3'b010,
 	operate = 3'b011,
-	transmit = 3'b100;
+	transmit = 3'b100,
+	transmit_reset = 3'b101,
+	transmit_init = 3'b110;
 	
 	// signal declaration
 	reg [1:0] state_reg;
@@ -27,27 +29,63 @@ module interface
 	reg is_s, aux_BIP, z_flag, acc_sended, tx_start_aux;
 	reg [13:0] div; //puede ser integer también, pero así no da warning;
 	reg [7:0] dig, out;
+	reg [6:0] i;
 	
 	// body
 	// FSMD next-state logic
 	always @(posedge clk , posedge reset)
 	begin
-        if (reset) 
+        if (reset)
             begin
-                state_reg <= idle_rx;
-                aux_Acc_Count <= 0; // aux lo inicializamos en 0
-                aux_Acc <= 0;
-                aux_Count <= 0;
-                is_s <= 0;
-                acc_sended <= 0;
-                out <= 0;
-                z_flag <= 0;
-                dig <= 0;
-                aux_BIP <= 0;
+                state_reg <= transmit_init;
+                i = 1;
             end
         else
             begin
                 case (state_reg)
+                    transmit_init :
+                       begin
+                          case (i)
+                              1: out = "T";
+                              2: out = "P";
+                              3: out = " ";
+                              4: out = "2";
+                              default: out = ":";    
+                          endcase
+                          tx_start_aux = 1'b1; 
+                          if (tx_done_tick) 
+                            begin
+                                i = i+1;
+                                if (out == ":") state_reg = transmit_reset;
+                                tx_start_aux = 1'b0;
+                            end
+                        end
+                    transmit_reset :
+                       begin
+                         if (out != 10) out = 13; // nueva linea en ascii
+                         tx_start_aux = 1'b1; 
+                         if (tx_done_tick) 
+                           begin
+                               if (out == 13) 
+                                   begin
+                                       state_reg = transmit_reset;
+                                       out = 10; 
+                                   end // if (out == 13) 
+                               else 
+                                    begin
+                                        state_reg <= idle_rx;
+                                        aux_Acc_Count <= 0; // aux lo inicializamos en 0
+                                        aux_Acc <= 0;
+                                        aux_Count <= 0;
+                                        is_s <= 0;
+                                        acc_sended <= 0;
+                                        out <= 0;
+                                        z_flag <= 0;
+                                        dig <= 0;
+                                        aux_BIP <= 0;
+                                    end //else
+                           end //if(tx_done_tick)
+                       end // transmit_reset
                     idle_rx :
                       if (rx_done_tick) state_reg = receive;
                     receive :
@@ -103,7 +141,7 @@ module interface
                                            z_flag = 1'b0;
                                            div = 10000;
                                            state_reg = transmit;
-                                           if (acc_sended==1) state_reg = idle_rx;
+                                           if (acc_sended==1) state_reg = transmit_reset;
                                            acc_sended = 1;
                                            aux_Acc_Count = aux_Count;
                                            out = 67; // C en ascii

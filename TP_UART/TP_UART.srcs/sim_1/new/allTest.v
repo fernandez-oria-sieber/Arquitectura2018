@@ -2,7 +2,7 @@
 
 module allTest;
 
-    wire signed[7:0] a, b, d_in; 
+    wire signe
 	wire [7:0] leds;
 	reg [7:0] dout;
 	wire [5:0] op;

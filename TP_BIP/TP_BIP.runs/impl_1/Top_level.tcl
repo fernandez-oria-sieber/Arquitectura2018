@@ -69,6 +69,7 @@ set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
   set_param synth.incrementalSynthesisCache ./.Xil/Vivado-2491-lenovo/incrSyn
+  set_param xicom.use_bs_reader 1
   open_checkpoint Top_level_routed.dcp
   set_property webtalk.parent_dir /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.cache/wt [current_project]
   catch { write_mem_info -force Top_level.mmi }
