@@ -1,0 +1,7 @@
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 38519cdd0e624429ac5e340b8cc759ab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L secureip --snapshot allTest_func_synth xil_defaultlib.allTest xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-529] concurrent assignment to a non-net din is not permitted [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:20]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.

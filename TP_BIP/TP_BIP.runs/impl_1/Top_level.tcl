@@ -60,15 +60,11 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 
 start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
-  set_param synth.incrementalSynthesisCache ./.Xil/Vivado-2491-lenovo/incrSyn
   set_param xicom.use_bs_reader 1
   open_checkpoint Top_level_routed.dcp
   set_property webtalk.parent_dir /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.cache/wt [current_project]

@@ -2,8 +2,8 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Thu Mar 14 19:50:39 2019
-# Process ID: 30558
+# Start of session at: Fri Mar 15 20:32:14 2019
+# Process ID: 29054
 # Current directory: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1
 # Command line: vivado -log Top_level.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top_level.tcl
 # Log file: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1/Top_level.vds

@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date         : Thu Mar 14 19:54:48 2019
+| Date         : Fri Mar 15 20:36:02 2019
 | Host         : lenovo running 64-bit Manjaro Linux
 | Command      : report_control_sets -verbose -file Top_level_control_sets_placed.rpt
 | Design       : Top_level
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |     4 |
-| Unused register locations in slices containing registers |    10 |
+| Number of unique control sets                            |    16 |
+| Unused register locations in slices containing registers |    22 |
 +----------------------------------------------------------+-------+
 
 
@@ -34,10 +34,10 @@ Table of Contents
 +--------+--------------+
 | Fanout | Control Sets |
 +--------+--------------+
-|      4 |            1 |
-|      8 |            1 |
+|      8 |            3 |
 |     12 |            1 |
-|     14 |            1 |
+|     14 |            3 |
+|    16+ |            9 |
 +--------+--------------+
 
 
@@ -47,25 +47,37 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               4 |            1 |
-| No           | No                    | Yes                    |              12 |            3 |
-| No           | Yes                   | No                     |              14 |            1 |
-| Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |               8 |            1 |
-| Yes          | Yes                   | No                     |               0 |            0 |
+| No           | No                    | No                     |              46 |           14 |
+| No           | No                    | Yes                    |              28 |            8 |
+| No           | Yes                   | No                     |              14 |            3 |
+| Yes          | No                    | No                     |              86 |           25 |
+| Yes          | No                    | Yes                    |             116 |           21 |
+| Yes          | Yes                   | No                     |               8 |            4 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------+--------------------+-----------------------------+------------------+----------------+
-|  Clock Signal  |    Enable Signal   |       Set/Reset Signal      | Slice Load Count | Bel Load Count |
-+----------------+--------------------+-----------------------------+------------------+----------------+
-|  clk_IBUF_BUFG |                    |                             |                1 |              4 |
-|  clk_IBUF_BUFG | uart/tx_mod/s_next | reset_IBUF                  |                1 |              8 |
-|  clk_IBUF_BUFG |                    | reset_IBUF                  |                3 |             12 |
-|  clk_IBUF_BUFG |                    | uart/br_g/ciclos[7]_i_1_n_0 |                1 |             14 |
-+----------------+--------------------+-----------------------------+------------------+----------------+
++---------------------------------+--------------------------------------+-----------------------------+------------------+----------------+
+|           Clock Signal          |             Enable Signal            |       Set/Reset Signal      | Slice Load Count | Bel Load Count |
++---------------------------------+--------------------------------------+-----------------------------+------------------+----------------+
+|  clk_IBUF_BUFG                  | uart/rx_mod/s_next                   | button_OBUF                 |                2 |              8 |
+|  clk_IBUF_BUFG                  | uart/int/div[10]_i_1_n_0             | uart/int/div[7]_i_1_n_0     |                4 |              8 |
+|  clk_IBUF_BUFG                  | uart/tx_mod/s_next                   | button_OBUF                 |                2 |              8 |
+|  clk_IBUF_BUFG                  | uart/int/div[10]_i_1_n_0             |                             |                4 |             12 |
+|  clk_IBUF_BUFG                  |                                      |                             |                7 |             14 |
+|  clk_IBUF_BUFG                  |                                      | uart/br_g/ciclos[7]_i_1_n_0 |                3 |             14 |
+|  clk_IBUF_BUFG                  | uart/int/i[6]_i_1_n_0                | button_OBUF                 |                2 |             14 |
+|  clk_IBUF_BUFG                  | uart/int/out[7]_P_i_1_n_0            |                             |                5 |             16 |
+|  clk_IBUF_BUFG                  | uart/rx_mod/b_next                   | button_OBUF                 |                3 |             16 |
+|  clk_IBUF_BUFG                  | uart/tx_mod/b_next_0                 | button_OBUF                 |                2 |             16 |
+|  clk_IBUF_BUFG                  | uart/int/aux_PC_reg[0][0]            | button_OBUF                 |                3 |             22 |
+|  clk_IBUF_BUFG                  | uart/int/aux_Count[10]_P_i_1_n_0     |                             |                2 |             22 |
+|  clk_IBUF_BUFG                  |                                      | button_OBUF                 |                8 |             28 |
+|  Program_memory/ACC_reg[0]_0[0] |                                      |                             |                7 |             32 |
+|  clk_IBUF_BUFG                  | Program_memory/ACC_reg[0][0]         | button_OBUF                 |                7 |             32 |
+|  clk_IBUF_BUFG                  | uart/int/aux_Acc_Count[17]_P_i_1_n_0 |                             |               14 |             36 |
++---------------------------------+--------------------------------------+-----------------------------+------------------+----------------+
 
 

@@ -22,7 +22,7 @@
 
 module Top_level(
     input rx, clk, reset,
-    output tx
+    output tx, button
     );
 
 wire BIP_enable, finish_program, WrRAM, RdRAM;
@@ -38,5 +38,6 @@ CPU bip(BIP_enable, clk, reset, Program_Data, Out_Data, In_Data, PC, WrRAM, RdRA
 assign out_Acc_Counter[26:16] = PC;
 assign out_Acc_Counter[15:0] = In_Data;
 assign Addr = Program_Data[10:0];
+assign button = reset;
 
 endmodule

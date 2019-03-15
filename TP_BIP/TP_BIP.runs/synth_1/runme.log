@@ -14,9 +14,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 30586 
+INFO: Helper process launched with PID 29078 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1250.031 ; gain = 82.805 ; free physical = 126 ; free virtual = 3609
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1250.031 ; gain = 82.805 ; free physical = 206 ; free virtual = 4355
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'Top_level' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Top_level.v:23]
 INFO: [Synth 8-6157] synthesizing module 'UART' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/Main.v:8]
@@ -47,17 +47,19 @@ INFO: [Synth 8-6157] synthesizing module 'interface' [/usr/local/magnetic2/Xilin
 	Parameter operate bound to: 3'b011 
 	Parameter transmit bound to: 3'b100 
 	Parameter transmit_reset bound to: 3'b101 
-WARNING: [Synth 8-151] case item 3'b101 is unreachable [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:40]
-WARNING: [Synth 8-151] case item 3'b100 is unreachable [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:103]
-WARNING: [Synth 8-6014] Unused sequential element aux_Count_reg was removed.  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:92]
-WARNING: [Synth 8-6014] Unused sequential element dig_reg was removed.  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:98]
-WARNING: [Synth 8-5788] Register is_s_reg in module interface is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:72]
-WARNING: [Synth 8-5788] Register aux_BIP_reg in module interface is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:77]
-WARNING: [Synth 8-5788] Register out_reg in module interface is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:90]
-WARNING: [Synth 8-5788] Register aux_Acc_Count_reg in module interface is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:93]
-WARNING: [Synth 8-5788] Register div_reg in module interface is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:94]
-WARNING: [Synth 8-3848] Net z_flag in module/entity interface does not have driver. [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:28]
-WARNING: [Synth 8-3848] Net tx_start_aux in module/entity interface does not have driver. [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:28]
+	Parameter transmit_init bound to: 3'b110 
+INFO: [Synth 8-155] case statement is not full and has no default [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:45]
+WARNING: [Synth 8-6014] Unused sequential element aux_Acc_reg was removed.  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:78]
+WARNING: [Synth 8-6014] Unused sequential element dig_reg was removed.  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:84]
+WARNING: [Synth 8-5788] Register out_reg in module interface is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:49]
+WARNING: [Synth 8-5788] Register tx_start_aux_reg in module interface is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:55]
+WARNING: [Synth 8-5788] Register aux_Acc_Count_reg in module interface is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:77]
+WARNING: [Synth 8-5788] Register aux_Count_reg in module interface is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:79]
+WARNING: [Synth 8-5788] Register is_s_reg in module interface is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:80]
+WARNING: [Synth 8-5788] Register acc_sended_reg in module interface is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:81]
+WARNING: [Synth 8-5788] Register z_flag_reg in module interface is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:83]
+WARNING: [Synth 8-5788] Register aux_BIP_reg in module interface is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:85]
+WARNING: [Synth 8-5788] Register div_reg in module interface is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:118]
 INFO: [Synth 8-6155] done synthesizing module 'interface' (4#1) [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:3]
 WARNING: [Synth 8-3848] Net rd in module/entity UART does not have driver. [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/Main.v:18]
 INFO: [Synth 8-6155] done synthesizing module 'UART' (5#1) [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/Main.v:8]
@@ -88,27 +90,9 @@ INFO: [Synth 8-6155] done synthesizing module 'CPU' (11#1) [/usr/local/magnetic2
 INFO: [Synth 8-6155] done synthesizing module 'Top_level' (12#1) [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Top_level.v:23]
 WARNING: [Synth 8-3331] design sinc_memory__parameterized0 has unconnected port Rd
 WARNING: [Synth 8-3331] design sinc_memory has unconnected port Rd
-WARNING: [Synth 8-3331] design interface has unconnected port tx_start
 WARNING: [Synth 8-3331] design interface has unconnected port rd
-WARNING: [Synth 8-3331] design interface has unconnected port tx_done_tick
-WARNING: [Synth 8-3331] design interface has unconnected port out_Acc_Count[31]
-WARNING: [Synth 8-3331] design interface has unconnected port out_Acc_Count[30]
-WARNING: [Synth 8-3331] design interface has unconnected port out_Acc_Count[29]
-WARNING: [Synth 8-3331] design interface has unconnected port out_Acc_Count[28]
-WARNING: [Synth 8-3331] design interface has unconnected port out_Acc_Count[27]
-WARNING: [Synth 8-3331] design interface has unconnected port out_Acc_Count[26]
-WARNING: [Synth 8-3331] design interface has unconnected port out_Acc_Count[25]
-WARNING: [Synth 8-3331] design interface has unconnected port out_Acc_Count[24]
-WARNING: [Synth 8-3331] design interface has unconnected port out_Acc_Count[23]
-WARNING: [Synth 8-3331] design interface has unconnected port out_Acc_Count[22]
-WARNING: [Synth 8-3331] design interface has unconnected port out_Acc_Count[21]
-WARNING: [Synth 8-3331] design interface has unconnected port out_Acc_Count[20]
-WARNING: [Synth 8-3331] design interface has unconnected port out_Acc_Count[19]
-WARNING: [Synth 8-3331] design interface has unconnected port out_Acc_Count[18]
-WARNING: [Synth 8-3331] design interface has unconnected port out_Acc_Count[17]
-WARNING: [Synth 8-3331] design interface has unconnected port out_Acc_Count[16]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1294.656 ; gain = 127.430 ; free physical = 162 ; free virtual = 3618
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1294.656 ; gain = 127.430 ; free physical = 211 ; free virtual = 4361
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -126,10 +110,10 @@ WARNING: [Synth 8-3295] tying undriven pin uart:out_Acc_Counter[27] to constant 
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1294.656 ; gain = 127.430 ; free physical = 162 ; free virtual = 3619
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1294.656 ; gain = 127.430 ; free physical = 212 ; free virtual = 4362
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1294.656 ; gain = 127.430 ; free physical = 162 ; free virtual = 3619
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1294.656 ; gain = 127.430 ; free physical = 212 ; free virtual = 4362
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -145,22 +129,22 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1620.516 ; gain = 0.000 ; free physical = 117 ; free virtual = 3358
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1623.984 ; gain = 0.000 ; free physical = 115 ; free virtual = 4044
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:49 . Memory (MB): peak = 1620.516 ; gain = 453.289 ; free physical = 177 ; free virtual = 3430
+Finished Constraint Validation : Time (s): cpu = 00:00:21 ; elapsed = 00:00:38 . Memory (MB): peak = 1623.984 ; gain = 456.758 ; free physical = 179 ; free virtual = 4107
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:49 . Memory (MB): peak = 1620.516 ; gain = 453.289 ; free physical = 176 ; free virtual = 3430
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:21 ; elapsed = 00:00:38 . Memory (MB): peak = 1623.984 ; gain = 456.758 ; free physical = 180 ; free virtual = 4107
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:49 . Memory (MB): peak = 1620.516 ; gain = 453.289 ; free physical = 178 ; free virtual = 3432
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:38 . Memory (MB): peak = 1623.984 ; gain = 456.758 ; free physical = 180 ; free virtual = 4107
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "tick" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'rx_module'
@@ -174,6 +158,11 @@ INFO: [Synth 8-5544] ROM "tx_done_tick" won't be mapped to Block RAM because add
 INFO: [Synth 8-5544] ROM "state_next" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "s_next" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "n_next" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "out" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "out" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "out" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "aux_Acc_Count" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "is_s" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "Output" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v:32]
@@ -197,7 +186,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encod
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'sequential' in module 'tx_module'
 WARNING: [Synth 8-327] inferring latch for variable 'A_reg' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:52]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:50 . Memory (MB): peak = 1620.516 ; gain = 453.289 ; free physical = 164 ; free virtual = 3424
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:40 . Memory (MB): peak = 1623.984 ; gain = 456.758 ; free physical = 175 ; free virtual = 4108
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -213,40 +202,54 @@ Detailed RTL Component Info :
 	   3 Input     16 Bit       Adders := 1     
 	   2 Input     11 Bit       Adders := 1     
 	   2 Input      8 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 1     
 	   2 Input      4 Bit       Adders := 2     
 	   2 Input      3 Bit       Adders := 2     
 +---XORs : 
 	   2 Input     16 Bit         XORs := 1     
 +---Registers : 
 	               32 Bit    Registers := 1     
-	               16 Bit    Registers := 3     
+	               16 Bit    Registers := 4     
 	               14 Bit    Registers := 1     
 	               11 Bit    Registers := 1     
 	                8 Bit    Registers := 4     
+	                7 Bit    Registers := 1     
 	                4 Bit    Registers := 2     
-	                3 Bit    Registers := 2     
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 5     
+	                3 Bit    Registers := 3     
+	                1 Bit    Registers := 8     
 +---RAMs : 
 	              32K Bit         RAMs := 2     
 +---Muxes : 
+	   8 Input     32 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 5     
+	   2 Input     18 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 6     
+	   8 Input     16 Bit        Muxes := 1     
 	   4 Input     16 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 1     
-	   4 Input     14 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 2     
-	   4 Input      8 Bit        Muxes := 2     
-	   8 Input      8 Bit        Muxes := 1     
+	   8 Input     14 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 7     
+	   4 Input      8 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 3     
+	   2 Input      7 Bit        Muxes := 3     
+	   5 Input      7 Bit        Muxes := 1     
+	   3 Input      7 Bit        Muxes := 1     
+	   3 Input      6 Bit        Muxes := 1     
 	   2 Input      6 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 3     
 	   4 Input      4 Bit        Muxes := 2     
 	   4 Input      3 Bit        Muxes := 2     
+	   3 Input      3 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 5     
+	   5 Input      3 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
 	   4 Input      2 Bit        Muxes := 2     
 	   2 Input      2 Bit        Muxes := 5     
 	   3 Input      2 Bit        Muxes := 1     
-	   6 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 11    
-	   3 Input      1 Bit        Muxes := 7     
-	   4 Input      1 Bit        Muxes := 18    
+	   2 Input      1 Bit        Muxes := 27    
+	   3 Input      1 Bit        Muxes := 10    
+	   4 Input      1 Bit        Muxes := 12    
+	   8 Input      1 Bit        Muxes := 23    
+	  10 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -306,21 +309,38 @@ Module interface
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input      8 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
 +---Registers : 
 	               32 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
 	               14 Bit    Registers := 1     
 	                8 Bit    Registers := 1     
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
+	                7 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 5     
 +---Muxes : 
-	   4 Input     14 Bit        Muxes := 1     
-	   4 Input      8 Bit        Muxes := 1     
+	   8 Input     32 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 5     
+	   2 Input     18 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 5     
+	   8 Input     16 Bit        Muxes := 1     
+	   8 Input     14 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 5     
+	   2 Input      7 Bit        Muxes := 3     
+	   5 Input      7 Bit        Muxes := 1     
+	   3 Input      7 Bit        Muxes := 1     
+	   3 Input      6 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 5     
+	   5 Input      3 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 3     
 	   3 Input      2 Bit        Muxes := 1     
-	   6 Input      2 Bit        Muxes := 1     
-	   3 Input      1 Bit        Muxes := 3     
-	   4 Input      1 Bit        Muxes := 6     
-	   2 Input      1 Bit        Muxes := 5     
+	   2 Input      1 Bit        Muxes := 21    
+	   8 Input      1 Bit        Muxes := 23    
+	   3 Input      1 Bit        Muxes := 6     
+	  10 Input      1 Bit        Muxes := 1     
 Module sinc_memory 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -376,50 +396,155 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-INFO: [Synth 8-5546] ROM "br_g/tick" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "int/is_s" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-3331] design UART has unconnected port out_Acc_Counter[31]
-WARNING: [Synth 8-3331] design UART has unconnected port out_Acc_Counter[30]
-WARNING: [Synth 8-3331] design UART has unconnected port out_Acc_Counter[29]
-WARNING: [Synth 8-3331] design UART has unconnected port out_Acc_Counter[28]
-WARNING: [Synth 8-3331] design UART has unconnected port out_Acc_Counter[27]
-WARNING: [Synth 8-3331] design UART has unconnected port out_Acc_Counter[26]
-WARNING: [Synth 8-3331] design UART has unconnected port out_Acc_Counter[25]
-WARNING: [Synth 8-3331] design UART has unconnected port out_Acc_Counter[24]
-WARNING: [Synth 8-3331] design UART has unconnected port out_Acc_Counter[23]
-WARNING: [Synth 8-3331] design UART has unconnected port out_Acc_Counter[22]
-WARNING: [Synth 8-3331] design UART has unconnected port out_Acc_Counter[21]
-WARNING: [Synth 8-3331] design UART has unconnected port out_Acc_Counter[20]
-WARNING: [Synth 8-3331] design UART has unconnected port out_Acc_Counter[19]
-WARNING: [Synth 8-3331] design UART has unconnected port out_Acc_Counter[18]
-WARNING: [Synth 8-3331] design UART has unconnected port out_Acc_Counter[17]
-WARNING: [Synth 8-3331] design UART has unconnected port out_Acc_Counter[16]
-INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[31]' (FDE) to 'uart/int/aux_Acc_Count_reg[16]'
-INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[16]' (FDE) to 'uart/int/aux_Acc_Count_reg[17]'
-INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[17]' (FDE) to 'uart/int/aux_Acc_Count_reg[18]'
-INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[18]' (FDE) to 'uart/int/aux_Acc_Count_reg[19]'
-INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[19]' (FDE) to 'uart/int/aux_Acc_Count_reg[20]'
-INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[20]' (FDE) to 'uart/int/aux_Acc_Count_reg[21]'
-INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[21]' (FDE) to 'uart/int/aux_Acc_Count_reg[22]'
-INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[22]' (FDE) to 'uart/int/aux_Acc_Count_reg[23]'
-INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[23]' (FDE) to 'uart/int/aux_Acc_Count_reg[24]'
-INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[24]' (FDE) to 'uart/int/aux_Acc_Count_reg[25]'
-INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[25]' (FDE) to 'uart/int/aux_Acc_Count_reg[26]'
-INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[26]' (FDE) to 'uart/int/aux_Acc_Count_reg[27]'
-INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[27]' (FDE) to 'uart/int/aux_Acc_Count_reg[28]'
-INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[28]' (FDE) to 'uart/int/aux_Acc_Count_reg[29]'
+INFO: [Synth 8-5546] ROM "uart/br_g/tick" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3331] design interface has unconnected port rd
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Count_reg[11]' (FDCPE) to 'uart/int/aux_Count_reg[15]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Count_reg[12]' (FDCPE) to 'uart/int/aux_Count_reg[15]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Count_reg[13]' (FDCPE) to 'uart/int/aux_Count_reg[15]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Count_reg[15]' (FDCPE) to 'uart/int/aux_Count_reg[14]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[31]' (FDE) to 'uart/int/aux_Acc_Count_reg[30]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uart/int/aux_Count_reg[14] )
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[18]' (FDE) to 'uart/int/aux_Acc_Count_reg[30]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[19]' (FDE) to 'uart/int/aux_Acc_Count_reg[30]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[20]' (FDE) to 'uart/int/aux_Acc_Count_reg[30]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[21]' (FDE) to 'uart/int/aux_Acc_Count_reg[30]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[22]' (FDE) to 'uart/int/aux_Acc_Count_reg[30]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[23]' (FDE) to 'uart/int/aux_Acc_Count_reg[30]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[24]' (FDE) to 'uart/int/aux_Acc_Count_reg[30]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[25]' (FDE) to 'uart/int/aux_Acc_Count_reg[30]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[26]' (FDE) to 'uart/int/aux_Acc_Count_reg[30]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[27]' (FDE) to 'uart/int/aux_Acc_Count_reg[30]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[28]' (FDE) to 'uart/int/aux_Acc_Count_reg[30]'
 INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[30]' (FDE) to 'uart/int/aux_Acc_Count_reg[29]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uart/int/aux_Acc_Count_reg[29] )
 INFO: [Synth 8-3886] merging instance 'uart/int/div_reg[11]' (FDE) to 'uart/int/div_reg[12]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uart/int/div_reg[12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uart/int/aux_Acc_Count_reg[29] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\bip/control/aux_finish_program_reg )
-INFO: [Synth 8-3886] merging instance 'uart/int/div_reg[10]' (FDE) to 'uart/int/div_reg[13]'
+INFO: [Synth 8-3886] merging instance 'uart/int/div_reg[13]' (FDE) to 'uart/int/div_reg[10]'
 WARNING: [Synth 8-3332] Sequential element (uart/int/div_reg[12]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[14]) is unused and will be removed from module Top_level.
 WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[29]) is unused and will be removed from module Top_level.
 WARNING: [Synth 8-3332] Sequential element (bip/control/aux_finish_program_reg) is unused and will be removed from module Top_level.
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Count_reg[0]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Count_reg[1]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Count_reg[2]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Count_reg[3]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Count_reg[4]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Count_reg[5]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Count_reg[6]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Count_reg[7]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Count_reg[8]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Count_reg[9]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Count_reg[10]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/acc_sended_reg_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/z_flag_reg_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Acc_Count_reg[0]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Acc_Count_reg[1]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Acc_Count_reg[2]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Acc_Count_reg[3]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Acc_Count_reg[4]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Acc_Count_reg[5]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Acc_Count_reg[6]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Acc_Count_reg[7]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Acc_Count_reg[8]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Acc_Count_reg[9]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Acc_Count_reg[10]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Acc_Count_reg[11]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Acc_Count_reg[12]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Acc_Count_reg[13]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Acc_Count_reg[15]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Acc_Count_reg[16]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Acc_Count_reg[17]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Acc_Count_reg[14]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/out_reg[7]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/out_reg[5]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/out_reg[4]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/out_reg[6]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/out_reg[3]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/out_reg[1]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/out_reg[2]_LDC )
 INFO: [Synth 8-3886] merging instance 'uart/int/div_reg[8]' (FDE) to 'uart/int/div_reg[9]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/out_reg[0]_LDC )
+WARNING: [Synth 8-3332] Sequential element (uart/int/acc_sended_reg_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/acc_sended_reg_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[10]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[10]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[9]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[9]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[8]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[8]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[7]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[7]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[6]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[6]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[5]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[5]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[4]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[4]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[3]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[3]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[2]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[2]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[1]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[1]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[0]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[0]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[17]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[17]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[16]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[16]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[15]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[15]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[14]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[14]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[13]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[13]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[12]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[12]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[11]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[11]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[10]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[10]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[9]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[9]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[8]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[8]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[7]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[7]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[6]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[6]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[5]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[5]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[4]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[4]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[3]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[3]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[2]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[2]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[1]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[1]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[0]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[0]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[7]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[7]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[6]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[6]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[5]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[5]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[4]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[4]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[3]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[3]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[2]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[2]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[1]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[1]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[0]_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[0]_C) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/z_flag_reg_LDC) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/z_flag_reg_C) is unused and will be removed from module Top_level.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:54 . Memory (MB): peak = 1620.516 ; gain = 453.289 ; free physical = 136 ; free virtual = 3405
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:46 . Memory (MB): peak = 1623.984 ; gain = 456.758 ; free physical = 179 ; free virtual = 4105
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -437,8 +562,8 @@ Note: The tale above is a preliminary report that shows the Block RAMs at the cu
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4480] The timing for the instance i_15/Data_memory/ram_name_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_16/Program_memory/ram_name_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_10/Data_memory/ram_name_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_11/Program_memory/ram_name_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -449,13 +574,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:01:08 . Memory (MB): peak = 1620.516 ; gain = 453.289 ; free physical = 115 ; free virtual = 3282
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:38 ; elapsed = 00:01:01 . Memory (MB): peak = 1623.984 ; gain = 456.758 ; free physical = 119 ; free virtual = 3946
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:01:12 . Memory (MB): peak = 1628.523 ; gain = 461.297 ; free physical = 139 ; free virtual = 3264
+Finished Timing Optimization : Time (s): cpu = 00:00:49 ; elapsed = 00:01:12 . Memory (MB): peak = 1691.812 ; gain = 524.586 ; free physical = 138 ; free virtual = 3877
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -481,87 +606,10 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3332] Sequential element (uart/rx_mod/b_reg_reg[7]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/rx_mod/b_reg_reg[6]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/rx_mod/b_reg_reg[5]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/rx_mod/b_reg_reg[4]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/rx_mod/b_reg_reg[3]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/rx_mod/b_reg_reg[2]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/rx_mod/b_reg_reg[1]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/rx_mod/b_reg_reg[0]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/state_reg_reg[1]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/state_reg_reg[0]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/div_reg[13]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/div_reg[0]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/div_reg[7]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/div_reg[6]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/div_reg[5]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/div_reg[3]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/div_reg[2]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/div_reg[1]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/div_reg[9]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/div_reg[4]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[15]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[14]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[13]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[12]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[11]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[10]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[9]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[8]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[7]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[6]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[5]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[4]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[3]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[2]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[1]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[0]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[7]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/is_s_reg) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_BIP_reg) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[15]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[14]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[13]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[12]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[11]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[10]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[9]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[8]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[7]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[6]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[5]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[4]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[3]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[2]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[1]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[0]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/ACC_reg[15]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/ACC_reg[14]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/ACC_reg[13]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/ACC_reg[12]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/ACC_reg[11]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/ACC_reg[10]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/ACC_reg[9]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/ACC_reg[8]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/ACC_reg[7]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/ACC_reg[6]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/ACC_reg[5]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/ACC_reg[4]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/ACC_reg[3]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/ACC_reg[2]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/ACC_reg[1]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/ACC_reg[0]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/tx_mod/b_reg_reg[7]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/tx_mod/b_reg_reg[6]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/tx_mod/b_reg_reg[5]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/tx_mod/b_reg_reg[4]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/tx_mod/b_reg_reg[3]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/tx_mod/b_reg_reg[2]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/tx_mod/b_reg_reg[1]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/tx_mod/b_reg_reg[0]) is unused and will be removed from module Top_level.
+INFO: [Synth 8-4480] The timing for the instance Data_memory/ram_name_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance Program_memory/ram_name_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:37 ; elapsed = 00:01:12 . Memory (MB): peak = 1636.531 ; gain = 469.305 ; free physical = 139 ; free virtual = 3263
+Finished Technology Mapping : Time (s): cpu = 00:00:50 ; elapsed = 00:01:13 . Memory (MB): peak = 1691.812 ; gain = 524.586 ; free physical = 138 ; free virtual = 3878
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -585,7 +633,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:38 ; elapsed = 00:01:13 . Memory (MB): peak = 1636.531 ; gain = 469.305 ; free physical = 140 ; free virtual = 3264
+Finished IO Insertion : Time (s): cpu = 00:00:51 ; elapsed = 00:01:14 . Memory (MB): peak = 1691.812 ; gain = 524.586 ; free physical = 138 ; free virtual = 3877
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -598,7 +646,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:38 ; elapsed = 00:01:13 . Memory (MB): peak = 1636.531 ; gain = 469.305 ; free physical = 140 ; free virtual = 3264
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:51 ; elapsed = 00:01:14 . Memory (MB): peak = 1691.812 ; gain = 524.586 ; free physical = 138 ; free virtual = 3877
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -610,25 +658,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:38 ; elapsed = 00:01:13 . Memory (MB): peak = 1636.531 ; gain = 469.305 ; free physical = 140 ; free virtual = 3264
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:52 ; elapsed = 00:01:15 . Memory (MB): peak = 1691.812 ; gain = 524.586 ; free physical = 138 ; free virtual = 3877
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:38 ; elapsed = 00:01:13 . Memory (MB): peak = 1636.531 ; gain = 469.305 ; free physical = 140 ; free virtual = 3264
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:52 ; elapsed = 00:01:15 . Memory (MB): peak = 1691.812 ; gain = 524.586 ; free physical = 138 ; free virtual = 3877
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:38 ; elapsed = 00:01:13 . Memory (MB): peak = 1636.531 ; gain = 469.305 ; free physical = 140 ; free virtual = 3264
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:52 ; elapsed = 00:01:15 . Memory (MB): peak = 1691.812 ; gain = 524.586 ; free physical = 138 ; free virtual = 3877
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:38 ; elapsed = 00:01:13 . Memory (MB): peak = 1636.531 ; gain = 469.305 ; free physical = 140 ; free virtual = 3264
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:52 ; elapsed = 00:01:15 . Memory (MB): peak = 1691.812 ; gain = 524.586 ; free physical = 138 ; free virtual = 3877
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -641,53 +689,66 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+-----+------+
-|      |Cell |Count |
-+------+-----+------+
-|1     |BUFG |     1|
-|2     |LUT1 |     1|
-|3     |LUT2 |     5|
-|4     |LUT3 |     8|
-|5     |LUT4 |     8|
-|6     |LUT5 |     8|
-|7     |LUT6 |    15|
-|8     |FDCE |    18|
-|9     |FDPE |     1|
-|10    |FDRE |     9|
-|11    |IBUF |     3|
-|12    |OBUF |     1|
-+------+-----+------+
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |BUFG       |     1|
+|2     |CARRY4     |   299|
+|3     |LUT1       |    77|
+|4     |LUT2       |   236|
+|5     |LUT3       |   866|
+|6     |LUT4       |    58|
+|7     |LUT5       |    72|
+|8     |LUT6       |    82|
+|9     |RAMB36E1   |     1|
+|10    |RAMB36E1_1 |     1|
+|11    |FDCE       |    68|
+|12    |FDPE       |     4|
+|13    |FDRE       |    61|
+|14    |LD         |    16|
+|15    |IBUF       |     3|
+|16    |OBUF       |     2|
++------+-----------+------+
 
 Report Instance Areas: 
-+------+-----------+-------------+------+
-|      |Instance   |Module       |Cells |
-+------+-----------+-------------+------+
-|1     |top        |             |    78|
-|2     |  uart     |UART         |    73|
-|3     |    br_g   |br_generator |    20|
-|4     |    rx_mod |rx_module    |    28|
-|5     |    tx_mod |tx_module    |    25|
-+------+-----------+-------------+------+
++------+-----------------+----------------------------+------+
+|      |Instance         |Module                      |Cells |
++------+-----------------+----------------------------+------+
+|1     |top              |                            |  1847|
+|2     |  Data_memory    |sinc_memory                 |     1|
+|3     |  Program_memory |sinc_memory__parameterized0 |    41|
+|4     |  bip            |CPU                         |    51|
+|5     |    control      |ControlUnit                 |    15|
+|6     |    datapath     |Datapath                    |    36|
+|7     |      alu        |ALU                         |     4|
+|8     |  uart           |UART                        |  1748|
+|9     |    br_g         |br_generator                |    20|
+|10    |    int          |interface                   |  1649|
+|11    |    rx_mod       |rx_module                   |    37|
+|12    |    tx_mod       |tx_module                   |    42|
++------+-----------------+----------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:38 ; elapsed = 00:01:13 . Memory (MB): peak = 1636.531 ; gain = 469.305 ; free physical = 140 ; free virtual = 3264
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:52 ; elapsed = 00:01:15 . Memory (MB): peak = 1691.812 ; gain = 524.586 ; free physical = 138 ; free virtual = 3877
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 99 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:37 . Memory (MB): peak = 1636.531 ; gain = 143.445 ; free physical = 194 ; free virtual = 3320
-Synthesis Optimization Complete : Time (s): cpu = 00:00:38 ; elapsed = 00:01:13 . Memory (MB): peak = 1636.539 ; gain = 469.305 ; free physical = 194 ; free virtual = 3321
+Synthesis finished with 0 errors, 0 critical warnings and 84 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:39 ; elapsed = 00:00:47 . Memory (MB): peak = 1691.812 ; gain = 195.258 ; free physical = 193 ; free virtual = 3933
+Synthesis Optimization Complete : Time (s): cpu = 00:00:52 ; elapsed = 00:01:15 . Memory (MB): peak = 1691.820 ; gain = 524.586 ; free physical = 204 ; free virtual = 3944
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 3 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 320 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'Top_level' is not ideal for floorplanning, since the cellview 'interface' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 16 instances were transformed.
+  LD => LDCE: 16 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-83 Infos, 137 Warnings, 0 Critical Warnings and 0 Errors encountered.
+132 Infos, 105 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:41 ; elapsed = 00:01:17 . Memory (MB): peak = 1636.539 ; gain = 480.961 ; free physical = 179 ; free virtual = 3324
+synth_design: Time (s): cpu = 00:00:55 ; elapsed = 00:01:18 . Memory (MB): peak = 1691.820 ; gain = 536.242 ; free physical = 242 ; free virtual = 3982
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1/Top_level.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Top_level_utilization_synth.rpt -pb Top_level_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.52 . Memory (MB): peak = 1660.543 ; gain = 0.000 ; free physical = 169 ; free virtual = 3323
-INFO: [Common 17-206] Exiting Vivado at Thu Mar 14 19:52:29 2019...
+report_utilization: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.09 . Memory (MB): peak = 1715.824 ; gain = 0.000 ; free physical = 241 ; free virtual = 3981
+INFO: [Common 17-206] Exiting Vivado at Fri Mar 15 20:33:47 2019...

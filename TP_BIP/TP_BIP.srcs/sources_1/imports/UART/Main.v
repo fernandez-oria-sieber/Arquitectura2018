@@ -5,7 +5,7 @@
 //					        Braian Sieber
 // Create Date:    		09:03:26 09/11/2018 
 //////////////////////////////////////////////////////////////////////////////////
-module UART #(parameter size = 8) //FALTA TODO
+module UART #(parameter size = 8) 
 	(
 	input rx, clk, reset, finish_program,
 	input [31:0] out_Acc_Counter,
