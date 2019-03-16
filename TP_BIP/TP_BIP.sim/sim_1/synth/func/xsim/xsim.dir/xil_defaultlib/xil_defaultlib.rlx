@@ -1,7 +1,7 @@
 0.6
 2018.2
-Jun 14 2018
-20:07:38
-/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v,1552684848,verilog,,/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v,,Top_level;UART;br_generator;glbl;rx_module;tx_module,,,,,,,,
-/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v,1552675518,verilog,,/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v,,interface,,,,,,,,
-/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v,1552684437,verilog,,,,allTest,,,,,,,,
+Oct  1 2018
+18:29:25
+/home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v,1552758949,verilog,,/home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v,,ALU;CPU;ControlUnit;Datapath;Top_level;UART;br_generator;glbl;rx_module;sinc_memory;sinc_memory__parameterized0;tx_module,,,,,,,,
+/home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v,1552757125,verilog,,/home/sieber/Arquitectura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v,,interface,,,,,,,,
+/home/sieber/Arquitectura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v,1552758926,verilog,,,,allTest,,,,,,,,

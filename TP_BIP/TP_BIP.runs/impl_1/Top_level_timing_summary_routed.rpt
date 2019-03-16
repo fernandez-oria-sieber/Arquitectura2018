@@ -1,12 +1,12 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date         : Fri Mar 15 20:36:50 2019
-| Host         : lenovo running 64-bit Manjaro Linux
+| Tool Version : Vivado v.2018.2.2 (lin64) Build 2348494 Mon Oct  1 18:25:39 MDT 2018
+| Date         : Sat Mar 16 15:51:11 2019
+| Host         : sieber running 64-bit Ubuntu 18.04.2 LTS
 | Command      : report_timing_summary -max_paths 10 -file Top_level_timing_summary_routed.rpt -pb Top_level_timing_summary_routed.pb -rpx Top_level_timing_summary_routed.rpx -warn_on_violation
 | Design       : Top_level
 | Device       : 7a35t-cpg236
-| Speed File   : -1  PRODUCTION 1.22 2018-03-21
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Timing Summary Report

@@ -45,15 +45,15 @@ module Decoder
 	begin                                                //                  |
 		case (Opcode)                                    // Operation        | WrPc  | SetA | SetB | WrAcc | Op | WrRAM | RdRAM |
 		                                                 //---------------------------------------------------------------------
-                3'b000: 	Output = 	00000000; 		 // HALT             |   1   |  00  |  0   |   0   | 0  |   0   |   0   |
-				3'b001: 	Output = 	10000010; 	     // STORE VARIABLE   |   1   |  xx  |  x   |   0   | x  |   1   |   0   |
-				3'b010: 	Output = 	10001001;        // LOAD VARIABLE    |   1   |  00  |  x   |   1   | x  |   0   |   1   |
-				3'b011: 	Output = 	10101000;        // LOAD INMEDIATE   |   1   |  01  |  x   |   1   | x  |   x   |   x   |
-				3'b100: 	Output = 	11001101;        // ADD VARIABLE     |   1   |  10  |  0   |   1   | 1  |   0   |   1   |
-				3'b101: 	Output = 	11011100;        // ADD INMEDIATE    |   1   |  10  |  1   |   1   | 1  |   0   |   0   |
-				3'b110: 	Output = 	11001001;        // SUB VARIABLE     |   1   |  10  |  0   |   1   | 0  |   0   |   1   |
-				3'b111: 	Output = 	11011000;        // SUB INMEDIATE    |   1   |  10  |  1   |   1   | 0  |   0   |   0   |
- 				default: 	Output = 	00000000;		 
+                5'b00000: 	Output = 	8'b00000000; 		 // HALT             |   0   |  00  |  0   |   0   | 0  |   0   |   0   |
+				5'b00001: 	Output = 	8'b10000010; 	     // STORE VARIABLE   |   1   |  xx  |  x   |   0   | x  |   1   |   0   |
+				5'b00010: 	Output = 	8'b10001001;        // LOAD VARIABLE    |   1   |  00  |  x   |   1   | x  |   0   |   1   |
+				5'b00011: 	Output = 	8'b10101000;        // LOAD INMEDIATE   |   1   |  01  |  x   |   1   | x  |   x   |   x   |
+				5'b00100: 	Output = 	8'b11001101;        // ADD VARIABLE     |   1   |  10  |  0   |   1   | 1  |   0   |   1   |
+				5'b00101: 	Output = 	8'b11011100;        // ADD INMEDIATE    |   1   |  10  |  1   |   1   | 1  |   0   |   0   |
+				5'b00110: 	Output = 	8'b11001001;        // SUB VARIABLE     |   1   |  10  |  0   |   1   | 0  |   0   |   1   |
+				5'b00111: 	Output = 	8'b11011000;        // SUB INMEDIATE    |   1   |  10  |  1   |   1   | 0  |   0   |   0   |
+ 				default: 	Output = 	8'b00000000;		 
 		endcase
 	end
 endmodule

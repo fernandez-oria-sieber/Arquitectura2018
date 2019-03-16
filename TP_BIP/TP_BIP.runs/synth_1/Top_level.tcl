@@ -17,32 +17,31 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.cache/wt [current_project]
-set_property parent.project_path /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.xpr [current_project]
+set_property webtalk.parent_dir /home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.cache/wt [current_project]
+set_property parent.project_path /home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
-set_property ip_output_repo /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.cache/ip [current_project]
+set_property ip_output_repo /home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
-  /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v
-  /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/CPU.v
-  /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v
-  /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v
-  /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Decoder.v
-  /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/Main.v
-  /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/br_generator.v
-  /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v
-  /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/rx_module.v
-  /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/sinc_memory.v
-  /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/tx_module.v
-  /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Top_level.v
+  /home/sieber/Arquitectura/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v
+  /home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/CPU.v
+  /home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v
+  /home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v
+  /home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Decoder.v
+  /home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/Main.v
+  /home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/br_generator.v
+  /home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v
+  /home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/rx_module.v
+  /home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/sinc_memory.v
+  /home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/tx_module.v
+  /home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Top_level.v
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -52,8 +51,8 @@ read_verilog -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc
-set_property used_in_implementation false [get_files /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc]
+read_xdc /home/sieber/Arquitectura/Arquitectura2018/TP_UART/TP_UART.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc
+set_property used_in_implementation false [get_files /home/sieber/Arquitectura/Arquitectura2018/TP_UART/TP_UART.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc]
 
 set_param ips.enableIPCacheLiteLoad 0
 close [open __synthesis_is_running__ w]

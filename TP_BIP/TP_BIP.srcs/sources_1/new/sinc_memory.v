@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module sinc_memory
+module Program_memory
 #(
 parameter RAM_WIDTH = 16,                  // Specify RAM data width
 parameter RAM_DEPTH = 2048,

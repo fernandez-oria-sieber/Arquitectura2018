@@ -7,20 +7,20 @@
 # 
 
 if [ -z "$PATH" ]; then
-  PATH=/usr/local/magnetic2/Xilinx/Vivado/SDK/2018.2/bin:/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/ids_lite/ISE/bin/lin64:/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin
+  PATH=/opt/Xilinx/SDK/2018.2/bin:/opt/Xilinx/Vivado/2018.2/ids_lite/ISE/bin/lin64:/opt/Xilinx/Vivado/2018.2/bin
 else
-  PATH=/usr/local/magnetic2/Xilinx/Vivado/SDK/2018.2/bin:/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/ids_lite/ISE/bin/lin64:/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin:$PATH
+  PATH=/opt/Xilinx/SDK/2018.2/bin:/opt/Xilinx/Vivado/2018.2/ids_lite/ISE/bin/lin64:/opt/Xilinx/Vivado/2018.2/bin:$PATH
 fi
 export PATH
 
 if [ -z "$LD_LIBRARY_PATH" ]; then
-  LD_LIBRARY_PATH=/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/ids_lite/ISE/lib/lin64
+  LD_LIBRARY_PATH=/opt/Xilinx/Vivado/2018.2/ids_lite/ISE/lib/lin64
 else
-  LD_LIBRARY_PATH=/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/ids_lite/ISE/lib/lin64:$LD_LIBRARY_PATH
+  LD_LIBRARY_PATH=/opt/Xilinx/Vivado/2018.2/ids_lite/ISE/lib/lin64:$LD_LIBRARY_PATH
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1'
+HD_PWD='/home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -37,7 +37,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .write_bitstream.begin.rst
+/bin/touch .init_design.begin.rst
 EAStep vivado -log Top_level.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source Top_level.tcl -notrace
 
 

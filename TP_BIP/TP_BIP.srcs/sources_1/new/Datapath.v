@@ -38,17 +38,23 @@ module Datapath
 	 reg [5:0]Operation;
 	 always @(posedge clk, posedge reset)
 	 begin
+	    if (reset)
+	       begin
+	           ACC = 0; 
+	           A = 0;
+	           B = 0; 
+	           Inmediate_Val = 0;
+	           Operation = 0;
+	       end
 		if (WrAcc) ACC = A;
 		else ACC = ACC;
 	    if (reset) ACC = 0;
 	 end
 	 
 	 always @(*)
-     begin 
-         
-         Inmediate_Val[10:0] = Data;     
-         case (SetA)                             
-                                                   
+     begin
+         Inmediate_Val[10:0] = Data;
+         case (SetA)                       
                  2'b00:     A = Out_Data;
                  2'b01:     A = Inmediate_Val;
                  2'b10:     A = SalidaALU;
