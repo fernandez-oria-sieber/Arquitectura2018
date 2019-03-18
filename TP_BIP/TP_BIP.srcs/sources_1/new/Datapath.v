@@ -33,22 +33,17 @@ module Datapath
     );
 	 
 	 //reg signed[size-1:0] a, b; 
-	 reg[15:0] ACC, A, B, Inmediate_Val;//, SalidaALU_aux;
+	 reg[15:0] ACC= 0;//, SalidaALU_aux;
 	 wire[15:0] SalidaALU;
 	 reg [5:0]Operation;
+	 reg[15:0] A = 0;
+	 reg[15:0] B = 0;
+	 reg[15:0] Inmediate_Val= 0;
 	 always @(posedge clk, posedge reset)
 	 begin
-	    if (reset)
-	       begin
-	           ACC = 0; 
-	           A = 0;
-	           B = 0; 
-	           Inmediate_Val = 0;
-	           Operation = 0;
-	       end
-		if (WrAcc) ACC = A;
-		else ACC = ACC;
 	    if (reset) ACC = 0;
+		else if (WrAcc) ACC = A;
+		else ACC = ACC;
 	 end
 	 
 	 always @(*)
@@ -66,8 +61,8 @@ module Datapath
                 1'b1: B = Inmediate_Val;
                 default: B = B;
          endcase
-         if (Op) Operation = 6'b100000;
-         else Operation = 6'b100010;
+         if (Op) Operation <= 6'b100000;
+         else Operation <= 6'b100010;
          
      end
 	 

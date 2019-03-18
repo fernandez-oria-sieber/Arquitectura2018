@@ -27,10 +27,14 @@ module ControlUnit
      
      always @(posedge clk, posedge reset)
          begin
-             if (Opcode == 0 && aux_PC!=0) aux_finish_program=1;
+             if (!Opcode && aux_PC) aux_finish_program=1;
              if (BIP_enable) aux_PC = aux_PC + WrPc; 
              else aux_PC = aux_PC;
-             if (reset) aux_PC = 0;
+             if (reset) 
+                begin
+                    aux_PC = 0;
+                    aux_finish_program=0;
+                end
          end
      
      

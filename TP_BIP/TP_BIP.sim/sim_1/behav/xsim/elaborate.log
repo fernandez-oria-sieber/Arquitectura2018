@@ -1,8 +1,13 @@
 Vivado Simulator 2018.2
 Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: /opt/Xilinx/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 38519cdd0e624429ac5e340b8cc759ab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot allTest_behav xil_defaultlib.allTest xil_defaultlib.glbl -log elaborate.log 
+Running: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 38519cdd0e624429ac5e340b8cc759ab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot interface_sim_behav xil_defaultlib.interface_sim xil_defaultlib.glbl -log elaborate.log 
 Using 8 slave threads.
 Starting static elaboration
-WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port Rd [/home/sieber/Arquitectura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:33]
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.interface
+Compiling module xil_defaultlib.interface_sim
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot interface_sim_behav

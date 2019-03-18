@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2018.2.2 (lin64) Build 2348494 Mon Oct  1 18:25:39 MDT 2018
-| Date         : Sat Mar 16 15:50:46 2019
-| Host         : sieber running 64-bit Ubuntu 18.04.2 LTS
+| Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
+| Date         : Mon Mar 18 18:35:04 2019
+| Host         : lenovo running 64-bit Manjaro Linux
 | Command      : report_control_sets -verbose -file Top_level_control_sets_placed.rpt
 | Design       : Top_level
 | Device       : xc7a35t
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    16 |
-| Unused register locations in slices containing registers |    22 |
+| Number of unique control sets                            |    15 |
+| Unused register locations in slices containing registers |    16 |
 +----------------------------------------------------------+-------+
 
 
@@ -37,7 +37,7 @@ Table of Contents
 |      8 |            3 |
 |     12 |            1 |
 |     14 |            3 |
-|    16+ |            9 |
+|    16+ |            8 |
 +--------+--------------+
 
 
@@ -47,37 +47,36 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              46 |           14 |
-| No           | No                    | Yes                    |              28 |            8 |
-| No           | Yes                   | No                     |              14 |            3 |
-| Yes          | No                    | No                     |              86 |           25 |
-| Yes          | No                    | Yes                    |             116 |           21 |
-| Yes          | Yes                   | No                     |               8 |            4 |
+| No           | No                    | No                     |              14 |            4 |
+| No           | No                    | Yes                    |              30 |           10 |
+| No           | Yes                   | No                     |              14 |            1 |
+| Yes          | No                    | No                     |              82 |           26 |
+| Yes          | No                    | Yes                    |             116 |           22 |
+| Yes          | Yes                   | No                     |               8 |            3 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+---------------------------------+--------------------------------------+-----------------------------+------------------+----------------+
-|           Clock Signal          |             Enable Signal            |       Set/Reset Signal      | Slice Load Count | Bel Load Count |
-+---------------------------------+--------------------------------------+-----------------------------+------------------+----------------+
-|  clk_IBUF_BUFG                  | uart/rx_mod/s_next                   | button_OBUF                 |                2 |              8 |
-|  clk_IBUF_BUFG                  | uart/int/div[10]_i_1_n_0             | uart/int/div[7]_i_1_n_0     |                4 |              8 |
-|  clk_IBUF_BUFG                  | uart/tx_mod/s_next                   | button_OBUF                 |                2 |              8 |
-|  clk_IBUF_BUFG                  | uart/int/div[10]_i_1_n_0             |                             |                4 |             12 |
-|  clk_IBUF_BUFG                  |                                      |                             |                7 |             14 |
-|  clk_IBUF_BUFG                  |                                      | uart/br_g/ciclos[7]_i_1_n_0 |                3 |             14 |
-|  clk_IBUF_BUFG                  | uart/int/i[6]_i_1_n_0                | button_OBUF                 |                2 |             14 |
-|  clk_IBUF_BUFG                  | uart/int/out[7]_P_i_1_n_0            |                             |                5 |             16 |
-|  clk_IBUF_BUFG                  | uart/rx_mod/b_next                   | button_OBUF                 |                3 |             16 |
-|  clk_IBUF_BUFG                  | uart/tx_mod/b_next_0                 | button_OBUF                 |                2 |             16 |
-|  clk_IBUF_BUFG                  | uart/int/aux_PC_reg[0][0]            | button_OBUF                 |                3 |             22 |
-|  clk_IBUF_BUFG                  | uart/int/aux_Count[10]_P_i_1_n_0     |                             |                2 |             22 |
-|  clk_IBUF_BUFG                  |                                      | button_OBUF                 |                8 |             28 |
-|  Program_memory/ACC_reg[0]_0[0] |                                      |                             |                7 |             32 |
-|  clk_IBUF_BUFG                  | Program_memory/ACC_reg[0][0]         | button_OBUF                 |                7 |             32 |
-|  clk_IBUF_BUFG                  | uart/int/aux_Acc_Count[17]_P_i_1_n_0 |                             |               14 |             36 |
-+---------------------------------+--------------------------------------+-----------------------------+------------------+----------------+
++----------------+----------------------------------+-----------------------------+------------------+----------------+
+|  Clock Signal  |           Enable Signal          |       Set/Reset Signal      | Slice Load Count | Bel Load Count |
++----------------+----------------------------------+-----------------------------+------------------+----------------+
+|  clk_IBUF_BUFG | uart/int/div[10]_i_1_n_0         | uart/int/div[7]_i_1_n_0     |                3 |              8 |
+|  clk_IBUF_BUFG | uart/tx_mod/s_next               | button_OBUF                 |                2 |              8 |
+|  clk_IBUF_BUFG | uart/rx_mod/s_next               | button_OBUF                 |                2 |              8 |
+|  clk_IBUF_BUFG | uart/int/div[10]_i_1_n_0         |                             |                4 |             12 |
+|  clk_IBUF_BUFG |                                  |                             |                4 |             14 |
+|  clk_IBUF_BUFG |                                  | uart/br_g/ciclos[7]_i_1_n_0 |                1 |             14 |
+|  clk_IBUF_BUFG | uart/int/i[6]_i_1_n_0            | button_OBUF                 |                2 |             14 |
+|  clk_IBUF_BUFG | uart/rx_mod/b_next               | button_OBUF                 |                2 |             16 |
+|  clk_IBUF_BUFG | uart/int/out[7]_P_i_1_n_0        |                             |                5 |             16 |
+|  clk_IBUF_BUFG | uart/tx_mod/b_next_0             | button_OBUF                 |                5 |             16 |
+|  clk_IBUF_BUFG | uart/int/aux_Count[10]_P_i_1_n_0 |                             |                2 |             22 |
+|  clk_IBUF_BUFG | uart/int/ena                     | button_OBUF                 |                3 |             22 |
+|  clk_IBUF_BUFG |                                  | button_OBUF                 |               10 |             30 |
+|  clk_IBUF_BUFG | Program_memory/E[0]              | button_OBUF                 |                6 |             32 |
+|  clk_IBUF_BUFG | uart/int/aux[15]_P_i_1_n_0       |                             |               15 |             32 |
++----------------+----------------------------------+-----------------------------+------------------+----------------+
 
 

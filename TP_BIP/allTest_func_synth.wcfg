@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="allTest_func_synth.wdb" id="1">
+         <top_modules>
+            <top_module name="allTest" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="67860000fs"></ZoomStartTime>
+      <ZoomEndTime time="167360001fs"></ZoomEndTime>
+      <Cursor1Time time="1000000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="172"></NameColumnWidth>
+      <ValueColumnWidth column_width="100"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="12" />
+   <wvobject type="logic" fp_name="/allTest/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/allTest/reset">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/allTest/BIP_enable">
+      <obj_property name="ElementShortName">BIP_enable</obj_property>
+      <obj_property name="ObjectShortName">BIP_enable</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/allTest/finish_program">
+      <obj_property name="ElementShortName">finish_program</obj_property>
+      <obj_property name="ObjectShortName">finish_program</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/allTest/WrRAM">
+      <obj_property name="ElementShortName">WrRAM</obj_property>
+      <obj_property name="ObjectShortName">WrRAM</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/allTest/RdRAM">
+      <obj_property name="ElementShortName">RdRAM</obj_property>
+      <obj_property name="ObjectShortName">RdRAM</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/allTest/PC">
+      <obj_property name="ElementShortName">PC[10:0]</obj_property>
+      <obj_property name="ObjectShortName">PC[10:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/allTest/Addr">
+      <obj_property name="ElementShortName">Addr[10:0]</obj_property>
+      <obj_property name="ObjectShortName">Addr[10:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/allTest/Program_Data">
+      <obj_property name="ElementShortName">Program_Data[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Program_Data[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/allTest/In_Data">
+      <obj_property name="ElementShortName">In_Data[15:0]</obj_property>
+      <obj_property name="ObjectShortName">In_Data[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/allTest/Out_Data">
+      <obj_property name="ElementShortName">Out_Data[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Out_Data[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/allTest/out_Acc_Counter">
+      <obj_property name="ElementShortName">out_Acc_Counter[31:0]</obj_property>
+      <obj_property name="ObjectShortName">out_Acc_Counter[31:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+</wave_config>

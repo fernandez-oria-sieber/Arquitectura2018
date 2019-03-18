@@ -2,10 +2,1973 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Wed Feb 27 16:30:59 2019
-# Process ID: 6667
+# Start of session at: Mon Mar 18 12:50:29 2019
+# Process ID: 4570
 # Current directory: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018
 # Command line: vivado
 # Log file: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/vivado.log
 # Journal file: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/vivado.jou
 #-----------------------------------------------------------
+start_gui
+open_project /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.xpr
+CRITICAL WARNING: [Project 1-19] Could not find the file '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sim_1/new/sim_interface.v'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 6130.844 ; gain = 113.516 ; free physical = 141 ; free virtual = 6301
+update_compile_order -fileset sources_1
+launch_simulation -mode post-synthesis -type functional
+INFO: [Vivado 12-5682] Launching post-synthesis functional simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a35tcpg236-1
+INFO: [Netlist 29-17] Analyzing 304 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'Top_level' is not ideal for floorplanning, since the cellview 'interface' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2.2
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc]
+Finished Parsing XDC File [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:28 ; elapsed = 00:00:36 . Memory (MB): peak = 6544.891 ; gain = 337.992 ; free physical = 128 ; free virtual = 5875
+INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
+INFO: [SIM-utils-25] write_verilog -mode funcsim -nolib -force -file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v"
+INFO: [SIM-utils-36] Netlist generated:/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v
+INFO: [SIM-utils-54] Inspecting design source files for 'allTest' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+xvlog --incr --relax -prj allTest_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-311] analyzing module CPU
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-311] analyzing module Datapath
+INFO: [VRFC 10-311] analyzing module Top_level
+INFO: [VRFC 10-311] analyzing module UART
+INFO: [VRFC 10-311] analyzing module br_generator
+INFO: [VRFC 10-311] analyzing module interface
+INFO: [VRFC 10-311] analyzing module rx_module
+INFO: [VRFC 10-311] analyzing module sinc_memory
+INFO: [VRFC 10-311] analyzing module sinc_memory__parameterized0
+INFO: [VRFC 10-311] analyzing module tx_module
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+WARNING: [VRFC 10-2845] overwriting previous definition of module ALU [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/CPU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CPU
+WARNING: [VRFC 10-2845] overwriting previous definition of module CPU [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/CPU.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+WARNING: [VRFC 10-2845] overwriting previous definition of module ControlUnit [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:8]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Data_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Data_memory
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Datapath
+WARNING: [VRFC 10-2845] overwriting previous definition of module Datapath [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/sinc_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Program_memory
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module allTest
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 38519cdd0e624429ac5e340b8cc759ab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L secureip --snapshot allTest_func_synth xil_defaultlib.allTest xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port Rd [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:33]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Data_memory(INIT_FILE="/home/luc...
+Compiling module xil_defaultlib.Program_memory(INIT_FILE="/home/...
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ALU(size=16)
+Compiling module xil_defaultlib.Datapath
+Compiling module xil_defaultlib.CPU
+Compiling module xil_defaultlib.allTest
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot allTest_func_synth
+
+****** Webtalk v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/xsim.dir/allTest_func_synth/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Mon Mar 18 13:00:26 2019...
+run_program: Time (s): cpu = 00:00:16 ; elapsed = 00:00:11 . Memory (MB): peak = 6586.113 ; gain = 41.223 ; free physical = 211 ; free virtual = 5784
+INFO: [USF-XSim-69] 'elaborate' step finished in '11' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "allTest_func_synth -key {Post-Synthesis:sim_1:Functional:allTest} -tclbatch {allTest.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source allTest.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'allTest_func_synth' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:01:08 ; elapsed = 00:00:59 . Memory (MB): peak = 6700.020 ; gain = 493.121 ; free physical = 122 ; free virtual = 5722
+relaunch_sim
+suspend_sim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 6977.168 ; gain = 0.000 ; free physical = 239 ; free virtual = 5496
+INFO: [Vivado 12-5682] Launching post-synthesis functional simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
+INFO: [SIM-utils-25] write_verilog -mode funcsim -nolib -force -file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v"
+INFO: [SIM-utils-36] Netlist generated:/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v
+INFO: [SIM-utils-54] Inspecting design source files for 'allTest' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+xvlog --incr --relax -prj allTest_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-311] analyzing module CPU
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-311] analyzing module Datapath
+INFO: [VRFC 10-311] analyzing module Top_level
+INFO: [VRFC 10-311] analyzing module UART
+INFO: [VRFC 10-311] analyzing module br_generator
+INFO: [VRFC 10-311] analyzing module interface
+INFO: [VRFC 10-311] analyzing module rx_module
+INFO: [VRFC 10-311] analyzing module sinc_memory
+INFO: [VRFC 10-311] analyzing module sinc_memory__parameterized0
+INFO: [VRFC 10-311] analyzing module tx_module
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+WARNING: [VRFC 10-2845] overwriting previous definition of module ALU [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/CPU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CPU
+WARNING: [VRFC 10-2845] overwriting previous definition of module CPU [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/CPU.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+WARNING: [VRFC 10-2845] overwriting previous definition of module ControlUnit [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:8]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Data_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Data_memory
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Datapath
+WARNING: [VRFC 10-2845] overwriting previous definition of module Datapath [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/sinc_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Program_memory
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module allTest
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching post-synthesis functional simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 38519cdd0e624429ac5e340b8cc759ab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L secureip --snapshot allTest_func_synth xil_defaultlib.allTest xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port Rd [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:33]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Data_memory(INIT_FILE="/home/luc...
+Compiling module xil_defaultlib.Program_memory(INIT_FILE="/home/...
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ALU(size=16)
+Compiling module xil_defaultlib.Datapath
+Compiling module xil_defaultlib.CPU
+Compiling module xil_defaultlib.allTest
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot allTest_func_synth
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 6977.168 ; gain = 0.000 ; free physical = 224 ; free virtual = 5481
+relaunch_sim
+INFO: [Vivado 12-5682] Launching post-synthesis functional simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
+INFO: [SIM-utils-25] write_verilog -mode funcsim -nolib -force -file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v"
+INFO: [SIM-utils-36] Netlist generated:/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v
+INFO: [SIM-utils-54] Inspecting design source files for 'allTest' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+xvlog --incr --relax -prj allTest_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-311] analyzing module CPU
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-311] analyzing module Datapath
+INFO: [VRFC 10-311] analyzing module Top_level
+INFO: [VRFC 10-311] analyzing module UART
+INFO: [VRFC 10-311] analyzing module br_generator
+INFO: [VRFC 10-311] analyzing module interface
+INFO: [VRFC 10-311] analyzing module rx_module
+INFO: [VRFC 10-311] analyzing module sinc_memory
+INFO: [VRFC 10-311] analyzing module sinc_memory__parameterized0
+INFO: [VRFC 10-311] analyzing module tx_module
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+WARNING: [VRFC 10-2845] overwriting previous definition of module ALU [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/CPU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CPU
+WARNING: [VRFC 10-2845] overwriting previous definition of module CPU [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/CPU.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+WARNING: [VRFC 10-2845] overwriting previous definition of module ControlUnit [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:8]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Data_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Data_memory
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Datapath
+WARNING: [VRFC 10-2845] overwriting previous definition of module Datapath [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/sinc_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Program_memory
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module allTest
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching post-synthesis functional simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 38519cdd0e624429ac5e340b8cc759ab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L secureip --snapshot allTest_func_synth xil_defaultlib.allTest xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port Rd [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:33]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Data_memory(INIT_FILE="/home/luc...
+Compiling module xil_defaultlib.Program_memory(INIT_FILE="/home/...
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ALU(size=16)
+Compiling module xil_defaultlib.Datapath
+Compiling module xil_defaultlib.CPU
+Compiling module xil_defaultlib.allTest
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot allTest_func_synth
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 7001.160 ; gain = 0.008 ; free physical = 235 ; free virtual = 5496
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Mon Mar 18 13:31:10 2019] Launched synth_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 2
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Mon Mar 18 13:33:15 2019] Launched impl_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Mon Mar 18 13:36:23 2019] Launched impl_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.2
+  **** Build date : Jun 14 2018-20:18:37
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A8A4C3A
+set_property PROGRAM.FILE {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Mon Mar 18 13:47:27 2019] Launched synth_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 2
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Mon Mar 18 13:49:04 2019] Launched impl_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Mon Mar 18 13:57:56 2019] Launched impl_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+save_wave_config {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg}
+add_files -fileset sim_1 -norecurse /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg
+set_property xsim.view /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg [get_filesets sim_1]
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_design
+launch_simulation -mode post-synthesis -type functional
+INFO: [Vivado 12-5682] Launching post-synthesis functional simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a35tcpg236-1
+INFO: [Netlist 29-17] Analyzing 299 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'Top_level' is not ideal for floorplanning, since the cellview 'interface' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc]
+Finished Parsing XDC File [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 7708.555 ; gain = 0.000 ; free physical = 1327 ; free virtual = 4632
+INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
+INFO: [SIM-utils-25] write_verilog -mode funcsim -nolib -force -file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v"
+INFO: [SIM-utils-36] Netlist generated:/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v
+INFO: [SIM-utils-54] Inspecting design source files for 'allTest' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+xvlog --incr --relax -prj allTest_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CPU
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-311] analyzing module Program_memory
+INFO: [VRFC 10-311] analyzing module Top_level
+INFO: [VRFC 10-311] analyzing module UART
+INFO: [VRFC 10-311] analyzing module br_generator
+INFO: [VRFC 10-311] analyzing module interface
+INFO: [VRFC 10-311] analyzing module rx_module
+INFO: [VRFC 10-311] analyzing module tx_module
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/CPU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CPU
+WARNING: [VRFC 10-2845] overwriting previous definition of module CPU [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/CPU.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+WARNING: [VRFC 10-2845] overwriting previous definition of module ControlUnit [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:8]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Data_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Data_memory
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Datapath
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/sinc_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Program_memory
+WARNING: [VRFC 10-2845] overwriting previous definition of module Program_memory [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/sinc_memory.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module allTest
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 38519cdd0e624429ac5e340b8cc759ab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L secureip --snapshot allTest_func_synth xil_defaultlib.allTest xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port Rd [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:33]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Data_memory(INIT_FILE="/home/luc...
+Compiling module xil_defaultlib.Program_memory(INIT_FILE="/home/...
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ALU(size=16)
+Compiling module xil_defaultlib.Datapath
+Compiling module xil_defaultlib.CPU
+Compiling module xil_defaultlib.allTest
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot allTest_func_synth
+run_program: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 7708.555 ; gain = 0.000 ; free physical = 1246 ; free virtual = 4639
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "allTest_func_synth -key {Post-Synthesis:sim_1:Functional:allTest} -tclbatch {allTest.tcl} -view {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+open_wave_config /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg
+source allTest.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'allTest_func_synth' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 7720.055 ; gain = 11.500 ; free physical = 1240 ; free virtual = 4635
+relaunch_sim
+INFO: [Vivado 12-5682] Launching post-synthesis functional simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
+INFO: [SIM-utils-25] write_verilog -mode funcsim -nolib -force -file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v"
+INFO: [SIM-utils-36] Netlist generated:/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v
+INFO: [SIM-utils-54] Inspecting design source files for 'allTest' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+xvlog --incr --relax -prj allTest_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CPU
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-311] analyzing module Program_memory
+INFO: [VRFC 10-311] analyzing module Top_level
+INFO: [VRFC 10-311] analyzing module UART
+INFO: [VRFC 10-311] analyzing module br_generator
+INFO: [VRFC 10-311] analyzing module interface
+INFO: [VRFC 10-311] analyzing module rx_module
+INFO: [VRFC 10-311] analyzing module tx_module
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/CPU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CPU
+WARNING: [VRFC 10-2845] overwriting previous definition of module CPU [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/CPU.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+WARNING: [VRFC 10-2845] overwriting previous definition of module ControlUnit [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:8]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Data_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Data_memory
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Datapath
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/sinc_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Program_memory
+WARNING: [VRFC 10-2845] overwriting previous definition of module Program_memory [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/sinc_memory.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module allTest
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching post-synthesis functional simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 38519cdd0e624429ac5e340b8cc759ab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L secureip --snapshot allTest_func_synth xil_defaultlib.allTest xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port Rd [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:33]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Data_memory(INIT_FILE="/home/luc...
+Compiling module xil_defaultlib.Program_memory(INIT_FILE="/home/...
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ALU(size=16)
+Compiling module xil_defaultlib.Datapath
+Compiling module xil_defaultlib.CPU
+Compiling module xil_defaultlib.allTest
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot allTest_func_synth
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 7723.781 ; gain = 0.000 ; free physical = 1131 ; free virtual = 4546
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Mon Mar 18 14:27:50 2019] Launched synth_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 2
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Mon Mar 18 14:32:39 2019] Launched impl_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Mon Mar 18 14:35:47 2019] Launched impl_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+export_ip_user_files -of_objects  [get_files /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sim_1/new/sim_interface.v] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sim_1/new/sim_interface.v
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Mon Mar 18 14:52:08 2019] Launched synth_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 2
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Mon Mar 18 14:56:07 2019] Launched impl_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Mon Mar 18 15:01:04 2019] Launched synth_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Mon Mar 18 15:03:48 2019] Launched synth_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Mon Mar 18 15:15:14 2019] Launched synth_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 2
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Mon Mar 18 15:17:17 2019] Launched impl_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -jobs 2
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Mon Mar 18 15:45:43 2019] Launched synth_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1/runme.log
+[Mon Mar 18 15:45:43 2019] Launched impl_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/runme.log
+save_wave_config {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_design
+launch_simulation -mode post-synthesis -type functional
+INFO: [Vivado 12-5682] Launching post-synthesis functional simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a35tcpg236-1
+INFO: [Netlist 29-17] Analyzing 304 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'Top_level' is not ideal for floorplanning, since the cellview 'interface' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc]
+Finished Parsing XDC File [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
+INFO: [SIM-utils-25] write_verilog -mode funcsim -nolib -force -file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v"
+INFO: [SIM-utils-36] Netlist generated:/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v
+INFO: [SIM-utils-54] Inspecting design source files for 'allTest' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+xvlog --incr --relax -prj allTest_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-311] analyzing module CPU
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-311] analyzing module Data_memory
+INFO: [VRFC 10-311] analyzing module Datapath
+INFO: [VRFC 10-311] analyzing module Program_memory
+INFO: [VRFC 10-311] analyzing module Top_level
+INFO: [VRFC 10-311] analyzing module UART
+INFO: [VRFC 10-311] analyzing module br_generator
+INFO: [VRFC 10-311] analyzing module interface
+INFO: [VRFC 10-311] analyzing module rx_module
+INFO: [VRFC 10-311] analyzing module tx_module
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+WARNING: [VRFC 10-2845] overwriting previous definition of module ALU [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/CPU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CPU
+WARNING: [VRFC 10-2845] overwriting previous definition of module CPU [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/CPU.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+WARNING: [VRFC 10-2845] overwriting previous definition of module ControlUnit [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:8]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Data_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Data_memory
+WARNING: [VRFC 10-2845] overwriting previous definition of module Data_memory [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Data_memory.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Datapath
+WARNING: [VRFC 10-2845] overwriting previous definition of module Datapath [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/sinc_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Program_memory
+WARNING: [VRFC 10-2845] overwriting previous definition of module Program_memory [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/sinc_memory.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module allTest
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 38519cdd0e624429ac5e340b8cc759ab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L secureip --snapshot allTest_func_synth xil_defaultlib.allTest xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port Rd [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:33]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Data_memory(INIT_FILE="/home/luc...
+Compiling module xil_defaultlib.Program_memory(INIT_FILE="/home/...
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ALU(size=16)
+Compiling module xil_defaultlib.Datapath
+Compiling module xil_defaultlib.CPU
+Compiling module xil_defaultlib.allTest
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot allTest_func_synth
+run_program: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 7849.328 ; gain = 0.000 ; free physical = 154 ; free virtual = 3618
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "allTest_func_synth -key {Post-Synthesis:sim_1:Functional:allTest} -tclbatch {allTest.tcl} -view {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+open_wave_config /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg
+source allTest.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'allTest_func_synth' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 7849.328 ; gain = 0.000 ; free physical = 175 ; free virtual = 3602
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation -mode post-synthesis -type functional
+INFO: [Vivado 12-5682] Launching post-synthesis functional simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
+INFO: [SIM-utils-25] write_verilog -mode funcsim -nolib -force -file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v"
+INFO: [SIM-utils-36] Netlist generated:/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v
+INFO: [SIM-utils-54] Inspecting design source files for 'allTest' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+xvlog --incr --relax -prj allTest_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-311] analyzing module CPU
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-311] analyzing module Data_memory
+INFO: [VRFC 10-311] analyzing module Datapath
+INFO: [VRFC 10-311] analyzing module Program_memory
+INFO: [VRFC 10-311] analyzing module Top_level
+INFO: [VRFC 10-311] analyzing module UART
+INFO: [VRFC 10-311] analyzing module br_generator
+INFO: [VRFC 10-311] analyzing module interface
+INFO: [VRFC 10-311] analyzing module rx_module
+INFO: [VRFC 10-311] analyzing module tx_module
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+WARNING: [VRFC 10-2845] overwriting previous definition of module ALU [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/CPU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CPU
+WARNING: [VRFC 10-2845] overwriting previous definition of module CPU [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/CPU.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+WARNING: [VRFC 10-2845] overwriting previous definition of module ControlUnit [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:8]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Data_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Data_memory
+WARNING: [VRFC 10-2845] overwriting previous definition of module Data_memory [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Data_memory.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Datapath
+WARNING: [VRFC 10-2845] overwriting previous definition of module Datapath [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/sinc_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Program_memory
+WARNING: [VRFC 10-2845] overwriting previous definition of module Program_memory [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/sinc_memory.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module allTest
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 38519cdd0e624429ac5e340b8cc759ab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L secureip --snapshot allTest_func_synth xil_defaultlib.allTest xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port Rd [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:33]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Data_memory(INIT_FILE="/home/luc...
+Compiling module xil_defaultlib.Program_memory(INIT_FILE="/home/...
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ALU(size=16)
+Compiling module xil_defaultlib.Datapath
+Compiling module xil_defaultlib.CPU
+Compiling module xil_defaultlib.allTest
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot allTest_func_synth
+run_program: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 7849.328 ; gain = 0.000 ; free physical = 1082 ; free virtual = 4432
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "allTest_func_synth -key {Post-Synthesis:sim_1:Functional:allTest} -tclbatch {allTest.tcl} -view {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+open_wave_config /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg
+source allTest.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'allTest_func_synth' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 7849.328 ; gain = 0.000 ; free physical = 1083 ; free virtual = 4433
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Mon Mar 18 15:52:29 2019] Launched synth_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1/runme.log
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_design
+launch_simulation -mode post-synthesis -type functional
+INFO: [Vivado 12-5682] Launching post-synthesis functional simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a35tcpg236-1
+INFO: [Netlist 29-17] Analyzing 304 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'Top_level' is not ideal for floorplanning, since the cellview 'interface' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc]
+Finished Parsing XDC File [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
+INFO: [SIM-utils-25] write_verilog -mode funcsim -nolib -force -file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v"
+INFO: [SIM-utils-36] Netlist generated:/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v
+INFO: [SIM-utils-54] Inspecting design source files for 'allTest' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+xvlog --incr --relax -prj allTest_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-311] analyzing module CPU
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-311] analyzing module Data_memory
+INFO: [VRFC 10-311] analyzing module Datapath
+INFO: [VRFC 10-311] analyzing module Program_memory
+INFO: [VRFC 10-311] analyzing module Top_level
+INFO: [VRFC 10-311] analyzing module UART
+INFO: [VRFC 10-311] analyzing module br_generator
+INFO: [VRFC 10-311] analyzing module interface
+INFO: [VRFC 10-311] analyzing module rx_module
+INFO: [VRFC 10-311] analyzing module tx_module
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+WARNING: [VRFC 10-2845] overwriting previous definition of module ALU [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/CPU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CPU
+WARNING: [VRFC 10-2845] overwriting previous definition of module CPU [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/CPU.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+WARNING: [VRFC 10-2845] overwriting previous definition of module ControlUnit [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:8]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Data_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Data_memory
+WARNING: [VRFC 10-2845] overwriting previous definition of module Data_memory [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Data_memory.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Datapath
+WARNING: [VRFC 10-2845] overwriting previous definition of module Datapath [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/sinc_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Program_memory
+WARNING: [VRFC 10-2845] overwriting previous definition of module Program_memory [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/sinc_memory.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module allTest
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 38519cdd0e624429ac5e340b8cc759ab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L secureip --snapshot allTest_func_synth xil_defaultlib.allTest xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port Rd [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:33]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Data_memory(INIT_FILE="/home/luc...
+Compiling module xil_defaultlib.Program_memory(INIT_FILE="/home/...
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ALU(size=16)
+Compiling module xil_defaultlib.Datapath
+Compiling module xil_defaultlib.CPU
+Compiling module xil_defaultlib.allTest
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot allTest_func_synth
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "allTest_func_synth -key {Post-Synthesis:sim_1:Functional:allTest} -tclbatch {allTest.tcl} -view {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+open_wave_config /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg
+source allTest.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'allTest_func_synth' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:15 ; elapsed = 00:00:12 . Memory (MB): peak = 7849.328 ; gain = 0.000 ; free physical = 910 ; free virtual = 4387
+relaunch_sim
+INFO: [Vivado 12-5682] Launching post-synthesis functional simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
+INFO: [SIM-utils-25] write_verilog -mode funcsim -nolib -force -file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v"
+INFO: [SIM-utils-36] Netlist generated:/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v
+INFO: [SIM-utils-54] Inspecting design source files for 'allTest' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+xvlog --incr --relax -prj allTest_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-311] analyzing module CPU
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-311] analyzing module Data_memory
+INFO: [VRFC 10-311] analyzing module Datapath
+INFO: [VRFC 10-311] analyzing module Program_memory
+INFO: [VRFC 10-311] analyzing module Top_level
+INFO: [VRFC 10-311] analyzing module UART
+INFO: [VRFC 10-311] analyzing module br_generator
+INFO: [VRFC 10-311] analyzing module interface
+INFO: [VRFC 10-311] analyzing module rx_module
+INFO: [VRFC 10-311] analyzing module tx_module
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+WARNING: [VRFC 10-2845] overwriting previous definition of module ALU [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/CPU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CPU
+WARNING: [VRFC 10-2845] overwriting previous definition of module CPU [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/CPU.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+WARNING: [VRFC 10-2845] overwriting previous definition of module ControlUnit [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:8]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Data_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Data_memory
+WARNING: [VRFC 10-2845] overwriting previous definition of module Data_memory [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Data_memory.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Datapath
+WARNING: [VRFC 10-2845] overwriting previous definition of module Datapath [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/sinc_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Program_memory
+WARNING: [VRFC 10-2845] overwriting previous definition of module Program_memory [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/sinc_memory.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module allTest
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 7849.328 ; gain = 0.000 ; free physical = 870 ; free virtual = 4370
+INFO: [Vivado 12-5682] Launching post-synthesis functional simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 38519cdd0e624429ac5e340b8cc759ab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L secureip --snapshot allTest_func_synth xil_defaultlib.allTest xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port Rd [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:33]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Data_memory(INIT_FILE="/home/luc...
+Compiling module xil_defaultlib.Program_memory(INIT_FILE="/home/...
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ALU(size=16)
+Compiling module xil_defaultlib.Datapath
+Compiling module xil_defaultlib.CPU
+Compiling module xil_defaultlib.allTest
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot allTest_func_synth
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 7849.328 ; gain = 0.000 ; free physical = 871 ; free virtual = 4372
+add_bp {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v} 39
+remove_bps -file {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v} -line 39
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Mon Mar 18 16:09:55 2019] Launched synth_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 2
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Mon Mar 18 16:11:42 2019] Launched impl_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Mon Mar 18 16:14:43 2019] Launched impl_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/runme.log
+save_wave_config {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_design
+launch_simulation -mode post-synthesis -type functional
+INFO: [Vivado 12-5682] Launching post-synthesis functional simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a35tcpg236-1
+INFO: [Netlist 29-17] Analyzing 299 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'Top_level' is not ideal for floorplanning, since the cellview 'interface' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc]
+Finished Parsing XDC File [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
+INFO: [SIM-utils-25] write_verilog -mode funcsim -nolib -force -file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v"
+INFO: [SIM-utils-36] Netlist generated:/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v
+INFO: [SIM-utils-54] Inspecting design source files for 'allTest' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+xvlog --incr --relax -prj allTest_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CPU
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-311] analyzing module Program_memory
+INFO: [VRFC 10-311] analyzing module Top_level
+INFO: [VRFC 10-311] analyzing module UART
+INFO: [VRFC 10-311] analyzing module br_generator
+INFO: [VRFC 10-311] analyzing module interface
+INFO: [VRFC 10-311] analyzing module rx_module
+INFO: [VRFC 10-311] analyzing module tx_module
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/CPU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CPU
+WARNING: [VRFC 10-2845] overwriting previous definition of module CPU [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/CPU.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+WARNING: [VRFC 10-2845] overwriting previous definition of module ControlUnit [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:8]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Data_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Data_memory
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Datapath
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/sinc_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Program_memory
+WARNING: [VRFC 10-2845] overwriting previous definition of module Program_memory [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/sinc_memory.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module allTest
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 38519cdd0e624429ac5e340b8cc759ab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L secureip --snapshot allTest_func_synth xil_defaultlib.allTest xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 16 for port In_Data [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:33]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Data_memory(INIT_FILE="/home/luc...
+Compiling module xil_defaultlib.Program_memory(INIT_FILE="/home/...
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ALU(size=16)
+Compiling module xil_defaultlib.Datapath
+Compiling module xil_defaultlib.CPU
+Compiling module xil_defaultlib.allTest
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot allTest_func_synth
+run_program: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 7883.051 ; gain = 0.000 ; free physical = 1289 ; free virtual = 4483
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "allTest_func_synth -key {Post-Synthesis:sim_1:Functional:allTest} -tclbatch {allTest.tcl} -view {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+open_wave_config /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg
+source allTest.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'allTest_func_synth' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 7883.051 ; gain = 0.000 ; free physical = 1283 ; free virtual = 4478
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Mon Mar 18 16:24:00 2019] Launched synth_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1/runme.log
+[Mon Mar 18 16:24:00 2019] Launched impl_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Mon Mar 18 16:49:02 2019] Launched synth_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1/runme.log
+[Mon Mar 18 16:49:02 2019] Launched impl_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Mon Mar 18 17:04:34 2019] Launched synth_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1/runme.log
+[Mon Mar 18 17:04:34 2019] Launched impl_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Mon Mar 18 17:05:49 2019] Launched synth_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1/runme.log
+[Mon Mar 18 17:05:49 2019] Launched impl_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Mon Mar 18 17:22:25 2019] Launched synth_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 2
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Mon Mar 18 17:24:01 2019] Launched impl_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Mon Mar 18 17:26:50 2019] Launched impl_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+file mkdir /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sim_1/new/interface_sim.v w ]
+add_files -fileset sim_1 /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sim_1/new/interface_sim.v
+update_compile_order -fileset sim_1
+set_property top interface_sim [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'interface_sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj interface_sim_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module interface
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sim_1/new/interface_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module interface_sim
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 38519cdd0e624429ac5e340b8cc759ab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot interface_sim_behav xil_defaultlib.interface_sim xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.interface
+Compiling module xil_defaultlib.interface_sim
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot interface_sim_behav
+
+****** Webtalk v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim/xsim.dir/interface_sim_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Mon Mar 18 17:54:27 2019...
+run_program: Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 7968.785 ; gain = 0.000 ; free physical = 1431 ; free virtual = 4452
+INFO: [USF-XSim-69] 'elaborate' step finished in '9' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "interface_sim_behav -key {Behavioral:sim_1:Functional:interface_sim} -tclbatch {interface_sim.tcl} -view {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+open_wave_config /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg
+WARNING: Simulation object /allTest/clk was not found in the design.
+WARNING: Simulation object /allTest/reset was not found in the design.
+WARNING: Simulation object /allTest/BIP_enable was not found in the design.
+WARNING: Simulation object /allTest/finish_program was not found in the design.
+WARNING: Simulation object /allTest/WrRAM was not found in the design.
+WARNING: Simulation object /allTest/RdRAM was not found in the design.
+WARNING: Simulation object /allTest/PC was not found in the design.
+WARNING: Simulation object /allTest/Addr was not found in the design.
+WARNING: Simulation object /allTest/Program_Data was not found in the design.
+WARNING: Simulation object /allTest/In_Data was not found in the design.
+WARNING: Simulation object /allTest/Out_Data was not found in the design.
+WARNING: Simulation object /allTest/out_Acc_Counter was not found in the design.
+source interface_sim.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'interface_sim_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 8008.617 ; gain = 39.832 ; free physical = 1415 ; free virtual = 4444
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'interface_sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj interface_sim_vlog.prj
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 38519cdd0e624429ac5e340b8cc759ab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot interface_sim_behav xil_defaultlib.interface_sim xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 8015.633 ; gain = 0.000 ; free physical = 1313 ; free virtual = 4348
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'interface_sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj interface_sim_vlog.prj
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 38519cdd0e624429ac5e340b8cc759ab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot interface_sim_behav xil_defaultlib.interface_sim xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 8015.633 ; gain = 0.000 ; free physical = 1284 ; free virtual = 4324
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'interface_sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj interface_sim_vlog.prj
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 38519cdd0e624429ac5e340b8cc759ab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot interface_sim_behav xil_defaultlib.interface_sim xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 8015.633 ; gain = 0.000 ; free physical = 1226 ; free virtual = 4277
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'interface_sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj interface_sim_vlog.prj
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 38519cdd0e624429ac5e340b8cc759ab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot interface_sim_behav xil_defaultlib.interface_sim xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 8015.633 ; gain = 0.000 ; free physical = 1207 ; free virtual = 4259
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'interface_sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj interface_sim_vlog.prj
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 38519cdd0e624429ac5e340b8cc759ab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot interface_sim_behav xil_defaultlib.interface_sim xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 8015.633 ; gain = 0.000 ; free physical = 1197 ; free virtual = 4250
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'interface_sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj interface_sim_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module interface
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sim_1/new/interface_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module interface_sim
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 38519cdd0e624429ac5e340b8cc759ab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot interface_sim_behav xil_defaultlib.interface_sim xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.interface
+Compiling module xil_defaultlib.interface_sim
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot interface_sim_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 8015.633 ; gain = 0.000 ; free physical = 1190 ; free virtual = 4243
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'interface_sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj interface_sim_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module interface
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sim_1/new/interface_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module interface_sim
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 38519cdd0e624429ac5e340b8cc759ab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot interface_sim_behav xil_defaultlib.interface_sim xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.interface
+Compiling module xil_defaultlib.interface_sim
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot interface_sim_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 8015.633 ; gain = 0.000 ; free physical = 1187 ; free virtual = 4245
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'interface_sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj interface_sim_vlog.prj
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 38519cdd0e624429ac5e340b8cc759ab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot interface_sim_behav xil_defaultlib.interface_sim xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 8015.633 ; gain = 0.000 ; free physical = 1155 ; free virtual = 4212
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'interface_sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj interface_sim_vlog.prj
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 38519cdd0e624429ac5e340b8cc759ab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot interface_sim_behav xil_defaultlib.interface_sim xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 8015.633 ; gain = 0.000 ; free physical = 1034 ; free virtual = 4088
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'interface_sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj interface_sim_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module interface
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sim_1/new/interface_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module interface_sim
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 38519cdd0e624429ac5e340b8cc759ab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot interface_sim_behav xil_defaultlib.interface_sim xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.interface
+Compiling module xil_defaultlib.interface_sim
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot interface_sim_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 8015.633 ; gain = 0.000 ; free physical = 1017 ; free virtual = 4083
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Mon Mar 18 18:31:52 2019] Launched synth_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1/runme.log
+[Mon Mar 18 18:31:52 2019] Launched impl_1...
+Run output will be captured here: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/runme.log
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'interface_sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj interface_sim_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module interface
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sim_1/new/interface_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module interface_sim
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 38519cdd0e624429ac5e340b8cc759ab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot interface_sim_behav xil_defaultlib.interface_sim xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.interface
+Compiling module xil_defaultlib.interface_sim
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot interface_sim_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 8015.633 ; gain = 0.000 ; free physical = 1437 ; free virtual = 4205
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+close_design
+launch_simulation -mode post-synthesis -type functional
+INFO: [Vivado 12-5682] Launching post-synthesis functional simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a35tcpg236-1
+INFO: [Netlist 29-17] Analyzing 160 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc]
+Finished Parsing XDC File [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
+INFO: [SIM-utils-25] write_verilog -mode funcsim -nolib -force -file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/interface_sim_func_synth.v"
+INFO: [SIM-utils-36] Netlist generated:/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/interface_sim_func_synth.v
+INFO: [SIM-utils-54] Inspecting design source files for 'interface_sim' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+xvlog --incr --relax -prj interface_sim_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/interface_sim_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-311] analyzing module CPU
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-311] analyzing module Data_memory
+INFO: [VRFC 10-311] analyzing module Datapath
+INFO: [VRFC 10-311] analyzing module Program_memory
+INFO: [VRFC 10-311] analyzing module Top_level
+INFO: [VRFC 10-311] analyzing module UART
+INFO: [VRFC 10-311] analyzing module br_generator
+INFO: [VRFC 10-311] analyzing module interface
+INFO: [VRFC 10-311] analyzing module rx_module
+INFO: [VRFC 10-311] analyzing module tx_module
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module interface
+WARNING: [VRFC 10-2845] overwriting previous definition of module interface [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:3]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sim_1/new/interface_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module interface_sim
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 38519cdd0e624429ac5e340b8cc759ab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L secureip --snapshot interface_sim_func_synth xil_defaultlib.interface_sim xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.interface
+Compiling module xil_defaultlib.interface_sim
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot interface_sim_func_synth
+
+****** Webtalk v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/xsim.dir/interface_sim_func_synth/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Mon Mar 18 18:42:40 2019...
+run_program: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 8031.641 ; gain = 0.000 ; free physical = 1365 ; free virtual = 4168
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "interface_sim_func_synth -key {Post-Synthesis:sim_1:Functional:interface_sim} -tclbatch {interface_sim.tcl} -view {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+open_wave_config /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg
+WARNING: Simulation object /allTest/clk was not found in the design.
+WARNING: Simulation object /allTest/reset was not found in the design.
+WARNING: Simulation object /allTest/BIP_enable was not found in the design.
+WARNING: Simulation object /allTest/finish_program was not found in the design.
+WARNING: Simulation object /allTest/WrRAM was not found in the design.
+WARNING: Simulation object /allTest/RdRAM was not found in the design.
+WARNING: Simulation object /allTest/PC was not found in the design.
+WARNING: Simulation object /allTest/Addr was not found in the design.
+WARNING: Simulation object /allTest/Program_Data was not found in the design.
+WARNING: Simulation object /allTest/In_Data was not found in the design.
+WARNING: Simulation object /allTest/Out_Data was not found in the design.
+WARNING: Simulation object /allTest/out_Acc_Counter was not found in the design.
+source interface_sim.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'interface_sim_func_synth' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:18 ; elapsed = 00:00:17 . Memory (MB): peak = 8063.277 ; gain = 47.645 ; free physical = 1359 ; free virtual = 4162
+relaunch_sim
+INFO: [Vivado 12-5682] Launching post-synthesis functional simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
+INFO: [SIM-utils-25] write_verilog -mode funcsim -nolib -force -file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/interface_sim_func_synth.v"
+INFO: [SIM-utils-36] Netlist generated:/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/interface_sim_func_synth.v
+INFO: [SIM-utils-54] Inspecting design source files for 'interface_sim' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+xvlog --incr --relax -prj interface_sim_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/interface_sim_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-311] analyzing module CPU
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-311] analyzing module Data_memory
+INFO: [VRFC 10-311] analyzing module Datapath
+INFO: [VRFC 10-311] analyzing module Program_memory
+INFO: [VRFC 10-311] analyzing module Top_level
+INFO: [VRFC 10-311] analyzing module UART
+INFO: [VRFC 10-311] analyzing module br_generator
+INFO: [VRFC 10-311] analyzing module interface
+INFO: [VRFC 10-311] analyzing module rx_module
+INFO: [VRFC 10-311] analyzing module tx_module
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module interface
+WARNING: [VRFC 10-2845] overwriting previous definition of module interface [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:3]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sim_1/new/interface_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module interface_sim
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching post-synthesis functional simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 38519cdd0e624429ac5e340b8cc759ab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L secureip --snapshot interface_sim_func_synth xil_defaultlib.interface_sim xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.interface
+Compiling module xil_defaultlib.interface_sim
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot interface_sim_func_synth
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 8063.277 ; gain = 0.000 ; free physical = 1371 ; free virtual = 4175
+relaunch_sim
+INFO: [Vivado 12-5682] Launching post-synthesis functional simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
+INFO: [SIM-utils-25] write_verilog -mode funcsim -nolib -force -file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/interface_sim_func_synth.v"
+INFO: [SIM-utils-36] Netlist generated:/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/interface_sim_func_synth.v
+INFO: [SIM-utils-54] Inspecting design source files for 'interface_sim' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+xvlog --incr --relax -prj interface_sim_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/interface_sim_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-311] analyzing module CPU
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-311] analyzing module Data_memory
+INFO: [VRFC 10-311] analyzing module Datapath
+INFO: [VRFC 10-311] analyzing module Program_memory
+INFO: [VRFC 10-311] analyzing module Top_level
+INFO: [VRFC 10-311] analyzing module UART
+INFO: [VRFC 10-311] analyzing module br_generator
+INFO: [VRFC 10-311] analyzing module interface
+INFO: [VRFC 10-311] analyzing module rx_module
+INFO: [VRFC 10-311] analyzing module tx_module
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module interface
+WARNING: [VRFC 10-2845] overwriting previous definition of module interface [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:3]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sim_1/new/interface_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module interface_sim
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching post-synthesis functional simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 38519cdd0e624429ac5e340b8cc759ab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L secureip --snapshot interface_sim_func_synth xil_defaultlib.interface_sim xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.interface
+Compiling module xil_defaultlib.interface_sim
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot interface_sim_func_synth
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 8084.777 ; gain = 0.000 ; free physical = 1471 ; free virtual = 4280
+set_property top allTest [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+current_sim simulation_6
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation -mode post-synthesis -type functional
+INFO: [Vivado 12-5682] Launching post-synthesis functional simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
+INFO: [SIM-utils-25] write_verilog -mode funcsim -nolib -force -file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v"
+INFO: [SIM-utils-36] Netlist generated:/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v
+INFO: [SIM-utils-54] Inspecting design source files for 'allTest' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+xvlog --incr --relax -prj allTest_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-311] analyzing module CPU
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-311] analyzing module Data_memory
+INFO: [VRFC 10-311] analyzing module Datapath
+INFO: [VRFC 10-311] analyzing module Program_memory
+INFO: [VRFC 10-311] analyzing module Top_level
+INFO: [VRFC 10-311] analyzing module UART
+INFO: [VRFC 10-311] analyzing module br_generator
+INFO: [VRFC 10-311] analyzing module interface
+INFO: [VRFC 10-311] analyzing module rx_module
+INFO: [VRFC 10-311] analyzing module tx_module
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+WARNING: [VRFC 10-2845] overwriting previous definition of module ALU [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/CPU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CPU
+WARNING: [VRFC 10-2845] overwriting previous definition of module CPU [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/CPU.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+WARNING: [VRFC 10-2845] overwriting previous definition of module ControlUnit [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:8]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Data_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Data_memory
+WARNING: [VRFC 10-2845] overwriting previous definition of module Data_memory [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Data_memory.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Datapath
+WARNING: [VRFC 10-2845] overwriting previous definition of module Datapath [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module interface
+WARNING: [VRFC 10-2845] overwriting previous definition of module interface [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:3]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/sinc_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Program_memory
+WARNING: [VRFC 10-2845] overwriting previous definition of module Program_memory [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/sinc_memory.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module allTest
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 38519cdd0e624429ac5e340b8cc759ab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L secureip --snapshot allTest_func_synth xil_defaultlib.allTest xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 16 for port In_Data [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:33]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Data_memory(INIT_FILE="/home/luc...
+Compiling module xil_defaultlib.Program_memory(INIT_FILE="/home/...
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ALU(size=16)
+Compiling module xil_defaultlib.Datapath
+Compiling module xil_defaultlib.CPU
+Compiling module xil_defaultlib.interface
+Compiling module xil_defaultlib.allTest
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot allTest_func_synth
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "allTest_func_synth -key {Post-Synthesis:sim_1:Functional:allTest} -tclbatch {allTest.tcl} -view {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+open_wave_config /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg
+source allTest.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'allTest_func_synth' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 8108.777 ; gain = 0.000 ; free physical = 1405 ; free virtual = 4207
+relaunch_sim
+INFO: [Vivado 12-5682] Launching post-synthesis functional simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
+INFO: [SIM-utils-25] write_verilog -mode funcsim -nolib -force -file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v"
+INFO: [SIM-utils-36] Netlist generated:/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v
+INFO: [SIM-utils-54] Inspecting design source files for 'allTest' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+xvlog --incr --relax -prj allTest_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/allTest_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-311] analyzing module CPU
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-311] analyzing module Data_memory
+INFO: [VRFC 10-311] analyzing module Datapath
+INFO: [VRFC 10-311] analyzing module Program_memory
+INFO: [VRFC 10-311] analyzing module Top_level
+INFO: [VRFC 10-311] analyzing module UART
+INFO: [VRFC 10-311] analyzing module br_generator
+INFO: [VRFC 10-311] analyzing module interface
+INFO: [VRFC 10-311] analyzing module rx_module
+INFO: [VRFC 10-311] analyzing module tx_module
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+WARNING: [VRFC 10-2845] overwriting previous definition of module ALU [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/CPU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CPU
+WARNING: [VRFC 10-2845] overwriting previous definition of module CPU [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/CPU.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+WARNING: [VRFC 10-2845] overwriting previous definition of module ControlUnit [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:8]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Data_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Data_memory
+WARNING: [VRFC 10-2845] overwriting previous definition of module Data_memory [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Data_memory.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Datapath
+WARNING: [VRFC 10-2845] overwriting previous definition of module Datapath [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module interface
+WARNING: [VRFC 10-2845] overwriting previous definition of module interface [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:3]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/sinc_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Program_memory
+WARNING: [VRFC 10-2845] overwriting previous definition of module Program_memory [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/sinc_memory.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module allTest
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching post-synthesis functional simulation in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 38519cdd0e624429ac5e340b8cc759ab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L secureip --snapshot allTest_func_synth xil_defaultlib.allTest xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 16 for port In_Data [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:33]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Data_memory(INIT_FILE="/home/luc...
+Compiling module xil_defaultlib.Program_memory(INIT_FILE="/home/...
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ALU(size=16)
+Compiling module xil_defaultlib.Datapath
+Compiling module xil_defaultlib.CPU
+Compiling module xil_defaultlib.interface
+Compiling module xil_defaultlib.allTest
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot allTest_func_synth
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 8108.777 ; gain = 0.000 ; free physical = 1383 ; free virtual = 4209
