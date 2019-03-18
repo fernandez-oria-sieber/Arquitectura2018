@@ -1,0 +1,21 @@
+0x1805
+0x2000
+0x0802
+0x3001
+0x3806
+0x2818
+0x0803
+0x1002
+0x2003
+0x0000
+//                    - OPERATION           VAL      / ACC
+//0001 1000 0000 0101 - Load Immediate      5        /  5
+//0010 0000 0000 0000 - Add Variable        #0 (12)  /  17
+//0000 1000 0000 0010 - Store Variable      #2       /  17
+//0011 0000 0000 0001 - Subtract Variable   #1 (8)   /  9
+//0011 1000 0000 0110 - Subtract Immediate  6        /  3
+//0010 1000 0001 1000 - Add Immediate       24       /  27
+//0000 1000 0000 0011 - Store Variable      #3       /  27
+//0001 0000 0000 0010 - Load Variable       #2       /  17
+//0010 0000 0000 0011 - Add Variable        #3       /  44
+//0000 0000 0000 0000 - halt
