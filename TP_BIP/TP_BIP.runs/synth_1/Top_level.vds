@@ -1,13 +1,13 @@
 #-----------------------------------------------------------
-# Vivado v2018.2 (64-bit)
-# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
-# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Mon Mar 18 18:31:55 2019
-# Process ID: 12177
-# Current directory: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1
+# Vivado v2018.2.2 (64-bit)
+# SW Build 2348494 on Mon Oct  1 18:25:39 MDT 2018
+# IP Build 2318053 on Mon Oct  1 21:44:26 MDT 2018
+# Start of session at: Tue Mar 19 02:14:21 2019
+# Process ID: 30387
+# Current directory: /home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1
 # Command line: vivado -log Top_level.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top_level.tcl
-# Log file: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1/Top_level.vds
-# Journal file: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1/vivado.jou
+# Log file: /home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1/Top_level.vds
+# Journal file: /home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
 source Top_level.tcl -notrace
 Command: synth_design -top Top_level -part xc7a35tcpg236-1
@@ -15,32 +15,32 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 12183 
+INFO: Helper process launched with PID 30391 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1250.023 ; gain = 82.805 ; free physical = 730 ; free virtual = 3803
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1274.688 ; gain = 82.914 ; free physical = 2570 ; free virtual = 11550
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'Top_level' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Top_level.v:23]
-INFO: [Synth 8-6157] synthesizing module 'UART' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/Main.v:8]
+INFO: [Synth 8-6157] synthesizing module 'Top_level' [/home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Top_level.v:3]
+INFO: [Synth 8-6157] synthesizing module 'UART' [/home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/Main.v:8]
 	Parameter size bound to: 8 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'br_generator' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/br_generator.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'br_generator' (1#1) [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/br_generator.v:3]
-INFO: [Synth 8-6157] synthesizing module 'rx_module' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/rx_module.v:22]
+INFO: [Synth 8-6157] synthesizing module 'br_generator' [/home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/br_generator.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'br_generator' (1#1) [/home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/br_generator.v:3]
+INFO: [Synth 8-6157] synthesizing module 'rx_module' [/home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/rx_module.v:22]
 	Parameter DBIT bound to: 8 - type: integer 
 	Parameter SB_TICK bound to: 16 - type: integer 
 	Parameter idle bound to: 2'b00 
 	Parameter start bound to: 2'b01 
 	Parameter data bound to: 2'b10 
 	Parameter stop bound to: 2'b11 
-INFO: [Synth 8-6155] done synthesizing module 'rx_module' (2#1) [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/rx_module.v:22]
-INFO: [Synth 8-6157] synthesizing module 'tx_module' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/tx_module.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'rx_module' (2#1) [/home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/rx_module.v:22]
+INFO: [Synth 8-6157] synthesizing module 'tx_module' [/home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/tx_module.v:2]
 	Parameter DBIT bound to: 8 - type: integer 
 	Parameter SB_TICK bound to: 16 - type: integer 
 	Parameter idle bound to: 2'b00 
 	Parameter start bound to: 2'b01 
 	Parameter data bound to: 2'b10 
 	Parameter stop bound to: 2'b11 
-INFO: [Synth 8-6155] done synthesizing module 'tx_module' (3#1) [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/tx_module.v:2]
-INFO: [Synth 8-6157] synthesizing module 'interface' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'tx_module' (3#1) [/home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/tx_module.v:2]
+INFO: [Synth 8-6157] synthesizing module 'interface' [/home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:3]
 	Parameter DBIT bound to: 8 - type: integer 
 	Parameter idle_rx bound to: 3'b000 
 	Parameter receive bound to: 3'b001 
@@ -49,50 +49,35 @@ INFO: [Synth 8-6157] synthesizing module 'interface' [/usr/local/magnetic2/Xilin
 	Parameter transmit bound to: 3'b100 
 	Parameter transmit_reset bound to: 3'b101 
 	Parameter transmit_init bound to: 3'b110 
-INFO: [Synth 8-155] case statement is not full and has no default [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:45]
-WARNING: [Synth 8-6014] Unused sequential element dig_reg was removed.  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:84]
-WARNING: [Synth 8-5788] Register out_reg in module interface is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:49]
-WARNING: [Synth 8-5788] Register tx_start_aux_reg in module interface is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:55]
-WARNING: [Synth 8-5788] Register aux_reg in module interface is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:78]
-WARNING: [Synth 8-5788] Register aux_Count_reg in module interface is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:79]
-WARNING: [Synth 8-5788] Register is_s_reg in module interface is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:80]
-WARNING: [Synth 8-5788] Register acc_sended_reg in module interface is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:81]
-WARNING: [Synth 8-5788] Register z_flag_reg in module interface is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:83]
-WARNING: [Synth 8-5788] Register aux_BIP_reg in module interface is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:85]
-WARNING: [Synth 8-5788] Register div_reg in module interface is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:118]
-INFO: [Synth 8-6155] done synthesizing module 'interface' (4#1) [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:3]
-WARNING: [Synth 8-3848] Net rd in module/entity UART does not have driver. [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/Main.v:18]
-INFO: [Synth 8-6155] done synthesizing module 'UART' (5#1) [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/Main.v:8]
-INFO: [Synth 8-6157] synthesizing module 'Data_memory' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Data_memory.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:54]
+INFO: [Synth 8-6155] done synthesizing module 'interface' (4#1) [/home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'UART' (5#1) [/home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/Main.v:8]
+INFO: [Synth 8-6157] synthesizing module 'Data_memory' [/home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Data_memory.v:23]
 	Parameter RAM_WIDTH bound to: 16 - type: integer 
 	Parameter RAM_DEPTH bound to: 2048 - type: integer 
-	Parameter INIT_FILE bound to: /home/luchosteam/Documents/Arquitectura/Practico2018/datos.txt - type: string 
-INFO: [Synth 8-3876] $readmem data file '/home/luchosteam/Documents/Arquitectura/Practico2018/datos.txt' is read successfully [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Data_memory.v:64]
-INFO: [Synth 8-6155] done synthesizing module 'Data_memory' (6#1) [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Data_memory.v:23]
-INFO: [Synth 8-6157] synthesizing module 'Program_memory' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/sinc_memory.v:23]
+	Parameter INIT_FILE bound to: /home/sieber/Arquitectura/Arquitectura2018/datos.txt - type: string 
+INFO: [Synth 8-3876] $readmem data file '/home/sieber/Arquitectura/Arquitectura2018/datos.txt' is read successfully [/home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Data_memory.v:64]
+INFO: [Synth 8-6155] done synthesizing module 'Data_memory' (6#1) [/home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Data_memory.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Program_memory' [/home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/sinc_memory.v:23]
 	Parameter RAM_WIDTH bound to: 16 - type: integer 
 	Parameter RAM_DEPTH bound to: 2048 - type: integer 
-	Parameter INIT_FILE bound to: /home/luchosteam/Documents/Arquitectura/Practico2018/instrucciones.txt - type: string 
-INFO: [Synth 8-3876] $readmem data file '/home/luchosteam/Documents/Arquitectura/Practico2018/instrucciones.txt' is read successfully [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/sinc_memory.v:64]
-INFO: [Synth 8-6155] done synthesizing module 'Program_memory' (7#1) [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/sinc_memory.v:23]
-INFO: [Synth 8-6157] synthesizing module 'CPU' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/CPU.v:23]
-INFO: [Synth 8-6157] synthesizing module 'ControlUnit' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:8]
-INFO: [Synth 8-6157] synthesizing module 'Decoder' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Decoder.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'Decoder' (8#1) [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Decoder.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'ControlUnit' (9#1) [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:8]
-INFO: [Synth 8-6157] synthesizing module 'Datapath' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:23]
-INFO: [Synth 8-226] default block is never used [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:58]
-INFO: [Synth 8-6157] synthesizing module 'ALU' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v:23]
+	Parameter INIT_FILE bound to: /home/sieber/Arquitectura/Arquitectura2018/instrucciones.txt - type: string 
+INFO: [Synth 8-3876] $readmem data file '/home/sieber/Arquitectura/Arquitectura2018/instrucciones.txt' is read successfully [/home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/sinc_memory.v:64]
+INFO: [Synth 8-6155] done synthesizing module 'Program_memory' (7#1) [/home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/sinc_memory.v:23]
+INFO: [Synth 8-6157] synthesizing module 'CPU' [/home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/CPU.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ControlUnit' [/home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:8]
+INFO: [Synth 8-6157] synthesizing module 'Decoder' [/home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Decoder.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Decoder' (8#1) [/home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Decoder.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ControlUnit' (9#1) [/home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:8]
+INFO: [Synth 8-6157] synthesizing module 'Datapath' [/home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ALU' [/home/sieber/Arquitectura/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v:23]
 	Parameter size bound to: 16 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'ALU' (10#1) [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'Datapath' (11#1) [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'CPU' (12#1) [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/CPU.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'Top_level' (13#1) [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Top_level.v:23]
-WARNING: [Synth 8-3331] design Program_memory has unconnected port Rd
-WARNING: [Synth 8-3331] design Data_memory has unconnected port Rd
-WARNING: [Synth 8-3331] design interface has unconnected port rd
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (10#1) [/home/sieber/Arquitectura/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Datapath' (11#1) [/home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'CPU' (12#1) [/home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/CPU.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Top_level' (13#1) [/home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Top_level.v:3]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1294.648 ; gain = 127.430 ; free physical = 737 ; free virtual = 3810
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1319.312 ; gain = 127.539 ; free physical = 2578 ; free virtual = 11558
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -105,41 +90,41 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1294.648 ; gain = 127.430 ; free physical = 739 ; free virtual = 3812
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1319.312 ; gain = 127.539 ; free physical = 2578 ; free virtual = 11559
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1294.648 ; gain = 127.430 ; free physical = 739 ; free virtual = 3812
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1319.312 ; gain = 127.539 ; free physical = 2578 ; free virtual = 11559
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc]
-Finished Parsing XDC File [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Top_level_propImpl.xdc].
+Parsing XDC File [/home/sieber/Arquitectura/Arquitectura2018/TP_UART/TP_UART.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc]
+Finished Parsing XDC File [/home/sieber/Arquitectura/Arquitectura2018/TP_UART/TP_UART.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/sieber/Arquitectura/Arquitectura2018/TP_UART/TP_UART.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Top_level_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/Top_level_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1622.977 ; gain = 0.000 ; free physical = 483 ; free virtual = 3557
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1647.641 ; gain = 0.000 ; free physical = 2426 ; free virtual = 11407
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:36 . Memory (MB): peak = 1622.977 ; gain = 455.758 ; free physical = 562 ; free virtual = 3635
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:20 . Memory (MB): peak = 1647.641 ; gain = 455.867 ; free physical = 2501 ; free virtual = 11482
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:36 . Memory (MB): peak = 1622.977 ; gain = 455.758 ; free physical = 562 ; free virtual = 3635
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:20 . Memory (MB): peak = 1647.641 ; gain = 455.867 ; free physical = 2501 ; free virtual = 11482
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:36 . Memory (MB): peak = 1622.977 ; gain = 455.758 ; free physical = 564 ; free virtual = 3637
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:20 . Memory (MB): peak = 1647.641 ; gain = 455.867 ; free physical = 2503 ; free virtual = 11484
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "tick" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'rx_module'
@@ -159,7 +144,7 @@ INFO: [Synth 8-5546] ROM "out" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "out" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "is_s" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5587] ROM size for "Output" is below threshold of ROM address width. It will be mapped to LUTs
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v:32]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/sieber/Arquitectura/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v:32]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -178,9 +163,8 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encod
                     stop |                               11 |                               11
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'sequential' in module 'tx_module'
-WARNING: [Synth 8-327] inferring latch for variable 'A_reg' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:53]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:38 . Memory (MB): peak = 1622.977 ; gain = 455.758 ; free physical = 554 ; free virtual = 3627
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:21 . Memory (MB): peak = 1647.641 ; gain = 455.867 ; free physical = 2492 ; free virtual = 11474
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -213,15 +197,15 @@ Detailed RTL Component Info :
 +---RAMs : 
 	              32K Bit         RAMs := 2     
 +---Muxes : 
-	   2 Input     16 Bit        Muxes := 12    
 	   8 Input     16 Bit        Muxes := 3     
+	   2 Input     16 Bit        Muxes := 4     
 	   4 Input     16 Bit        Muxes := 1     
 	   8 Input     14 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 7     
+	   2 Input      8 Bit        Muxes := 3     
 	   4 Input      8 Bit        Muxes := 1     
 	   8 Input      8 Bit        Muxes := 3     
-	   2 Input      7 Bit        Muxes := 3     
-	   5 Input      7 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 4     
+	   7 Input      7 Bit        Muxes := 2     
 	   3 Input      7 Bit        Muxes := 1     
 	   3 Input      6 Bit        Muxes := 1     
 	   2 Input      6 Bit        Muxes := 1     
@@ -232,12 +216,12 @@ Detailed RTL Component Info :
 	   2 Input      3 Bit        Muxes := 7     
 	   8 Input      3 Bit        Muxes := 1     
 	   4 Input      2 Bit        Muxes := 2     
-	   2 Input      2 Bit        Muxes := 5     
+	   2 Input      2 Bit        Muxes := 3     
 	   3 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 27    
+	   2 Input      1 Bit        Muxes := 21    
 	   3 Input      1 Bit        Muxes := 12    
-	   4 Input      1 Bit        Muxes := 12    
-	   8 Input      1 Bit        Muxes := 22    
+	   4 Input      1 Bit        Muxes := 11    
+	   8 Input      1 Bit        Muxes := 21    
 	  10 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -307,23 +291,23 @@ Detailed RTL Component Info :
 	                3 Bit    Registers := 1     
 	                1 Bit    Registers := 5     
 +---Muxes : 
-	   2 Input     16 Bit        Muxes := 11    
 	   8 Input     16 Bit        Muxes := 3     
+	   2 Input     16 Bit        Muxes := 3     
 	   8 Input     14 Bit        Muxes := 1     
 	   8 Input      8 Bit        Muxes := 2     
-	   2 Input      8 Bit        Muxes := 5     
-	   2 Input      7 Bit        Muxes := 3     
-	   5 Input      7 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 4     
+	   7 Input      7 Bit        Muxes := 2     
 	   3 Input      7 Bit        Muxes := 1     
 	   3 Input      6 Bit        Muxes := 1     
 	   3 Input      3 Bit        Muxes := 3     
 	   2 Input      3 Bit        Muxes := 7     
 	   8 Input      3 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 3     
 	   3 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 21    
-	   8 Input      1 Bit        Muxes := 22    
+	   2 Input      2 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 21    
 	   3 Input      1 Bit        Muxes := 8     
+	   2 Input      1 Bit        Muxes := 15    
 	  10 Input      1 Bit        Muxes := 1     
 Module Data_memory 
 Detailed RTL Component Info : 
@@ -363,7 +347,6 @@ Detailed RTL Component Info :
 	   4 Input     16 Bit        Muxes := 1     
 	   2 Input     16 Bit        Muxes := 1     
 	   2 Input      6 Bit        Muxes := 1     
-	   4 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -382,147 +365,13 @@ Start Cross Boundary and Area Optimization
 Warning: Parallel synthesis criteria is not met 
 INFO: [Synth 8-5546] ROM "out" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "uart/br_g/tick" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-3331] design interface has unconnected port rd
-INFO: [Synth 8-3886] merging instance 'uart/int/aux_Count_reg[15]' (FDCPE) to 'uart/int/aux_Count_reg[14]'
-INFO: [Synth 8-3886] merging instance 'uart/int/aux_Count_reg[11]' (FDCPE) to 'uart/int/aux_Count_reg[14]'
-INFO: [Synth 8-3886] merging instance 'uart/int/aux_Count_reg[12]' (FDCPE) to 'uart/int/aux_Count_reg[14]'
-INFO: [Synth 8-3886] merging instance 'uart/int/aux_Count_reg[13]' (FDCPE) to 'uart/int/aux_Count_reg[14]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uart/int/aux_Count_reg[14] )
-INFO: [Synth 8-3886] merging instance 'uart/int/div_reg[12]' (FDE) to 'uart/int/div_reg[11]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uart/int/div_reg[11] )
-INFO: [Synth 8-3886] merging instance 'uart/int/div_reg[13]' (FDE) to 'uart/int/div_reg[10]'
-WARNING: [Synth 8-3332] Sequential element (uart/int/div_reg[11]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[14]) is unused and will be removed from module Top_level.
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Count_reg[0]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Count_reg[1]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Count_reg[2]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Count_reg[3]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Count_reg[4]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Count_reg[5]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Count_reg[6]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Count_reg[7]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Count_reg[8]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Count_reg[9]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_Count_reg[10]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_reg[15]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/acc_sended_reg_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/out_reg[2]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/out_reg[7]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/out_reg[6]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/out_reg[5]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/out_reg[1]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/out_reg[3]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/out_reg[4]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/z_flag_reg_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_reg[0]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_reg[1]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_reg[2]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_reg[3]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_reg[4]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_reg[5]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_reg[6]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_reg[7]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_reg[8]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_reg[9]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_reg[10]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_reg[11]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_reg[12]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_reg[13]_LDC )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/aux_reg[14]_LDC )
-INFO: [Synth 8-3886] merging instance 'uart/int/div_reg[8]' (FDE) to 'uart/int/div_reg[9]'
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\uart/int/out_reg[0]_LDC )
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[15]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[14]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[13]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[12]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[11]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[10]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[9]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[8]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[7]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[6]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[5]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[4]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[3]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[2]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[1]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[0]) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/acc_sended_reg_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/acc_sended_reg_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[10]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[10]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[9]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[9]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[8]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[8]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[7]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[7]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[6]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[6]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[5]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[5]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[4]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[4]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[3]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[3]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[2]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[2]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[1]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[1]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[0]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Count_reg[0]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_reg[15]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_reg[15]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_reg[14]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_reg[14]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_reg[13]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_reg[13]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_reg[12]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_reg[12]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_reg[11]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_reg[11]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_reg[10]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_reg[10]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_reg[9]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_reg[9]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_reg[8]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_reg[8]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_reg[7]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_reg[7]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_reg[6]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_reg[6]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_reg[5]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_reg[5]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_reg[4]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_reg[4]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_reg[3]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_reg[3]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_reg[2]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_reg[2]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_reg[1]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_reg[1]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_reg[0]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/aux_reg[0]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[7]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[7]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[6]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[6]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[5]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[5]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[4]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[4]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[3]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[3]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[2]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[2]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[1]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[1]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[0]_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[0]_C) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/z_flag_reg_LDC) is unused and will be removed from module Top_level.
-WARNING: [Synth 8-3332] Sequential element (uart/int/z_flag_reg_C) is unused and will be removed from module Top_level.
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Count_reg[15]' (FDPE) to 'uart/int/aux_Count_reg[14]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Count_reg[11]' (FDPE) to 'uart/int/aux_Count_reg[14]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Count_reg[12]' (FDPE) to 'uart/int/aux_Count_reg[14]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Count_reg[13]' (FDPE) to 'uart/int/aux_Count_reg[14]'
+INFO: [Synth 8-3886] merging instance 'uart/int/div_reg[12]' (FDPE) to 'uart/int/div_reg[11]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:42 . Memory (MB): peak = 1622.977 ; gain = 455.758 ; free physical = 531 ; free virtual = 3608
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:23 . Memory (MB): peak = 1647.641 ; gain = 455.867 ; free physical = 2479 ; free virtual = 11458
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -540,8 +389,8 @@ Note: The tale above is a preliminary report that shows the Block RAMs at the cu
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4480] The timing for the instance i_10/Data_memory/ram_name_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_11/Program_memory/ram_name_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_11/Data_memory/ram_name_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_12/Program_memory/ram_name_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -552,13 +401,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:57 . Memory (MB): peak = 1622.977 ; gain = 455.758 ; free physical = 407 ; free virtual = 3480
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:30 . Memory (MB): peak = 1647.641 ; gain = 455.867 ; free physical = 2356 ; free virtual = 11334
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:44 ; elapsed = 00:01:05 . Memory (MB): peak = 1674.969 ; gain = 507.750 ; free physical = 354 ; free virtual = 3428
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:34 . Memory (MB): peak = 1677.922 ; gain = 486.148 ; free physical = 2312 ; free virtual = 11291
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -587,7 +436,7 @@ Start Technology Mapping
 INFO: [Synth 8-4480] The timing for the instance Data_memory/ram_name_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance Program_memory/ram_name_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:44 ; elapsed = 00:01:06 . Memory (MB): peak = 1674.969 ; gain = 507.750 ; free physical = 351 ; free virtual = 3426
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:34 . Memory (MB): peak = 1693.938 ; gain = 502.164 ; free physical = 2309 ; free virtual = 11288
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -611,7 +460,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:45 ; elapsed = 00:01:07 . Memory (MB): peak = 1674.969 ; gain = 507.750 ; free physical = 352 ; free virtual = 3426
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:35 . Memory (MB): peak = 1693.938 ; gain = 502.164 ; free physical = 2309 ; free virtual = 11288
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -624,7 +473,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:45 ; elapsed = 00:01:07 . Memory (MB): peak = 1674.969 ; gain = 507.750 ; free physical = 352 ; free virtual = 3426
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:35 . Memory (MB): peak = 1693.938 ; gain = 502.164 ; free physical = 2309 ; free virtual = 11288
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -636,25 +485,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:46 ; elapsed = 00:01:07 . Memory (MB): peak = 1674.969 ; gain = 507.750 ; free physical = 352 ; free virtual = 3426
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:35 . Memory (MB): peak = 1693.938 ; gain = 502.164 ; free physical = 2309 ; free virtual = 11288
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:46 ; elapsed = 00:01:07 . Memory (MB): peak = 1674.969 ; gain = 507.750 ; free physical = 352 ; free virtual = 3426
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:35 . Memory (MB): peak = 1693.938 ; gain = 502.164 ; free physical = 2309 ; free virtual = 11288
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:46 ; elapsed = 00:01:07 . Memory (MB): peak = 1674.969 ; gain = 507.750 ; free physical = 352 ; free virtual = 3426
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:35 . Memory (MB): peak = 1693.938 ; gain = 502.164 ; free physical = 2309 ; free virtual = 11288
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:46 ; elapsed = 00:01:07 . Memory (MB): peak = 1674.969 ; gain = 507.750 ; free physical = 352 ; free virtual = 3426
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:35 . Memory (MB): peak = 1693.938 ; gain = 502.164 ; free physical = 2309 ; free virtual = 11288
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -672,44 +521,44 @@ Report Cell Usage:
 +------+-----------+------+
 |1     |BUFG       |     1|
 |2     |CARRY4     |   155|
-|3     |LUT1       |    73|
-|4     |LUT2       |   109|
-|5     |LUT3       |   451|
-|6     |LUT4       |    49|
-|7     |LUT5       |    70|
-|8     |LUT6       |    88|
+|3     |LUT1       |    79|
+|4     |LUT2       |    63|
+|5     |LUT3       |   498|
+|6     |LUT4       |    58|
+|7     |LUT5       |    67|
+|8     |LUT6       |    91|
 |9     |RAMB36E1   |     1|
 |10    |RAMB36E1_1 |     1|
-|11    |FDCE       |    69|
-|12    |FDPE       |     4|
-|13    |FDRE       |    59|
+|11    |FDCE       |    98|
+|12    |FDPE       |    29|
+|13    |FDRE       |     9|
 |14    |IBUF       |     3|
-|15    |OBUF       |     2|
+|15    |OBUF       |     1|
 +------+-----------+------+
 
 Report Instance Areas: 
 +------+-----------------+---------------+------+
 |      |Instance         |Module         |Cells |
 +------+-----------------+---------------+------+
-|1     |top              |               |  1135|
+|1     |top              |               |  1154|
 |2     |  Data_memory    |Data_memory    |     1|
-|3     |  Program_memory |Program_memory |    39|
-|4     |  bip            |CPU            |    39|
+|3     |  Program_memory |Program_memory |    40|
+|4     |  bip            |CPU            |    40|
 |5     |    control      |ControlUnit    |    19|
-|6     |    datapath     |Datapath       |    20|
+|6     |    datapath     |Datapath       |    21|
 |7     |      alu        |ALU            |     4|
-|8     |  uart           |UART           |  1049|
+|8     |  uart           |UART           |  1067|
 |9     |    br_g         |br_generator   |    20|
-|10    |    int          |interface      |   945|
-|11    |    rx_mod       |rx_module      |    40|
-|12    |    tx_mod       |tx_module      |    44|
+|10    |    int          |interface      |   963|
+|11    |    rx_mod       |rx_module      |    41|
+|12    |    tx_mod       |tx_module      |    43|
 +------+-----------------+---------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:46 ; elapsed = 00:01:07 . Memory (MB): peak = 1674.969 ; gain = 507.750 ; free physical = 352 ; free virtual = 3426
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:35 . Memory (MB): peak = 1693.938 ; gain = 502.164 ; free physical = 2309 ; free virtual = 11288
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 94 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:34 ; elapsed = 00:00:41 . Memory (MB): peak = 1674.969 ; gain = 179.422 ; free physical = 408 ; free virtual = 3482
-Synthesis Optimization Complete : Time (s): cpu = 00:00:46 ; elapsed = 00:01:08 . Memory (MB): peak = 1674.977 ; gain = 507.750 ; free physical = 408 ; free virtual = 3482
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 1693.938 ; gain = 173.836 ; free physical = 2364 ; free virtual = 11342
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:35 . Memory (MB): peak = 1693.945 ; gain = 502.164 ; free physical = 2364 ; free virtual = 11342
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 160 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -719,11 +568,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-115 Infos, 108 Warnings, 0 Critical Warnings and 0 Errors encountered.
+73 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:49 ; elapsed = 00:01:10 . Memory (MB): peak = 1674.977 ; gain = 519.406 ; free physical = 439 ; free virtual = 3517
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:36 . Memory (MB): peak = 1693.945 ; gain = 502.258 ; free physical = 2392 ; free virtual = 11371
 WARNING: [Constraints 18-5210] No constraint will be written out.
-INFO: [Common 17-1381] The checkpoint '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1/Top_level.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint '/home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1/Top_level.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Top_level_utilization_synth.rpt -pb Top_level_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.08 . Memory (MB): peak = 1698.980 ; gain = 0.000 ; free physical = 431 ; free virtual = 3517
-INFO: [Common 17-206] Exiting Vivado at Mon Mar 18 18:33:16 2019...
+report_utilization: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.08 . Memory (MB): peak = 1717.949 ; gain = 0.000 ; free physical = 2393 ; free virtual = 11372
+INFO: [Common 17-206] Exiting Vivado at Tue Mar 19 02:15:03 2019...

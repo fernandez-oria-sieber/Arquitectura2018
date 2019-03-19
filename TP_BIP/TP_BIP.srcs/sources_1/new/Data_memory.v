@@ -29,7 +29,7 @@ parameter INIT_FILE = ""                       // Specify name/location of RAM i
 
 )
 (
-input Rd, Wr, clk, ena,
+input Wr, clk, ena,
 input [10:0] Addr,
 input [15:0] In_Data,
 output [15:0] Out_Data

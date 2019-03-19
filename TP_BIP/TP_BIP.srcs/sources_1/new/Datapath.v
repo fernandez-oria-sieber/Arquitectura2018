@@ -31,43 +31,45 @@ module Datapath
     input Op,
     output [15:0] In_Data
     );
+    
 	 
-	 //reg signed[size-1:0] a, b; 
-	 reg[15:0] ACC= 0;//, SalidaALU_aux;
-	 wire[15:0] SalidaALU;
-	 reg [5:0]Operation;
-	 reg[15:0] A = 0;
-	 reg[15:0] B = 0;
-	 reg[15:0] Inmediate_Val= 0;
-	 always @(posedge clk, posedge reset)
-	 begin
-	    if (reset) ACC = 0;
-		else if (WrAcc) ACC = A;
-		else ACC = ACC;
-	 end
+    reg [15:0] ACC, A, B, Inmediate_Val;
+    wire [15:0] SalidaALU;
+    reg [5:0] Operation;
 	 
-	 always @(*)
-     begin
-         Inmediate_Val[10:0] = Data;
-         case (SetA)                       
-                 2'b00:     A = Out_Data;
-                 2'b01:     A = Inmediate_Val;
-                 2'b10:     A = SalidaALU;
-                 default:   A = A;
-         endcase
-         case (SetB)
-         
-                1'b0: B = Out_Data;
-                1'b1: B = Inmediate_Val;
-                default: B = B;
-         endcase
-         if (Op) Operation <= 6'b100000;
-         else Operation <= 6'b100010;
-         
-     end
-	 
-	 ALU #(.size(16)) alu (.Op(Operation), .A(ACC), .B(B), .Leds(SalidaALU)); 
-	 
-     assign In_Data = ACC;
-     //assign SalidaALU_aux = SalidaALU;
+    initial
+        begin
+           ACC = 0;
+           A = 0;
+           B = 0;
+           Inmediate_Val= 0;
+        end
+	   
+    always @(posedge clk, posedge reset)
+    begin
+        if (reset) ACC = 0;
+        else if (WrAcc) ACC = A;
+        else ACC = ACC;
+    end
+
+    always @(*)
+    begin
+        Inmediate_Val[10:0] = Data;
+        case (SetB)
+            1'b0: B = Out_Data;
+            1'b1: B = Inmediate_Val;
+//            default: B = B;
+        endcase
+        case (SetA)
+            2'b00:      A = Out_Data;
+            2'b01:      A = Inmediate_Val;
+            2'b10:      A = SalidaALU;
+            default:    A = 0; // TODO, ver este A = 0, si ponemos A = A, da inferred latch
+        endcase
+        if (Op) Operation <= 6'b100000;
+        else Operation <= 6'b100010;
+    end
+    
+    ALU #(.size(16)) alu (.Op(Operation), .A(ACC), .B(B), .Leds(SalidaALU));
+    assign In_Data = ACC;
 endmodule
