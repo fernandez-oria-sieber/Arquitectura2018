@@ -29,13 +29,14 @@ reg clk, reset, rx_done_tick, tx_done_tick;
     wire[31:0] out_Acc_Counter;
        
     //UART uart(rx, clk, reset, finish_program, out_Acc_Counter, tx, BIP_enable);    
-    Data_memory #(.INIT_FILE("/home/sieber/Arquitectura/Arquitectura2018/datos.txt")) Data_memory (.Wr(WrRAM),.clk(clk),.ena(BIP_enable), .Addr(Addr), .In_Data(In_Data), .Out_Data(Out_Data));
-    Program_memory #(.INIT_FILE("/home/sieber/Arquitectura/Arquitectura2018/instrucciones.txt")) Program_memory (1'b0, clk, BIP_enable, PC, 0, Program_Data);
+    Data_memory #(.INIT_FILE("/home/vlad/Arquitectura2018/datos.txt")) Data_memory (.Wr(WrRAM),.clk(clk),.ena(BIP_enable), .Addr(Addr), .In_Data(In_Data), .Out_Data(Out_Data));
+    Program_memory #(.INIT_FILE("/home/vlad/Arquitectura2018/instrucciones.txt")) Program_memory (1'b0, clk, BIP_enable, PC, 0, Program_Data);
     CPU bip(BIP_enable, clk, reset, Program_Data, Out_Data, In_Data, PC, WrRAM, RdRAM, finish_program);
     
-    interface #(.DBIT(8)) int (clk, reset,rx_done_tick, finish_program, tx_done_tick, 
-                                           dout, out_Acc_Counter, din, BIP_enable, tx_start); 
-    
+    Rx_interface #(.DBIT(8)) int_rx (clk, reset,rx_done_tick, dout, BIP_enable);
+         
+    Tx_interface #(.DBIT(8)) int_tx (clk, reset, finish_program, tx_done_tick, out_Acc_Counter, din, tx_start);
+         
     
     assign out_Acc_Counter[31:27] = 0;
     assign out_Acc_Counter[26:16] = PC;

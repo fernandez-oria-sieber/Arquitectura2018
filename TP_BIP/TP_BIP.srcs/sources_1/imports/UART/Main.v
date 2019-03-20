@@ -25,10 +25,9 @@ module UART #(parameter size = 8)
 	 
 	 tx_module #(.DBIT(size), .SB_TICK(16)) tx_mod (clk, reset, tx_start , s_tick, din, tx_done_tick , tx);
 	 
-	 interface #(.DBIT(size)) int (clk, reset,rx_done_tick, finish_program, tx_done_tick, 
-	                               dout, out_Acc_Counter, din, BIP_enable, tx_start);
+	 Rx_interface #(.DBIT(size)) int_rx (clk, reset,rx_done_tick, dout, BIP_enable);
      
-     
+     Tx_interface #(.DBIT(size)) int_tx (clk, reset, finish_program, tx_done_tick, out_Acc_Counter, din, tx_start);
 	 
            
 endmodule

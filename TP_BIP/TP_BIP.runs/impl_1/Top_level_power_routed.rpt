@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version     : Vivado v.2018.2.2 (lin64) Build 2348494 Mon Oct  1 18:25:39 MDT 2018
-| Date             : Tue Mar 19 21:43:39 2019
-| Host             : sieber running 64-bit Ubuntu 18.04.2 LTS
+| Tool Version     : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
+| Date             : Wed Mar 20 18:19:38 2019
+| Host             : vlad-putin running 64-bit Arch Linux
 | Command          : report_power -file Top_level_power_routed.rpt -pb Top_level_power_summary_routed.pb -rpx Top_level_power_routed.rpx
 | Design           : Top_level
 | Device           : xc7a35tcpg236-1
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.086        |
+| Total On-Chip Power (W)  | 0.096        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.014        |
+| Dynamic (W)              | 0.025        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 84.6         |
-| Junction Temperature (C) | 25.4         |
+| Max Ambient (C)          | 84.5         |
+| Junction Temperature (C) | 25.5         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,17 +52,18 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |     0.004 |     1146 |       --- |             --- |
-|   LUT as Logic |     0.003 |      779 |     20800 |            3.75 |
-|   CARRY4       |    <0.001 |      155 |      8150 |            1.90 |
-|   Register     |    <0.001 |      136 |     41600 |            0.33 |
-|   Others       |     0.000 |       14 |       --- |             --- |
-| Signals        |     0.005 |      982 |       --- |             --- |
+| Clocks         |     0.002 |        3 |       --- |             --- |
+| Slice Logic    |     0.008 |     1768 |       --- |             --- |
+|   LUT as Logic |     0.006 |     1227 |     20800 |            5.90 |
+|   CARRY4       |     0.002 |      281 |      8150 |            3.45 |
+|   Register     |    <0.001 |      143 |     41600 |            0.34 |
+|   F7/F8 Muxes  |    <0.001 |        5 |     32600 |            0.02 |
+|   Others       |     0.000 |       15 |       --- |             --- |
+| Signals        |     0.011 |     1504 |       --- |             --- |
 | Block RAM      |     0.002 |        2 |        50 |            4.00 |
 | I/O            |     0.002 |        4 |       106 |            3.77 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.086 |          |           |                 |
+| Total          |     0.096 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.021 |       0.012 |      0.010 |
+| Vccint    |       1.000 |     0.032 |       0.022 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
 | Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -141,16 +142,17 @@ Table of Contents
 +------------------+-----------+
 | Name             | Power (W) |
 +------------------+-----------+
-| Top_level        |     0.014 |
+| Top_level        |     0.025 |
 |   Data_memory    |     0.001 |
 |   Program_memory |     0.001 |
 |   bip            |    <0.001 |
 |     control      |    <0.001 |
 |     datapath     |    <0.001 |
 |       alu        |    <0.001 |
-|   uart           |     0.009 |
+|   uart           |     0.019 |
 |     br_g         |    <0.001 |
-|     int          |     0.008 |
+|     int_rx       |    <0.001 |
+|     int_tx       |     0.018 |
 |     rx_mod       |    <0.001 |
 |     tx_mod       |    <0.001 |
 +------------------+-----------+

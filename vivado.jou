@@ -2,23 +2,25 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Mon Mar 18 12:50:29 2019
-# Process ID: 4570
-# Current directory: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018
+# Start of session at: Wed Mar 20 14:51:23 2019
+# Process ID: 24699
+# Current directory: /home/vlad/Arquitectura2018
 # Command line: vivado
-# Log file: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/vivado.log
-# Journal file: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/vivado.jou
+# Log file: /home/vlad/Arquitectura2018/vivado.log
+# Journal file: /home/vlad/Arquitectura2018/vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.xpr
+open_project /home/vlad/Arquitectura2018/TP_BIP/TP_BIP.xpr
 update_compile_order -fileset sources_1
-launch_simulation -mode post-synthesis -type functional
-source allTest.tcl
-relaunch_sim
-relaunch_sim
+close [ open /home/vlad/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Tx_interface.v w ]
+add_files /home/vlad/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Tx_interface.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
 reset_run synth_1
 launch_runs synth_1 -jobs 2
 wait_on_run synth_1
+reset_run synth_1
 launch_runs impl_1 -jobs 2
 wait_on_run impl_1
 launch_runs impl_1 -to_step write_bitstream -jobs 2
@@ -26,196 +28,117 @@ wait_on_run impl_1
 open_hw
 connect_hw_server
 open_hw_target
-set_property PROGRAM.FILE {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.bit} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/vlad/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.bit} [get_hw_devices xc7a35t_0]
 current_hw_device [get_hw_devices xc7a35t_0]
 refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
 set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.bit} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/vlad/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.bit} [get_hw_devices xc7a35t_0]
 program_hw_devices [get_hw_devices xc7a35t_0]
 refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
 reset_run synth_1
-launch_runs synth_1 -jobs 2
-wait_on_run synth_1
-launch_runs impl_1 -jobs 2
-wait_on_run impl_1
 launch_runs impl_1 -to_step write_bitstream -jobs 2
 wait_on_run impl_1
 set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.bit} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/vlad/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.bit} [get_hw_devices xc7a35t_0]
 program_hw_devices [get_hw_devices xc7a35t_0]
 refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-save_wave_config {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg}
-add_files -fileset sim_1 -norecurse /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg
-set_property xsim.view /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg [get_filesets sim_1]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/vlad/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/vlad/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+launch_simulation -mode post-synthesis -type functional
+open_wave_config /home/vlad/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg
+source allTest.tcl
+relaunch_sim
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/vlad/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+launch_simulation -mode post-implementation -type timing
+open_wave_config /home/vlad/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg
+source allTest.tcl
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/vlad/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/vlad/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/vlad/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/vlad/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+save_wave_config {/home/vlad/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg}
+current_sim simulation_1
 close_sim
+current_design synth_1
 close_design
 launch_simulation -mode post-synthesis -type functional
-open_wave_config /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg
+open_wave_config /home/vlad/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg
 source allTest.tcl
 relaunch_sim
-reset_run synth_1
-launch_runs synth_1 -jobs 2
-wait_on_run synth_1
-launch_runs impl_1 -jobs 2
-wait_on_run impl_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-export_ip_user_files -of_objects  [get_files /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sim_1/new/sim_interface.v] -no_script -reset -force -quiet
-remove_files  -fileset sim_1 /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sim_1/new/sim_interface.v
-reset_run synth_1
-launch_runs synth_1 -jobs 2
-wait_on_run synth_1
-launch_runs impl_1 -jobs 2
-wait_on_run impl_1
-reset_run synth_1
-launch_runs synth_1 -jobs 2
-wait_on_run synth_1
-reset_run synth_1
-launch_runs synth_1 -jobs 2
-wait_on_run synth_1
-reset_run synth_1
-launch_runs synth_1 -jobs 2
-wait_on_run synth_1
-launch_runs impl_1 -jobs 2
-wait_on_run impl_1
-reset_run synth_1
-launch_runs impl_1 -jobs 2
-wait_on_run impl_1
-save_wave_config {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg}
-close_sim
-close_design
-launch_simulation -mode post-synthesis -type functional
-open_wave_config /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg
-source allTest.tcl
+save_wave_config {/home/vlad/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg}
 close_sim
 launch_simulation -mode post-synthesis -type functional
-open_wave_config /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg
+open_wave_config /home/vlad/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg
 source allTest.tcl
 reset_run synth_1
-launch_runs synth_1 -jobs 2
-wait_on_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/vlad/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/vlad/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+save_wave_config {/home/vlad/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg}
 close_sim
-close_design
-launch_simulation -mode post-synthesis -type functional
-open_wave_config /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg
-source allTest.tcl
-relaunch_sim
-add_bp {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v} 39
-remove_bps -file {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v} -line 39
-reset_run synth_1
-launch_runs synth_1 -jobs 2
-wait_on_run synth_1
-launch_runs impl_1 -jobs 2
-wait_on_run impl_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
-save_wave_config {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg}
+save_wave_config {/home/vlad/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg}
 close_sim
-close_design
-launch_simulation -mode post-synthesis -type functional
-open_wave_config /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg
-source allTest.tcl
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-reset_run synth_1
-launch_runs synth_1 -jobs 2
-wait_on_run synth_1
-launch_runs impl_1 -jobs 2
-wait_on_run impl_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-file mkdir /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sim_1/new
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-close [ open /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sim_1/new/interface_sim.v w ]
-add_files -fileset sim_1 /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sim_1/new/interface_sim.v
-update_compile_order -fileset sim_1
-# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
-set_property source_mgmt_mode None [current_project]
-set_property top interface_sim [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-# Re-enabling previously disabled source management mode.
-set_property source_mgmt_mode All [current_project]
-update_compile_order -fileset sim_1
-launch_simulation
-open_wave_config /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg
-source interface_sim.tcl
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
-relaunch_sim
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-close_design
-launch_simulation -mode post-synthesis -type functional
-open_wave_config /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg
-source interface_sim.tcl
-relaunch_sim
-relaunch_sim
-# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
-set_property source_mgmt_mode None [current_project]
-set_property top allTest [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-# Re-enabling previously disabled source management mode.
-set_property source_mgmt_mode All [current_project]
-update_compile_order -fileset sim_1
-current_sim simulation_6
-close_sim
-launch_simulation -mode post-synthesis -type functional
-open_wave_config /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/allTest_func_synth.wcfg
-source allTest.tcl
-relaunch_sim
