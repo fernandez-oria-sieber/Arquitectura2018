@@ -58,13 +58,13 @@ module Datapath
         case (SetB)
             1'b0: B = Out_Data;
             1'b1: B = Inmediate_Val;
-//            default: B = B;
+            default: B = B;
         endcase
         case (SetA)
             2'b00:      A = Out_Data;
             2'b01:      A = Inmediate_Val;
             2'b10:      A = SalidaALU;
-            default:    A = 0; // TODO, ver este A = 0, si ponemos A = A, da inferred latch
+            2'b11:      A = 0; // TODO, ver este A = 0, si ponemos A = A, da inferred latch
         endcase
         if (Op) Operation <= 6'b100000;
         else Operation <= 6'b100010;

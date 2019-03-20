@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="67860000fs"></ZoomStartTime>
-      <ZoomEndTime time="167360001fs"></ZoomEndTime>
-      <Cursor1Time time="1000000000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="731382979fs"></ZoomEndTime>
+      <Cursor1Time time="167553000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="172"></NameColumnWidth>
-      <ValueColumnWidth column_width="100"></ValueColumnWidth>
+      <ValueColumnWidth column_width="96"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="12" />
+   <WVObjectSize size="17" />
    <wvobject type="logic" fp_name="/allTest/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -70,5 +70,26 @@
       <obj_property name="ElementShortName">out_Acc_Counter[31:0]</obj_property>
       <obj_property name="ObjectShortName">out_Acc_Counter[31:0]</obj_property>
       <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/allTest/int/is_s">
+      <obj_property name="ElementShortName">is_s</obj_property>
+      <obj_property name="ObjectShortName">is_s</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/allTest/int/dout">
+      <obj_property name="ElementShortName">dout[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/allTest/BIP_enable">
+      <obj_property name="ElementShortName">BIP_enable</obj_property>
+      <obj_property name="ObjectShortName">BIP_enable</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/allTest/int/tx_done_tick">
+      <obj_property name="ElementShortName">tx_done_tick</obj_property>
+      <obj_property name="ObjectShortName">tx_done_tick</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/allTest/int/rx_done_tick">
+      <obj_property name="ElementShortName">rx_done_tick</obj_property>
+      <obj_property name="ObjectShortName">rx_done_tick</obj_property>
    </wvobject>
 </wave_config>

@@ -18,6 +18,7 @@ proc create_report { reportName command } {
   }
 }
 set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -53,8 +54,8 @@ read_verilog -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/sieber/Arquitectura/Arquitectura2018/TP_UART/TP_UART.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc
-set_property used_in_implementation false [get_files /home/sieber/Arquitectura/Arquitectura2018/TP_UART/TP_UART.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc]
+read_xdc /home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/constrs_1/new/basys3_constrain.xdc
+set_property used_in_implementation false [get_files /home/sieber/Arquitectura/Arquitectura2018/TP_BIP/TP_BIP.srcs/constrs_1/new/basys3_constrain.xdc]
 
 set_param ips.enableIPCacheLiteLoad 0
 close [open __synthesis_is_running__ w]

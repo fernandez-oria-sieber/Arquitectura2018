@@ -9,7 +9,7 @@ reg clk, reset, rx_done_tick, tx_done_tick;
 	wire [7:0] din;
 //	wire [5:0] op;
 	
-	wire wr, rd, tx_start, tx_full, rx_empty,BIP_enable;
+	wire wr, tx_start, tx_full, rx_empty,BIP_enable;
 //	wire tx, rx, s_tick, finish_program;
 //	reg [31:0] out_Acc_Counter;
 	
@@ -29,11 +29,11 @@ reg clk, reset, rx_done_tick, tx_done_tick;
     wire[31:0] out_Acc_Counter;
        
     //UART uart(rx, clk, reset, finish_program, out_Acc_Counter, tx, BIP_enable);    
-    Data_memory #(.INIT_FILE("/home/luchosteam/Documents/Arquitectura/Practico2018/datos.txt")) Data_memory(.Rd(RdRAM), .Wr(WrRAM),.clk(clk),.ena(BIP_enable), .Addr(Addr), .In_Data(In_Data), .Out_Data(Out_Data));
-    Program_memory #(.INIT_FILE("/home/luchosteam/Documents/Arquitectura/Practico2018/instrucciones.txt")) Program_memory (1'b1, 1'b0, clk, BIP_enable, PC, 0, Program_Data);
+    Data_memory #(.INIT_FILE("/home/sieber/Arquitectura/Arquitectura2018/datos.txt")) Data_memory (.Wr(WrRAM),.clk(clk),.ena(BIP_enable), .Addr(Addr), .In_Data(In_Data), .Out_Data(Out_Data));
+    Program_memory #(.INIT_FILE("/home/sieber/Arquitectura/Arquitectura2018/instrucciones.txt")) Program_memory (1'b0, clk, BIP_enable, PC, 0, Program_Data);
     CPU bip(BIP_enable, clk, reset, Program_Data, Out_Data, In_Data, PC, WrRAM, RdRAM, finish_program);
     
-    interface #(.DBIT(8)) int (clk, reset,rx_done_tick, rd, finish_program, tx_done_tick, 
+    interface #(.DBIT(8)) int (clk, reset,rx_done_tick, finish_program, tx_done_tick, 
                                            dout, out_Acc_Counter, din, BIP_enable, tx_start); 
     
     
@@ -65,9 +65,7 @@ reg clk, reset, rx_done_tick, tx_done_tick;
             #10  
             rx_done_tick = 1;
             dout = 115;
-            #10;
-            #10;
-            #10
+            #50;
             dout = 13;
             #50;
             #10  tx_done_tick = 0;
