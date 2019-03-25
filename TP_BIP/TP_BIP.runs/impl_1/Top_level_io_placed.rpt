@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date                      : Wed Mar 20 18:19:07 2019
-| Host                      : vlad-putin running 64-bit Arch Linux
+| Date                      : Fri Mar 22 21:05:10 2019
+| Host                      : lenovo running 64-bit Manjaro Linux
 | Command                   : report_io -file Top_level_io_placed.rpt
 | Design                    : Top_level
 | Device                    : xc7a35t

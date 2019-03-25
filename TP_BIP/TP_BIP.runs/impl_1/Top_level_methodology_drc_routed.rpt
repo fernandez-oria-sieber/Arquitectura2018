@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date         : Wed Mar 20 18:19:37 2019
-| Host         : vlad-putin running 64-bit Arch Linux
+| Date         : Fri Mar 22 21:06:34 2019
+| Host         : lenovo running 64-bit Manjaro Linux
 | Command      : report_methodology -file Top_level_methodology_drc_routed.rpt -pb Top_level_methodology_drc_routed.pb -rpx Top_level_methodology_drc_routed.rpx
 | Design       : Top_level
 | Device       : xc7a35tcpg236-1
@@ -46,122 +46,122 @@ Related violations: <none>
 
 TIMING-16#1 Warning
 Large setup violation  
-There is a large setup violation of -1.526 ns between uart/int_tx/div_reg[11]/C (clocked by sys_clk_pin) and uart/int_tx/div_reg[0]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.459 ns between uart/int_tx/div_reg[11]/C (clocked by sys_clk_pin) and uart/int_tx/div_reg[0]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#2 Warning
 Large setup violation  
-There is a large setup violation of -27.014 ns between uart/int_tx/div_reg[2]/C (clocked by sys_clk_pin) and uart/int_tx/aux_reg[1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -27.330 ns between uart/int_tx/div_reg[4]/C (clocked by sys_clk_pin) and uart/int_tx/aux_reg[5]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#3 Warning
 Large setup violation  
-There is a large setup violation of -27.172 ns between uart/int_tx/div_reg[2]/C (clocked by sys_clk_pin) and uart/int_tx/aux_reg[5]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -27.427 ns between uart/int_tx/div_reg[4]/C (clocked by sys_clk_pin) and uart/int_tx/aux_reg[1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#4 Warning
 Large setup violation  
-There is a large setup violation of -27.563 ns between uart/int_tx/div_reg[2]/C (clocked by sys_clk_pin) and uart/int_tx/aux_reg[4]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -27.438 ns between uart/int_tx/div_reg[4]/C (clocked by sys_clk_pin) and uart/int_tx/aux_reg[7]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#5 Warning
 Large setup violation  
-There is a large setup violation of -27.581 ns between uart/int_tx/div_reg[2]/C (clocked by sys_clk_pin) and uart/int_tx/aux_reg[6]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -27.513 ns between uart/int_tx/div_reg[4]/C (clocked by sys_clk_pin) and uart/int_tx/aux_reg[3]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#6 Warning
 Large setup violation  
-There is a large setup violation of -27.693 ns between uart/int_tx/div_reg[2]/C (clocked by sys_clk_pin) and uart/int_tx/aux_reg[3]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -27.908 ns between uart/int_tx/div_reg[4]/C (clocked by sys_clk_pin) and uart/int_tx/aux_reg[6]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#7 Warning
 Large setup violation  
-There is a large setup violation of -27.888 ns between uart/int_tx/div_reg[2]/C (clocked by sys_clk_pin) and uart/int_tx/aux_reg[7]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -28.262 ns between uart/int_tx/div_reg[4]/C (clocked by sys_clk_pin) and uart/int_tx/aux_reg[9]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#8 Warning
 Large setup violation  
-There is a large setup violation of -28.126 ns between uart/int_tx/div_reg[2]/C (clocked by sys_clk_pin) and uart/int_tx/aux_reg[9]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -28.600 ns between uart/int_tx/div_reg[4]/C (clocked by sys_clk_pin) and uart/int_tx/aux_reg[4]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#9 Warning
 Large setup violation  
-There is a large setup violation of -28.332 ns between uart/int_tx/div_reg[2]/C (clocked by sys_clk_pin) and uart/int_tx/aux_reg[8]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -28.610 ns between uart/int_tx/div_reg[4]/C (clocked by sys_clk_pin) and uart/int_tx/aux_reg[8]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#10 Warning
 Large setup violation  
-There is a large setup violation of -28.466 ns between uart/int_tx/div_reg[2]/C (clocked by sys_clk_pin) and uart/int_tx/aux_reg[2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -28.740 ns between uart/int_tx/div_reg[4]/C (clocked by sys_clk_pin) and uart/int_tx/aux_reg[2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#11 Warning
 Large setup violation  
-There is a large setup violation of -28.554 ns between uart/int_tx/div_reg[2]/C (clocked by sys_clk_pin) and uart/int_tx/aux_reg[11]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -29.050 ns between uart/int_tx/div_reg[4]/C (clocked by sys_clk_pin) and uart/int_tx/aux_reg[10]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#12 Warning
 Large setup violation  
-There is a large setup violation of -28.865 ns between uart/int_tx/div_reg[2]/C (clocked by sys_clk_pin) and uart/int_tx/aux_reg[10]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -29.296 ns between uart/int_tx/div_reg[4]/C (clocked by sys_clk_pin) and uart/int_tx/aux_reg[13]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#13 Warning
 Large setup violation  
-There is a large setup violation of -28.978 ns between uart/int_tx/div_reg[2]/C (clocked by sys_clk_pin) and uart/int_tx/aux_reg[13]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -29.621 ns between uart/int_tx/div_reg[4]/C (clocked by sys_clk_pin) and uart/int_tx/aux_reg[11]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#14 Warning
 Large setup violation  
-There is a large setup violation of -29.243 ns between uart/int_tx/div_reg[2]/C (clocked by sys_clk_pin) and uart/int_tx/aux_reg[12]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -29.687 ns between uart/int_tx/div_reg[4]/C (clocked by sys_clk_pin) and uart/int_tx/aux_reg[14]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#15 Warning
 Large setup violation  
-There is a large setup violation of -29.272 ns between uart/int_tx/div_reg[2]/C (clocked by sys_clk_pin) and uart/int_tx/aux_reg[15]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -29.993 ns between uart/int_tx/div_reg[4]/C (clocked by sys_clk_pin) and uart/int_tx/aux_reg[15]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#16 Warning
 Large setup violation  
-There is a large setup violation of -29.514 ns between uart/int_tx/div_reg[2]/C (clocked by sys_clk_pin) and uart/int_tx/aux_reg[14]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -30.675 ns between uart/int_tx/div_reg[4]/C (clocked by sys_clk_pin) and uart/int_tx/aux_reg[12]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#17 Warning
 Large setup violation  
-There is a large setup violation of -45.099 ns between uart/int_tx/div_reg[2]/C (clocked by sys_clk_pin) and uart/int_tx/out_reg[7]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -45.573 ns between uart/int_tx/div_reg[4]/C (clocked by sys_clk_pin) and uart/int_tx/out_reg[7]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#18 Warning
 Large setup violation  
-There is a large setup violation of -47.486 ns between uart/int_tx/div_reg[2]/C (clocked by sys_clk_pin) and uart/int_tx/out_reg[6]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -48.142 ns between uart/int_tx/div_reg[4]/C (clocked by sys_clk_pin) and uart/int_tx/out_reg[6]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#19 Warning
 Large setup violation  
-There is a large setup violation of -48.620 ns between uart/int_tx/div_reg[2]/C (clocked by sys_clk_pin) and uart/int_tx/out_reg[5]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -49.022 ns between uart/int_tx/div_reg[4]/C (clocked by sys_clk_pin) and uart/int_tx/out_reg[5]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#20 Warning
 Large setup violation  
-There is a large setup violation of -50.438 ns between uart/int_tx/div_reg[2]/C (clocked by sys_clk_pin) and uart/int_tx/out_reg[4]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -51.403 ns between uart/int_tx/div_reg[4]/C (clocked by sys_clk_pin) and uart/int_tx/out_reg[4]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#21 Warning
 Large setup violation  
-There is a large setup violation of -52.280 ns between uart/int_tx/div_reg[2]/C (clocked by sys_clk_pin) and uart/int_tx/out_reg[3]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -52.817 ns between uart/int_tx/div_reg[4]/C (clocked by sys_clk_pin) and uart/int_tx/out_reg[3]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#22 Warning
 Large setup violation  
-There is a large setup violation of -54.224 ns between uart/int_tx/div_reg[2]/C (clocked by sys_clk_pin) and uart/int_tx/out_reg[2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -54.825 ns between uart/int_tx/div_reg[4]/C (clocked by sys_clk_pin) and uart/int_tx/out_reg[2]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#23 Warning
 Large setup violation  
-There is a large setup violation of -56.094 ns between uart/int_tx/div_reg[2]/C (clocked by sys_clk_pin) and uart/int_tx/out_reg[1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -56.716 ns between uart/int_tx/div_reg[4]/C (clocked by sys_clk_pin) and uart/int_tx/out_reg[1]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#24 Warning
 Large setup violation  
-There is a large setup violation of -58.448 ns between uart/int_tx/div_reg[2]/C (clocked by sys_clk_pin) and uart/int_tx/out_reg[0]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -59.024 ns between uart/int_tx/div_reg[4]/C (clocked by sys_clk_pin) and uart/int_tx/out_reg[0]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-18#1 Warning

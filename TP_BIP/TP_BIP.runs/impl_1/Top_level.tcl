@@ -60,7 +60,6 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
 
 start_step init_design
 set ACTIVE_STEP init_design
@@ -71,12 +70,12 @@ set rc [catch {
   set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir /home/vlad/Arquitectura2018/TP_BIP/TP_BIP.cache/wt [current_project]
-  set_property parent.project_path /home/vlad/Arquitectura2018/TP_BIP/TP_BIP.xpr [current_project]
-  set_property ip_output_repo /home/vlad/Arquitectura2018/TP_BIP/TP_BIP.cache/ip [current_project]
+  set_property webtalk.parent_dir /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.cache/wt [current_project]
+  set_property parent.project_path /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.xpr [current_project]
+  set_property ip_output_repo /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet /home/vlad/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1/Top_level.dcp
-  read_xdc /home/vlad/Arquitectura2018/TP_BIP/TP_BIP.srcs/constrs_1/new/basys3_constrain.xdc
+  add_files -quiet /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1/Top_level.dcp
+  read_xdc /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/constrs_1/new/basys3_constrain.xdc
   link_design -top Top_level -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb
 } RESULT]

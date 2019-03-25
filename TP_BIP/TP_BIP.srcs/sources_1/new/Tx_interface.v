@@ -17,13 +17,14 @@ module Tx_interface
 	operate = 3'b011,
 	transmit = 3'b100,
 	transmit_reset = 3'b101,
-	transmit_init = 3'b110;
+	transmit_init = 3'b110,
+	transmit_on = 3'b111;
 	
 	// signal declaration
 	reg [2:0] state_reg;
 	//reg [31:0] aux_Acc_Count;//
 	reg [15:0] aux, aux_Count; // solo usa 6 bits, da un warning sarray_charle ponemos 8 bits
-	reg z_flag, acc_sended, tx_start_aux, first;
+	reg z_flag, acc_sended, tx_start_aux, first, sending;
 	reg [13:0] div; //puede ser integer también, pero así no da warning;
 	reg [7:0] out, i;
 	reg [7:0] array_char[17:0];
@@ -65,27 +66,45 @@ module Tx_interface
                 tx_start_aux <= 0;
                 i<= 2;
                 div <= -1; // -1 para que use todos los bits, VER
+                sending<= 0;
             end
         else
             begin
                 case (state_reg)
                     transmit_init :
                        begin
-                          out = array_char[i];
-                          tx_start_aux = 1'b1; 
+                          if (!sending) 
+                            begin
+                                out = array_char[i];
+                                tx_start_aux = 1'b1;
+                                sending= 1'b1;
+                            end
+                          else tx_start_aux = 1'b0; 
                           if (tx_done_tick) 
                             begin
-                                tx_start_aux = 1'b0;
+                                sending = 1'b0;
                                 i = i+1;
                                 if (i == 9) state_reg = idle_tx;
                             end
                         end
-                    transmit_reset :
+                    transmit_on:
                         begin
                             tx_start_aux = 1'b1;
+                            state_reg = transmit_reset;
+                        end
+                    transmit_reset :
+                        begin
+//                            if (!sending) 
+//                                begin
+//                                    //tx_start_aux = 1'b1;
+//                                    sending= 1'b1;
+//                                end
+//                            else tx_start_aux = 1'b0;
+                            tx_start_aux = 1'b0;
                             if (tx_done_tick)
                               begin
-                                tx_start_aux = 1'b0;
+                                state_reg <= transmit_on;
+                                sending = 1'b0;
                                 i = i+1;
                                 if (out==" ")
                                     begin
@@ -109,7 +128,7 @@ module Tx_interface
                   idle_tx:
                     if(finish_program && first)  // Es 1 si termino el programa, else 0
                         begin
-                            state_reg = transmit_reset;
+                            state_reg = transmit_on;
                             first = 0;
                             acc_sended <= 0;
                             i = 9;
@@ -123,12 +142,13 @@ module Tx_interface
                                 state_reg = transmit;
                                 z_flag= 1'b1;
                                 out = out + 48; // Sumo 48 al digito enviado para transmitir en ascii
+                                tx_start_aux = 1'b1;
                             end
                         else out = aux / div;    // divido para obtener el digito a transmitir (ej, 123/100 - obtengo 1 en it. 1)
                     end
                   transmit :
                       begin
-                         tx_start_aux = 1'b1;
+                         tx_start_aux = 1'b0;
                          if (tx_done_tick)
                            begin
                                state_reg = operate ;
@@ -136,8 +156,8 @@ module Tx_interface
                                    begin
                                        z_flag = 1'b0;
                                        div = 10000;
-                                       state_reg = transmit_reset;
                                        if (acc_sended==1) state_reg = idle_tx;
+                                       else state_reg = transmit_on;
                                        acc_sended = 1;
                                        aux = aux_Count;
                                        out = array_char[i]; // salto de linea
@@ -147,7 +167,6 @@ module Tx_interface
                                     aux = aux % (div*10);
                                     out = aux / div;    // divido para obtener el digito a transmitir (ej, 123/100 - obtengo 1 en it. 1)             
                                 end
-                                tx_start_aux = 1'b0;
                            end// if (tx_done_tick)
                        end  // transmit
 		        endcase //end case (state_reg)

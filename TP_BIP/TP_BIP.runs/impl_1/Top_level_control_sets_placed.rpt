@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date         : Wed Mar 20 18:19:07 2019
-| Host         : vlad-putin running 64-bit Arch Linux
+| Date         : Fri Mar 22 21:05:10 2019
+| Host         : lenovo running 64-bit Manjaro Linux
 | Command      : report_control_sets -verbose -file Top_level_control_sets_placed.rpt
 | Design       : Top_level
 | Device       : xc7a35t
@@ -24,7 +24,7 @@ Table of Contents
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
 | Number of unique control sets                            |    14 |
-| Unused register locations in slices containing registers |    18 |
+| Unused register locations in slices containing registers |    16 |
 +----------------------------------------------------------+-------+
 
 
@@ -48,10 +48,10 @@ Table of Contents
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | No           | No                    | No                     |               4 |            2 |
-| No           | No                    | Yes                    |              50 |           14 |
-| No           | Yes                   | No                     |              14 |            4 |
+| No           | No                    | Yes                    |              52 |           16 |
+| No           | Yes                   | No                     |              14 |            3 |
 | Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |             218 |           51 |
+| Yes          | No                    | Yes                    |             218 |           54 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -65,17 +65,17 @@ Table of Contents
 |  clk_IBUF_BUFG |                                   |                             |                2 |              4 |
 |  clk_IBUF_BUFG | uart/rx_mod/s_next                | reset_IBUF                  |                2 |              8 |
 |  clk_IBUF_BUFG | uart/tx_mod/s_next                | reset_IBUF                  |                2 |              8 |
-|  clk_IBUF_BUFG |                                   | uart/br_g/ciclos[7]_i_1_n_0 |                4 |             14 |
-|  clk_IBUF_BUFG | uart/int_tx/i[7]_i_1_n_0          | reset_IBUF                  |                3 |             16 |
+|  clk_IBUF_BUFG |                                   | uart/br_g/ciclos[7]_i_1_n_0 |                3 |             14 |
 |  clk_IBUF_BUFG | uart/int_tx/out[7]_i_1_n_0        | reset_IBUF                  |                8 |             16 |
 |  clk_IBUF_BUFG | uart/rx_mod/b_next                | reset_IBUF                  |                2 |             16 |
-|  clk_IBUF_BUFG | uart/tx_mod/b_next_0              | reset_IBUF                  |                2 |             16 |
+|  clk_IBUF_BUFG | uart/int_tx/i                     | reset_IBUF                  |                5 |             16 |
+|  clk_IBUF_BUFG | uart/tx_mod/b_next_0              | reset_IBUF                  |                3 |             16 |
 |  clk_IBUF_BUFG | uart/int_rx/ena                   | reset_IBUF                  |                3 |             22 |
-|  clk_IBUF_BUFG | uart/int_tx/aux_Count[11]_i_1_n_0 | reset_IBUF                  |                7 |             24 |
-|  clk_IBUF_BUFG | uart/int_tx/div                   | reset_IBUF                  |                6 |             28 |
-|  clk_IBUF_BUFG | uart/int_tx/aux[15]_i_1_n_0       | reset_IBUF                  |               10 |             32 |
-|  clk_IBUF_BUFG | Program_memory/E[0]               | reset_IBUF                  |                6 |             32 |
-|  clk_IBUF_BUFG |                                   | reset_IBUF                  |               14 |             50 |
+|  clk_IBUF_BUFG | uart/int_tx/aux_Count[11]_i_1_n_0 | reset_IBUF                  |                5 |             24 |
+|  clk_IBUF_BUFG | uart/int_tx/div                   | reset_IBUF                  |                8 |             28 |
+|  clk_IBUF_BUFG | uart/int_tx/aux[15]_i_1_n_0       | reset_IBUF                  |               11 |             32 |
+|  clk_IBUF_BUFG | Program_memory/E[0]               | reset_IBUF                  |                5 |             32 |
+|  clk_IBUF_BUFG |                                   | reset_IBUF                  |               16 |             52 |
 +----------------+-----------------------------------+-----------------------------+------------------+----------------+
 
 

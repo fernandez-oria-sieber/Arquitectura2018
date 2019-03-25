@@ -7,20 +7,20 @@
 # 
 
 if [ -z "$PATH" ]; then
-  PATH=/home/Xilinx/SDK/2018.2/bin:/home/Xilinx/Vivado/2018.2/ids_lite/ISE/bin/lin64:/home/Xilinx/Vivado/2018.2/bin
+  PATH=/usr/local/magnetic2/Xilinx/Vivado/SDK/2018.2/bin:/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/ids_lite/ISE/bin/lin64:/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin
 else
-  PATH=/home/Xilinx/SDK/2018.2/bin:/home/Xilinx/Vivado/2018.2/ids_lite/ISE/bin/lin64:/home/Xilinx/Vivado/2018.2/bin:$PATH
+  PATH=/usr/local/magnetic2/Xilinx/Vivado/SDK/2018.2/bin:/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/ids_lite/ISE/bin/lin64:/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin:$PATH
 fi
 export PATH
 
 if [ -z "$LD_LIBRARY_PATH" ]; then
-  LD_LIBRARY_PATH=/home/Xilinx/Vivado/2018.2/ids_lite/ISE/lib/lin64
+  LD_LIBRARY_PATH=/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/ids_lite/ISE/lib/lin64
 else
-  LD_LIBRARY_PATH=/home/Xilinx/Vivado/2018.2/ids_lite/ISE/lib/lin64:$LD_LIBRARY_PATH
+  LD_LIBRARY_PATH=/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/ids_lite/ISE/lib/lin64:$LD_LIBRARY_PATH
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/vlad/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1'
+HD_PWD='/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
