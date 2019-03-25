@@ -68,6 +68,7 @@ module Datapath
         endcase
         if (Op) Operation <= 6'b100000;
         else Operation <= 6'b100010;
+     
     end
     
     ALU #(.size(16)) alu (.Op(Operation), .A(ACC), .B(B), .Leds(SalidaALU));

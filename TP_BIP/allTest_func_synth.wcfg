@@ -3,7 +3,7 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="allTest_time_impl.wdb" id="1">
+      <db_ref path="allTest_func_synth.wdb" id="1">
          <top_modules>
             <top_module name="allTest" />
             <top_module name="glbl" />
@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="287780000fs"></ZoomStartTime>
-      <ZoomEndTime time="326780001fs"></ZoomEndTime>
-      <Cursor1Time time="1000000000fs"></Cursor1Time>
+      <ZoomStartTime time="679990000fs"></ZoomStartTime>
+      <ZoomEndTime time="842290446fs"></ZoomEndTime>
+      <Cursor1Time time="630628000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="172"></NameColumnWidth>
-      <ValueColumnWidth column_width="92"></ValueColumnWidth>
+      <NameColumnWidth column_width="164"></NameColumnWidth>
+      <ValueColumnWidth column_width="60"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="18" />
+   <WVObjectSize size="22" />
    <wvobject type="logic" fp_name="/allTest/int_tx/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -40,6 +40,10 @@
       <obj_property name="ElementShortName">out_Acc_Count[31:0]</obj_property>
       <obj_property name="ObjectShortName">out_Acc_Count[31:0]</obj_property>
    </wvobject>
+   <wvobject type="array" fp_name="/allTest/int_tx/din">
+      <obj_property name="ElementShortName">din[7:0]</obj_property>
+      <obj_property name="ObjectShortName">din[7:0]</obj_property>
+   </wvobject>
    <wvobject type="logic" fp_name="/allTest/int_tx/tx_start">
       <obj_property name="ElementShortName">tx_start</obj_property>
       <obj_property name="ObjectShortName">tx_start</obj_property>
@@ -48,15 +52,17 @@
       <obj_property name="ElementShortName">state_reg[2:0]</obj_property>
       <obj_property name="ObjectShortName">state_reg[2:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/allTest/int_tx/aux">
-      <obj_property name="ElementShortName">aux[15:0]</obj_property>
-      <obj_property name="ObjectShortName">aux[15:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   <wvobject type="array" fp_name="/allTest/int_tx/state_prev">
+      <obj_property name="ElementShortName">state_prev[2:0]</obj_property>
+      <obj_property name="ObjectShortName">state_prev[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/allTest/int_tx/aux2">
+      <obj_property name="ElementShortName">aux2[15:0]</obj_property>
+      <obj_property name="ObjectShortName">aux2[15:0]</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/allTest/int_tx/aux_Count">
       <obj_property name="ElementShortName">aux_Count[15:0]</obj_property>
       <obj_property name="ObjectShortName">aux_Count[15:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/allTest/int_tx/z_flag">
       <obj_property name="ElementShortName">z_flag</obj_property>
@@ -66,37 +72,44 @@
       <obj_property name="ElementShortName">acc_sended</obj_property>
       <obj_property name="ObjectShortName">acc_sended</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/allTest/int_tx/tx_start_aux">
-      <obj_property name="ElementShortName">tx_start_aux</obj_property>
-      <obj_property name="ObjectShortName">tx_start_aux</obj_property>
-   </wvobject>
    <wvobject type="logic" fp_name="/allTest/int_tx/first">
       <obj_property name="ElementShortName">first</obj_property>
       <obj_property name="ObjectShortName">first</obj_property>
    </wvobject>
+   <wvobject type="logic" fp_name="/allTest/int_tx/sending">
+      <obj_property name="ElementShortName">sending</obj_property>
+      <obj_property name="ObjectShortName">sending</obj_property>
+   </wvobject>
    <wvobject type="array" fp_name="/allTest/int_tx/div">
-      <obj_property name="ElementShortName">div[13:0]</obj_property>
-      <obj_property name="ObjectShortName">div[13:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="ElementShortName">div[4:0][15:0]</obj_property>
+      <obj_property name="ObjectShortName">div[4:0][15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/allTest/int_tx/tx_start_aux">
+      <obj_property name="ElementShortName">tx_start_aux</obj_property>
+      <obj_property name="ObjectShortName">tx_start_aux</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/allTest/int_tx/out">
       <obj_property name="ElementShortName">out[7:0]</obj_property>
       <obj_property name="ObjectShortName">out[7:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/allTest/int_tx/din">
-      <obj_property name="ElementShortName">din[7:0]</obj_property>
-      <obj_property name="ObjectShortName">din[7:0]</obj_property>
       <obj_property name="Radix">ASCIIRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/allTest/int_tx/aux">
+      <obj_property name="ElementShortName">aux[15:0]</obj_property>
+      <obj_property name="ObjectShortName">aux[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/allTest/int_tx/i">
       <obj_property name="ElementShortName">i[7:0]</obj_property>
       <obj_property name="ObjectShortName">i[7:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
+   <wvobject type="array" fp_name="/allTest/int_tx/j">
+      <obj_property name="ElementShortName">j[7:0]</obj_property>
+      <obj_property name="ObjectShortName">j[7:0]</obj_property>
+   </wvobject>
    <wvobject type="array" fp_name="/allTest/int_tx/array_char">
-      <obj_property name="ElementShortName">array_char[17:0][7:0]</obj_property>
-      <obj_property name="ObjectShortName">array_char[17:0][7:0]</obj_property>
+      <obj_property name="ElementShortName">array_char[15:0][7:0]</obj_property>
+      <obj_property name="ObjectShortName">array_char[15:0][7:0]</obj_property>
       <obj_property name="Radix">ASCIIRADIX</obj_property>
    </wvobject>
 </wave_config>

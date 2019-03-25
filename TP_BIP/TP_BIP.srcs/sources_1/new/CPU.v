@@ -37,9 +37,10 @@ module CPU(
     ControlUnit control(clk, reset, BIP_enable, Opcode, SetA, SetB,
                         WrAcc,Op, WrRAM, RdRAM, PC, finish_program);
                         
-    Datapath datapath(clk, reset, Data_Val, Out_Data, SetA, SetB, WrAcc,
+    Datapath datapath(clk, reset,Data_Val, Out_Data, SetA, SetB, WrAcc,
                       Op, In_Data);
     
+     
     assign Opcode = Data[15:11];
     assign Data_Val = Data[10:0];
  

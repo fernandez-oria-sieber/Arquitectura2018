@@ -29,7 +29,7 @@ parameter INIT_FILE = ""                       // Specify name/location of RAM i
 
 )
 (
-input Wr, clk, ena,
+input Wr, Rd, clk, ena,
 input [10:0] Addr,
 input [15:0] In_Data,
 output [15:0] Out_Data
@@ -72,8 +72,12 @@ output [15:0] Out_Data
 
   always @(negedge clk)
     if (ena) begin
+      ram_data <= ram_name[Addr]; 
+    end
+    
+  always @(posedge clk)
+    if (ena) begin
       if (Wr) ram_name[Addr] <= In_Data;
-      ram_data <= ram_name[Addr];
     end
 
 assign Out_Data= ram_data;
