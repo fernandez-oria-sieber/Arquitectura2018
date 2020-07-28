@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Webtalk v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Mon Mar 25 16:34:29 2019
+# Process ID: 22290
+# Current directory: /home/vlad/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim
+# Command line: wbtcv -mode batch -source /home/vlad/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/xsim.dir/allTest_func_synth/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/vlad/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/webtalk.log
+# Journal file: /home/vlad/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/webtalk.jou
+#-----------------------------------------------------------
+source /home/vlad/Arquitectura2018/TP_BIP/TP_BIP.sim/sim_1/synth/func/xsim/xsim.dir/allTest_func_synth/webtalk/xsim_webtalk.tcl -notrace
+webtalk_transmit: Time (s): cpu = 00:00:00.86 ; elapsed = 00:00:06 . Memory (MB): peak = 288.273 ; gain = 0.000 ; free physical = 7612 ; free virtual = 13832
+INFO: [Common 17-206] Exiting Webtalk at Mon Mar 25 16:34:35 2019...
