@@ -20,40 +20,117 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 
-module Decoder
-	(
-		input [4:0] Opcode,
-		output WrPc,
-		output [1:0] SetA,
-		output SetB,
-		output WrAcc,
-		output Op,
-		output WrRAM,
-		output RdRAM
-	);	
-	
-	reg[7:0] Output;          // registro auxiliar que asignadmos a las salidas
-	assign WrPc = Output[7];  // entrada al PC para aumentar su valor en 1
-    assign SetA= Output[6:5]; // selector para la entrada al acumulador, entre dato directo, inmediato ó salida de la ALU
-    assign SetB= Output[4];   // selector entre dato inmediato o directo para la entrada a la alu
-    assign WrAcc= Output[3];  // entrada al acumulador para permitir escritura
-    assign Op= Output[2];     // entrada a la alu para seleccionar entre operacion de suma y resta
-    assign WrRAM= Output[1];  // entrada a la mamoria de datos para permitir escritura 
-    assign RdRAM= Output[0];  // entrada a la memoria para permitir lectura
-	
-	always @(*)
-	begin                                                //                  |
-		case (Opcode)                                    // Operation        | WrPc  | SetA | SetB | WrAcc | Op | WrRAM | RdRAM |
-		                                                 //---------------------------------------------------------------------
-                5'b00000: 	Output = 	8'b00000000; 		 // HALT             |   0   |  00  |  0   |   0   | 0  |   0   |   0   |
-				5'b00001: 	Output = 	8'b10000010; 	     // STORE VARIABLE   |   1   |  xx  |  x   |   0   | x  |   1   |   0   |
-				5'b00010: 	Output = 	8'b10001001;        // LOAD VARIABLE    |   1   |  00  |  x   |   1   | x  |   0   |   1   |
-				5'b00011: 	Output = 	8'b10101000;        // LOAD INMEDIATE   |   1   |  01  |  x   |   1   | x  |   x   |   x   |
-				5'b00100: 	Output = 	8'b11001101;        // ADD VARIABLE     |   1   |  10  |  0   |   1   | 1  |   0   |   1   |
-				5'b00101: 	Output = 	8'b11011100;        // ADD INMEDIATE    |   1   |  10  |  1   |   1   | 1  |   0   |   0   |
-				5'b00110: 	Output = 	8'b11001001;        // SUB VARIABLE     |   1   |  10  |  0   |   1   | 0  |   0   |   1   |
-				5'b00111: 	Output = 	8'b11011000;        // SUB INMEDIATE    |   1   |  10  |  1   |   1   | 0  |   0   |   0   |
- 				default: 	Output = 	8'b00000000;		 
-		endcase
+module InstructionDecode(
+    input clk, rst,
+	// desde IF
+    input [31:0] inInstructionAddress,	// direccion de la instrucción (PC)
+    input [31:0] inInstruction,			// instrucción
+    // desde WB
+	input inRegF_wr,					// Flag de escritura en banco de registros
+    input [4:0] inRegF_wreg,			// también desde MEM? Direccion de memoria en registro a escribir
+    input [31:0] inRegF_wd,				// Data value a escribir
+
+    output [1:0] outWB,					// Salida de la unidad de control
+    output [2:0] outMEM,				// Salida de la unidad de control
+    output [3:0] outEXE,				// Salida de la unidad de control
+    output [31:0] outInstructionAddress,// Program Counter
+    output [31:0] outRegA,				// Salida A del Banco de registros
+    output [31:0] outRegB,				// Salida B del Banco de registros
+    output [31:0] outInstruction_ls,	// Salida con extensión de signo para ¿solo I-Types?
+    output [4:0] outLD_rt,				// Registros rt (inInstruction[20:16])
+    output [4:0] outRT_rd				// Registros rd (inInstruction[15:11])
+    );
+
+//Registros
+reg [1:0] WB;
+reg [2:0] MEM;
+reg [3:0] EXE;
+reg [4:0] LD_rt; // Para las instruccion Load - Load Doubleword[LD] rt, offset(base)
+reg [4:0] RT_rd; // Para los RType - Registro rd
+reg [31:0] InstructionAddress;
+reg signed [31:0] Instruction_ls;
+
+//Cables
+wire [8:0] outControl;
+
+wire [5:0] op;
+wire [4:0] rs;
+wire [4:0] rt;
+wire [4:0] rd;
+wire [5:0] funct;
+wire [15:0] address;
+
+wire [31:0] rs_reg;
+wire [31:0] rt_reg;
+wire [31:0] signExt; 
+wire [31:0] jump_address;
+
+
+// Asignaciones internas
+assign op = inInstruction[31-:6]; // [31:26]
+assign rs = inInstruction[25-:5];
+assign rt = inInstruction[20-:5];
+assign rd = inInstruction[15-:5];
+assign funct = inInstruction[5:0];
+assign address = inInstruction[15 -: 16];
+
+//Asignaciones de salida
+assign outWB = WB;
+assign outMEM = MEM;
+assign outEXE = EXE;
+assign outInstructionAddress = InstructionAddress;
+assign outInstruction_ls = Instruction_ls >>> 16;
+// (-45 antes del >>>) = 1111111111010011000000000000000 >>> (-45) = 11111111111111111111111111010011
+assign outLD_rt = LD_rt;
+assign outRT_rd = RT_rd;
+
+// Instancia de "Control Block"
+ControlBlock ctrl0 (
+	// TODO: verificar que funcione con las salidas asignando directamente WB, MEM y EXE
+	.inInstruction(op),
+	.outCtrlWB(WB),
+	.outCtrlMEM(MEM),
+	.outCtrlEXE(EXE)
+);
+
+// Instancia de "File Register"
+FileRegister regF0 (
+	.clk(clk),
+	.rst(rst),
+	.write(inRegF_wr),
+	.read_reg1(rs),
+	.read_reg2(rt),
+	.write_addr(inRegF_wreg),
+	.write_data(inRegF_wd),
+	.out_reg1(outRegA), 
+	.out_reg2(outRegB)
+);
+
+//Logica del Bloque
+always @(negedge clk, posedge rst)
+begin
+if (rst)
+	begin
+		WB = 2'b00;
+		MEM = 3'b010;
+		EXE = 4'b0;
+		InstructionAddress = 32'b0;
+		Instruction_ls = 32'b0;
+		LD_rt = 5'b0;
+		RT_rd = 5'b0;
 	end
+else // Escritura de todos los registros de salida
+	begin
+		// WB = outCtrlWB; // Esto ahora lo estamos asignando a la salida de ControlBlock
+		// MEM = outCtrlMEM;
+		// EXE = outCtrlEXE;
+		InstructionAddress = inInstructionAddress;
+		Instruction_ls = {address, 16'b0};
+		// Instruction_ls = $signed(address)
+		
+		LD_rt = rt;
+		RT_rd = rd;
+	end
+end
+
 endmodule

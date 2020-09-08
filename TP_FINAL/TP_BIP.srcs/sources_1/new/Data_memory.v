@@ -1,32 +1,10 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 03/12/2019 01:19:05 PM
-// Design Name: 
-// Module Name: sinc_memory
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
 
 module Data_memory
 #(
-parameter RAM_WIDTH = 32,                  // Specify RAM data width
+parameter RAM_WIDTH = 32,   // Specify RAM data width
 parameter RAM_DEPTH = 2048,
-//parameter ADDR_NB = $clog2(RAM_DEPTH),                  // Specify RAM depth (number of entries) 
-parameter INIT_FILE = ""                       // Specify name/location of RAM initialization file if using one (leave blank if not)
-
+parameter INIT_FILE = ""    // Specify name/location of RAM initialization file if using one (leave blank if not)
 )
 (
 input Wr, Rd, clk, ena,
@@ -43,16 +21,6 @@ output [RAM_WIDTH-1:0] Out_Data
   //  retained, it is suggested to set WRITE_MODE to NO_CHANGE as it is more power efficient.
   //  If a reset or enable is not necessary, it may be tied off or removed from the code.
   //  Modify the parameters for the desired RAM characteristics.
-
-    
-  //reg [ADDR_NB-1:0] addra;  // Address bus, width determined from RAM_DEPTH
-  //reg [RAM_WIDTH-1:0] dina;           // RAM input data
-  //reg clka;                           // Clock
-  //reg wea;                            // Write enable
-  //reg ena;                            // RAM Enable, for additional power savings, disable port when not in use
-  //reg rsta;                           // Output reset (does not affect memory contents)
-  //reg regcea;                         // Output register enable
-  //wire [RAM_WIDTH-1:0] douta;                   // RAM output data
 
   reg [RAM_WIDTH-1:0] ram_name [RAM_DEPTH-1:0];
   reg [RAM_WIDTH-1:0] ram_data = {RAM_WIDTH{1'b0}};
@@ -80,6 +48,6 @@ output [RAM_WIDTH-1:0] Out_Data
       if (Wr) ram_name[Addr] <= In_Data;
     end
 
-assign Out_Data= ram_data;
+assign Out_Data = ram_data;
 
 endmodule
