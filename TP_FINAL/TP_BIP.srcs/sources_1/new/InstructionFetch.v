@@ -23,6 +23,7 @@ begin
 		addr <= pc + 1;
 end
 
+// Logica del bloque
 always @ (negedge clk, posedge reset)
 begin
 	if (reset)
@@ -35,6 +36,7 @@ begin
 		end
 end
 
+// Asignaciones de salida
 assign instruction = out_memory;
 assign PC = pc;
 

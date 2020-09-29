@@ -51,20 +51,16 @@ reg [31:0] InstructionAddress;
 reg signed [31:0] Instruction_ls;
 
 //Cables
-wire [8:0] outControl;
-
 wire [5:0] op;
 wire [4:0] rs;
 wire [4:0] rt;
 wire [4:0] rd;
 wire [5:0] funct;
 wire [15:0] address;
-
 wire [31:0] rs_reg;
 wire [31:0] rt_reg;
 wire [31:0] signExt; 
 wire [31:0] jump_address;
-
 
 // Asignaciones internas
 assign op = inInstruction[31-:6]; // [31:26]
@@ -73,6 +69,55 @@ assign rt = inInstruction[20-:5];
 assign rd = inInstruction[15-:5];
 assign funct = inInstruction[5:0];
 assign address = inInstruction[15 -: 16];
+
+// Instancia de "Control Unit"
+ControlUnit control_unit (
+	// TODO: verificar que funcione con las salidas asignando directamente WB, MEM y EXE
+	.inInstruction(op),
+	.outCtrlWB(WB),
+	.outCtrlMEM(MEM),
+	.outCtrlEXE(EXE)
+);
+
+// Instancia de "File Register"
+FileRegister file_register (
+	.clk(clk),
+	.rst(rst),
+	.inWrite(inRegF_wr),
+	.inWrite_addr(inRegF_wreg),
+	.inWrite_data(inRegF_wd),
+	.inRead_regA(rs),
+	.inRead_regB(rt),
+	.outRegA(outRegA), 
+	.outRegB(outRegB)
+);
+
+//Logica del Bloque
+always @(negedge clk, posedge rst)
+	begin
+		if (rst)
+			begin
+				WB = 2'b00;
+				MEM = 3'b010;
+				EXE = 4'b0;
+				InstructionAddress = 32'b0;
+				Instruction_ls = 32'b0;
+				LD_rt = 5'b0;
+				RT_rd = 5'b0;
+			end
+		else // Escritura de todos los registros de salida
+			begin
+				InstructionAddress = inInstructionAddress;
+				Instruction_ls = $signed(address)
+				LD_rt = rt;
+				RT_rd = rd;
+
+				// WB = outCtrlWB; // Esto ahora lo estamos asignando a la salida de ControlBlock
+				// MEM = outCtrlMEM;
+				// EXE = outCtrlEXE;
+				// Instruction_ls = {address, 16'b0};
+			end
+	end
 
 //Asignaciones de salida
 assign outWB = WB;
@@ -83,54 +128,5 @@ assign outInstruction_ls = Instruction_ls >>> 16;
 // (-45 antes del >>>) = 1111111111010011000000000000000 >>> (-45) = 11111111111111111111111111010011
 assign outLD_rt = LD_rt;
 assign outRT_rd = RT_rd;
-
-// Instancia de "Control Block"
-ControlBlock ctrl0 (
-	// TODO: verificar que funcione con las salidas asignando directamente WB, MEM y EXE
-	.inInstruction(op),
-	.outCtrlWB(WB),
-	.outCtrlMEM(MEM),
-	.outCtrlEXE(EXE)
-);
-
-// Instancia de "File Register"
-FileRegister regF0 (
-	.clk(clk),
-	.rst(rst),
-	.write(inRegF_wr),
-	.read_reg1(rs),
-	.read_reg2(rt),
-	.write_addr(inRegF_wreg),
-	.write_data(inRegF_wd),
-	.out_reg1(outRegA), 
-	.out_reg2(outRegB)
-);
-
-//Logica del Bloque
-always @(negedge clk, posedge rst)
-begin
-if (rst)
-	begin
-		WB = 2'b00;
-		MEM = 3'b010;
-		EXE = 4'b0;
-		InstructionAddress = 32'b0;
-		Instruction_ls = 32'b0;
-		LD_rt = 5'b0;
-		RT_rd = 5'b0;
-	end
-else // Escritura de todos los registros de salida
-	begin
-		// WB = outCtrlWB; // Esto ahora lo estamos asignando a la salida de ControlBlock
-		// MEM = outCtrlMEM;
-		// EXE = outCtrlEXE;
-		InstructionAddress = inInstructionAddress;
-		Instruction_ls = {address, 16'b0};
-		// Instruction_ls = $signed(address)
-		
-		LD_rt = rt;
-		RT_rd = rd;
-	end
-end
 
 endmodule
