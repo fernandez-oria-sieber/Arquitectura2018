@@ -1,72 +1,63 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 03/06/2019 01:28:25 AM
-// Design Name: 
-// Module Name: Memory
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-module Memory(
-    input Rd, Wr,
-    input [10:0] Addr,
-    input [15:0] In_Data,
-    output [15:0] Out_Data
+module Stage_Memory(input clk,
+                    input [4:0] inAddrRegDst,        // WB
+                    input [31:0] inPcToReg,          // WB
+                    input [31:0] inALUResult,        // Alu result
+                    input [31:0] inRtReg,            // Valor del reg rt
+                    input [0:1] is_WB,               // ControlUnit_WB [RegWrite, MemToReg]
+                    input isWritePc,                 // WB
+                    input isStopPipe,                // WB
+                    input isMemWrite,
+                    input isMemRead,
+                    input [2:0] isLoadStoreType,     // viene del control unit
+                    output [31:0] onOutputMem,
+                    output [31:0] onALUResult,
+                    output [4:0] onAddrRegDst,
+                    output [31:0] onPcToReg,
+                    output osWritePC,
+                    output [1:0] osWB,
+                    output osStopPipe,
+                    output [1023:0] outDataToDebug);
+    
+    wire [31:0] bus_store_memory;
+    wire [31:0] bus_load_memory;
+    //Ver  que onda con el flag zero y el MemRead (no se utiliza)
+    
+    // StoreInstuction u_store_instruction_type(
+    // .isLoadStoreType([1:0] isLoadStoreType),
+    // .inData_to_mem(inRtReg),
+    // .outStore(bus_store_memory)
+    // );
+    // LoadInstuction u_load_instruction_type(
+    // .isLoadStoreType(isLoadStoreType),
+    // .inMemData(bus_load_memory),
+    // .outLoad(onOutputMem)
+    // );
+    
+    Data_memory u_data_memory(
+    .clk(clk),
+    .inWrEnable(isMemWrite),
+    .inAddress(inALUResult),
+    .inData(bus_store_memory),
+    .outData(bus_load_memory)
     );
     
-reg[15:0] Output;
-reg [15:0] bloques[63:0];
-
-always @(*)
-    begin
-        case (Addr)
-            11'b0000: if(Wr) bloques[0] = In_Data;
-                      else Output = bloques[0];
-            11'b0001: if(Wr) bloques[1] = In_Data;
-                      else Output = bloques[1];
-            11'b0010: if(Wr) bloques[2] = In_Data;
-                      else Output = bloques[2];
-            11'b0011: if(Wr) bloques[3] = In_Data;
-                      else Output = bloques[3];
-            11'b0100: if(Wr) bloques[4] = In_Data;
-                      else Output = bloques[4];
-            11'b0101: if(Wr) bloques[5] = In_Data;
-                      else Output = bloques[5];
-            11'b0110: if(Wr) bloques[6] = In_Data;
-                      else Output = bloques[6];
-            11'b0111: if(Wr) bloques[7] = In_Data;
-                      else Output = bloques[7];  
-            11'b1000: if(Wr) bloques[8] = In_Data;
-                      else Output = bloques[8];
-            11'b1001: if(Wr) bloques[9] = In_Data;
-                      else Output = bloques[9];
-            11'b1010: if(Wr) bloques[10] = In_Data;
-                      else Output = bloques[10];
-            11'b1011: if(Wr) bloques[11] = In_Data;
-                      else Output = bloques[11];
-            11'b1100: if(Wr) bloques[12] = In_Data;
-                      else Output = bloques[12];
-            11'b1101: if(Wr) bloques[13] = In_Data;
-                      else Output = bloques[13];
-            11'b1110: if(Wr) bloques[14] = In_Data;
-                      else Output = bloques[14];
-            11'b1111: if(Wr) bloques[15] = In_Data;
-                      else Output = bloques[15];
-        endcase
-    end
-        
-assign Out_Data = Output;    
-        
+    SignExtensionMem u_sign_extension_memory(
+    .isLoadStoreType(isLoadStoreType),
+    .inDataToMem(inRtReg),
+    .inMemData(bus_load_memory),
+    .isMemWrite(isMemWrite);
+    .outStore(bus_store_memory),
+    .outLoad(onOutputMem),
+    )
+    
+    assign onALUResult           = inALUResult;
+    assign onAddrRegDst          = inAddrRegDst;
+    assign onPcToReg             = inPcToReg;
+    assign osWB                  = is_WB;
+    assign osWritePC             = isWritePc;
+    assign osStopPipe            = isStopPipe;
+    // assign os_RegWrite        = is_RegWrite;
+    // assign os_MemtoReg        = is_MemtoReg;
+    // assign os_select_addr_reg = is_select_addr_reg;
 endmodule

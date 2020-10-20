@@ -95,7 +95,8 @@ always @(*)
 					4'b???1: regB_ALU <= inInstruction_ls;
 					4'b???0: regB_ALU <= inRegB;
 					default: regB_ALU <= inRegB;
-                            //  regB_ALU <= inInstruction_ls; // probar esto como default, para nosotros tiene más sentido
+                            //  regB_ALU <= inInstruction_ls; 
+                            // probar esto como default, para nosotros tiene más sentido
 				endcase
 			end
 	end

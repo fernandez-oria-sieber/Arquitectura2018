@@ -5,3 +5,22 @@ Bitacora de los capitanes:
     - Se termino la etapa de Execute.
     - Proximo paso: Empezar etapa de Memory
     commited
+
+05/10/2020:
+    - Estuvimos viendo Stage Memory
+    - DataMemory, en principio vamos a utilizar la del BIP
+    - Falta ver Branch con ZeroFlag.
+    - Falta todo el Memory (Visto el 07/10)
+
+07/10/2020:
+    - Estuvimos viendo Memory, vamos utilizamos la de Diego, estamos realizando cambios.
+    - store_instruction_type y load_instruction_type guardan los datos depediendo del control unit (opcode[2:0] creo)
+        tenemos que implementarlo en nuestro codigo.
+
+19/10/2020:
+    - Integramos en uno el store_instruction_type y el load_instruction_type,
+        extienden el valor del registro dependiendo de si es Load o Store y si es por Byte, Unsigned Byte o Word
+    - Hicimos cambio en el DataMemory y en el Memory
+    - Next Step: Verificar Memory, DataMemory y SignExtensionMem que esten bien las variables
+    - Falta: No sabemos como utilizar el AluZero que viene de Execute
+    
