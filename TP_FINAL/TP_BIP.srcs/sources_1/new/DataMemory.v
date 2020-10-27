@@ -1,14 +1,14 @@
 `timescale 1ns / 1ps
 
-module Data_memory #(parameter RAM_WIDTH = 32,        // Specify RAM data width
-                     parameter RAM_DEPTH = 2048,
-                     parameter INIT_FILE = "")
-                    (input inWrEnable,
-                     clk,
-                     ena,
-                     input [RAM_WIDTH-1:0] inAddress,
-                     input [RAM_WIDTH-1:0] inData,
-                     output [RAM_WIDTH-1:0] outData);
+module DataMemory #(parameter RAM_WIDTH = 32,        // Specify RAM data width
+                    parameter RAM_DEPTH = 2048,
+                    parameter INIT_FILE = "")
+                   (input inWrEnable,
+                    clk,
+                    ena,
+                    input [RAM_WIDTH-1:0] inAddress,
+                    input [RAM_WIDTH-1:0] inData,
+                    output [RAM_WIDTH-1:0] outData);
     
     
     //  Xilinx Single Port Read First RAM

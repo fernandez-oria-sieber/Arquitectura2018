@@ -23,4 +23,10 @@ Bitacora de los capitanes:
     - Hicimos cambio en el DataMemory y en el Memory
     - Next Step: Verificar Memory, DataMemory y SignExtensionMem que esten bien las variables
     - Falta: No sabemos como utilizar el AluZero que viene de Execute
-    
+
+26/10/2020:
+    - Verificamos y realizamos la correcta implementación de:
+        * InstructionFetch
+        * InstructionDecode
+        * Execute (vimos la mitad)
+        TODO: Seguir con Execute y ver Memory
