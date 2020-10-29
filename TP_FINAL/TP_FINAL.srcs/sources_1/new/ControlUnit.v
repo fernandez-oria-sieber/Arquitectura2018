@@ -10,7 +10,7 @@ reg [8:0] ctrl;
 
 always @(*)
 begin
-    case(inInstruction)    // EXE_MEM_WB
+    case(inInstruction)     // EXE_MEM_WB
         6'b00_0000: ctrl = 9'b1100_000_10; // d'00 - RType
         6'b10_0011: ctrl = 9'b0001_010_11; // d'35 - Load Word [LW]
         6'b10_1011: ctrl = 9'bX001_001_0X; // d'43 - Store Word [SW]

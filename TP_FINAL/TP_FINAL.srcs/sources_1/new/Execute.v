@@ -39,18 +39,18 @@ module Execute(input clk,
     
     // Instancia de "ALU"
     ALU #(.bits(32)) alu0 (
-    .in_op(ALUControl),
-    .in_A(inRegA),
-    .in_B(ALU_B),
-    .zero(ALUZero),
-    .result(ALUResult)
+    .inOp(ALUControl),
+    .inRegA(inRegA),
+    .inRegB(ALU_B),
+    .outZero(ALUZero),
+    .outResult(ALUResult)
     );
     
     // Instancia de "ALUControl"
     ALUControl alu_control0 (
-    .in_ALUop(inEXE),
-    .in_func(inInstruction_ls[5:0]), // funct: selecciona la operación aritmética a realizar
-    .out_op(ALUControl)
+    .inALUOp(inEXE),
+    .inFunc(inInstruction_ls[5:0]), // funct: selecciona la operación aritmética a realizar
+    .outOp(ALUControl)
     );
     
     always @(negedge clk, posedge rst)
@@ -80,7 +80,9 @@ module Execute(input clk,
         end
         else
         begin
-            Jump <= ((inInstruction_ls << 2) + inInstructionAddress);
+            // Jump <= ((inInstruction_ls << 2) + inInstructionAddress);
+            // Le sacamos el << 2 porque nosotros vamos sumando de a 1 el PC
+            Jump <= inInstruction_ls + inInstructionAddress:
             casez(inEXE)
                 4'b0???: wreg <= inLD_rt;
                 4'b1???: wreg <= inRT_rd;
@@ -90,7 +92,7 @@ module Execute(input clk,
                 4'b???1: regB_ALU <= inInstruction_ls;
                 4'b???0: regB_ALU <= inRegB;
                 default: regB_ALU <= inRegB;
-                //  regB_ALU      <= inInstruction_ls;
+                // regB_ALU       <= inInstruction_ls;
                 // probar esto como default, para nosotros tiene más sentido
             endcase
         end

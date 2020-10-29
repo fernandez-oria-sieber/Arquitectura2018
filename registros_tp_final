@@ -30,3 +30,7 @@ Bitacora de los capitanes:
         * InstructionDecode
         * Execute (vimos la mitad)
         TODO: Seguir con Execute y ver Memory
+
+28/10/2020:
+    - Terminamos Execute.
+    - Memory: implementamos BEQ -> ALUZero y EXE[2]
