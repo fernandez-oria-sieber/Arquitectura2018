@@ -33,4 +33,9 @@ Bitacora de los capitanes:
 
 28/10/2020:
     - Terminamos Execute.
-    - Memory: implementamos BEQ -> ALUZero y EXE[2]
+    - Memory: implementamos BEQ (Branch on Equals) que utiliza ALUZero y EXE[2]
+
+3/11/2020:
+    - Memory: Falta "inFR_wd" que entra a WB
+    - WB: Empezamos a implementarlo
+    - TODO: terminar WB y memory. Empezar con ForwardingUnit y Tests Unitarios

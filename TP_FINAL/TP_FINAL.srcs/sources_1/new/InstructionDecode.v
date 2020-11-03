@@ -5,7 +5,7 @@ module InstructionDecode(input clk,
                          input [31:0] inInstructionAddress,   // direccion de la instrucción (PC) [IF]
                          input [31:0] inInstruction,          // valor del PC - instrucción [IF]
                          input isFRWr,                        // Flag de escritura en banco de registros [WB]
-                         input [4:0] inFRWrAddr,              // también desde MEM? Direccion de memoria en registro a escribir [WB]
+                         input [4:0] inFRWrAddr,              // Direccion de memoria en registro a escribir [WB]
                          input [31:0] inFRWrData,             // Data value a escribir [WB]
                          output [1:0] outWB,                  // Salida de la unidad de control
                          output [2:0] outMEM,                 // Salida de la unidad de control

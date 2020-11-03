@@ -88,7 +88,7 @@ module Execute(input clk,
                 4'b1???: wreg <= inRT_rd;
                 default: wreg <= inRT_rd;
             endcase
-            casez(inEXE)
+            casez(inEXE) // segundo mux - Falta el primer mux (implementando ForwardingUnit)
                 4'b???1: regB_ALU <= inInstruction_ls;
                 4'b???0: regB_ALU <= inRegB;
                 default: regB_ALU <= inRegB;
