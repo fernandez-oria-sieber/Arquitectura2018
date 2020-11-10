@@ -39,3 +39,8 @@ Bitacora de los capitanes:
     - Memory: Falta "inFR_wd" que entra a WB
     - WB: Empezamos a implementarlo
     - TODO: terminar WB y memory. Empezar con ForwardingUnit y Tests Unitarios
+
+9/11/2020:
+    - Terminamos la implementación de WB y Memory
+    - Terminamos modulo de ForwardingUnit
+    - TODO: Instanciar ForwardingUnit en Execute, Hazard Unit y Tests Unitarios.

@@ -14,7 +14,7 @@ module Execute(input clk,
                output outALUZero,
                output [1:0] outWB,
                output [2:0] outMEM,
-               output [4:0] outFRWrReg,
+               output [4:0] outFRWrReg,           // FR - Registro a escribir en ID
                output [31:0] outPCJump,
                output [31:0] outALUResult,
                output [31:0] outRegB,
@@ -57,11 +57,12 @@ module Execute(input clk,
     begin
         if (rst)
         begin
-            PCJump    <= 32'b0;
-            FRWrReg   <= 5'bZZZZZ;
-            ALUResult <= 32'b0;
-            ALUZero   <= 1'b0;
-            RegB      <= 32'b0;
+            PCJump     <= 32'b0;
+            FRWrReg    <= 5'b0;
+            ALUResult  <= 32'b0;
+            ALUZero    <= 1'b0;
+            RegB       <= 32'b0;
+            // FRWrReg <= 5'bZZZZZ; // FIXME
         end
         else
         begin
