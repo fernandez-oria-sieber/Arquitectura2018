@@ -1,10 +1,10 @@
 `timescale 1ns / 1ps
-module ForwardingUnit (input inEX_MEM_RegWrite,
-                       input [4 : 0] inEX_MEM_Rd,
-                       input [4 : 0] inID_EX_Rs,
-                       input [4 : 0] inID_EX_Rt,
-                       input inMEM_WB_RegWrite,
-                       input [4 : 0] inMEM_WB_Rd,
+module ForwardingUnit (input inMEM_RegWrite,
+                       input [4 : 0] inMEM_Rd,
+                       input [4 : 0] inRs,
+                       input [4 : 0] inRt,
+                       input inWB_RegWrite,
+                       input [4 : 0] inWB_Rd,
                        output [1 : 0] out_isMUX_A,
                        output [1 : 0] out_isMUX_B);
     
@@ -20,9 +20,9 @@ module ForwardingUnit (input inEX_MEM_RegWrite,
         end
         else
         begin
-            if (inEX_MEM_RegWrite && inEX_MEM_Rd ! = 5'b0 && inEX_MEM_Rd == inID_EX_Rs)
+            if (inMEM_RegWrite && inMEM_Rd ! = 5'b0 && inMEM_Rd == inRs)
                 isMUX_A = 2'b10;
-            else if (inMEM_WB_RegWrite && inMEM_WB_Rd ! = 5'b0 && inMEM_WB_Rd == inID_EX_Rs)
+            else if (inWB_RegWrite && inWB_Rd ! = 5'b0 && inWB_Rd == inRs)
                 isMUX_A = 2'b01;
             else
                 isMUX_A = 2'b00;
@@ -31,9 +31,9 @@ module ForwardingUnit (input inEX_MEM_RegWrite,
     
     always @(*)
     begin
-        if (inEX_MEM_RegWrite && inEX_MEM_Rd ! = 5'b0 && inEX_MEM_Rd == inID_EX_Rt)
+        if (inMEM_RegWrite && inMEM_Rd ! = 5'b0 && inMEM_Rd == inRt)
             isMUX_B = 2'b10;
-        else if (inMEM_WB_RegWrite && inMEM_WB_Rd ! = 5'b0 && inMEM_WB_Rd == inID_EX_Rt)
+        else if (inWB_RegWrite && inWB_Rd ! = 5'b0 && inWB_Rd == inRt)
             isMUX_B = 2'b01;
         else
             isMUX_B = 2'b00;

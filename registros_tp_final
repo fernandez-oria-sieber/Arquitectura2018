@@ -44,3 +44,7 @@ Bitacora de los capitanes:
     - Terminamos la implementación de WB y Memory
     - Terminamos modulo de ForwardingUnit
     - TODO: Instanciar ForwardingUnit en Execute, Hazard Unit y Tests Unitarios.
+
+11/11/2020:
+    - Terminamos de integrar ForwardingUnit en Execute.
+    - Queda HazardUnit y Unit tests.
