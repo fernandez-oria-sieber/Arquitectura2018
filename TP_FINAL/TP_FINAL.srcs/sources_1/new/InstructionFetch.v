@@ -3,6 +3,7 @@
 module InstructionFetch(input clk,
                         input reset,
                         input isPCSel,                // Selector del MUX que viene de una AND en la etapa MEM, entre Branch y Zero
+                        input isPCWrite,              // Selector que viene desde el Hazard Unit
                         input [31:0] inPCJump,        // Salida del sumador en la etapa EX
                         output [31:0] outInstruction, //
                         output [31:0] outPC);
@@ -25,10 +26,7 @@ module InstructionFetch(input clk,
         if (reset)
             pc <= 32'd0;
         else
-        begin
-            if (isPCSel) pc <= inPCJump;
-            else pc         <= pc + 1;
-        end
+            if (isPCWrite) pc <= (isPCSel) ? inPCJump : pc + 1;
     end
     
     // // MUX + ALU(ADD)

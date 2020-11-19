@@ -48,3 +48,7 @@ Bitacora de los capitanes:
 11/11/2020:
     - Terminamos de integrar ForwardingUnit en Execute.
     - Queda HazardUnit y Unit tests.
+
+18/11/2020:
+    - Terminamos HazardUnit y lo integramos a ID, conectando con EX y IF.
+    - TODO: Ver como realizar los Unit Test y TopLevel (MIPS, acá irian los Latchs)

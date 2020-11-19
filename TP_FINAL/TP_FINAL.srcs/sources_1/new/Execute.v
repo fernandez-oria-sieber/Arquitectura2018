@@ -2,8 +2,8 @@
 
 module Execute(input clk,
                input rst,
-               input inMEM_RegWrite, // flag de control que viene de MEM y determina si se va a escribir un registro 
-               input inWB_RegWrite, // flag de control que viene de WB y determina si se va a escribir un registro 
+               input inMEM_RegWrite,              // flag de control que viene de MEM y determina si se va a escribir un registro
+               input inWB_RegWrite,               // flag de control que viene de WB y determina si se va a escribir un registro
                input [1:0] inWB,
                input [2:0] inMEM,
                input [3:0] inEXE,
@@ -11,7 +11,7 @@ module Execute(input clk,
                input [4:0] inFUnit_rs,
                input [4:0] inRT_rd,
                input [4:0] inMEM_rd,
-               input [4:0] inWB_rd, 
+               input [4:0] inWB_rd,
                input [31:0] inInstructionAddress, // PC
                input [31:0] inRegA,
                input [31:0] inRegB,
@@ -20,7 +20,8 @@ module Execute(input clk,
                input [31:0] inWB_FRWrData,
                output outALUZero,
                output [1:0] outWB,
-               output [2:0] outMEM,
+               output [2:0] outMEM,               // Esto va a EX/MEM y el MEM[1] al Hazard Unit
+               output [4:0] outEX_Rt,             // Reg Rt de LD que se utiliza en Hazard Unit
                output [4:0] outFRWrReg,           // FR - Registro a escribir en ID
                output [31:0] outPCJump,
                output [31:0] outALUResult,
@@ -36,10 +37,10 @@ module Execute(input clk,
     reg [31:0] ALUResult;
     reg [31:0] RegB;
     reg [31:0] regB_ALU;
-
+    
     reg [1:0] isMuxA;
     reg [1:0] isMuxB;
-
+    
     
     // Cables
     wire [3:0] ALUControl;
@@ -59,17 +60,17 @@ module Execute(input clk,
     .inFunc(inInstruction_ls[5:0]), // funct: selecciona la operación aritmética a realizar
     .outOp(ALUControl)
     );
-
+    
     // Instancia de "ForwardingUnit"
     ForwardingUnit forwardingUnit0 (
-        .inMEM_RegWrite(inMEM_RegWrite),
-        .inMEM_Rd(inMEM_rd),
-        .inRs(inFUnit_rs),
-        .inRt(inLD_rt),
-        .inWB_RegWrite(inWB_RegWrite),
-        .inWB_Rd(inWB_rd),
-        .out_isMUX_A(isMuxA),
-        .out_isMUX_B(isMuxB)
+    .inMEM_RegWrite(inMEM_RegWrite),
+    .inMEM_Rd(inMEM_rd),
+    .inRs(inFUnit_rs),
+    .inRt(inLD_rt),
+    .inWB_RegWrite(inWB_RegWrite),
+    .inWB_Rd(inWB_rd),
+    .out_isMUX_A(isMuxA),
+    .out_isMUX_B(isMuxB)
     )
     
     always @(negedge clk, posedge rst)
@@ -107,7 +108,7 @@ module Execute(input clk,
         endcase
         
     end
-
+    
     always @(*)
     begin
         if (rst)
@@ -138,6 +139,7 @@ module Execute(input clk,
     // Asignaciones de salida
     assign outWB        = inWB;
     assign outMEM       = inMEM;
+    assign outEX_Rt     = inLD_rt;
     assign outPCJump    = PCJump;
     assign outFRWrReg   = FRWrReg;
     assign outALUResult = ALUResult;
