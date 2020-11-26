@@ -39,7 +39,7 @@ module InstructionFetch(input clk,
     // end
     
     // Asignaciones de salida
-    assign outInstuction = memory_value;
-    assign outPC         = pc;
+    assign outInstruction = memory_value;
+    assign outPC          = pc;
     
 endmodule

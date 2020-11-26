@@ -2,27 +2,29 @@
 
 module Execute(input clk,
                input rst,
-               input inMEM_RegWrite,              // flag de control que viene de MEM y determina si se va a escribir un registro
-               input inWB_RegWrite,               // flag de control que viene de WB y determina si se va a escribir un registro
+               input inMEM_RegWrite,          // flag de control que viene de MEM y determina si se va a escribir un registro
+               input inWB_RegWrite,           // flag de control que viene de WB y determina si se va a escribir un registro
                input [1:0] inWB,
                input [2:0] inMEM,
                input [3:0] inEXE,
+               input [2:0] isLoadStoreType,
                input [4:0] inLD_rt,
-               input [4:0] inFUnit_rs,
                input [4:0] inRT_rd,
+               input [4:0] inFUnit_rs,
                input [4:0] inMEM_rd,
                input [4:0] inWB_rd,
-               input [31:0] inInstructionAddress, // PC
+               input [31:0] inPC,             // PC
                input [31:0] inRegA,
                input [31:0] inRegB,
-               input [31:0] inInstruction_ls,     // entrada con extension de signo de Intruction[15:0]
+               input [31:0] inInstruction_ls, // entrada con extension de signo de Intruction[15:0]
                input [31:0] inMEM_ALUResult,
                input [31:0] inWB_FRWrData,
                output outALUZero,
                output [1:0] outWB,
-               output [2:0] outMEM,               // Esto va a EX/MEM y el MEM[1] al Hazard Unit
-               output [4:0] outEX_Rt,             // Reg Rt de LD que se utiliza en Hazard Unit
-               output [4:0] outFRWrReg,           // FR - Registro a escribir en ID
+               output [2:0] outMEM,           // Esto va a EX/MEM y el MEM[1] al Hazard Unit
+               output [2:0] outLoadStoreType, // op[2:0] se utiliza en SignExtensionMemory de MEM
+               output [4:0] outEX_Rt,         // Reg Rt de LD que se utiliza en Hazard Unit
+               output [4:0] outFRWrReg,       // FR - Registro a escribir en ID
                output [31:0] outPCJump,
                output [31:0] outALUResult,
                output [31:0] outRegB,
@@ -118,9 +120,9 @@ module Execute(input clk,
         end
         else
         begin
-            // Jump <= ((inInstruction_ls << 2) + inInstructionAddress);
+            // Jump <= ((inInstruction_ls << 2) + inPC);
             // Le sacamos el << 2 porque nosotros vamos sumando de a 1 el PC
-            Jump <= inInstruction_ls + inInstructionAddress:
+            Jump <= inInstruction_ls + inPC:
             casez(inEXE)
                 4'b0???: wreg <= inLD_rt;
                 4'b1???: wreg <= inRT_rd;
@@ -137,13 +139,14 @@ module Execute(input clk,
     end
     
     // Asignaciones de salida
-    assign outWB        = inWB;
-    assign outMEM       = inMEM;
-    assign outEX_Rt     = inLD_rt;
-    assign outPCJump    = PCJump;
-    assign outFRWrReg   = FRWrReg;
-    assign outALUResult = ALUResult;
-    assign outALUZero   = ALUZero;
-    assign outRegB      = RegB;
+    assign outWB            = inWB;
+    assign outMEM           = inMEM;
+    assign outEX_Rt         = inLD_rt;
+    assign outPCJump        = PCJump;
+    assign outFRWrReg       = FRWrReg;
+    assign outALUResult     = ALUResult;
+    assign outALUZero       = ALUZero;
+    assign outRegB          = RegB;
+    assign outLoadStoreType = isLoadStoreType;
     
 endmodule

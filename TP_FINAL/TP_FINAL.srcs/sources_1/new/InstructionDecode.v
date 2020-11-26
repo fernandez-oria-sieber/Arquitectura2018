@@ -2,34 +2,36 @@
 
 module InstructionDecode(input clk,
                          input rst,
-                         input isFRWr,                        // Flag de escritura en banco de registros [WB]
-                         input isEX_MemRead,                  // Flag MemRead [EX]
-                         input [4:0] inFRWrAddr,              // Direccion de memoria en registro a escribir [WB]
-                         input [4:0] inEX_Rt,                 // Reg Rt de LD que se utiliza en Hazard Unit [EX]
-                         input [31:0] inInstructionAddress,   // direccion de la instrucción (PC) [IF]
-                         input [31:0] inInstruction,          // valor del PC - instrucción [IF]
-                         input [31:0] inFRWrData,             // Data value a escribir [WB]
-                         output out_isPCWrite,                // Salida del HazardUnit [IF]
-                         output out_isWrite_IF_ID,            // Salida del HazardUnit [IF/ID]
-                         output [1:0] outWB,                  // Salida de la unidad de control
-                         output [2:0] outMEM,                 // Salida de la unidad de control
-                         output [3:0] outEXE,                 // Salida de la unidad de control
-                         output [4:0] outLD_rt,               // Registros rt (inInstruction[20:16])
-                         output [4:0] outRT_rd,               // Registros rd (inInstruction[15:11])
-                         output [4:0] outFUnit_rs,            // Registros rs (inInstruction[25:21])
-                         output [31:0] outInstructionAddress, // Program Counter
-                         output [31:0] outRegA,               // Salida A del Banco de registros
-                         output [31:0] outRegB,               // Salida B del Banco de registros
-                         output [31:0] outInstruction_ls);    // Salida con extensión de signo para ¿solo I-Types?
+                         input isFRWr,                     // Flag de escritura en banco de registros [WB]
+                         input isEX_MemRead,               // Flag MemRead [EX]
+                         input [4:0] inFRWrAddr,           // Direccion de memoria en registro a escribir [WB]
+                         input [4:0] inEX_Rt,              // Reg Rt de LD que se utiliza en Hazard Unit [EX]
+                         input [31:0] inPC,                // direccion de la instrucción (PC) [IF]
+                         input [31:0] inInstruction,       // valor del PC - instrucción [IF]
+                         input [31:0] inFRWrData,          // Data value a escribir [WB]
+                         output out_isPCWrite,             // Salida del HazardUnit [IF]
+                         output out_isWrite_IF_ID,         // Salida del HazardUnit [IF/ID]
+                         output [1:0] outWB,               // Salida de la unidad de control
+                         output [2:0] outMEM,              // Salida de la unidad de control
+                         output [3:0] outEXE,              // Salida de la unidad de control
+                         output [2:0] outLoadStoreType,    // op[2:0] se utiliza en SignExtensionMemory de MEM
+                         output [4:0] outLD_rt,            // Registros rt (inInstruction[20:16])
+                         output [4:0] outRT_rd,            // Registros rd (inInstruction[15:11])
+                         output [4:0] outFUnit_rs,         // Registros rs (inInstruction[25:21])
+                         output [31:0] outPC,              // Program Counter
+                         output [31:0] outRegA,            // Salida A del Banco de registros
+                         output [31:0] outRegB,            // Salida B del Banco de registros
+                         output [31:0] outInstruction_ls); // Salida con extensión de signo para ¿solo I-Types?
     
     // Registros
     reg [1:0] WB;
     reg [2:0] MEM;
     reg [3:0] EXE;
+    reg [2:0] load_store_type;
     reg [4:0] LD_rt; // Para las instruccion Load - Load Doubleword[LD] rt, offset(base)
     reg [4:0] RT_rd; // Para los RType - Registro rd
     reg [4:0] FUnit_rs;
-    reg [31:0] InstructionAddress;
+    reg [31:0] PC;
     reg signed [31:0] Instruction_ls;
     
     // Cables
@@ -39,6 +41,7 @@ module InstructionDecode(input clk,
     wire [4:0] rd;
     wire [5:0] funct;
     wire [15:0] address;
+    
     
     // Asignaciones internas
     assign op      = inInstruction[31-:6]; // [31:26]
@@ -86,22 +89,24 @@ module InstructionDecode(input clk,
     begin
         if (rst)
         begin
-            WB                 = 2'b00;
-            MEM                = 3'b010;
-            EXE                = 4'b0;
-            InstructionAddress = 32'b0;
-            Instruction_ls     = 32'b0;
-            LD_rt              = 5'b0;
-            RT_rd              = 5'b0;
-            FUnit_rs           = 5'b0;
+            WB              = 2'b00;
+            MEM             = 3'b010;
+            EXE             = 4'b0;
+            PC              = 32'b0;
+            Instruction_ls  = 32'b0;
+            LD_rt           = 5'b0;
+            RT_rd           = 5'b0;
+            FUnit_rs        = 5'b0;
+            load_store_type = 3'b0;
         end
         else // Escritura de todos los registros de salida
         begin
-            InstructionAddress = inInstructionAddress;
+            PC = inPC;
             Instruction_ls = $signed(address)
-            LD_rt    = rt;
-            RT_rd    = rd;
-            FUnit_rs = rs;
+            LD_rt           = rt;
+            RT_rd           = rd;
+            FUnit_rs        = rs;
+            load_store_type = op[2:0];
             
             // WB             = outCtrlWB; // Esto ahora lo estamos asignando a la salida de ControlBlock
             // MEM            = outCtrlMEM;
@@ -111,13 +116,14 @@ module InstructionDecode(input clk,
     end
     
     //Asignaciones de salida
-    assign outWB                 = WB;
-    assign outMEM                = MEM;
-    assign outEXE                = EXE;
-    assign outLD_rt              = LD_rt;
-    assign outRT_rd              = RT_rd;
-    assign outFunit_rs           = FUnit_rs;
-    assign outInstructionAddress = InstructionAddress;
-    assign outInstruction_ls     = Instruction_ls >>> 16; // (-45 antes del >>>)     = 1111111111010011000000000000000 >>> (-45)     = 11111111111111111111111111010011
+    assign outWB             = WB;
+    assign outMEM            = MEM;
+    assign outEXE            = EXE;
+    assign outLD_rt          = LD_rt;
+    assign outRT_rd          = RT_rd;
+    assign outFunit_rs       = FUnit_rs;
+    assign outPC             = PC;
+    assign outInstruction_ls = Instruction_ls >>> 16; // (-45 antes del >>>) = 1111111111010011000000000000000 >>> (-45) = 11111111111111111111111111010011
+    assign outLoadStoreType  = load_store_type;
     
 endmodule

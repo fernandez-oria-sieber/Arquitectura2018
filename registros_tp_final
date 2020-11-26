@@ -52,3 +52,6 @@ Bitacora de los capitanes:
 18/11/2020:
     - Terminamos HazardUnit y lo integramos a ID, conectando con EX y IF.
     - TODO: Ver como realizar los Unit Test y TopLevel (MIPS, acá irian los Latchs)
+
+25/11/2020:
+    - Empezamos con la implementación del TopLevel de MIPS e hicimos algunos cambios necesarios en los modulos de los Stages

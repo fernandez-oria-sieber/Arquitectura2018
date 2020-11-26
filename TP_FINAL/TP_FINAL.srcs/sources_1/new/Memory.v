@@ -1,23 +1,22 @@
 `timescale 1ns / 1ps
 module Memory(input clk,
               input rst,
-              input isALUZero,                 // Si es 0, entonces BEQ hace el Branch
-              input isMemWrite,                // MEM[0]?
-              input isMemRead,                 // MEM[1]?
-              input isBranch,                  // MEM[2]
-              input [2:0] isLoadStoreType,     // viene del control unit
-              input [1:0] inWB,                // ControlUnit_WB [RegWrite, MemToReg]
-              input [4:0] inFRWrReg,           // FR - Registro a escribir en ID [EX]
-              input [31:0] inALUResult,        // Alu result
-              input [31:0] inRtReg,            // Valor del reg rt
+              input isALUZero,             // Si es 0, entonces BEQ hace el Branch
+              input isMemWrite,            // MEM[0]?
+              input isMemRead,             // MEM[1]?
+              input isBranch,              // MEM[2]
+              input [1:0] inWB,            // ControlUnit_WB [RegWrite, MemToReg]
+              input [2:0] isLoadStoreType, // Viene de ID -> op[2:0]
+              input [4:0] inFRWrReg,       // FR - Registro a escribir en ID [EX]
+              input [31:0] inALUResult,    // Alu result
+              input [31:0] inRtReg,        // Valor del reg rt
               input [31:0] inPCJump,
-              output osPC,                     // hacia IF [outPCSel]
-              output [1:0] osWB,
-              output [31:0] outMem,            // Salida del data_memory para un Load
-              output [31:0] outALUResult,      // Va hacia Forwarding Unit? y hacia WB
-              output [31:0] outPCJump,         // hacia IF
-              output [4:0] outFRWrReg,         // FR - Registro a escribir en ID [EX]
-              output [1023:0] outDataToDebug);
+              output osPC,                 // hacia IF [outPCSel]
+              output [1:0] outWB,
+              output [4:0] outFRWrReg,     // FR - Registro a escribir en ID [EX]
+              output [31:0] outMem,        // Salida del data_memory para un Load
+              output [31:0] outALUResult,  // Va hacia Forwarding Unit? y hacia WB
+              output [31:0] outPCJump);    // hacia IF
     
     // Registros
     reg [4:0] FRWrReg;
@@ -63,5 +62,5 @@ module Memory(input clk,
     assign outPCJump    = inPCJump;
     assign outFRWrReg   = FRWrReg;
     assign osPC         = PCSelect;
-    assign osWB         = inWB;
+    assign outWB        = inWB;
 endmodule
