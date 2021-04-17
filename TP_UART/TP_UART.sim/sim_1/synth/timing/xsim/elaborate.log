@@ -1,0 +1,11 @@
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /home/Xilinx/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto a87186fc4e034a1392b170a9571dd125 --incr --debug typical --relax --mt 8 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot allTest_time_synth -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.allTest xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-2063] Module <Data_memory> not found while processing module instance <Data_memory> [/home/vlad/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:32]
+ERROR: [VRFC 10-2063] Module <Program_memory> not found while processing module instance <Program_memory> [/home/vlad/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:33]
+ERROR: [VRFC 10-2063] Module <CPU> not found while processing module instance <bip> [/home/vlad/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:34]
+ERROR: [VRFC 10-2063] Module <Rx_interface> not found while processing module instance <int_rx> [/home/vlad/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:36]
+ERROR: [VRFC 10-2063] Module <Tx_interface> not found while processing module instance <int_tx> [/home/vlad/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:38]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.

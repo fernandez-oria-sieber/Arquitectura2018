@@ -23,11 +23,9 @@ module tx_interface
 	
 	// signal declaration
 	reg rd_aux, tx_start_aux, zflag;
-	reg [2:0] state_reg;
-	reg signed [7:0] aux;
+	reg [2:0] state_reg, i;
+	reg signed [7:0] aux, div;
 	reg [7:0] dig, salida;
-	reg [6:0] div,i; //puede ser integer también, pero así no da warning
-	reg el_lucho_tristisimo;
 	// body
 	// FSMD next-state logic
 	always @(posedge clk , posedge reset)
@@ -47,6 +45,7 @@ module tx_interface
                             aux = leds;
                             if (aux<0) state_reg=negative;
                             div = 100;
+                            dig = 0;
                             rd_aux = 1'b0; // Seteo en 0 para que rx_interface no vuelva a tomar datos
                         end
                     negative :
@@ -62,10 +61,25 @@ module tx_interface
                         end
                     operate :
                         begin
-                            dig = aux / div;    // divido para obtener el digito a transmitir (ej, 123/100 - obtengo 1 en it. 1)
-                            div = div / 10;     // Divido por 10 para en la sig iteración obtener el sig digito (100/10=10)
-                            if(dig || zflag == 1) state_reg = transmit; // Entro si dig != 0 ó zflag = 1 si ya transmiti un valor y tengo que mandar un 0
-                            salida = dig+48; // Sumo 48 al digito enviado para transmitir en ascii
+                            if ((aux-div)>=0)
+                                begin
+                                    aux <= aux - div;
+                                    dig <= dig + 1;
+                                end
+                            else
+                                begin
+                                    if (dig || zflag)
+                                        begin
+                                            state_reg = transmit;
+                                            div = div / 10;  // Divido por 10 para en la sig iteración obtener el sig digito (100/10=10)
+                                            salida = dig+48; // Sumo 48 al digito enviado para transmitir en ascii
+                                        end
+                                    else div = div / 10;
+                                end
+                            //dig = aux / div;    // divido para obtener el digito a transmitir (ej, 123/100 - obtengo 1 en it. 1)
+                            //div = div / 10;     // Divido por 10 para en la sig iteración obtener el sig digito (100/10=10)
+                            //if(dig || zflag == 1) state_reg = transmit; // Entro si dig != 0 ó zflag = 1 si ya transmiti un valor y tengo que mandar un 0
+                            //salida = dig+48; // Sumo 48 al digito enviado para transmitir en ascii
                         end
                     transmit :
                        begin
@@ -75,6 +89,7 @@ module tx_interface
                                 zflag= 1'b1;
                                 state_reg = operate ;
                                 tx_start_aux = 1'b0;
+                                dig = 0;
                                 if (div == 0) // Resetamos todos los parametros y le decimos a rx_int que puede volver a recibir
                                     begin
                                         rd_aux = 1'b1; // rx_int puede recibir
@@ -82,10 +97,8 @@ module tx_interface
                                         state_reg = transmit_reset;
                                         salida = 0;
                                         tx_start_aux = 1'b0;
-                                        dig = 0;
                                         aux = 0;
                                     end
-                                else aux = aux % (div*10);
                             end
                         end 
                     transmit_reset :

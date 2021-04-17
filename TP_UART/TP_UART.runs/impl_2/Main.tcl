@@ -65,18 +65,17 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a35tcpg236-1
   set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.cache/wt [current_project]
-  set_property parent.project_path /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.xpr [current_project]
-  set_property ip_output_repo /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.cache/ip [current_project]
+  set_property webtalk.parent_dir /home/vlad/Arquitectura2018/TP_UART/TP_UART.cache/wt [current_project]
+  set_property parent.project_path /home/vlad/Arquitectura2018/TP_UART/TP_UART.xpr [current_project]
+  set_property ip_output_repo /home/vlad/Arquitectura2018/TP_UART/TP_UART.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.runs/synth_1/Main.dcp
-  read_xdc /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc
-  read_xdc /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/Arquitectura2018/basys3_constraint.xdc
+  add_files -quiet /home/vlad/Arquitectura2018/TP_UART/TP_UART.runs/synth_1/Main.dcp
+  read_xdc /home/vlad/Arquitectura2018/TP_UART/TP_UART.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc
+  read_xdc /home/vlad/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/Arquitectura2018/basys3_constraint.xdc
   link_design -top Main -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb
 } RESULT]
@@ -149,24 +148,6 @@ if {$rc} {
   return -code error $RESULT
 } else {
   end_step route_design
-  unset ACTIVE_STEP 
-}
-
-start_step write_bitstream
-set ACTIVE_STEP write_bitstream
-set rc [catch {
-  create_msg_db write_bitstream.pb
-  catch { write_mem_info -force Main.mmi }
-  write_bitstream -force Main.bit 
-  catch {write_debug_probes -quiet -force Main}
-  catch {file copy -force Main.ltx debug_nets.ltx}
-  close_msg_db -file write_bitstream.pb
-} RESULT]
-if {$rc} {
-  step_failed write_bitstream
-  return -code error $RESULT
-} else {
-  end_step write_bitstream
   unset ACTIVE_STEP 
 }
 

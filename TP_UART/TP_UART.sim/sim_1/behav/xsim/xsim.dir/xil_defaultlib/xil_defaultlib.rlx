@@ -2,8 +2,15 @@
 2018.2
 Jun 14 2018
 20:07:38
-/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim/glbl.v,1529022455,verilog,,,,glbl,,,,,,,,
-/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v,1551304643,verilog,,,,allTest,,,,,,,,
-/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/ALU.v,1551286117,verilog,,/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/rx_interface.v,,ALU,,,,,,,,
-/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/rx_interface.v,1551286117,verilog,,/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_interface.v,,rx_interface,,,,,,,,
-/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_interface.v,1551296730,verilog,,/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v,,tx_interface,,,,,,,,
+/home/vlad/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim/glbl.v,1553528141,verilog,,,,glbl,,,,,,,,
+/home/vlad/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/Test_Top.v,1553528141,verilog,,,,Test_Top,,,,,,,,
+/home/vlad/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v,1553528141,verilog,,,,allTest,,,,,,,,
+/home/vlad/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/sim.v,1553528141,verilog,,,,interfaceTest,,,,,,,,
+/home/vlad/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/sim_tx.v,1615942101,verilog,,,,interfaceTestTx,,,,,,,,
+/home/vlad/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/ALU.v,1553528141,verilog,,/home/vlad/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/Main.v,,ALU,,,,,,,,
+/home/vlad/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/Main.v,1553528141,verilog,,/home/vlad/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/br_generator.v,,Main,,,,,,,,
+/home/vlad/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/br_generator.v,1553528141,verilog,,/home/vlad/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/rx_interface.v,,br_generator,,,,,,,,
+/home/vlad/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/rx_interface.v,1553528141,verilog,,/home/vlad/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/sim.v,,rx_interface,,,,,,,,
+/home/vlad/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/rx_module.v,1553528141,verilog,,/home/vlad/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_interface.v,,rx_module,,,,,,,,
+/home/vlad/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_interface.v,1615942086,verilog,,/home/vlad/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/sim_tx.v,,tx_interface,,,,,,,,
+/home/vlad/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_module.v,1553528141,verilog,,/home/vlad/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/Test_Top.v,,tx_module,,,,,,,,

@@ -2,9 +2,8 @@
 
 module interfaceTestTx;
 
-    wire signed[7:0] a, b, d_in; 
-	reg [7:0] dout, leds;
-	wire [5:0] op;
+    wire signed[7:0] d_in; 
+	reg [7:0] leds;
 	reg wr, s_tick, rx_done_tick, tx_done_tick, tx_full, clk, reset, rx_empty;
     wire tx_start, rd;
     
@@ -19,7 +18,7 @@ module interfaceTestTx;
             clk = 0;
             reset = 1;
             tx_done_tick = 0;
-            leds = 213;
+            leds = 127;
             rx_empty = 0;
             #20 reset = 0;          //#20
             

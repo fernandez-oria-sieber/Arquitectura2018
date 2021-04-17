@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date         : Mon Mar 11 16:41:42 2019
-| Host         : lenovo running 64-bit Manjaro Linux
+| Date         : Fri Mar 19 09:47:50 2021
+| Host         : vlad-putin running 64-bit Arch Linux
 | Command      : report_control_sets -verbose -file Main_control_sets_placed.rpt
 | Design       : Main
 | Device       : xc7a35t
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    14 |
-| Unused register locations in slices containing registers |    22 |
+| Number of unique control sets                            |    15 |
+| Unused register locations in slices containing registers |    20 |
 +----------------------------------------------------------+-------+
 
 
@@ -35,9 +35,9 @@ Table of Contents
 | Fanout | Control Sets |
 +--------+--------------+
 |      8 |            2 |
-|     10 |            1 |
-|     14 |            2 |
-|    16+ |            9 |
+|     10 |            2 |
+|     14 |            1 |
+|    16+ |           10 |
 +--------+--------------+
 
 
@@ -48,10 +48,10 @@ Table of Contents
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | No           | No                    | No                     |              16 |            6 |
-| No           | No                    | Yes                    |              34 |           11 |
-| No           | Yes                   | No                     |              14 |            3 |
-| Yes          | No                    | No                     |              32 |           14 |
-| Yes          | No                    | Yes                    |             146 |           33 |
+| No           | No                    | Yes                    |              40 |           12 |
+| No           | Yes                   | No                     |              14 |            2 |
+| Yes          | No                    | No                     |              58 |           15 |
+| Yes          | No                    | Yes                    |             132 |           27 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -62,20 +62,21 @@ Table of Contents
 +----------------+----------------------------+------------------------+------------------+----------------+
 |  Clock Signal  |        Enable Signal       |    Set/Reset Signal    | Slice Load Count | Bel Load Count |
 +----------------+----------------------------+------------------------+------------------+----------------+
-|  clk_IBUF_BUFG | rx_mod/s_next              | reset_IBUF             |                4 |              8 |
 |  clk_IBUF_BUFG | tx_mod/s_next              | reset_IBUF             |                2 |              8 |
-|  clk_IBUF_BUFG | int_rx/op                  | reset_IBUF             |                3 |             10 |
-|  clk_IBUF_BUFG |                            | br_g/ciclos[7]_i_1_n_0 |                3 |             14 |
-|  clk_IBUF_BUFG | int_tx/i[6]_i_1_n_0        | reset_IBUF             |                4 |             14 |
+|  clk_IBUF_BUFG | rx_mod/s_next              | reset_IBUF             |                2 |              8 |
+|  clk_IBUF_BUFG | int_tx/div                 |                        |                3 |             10 |
+|  clk_IBUF_BUFG | rx_mod/op_reg[5][0]        | reset_IBUF             |                2 |             10 |
+|  clk_IBUF_BUFG |                            | br_g/ciclos[7]_i_1_n_0 |                2 |             14 |
 |  clk_IBUF_BUFG |                            |                        |                6 |             16 |
-|  clk_IBUF_BUFG | rx_mod/second_op_reg[7][0] | reset_IBUF             |                3 |             16 |
-|  clk_IBUF_BUFG | rx_mod/b_next              | reset_IBUF             |                2 |             16 |
-|  clk_IBUF_BUFG | rx_mod/E[0]                | reset_IBUF             |                4 |             16 |
-|  clk_IBUF_BUFG | int_tx/salida[7]_i_1_n_0   |                        |                6 |             16 |
-|  clk_IBUF_BUFG | int_tx/aux[7]_i_1__0_n_0   |                        |                8 |             16 |
-|  clk_IBUF_BUFG | tx_mod/b_next_0            | reset_IBUF             |                3 |             16 |
-|  clk_IBUF_BUFG |                            | reset_IBUF             |               11 |             34 |
-|  clk_IBUF_BUFG | int_rx/aux2_0              | reset_IBUF             |                8 |             42 |
+|  clk_IBUF_BUFG | rx_mod/second_op_reg[7][0] | reset_IBUF             |                2 |             16 |
+|  clk_IBUF_BUFG | int_rx/first_op            | reset_IBUF             |                4 |             16 |
+|  clk_IBUF_BUFG | rx_mod/b_next              | reset_IBUF             |                3 |             16 |
+|  clk_IBUF_BUFG | int_tx/aux[7]_P_i_1_n_0    |                        |                4 |             16 |
+|  clk_IBUF_BUFG | int_tx/dig[7]_i_1_n_0      |                        |                3 |             16 |
+|  clk_IBUF_BUFG | int_tx/salida[7]_i_1_n_0   |                        |                5 |             16 |
+|  clk_IBUF_BUFG | tx_mod/b_next              | reset_IBUF             |                3 |             16 |
+|  clk_IBUF_BUFG |                            | reset_IBUF             |               12 |             40 |
+|  clk_IBUF_BUFG | rx_mod/E[0]                | reset_IBUF             |                9 |             42 |
 +----------------+----------------------------+------------------------+------------------+----------------+
 
 
