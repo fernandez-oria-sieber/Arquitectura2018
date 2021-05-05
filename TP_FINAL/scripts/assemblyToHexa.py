@@ -30,23 +30,23 @@ def format(l):
         "SLT"   : f'000000_00000_{format_value(l[2])}_{format_value(l[3])}_{format_value(l[1])}_101010',
 
         # I-Type
-        "LB"    : f'100000_{format_value(l[3])}{format_value(l[1])}{format_value(l[2])}',    # LB rt, offset(base)
-        "LH"    : f'100001_{format_value(l[3])}{format_value(l[1])}{format_value(l[2])}',
-        "LW"    : f'100011_{format_value(l[3])}{format_value(l[1])}{format_value(l[2])}',
-        "LWU"   : f'100111_{format_value(l[3])}{format_value(l[1])}{format_value(l[2])}',
-        "LBU"   : f'100100_{format_value(l[3])}{format_value(l[1])}{format_value(l[2])}',
-        "LHU"   : f'100001_{format_value(l[3])}{format_value(l[1])}{format_value(l[2])}',
-        "SB"    : f'101000_{format_value(l[3])}{format_value(l[1])}{format_value(l[2])}',
-        "SH"    : f'101001_{format_value(l[3])}{format_value(l[1])}{format_value(l[2])}',
-        "SW"    : f'101011_{format_value(l[3])}{format_value(l[1])}{format_value(l[2])}',
-        "ADDI"  : f'001000_{format_value(l[2])}{format_value(l[1])}{format_value(l[3])}',   # ADDI rt, rs, inmediate
-        "ANDI"  : f'001100_{format_value(l[2])}{format_value(l[1])}{format_value(l[3])}',
-        "ORI"   : f'001101_{format_value(l[2])}{format_value(l[1])}{format_value(l[3])}',
-        "XORI"  : f'001110_{format_value(l[2])}{format_value(l[1])}{format_value(l[3])}',
-        "LUI"   : f'001111_00000_{format_value(l[1])}{format_value(l[2])}', # LUI rt, inmediate
-        "SLTI"  : f'001010_{format_value(l[2])}{format_value(l[1])}{format_value(l[3])}',   # SLTI rt, rs, inmediate
-        "BEQ"   : f'000100_{format_value(l[1])}{format_value(l[2])}{format_value(l[3])}',      # ADDI rs, rt, offset
-        "BNE"   : f'000101_{format_value(l[1])}{format_value(l[2])}{format_value(l[3])}',
+        "LB"    : f'100000_{format_value(l[3])}_{format_value(l[1])}_{format_value(l[2])}',    # LB rt, offset(base)
+        "LH"    : f'100001_{format_value(l[3])}_{format_value(l[1])}_{format_value(l[2])}',
+        "LW"    : f'100011_{format_value(l[3])}_{format_value(l[1])}_{format_value(l[2])}',
+        "LWU"   : f'100111_{format_value(l[3])}_{format_value(l[1])}_{format_value(l[2])}',
+        "LBU"   : f'100100_{format_value(l[3])}_{format_value(l[1])}_{format_value(l[2])}',
+        "LHU"   : f'100001_{format_value(l[3])}_{format_value(l[1])}_{format_value(l[2])}',
+        "SB"    : f'101000_{format_value(l[3])}_{format_value(l[1])}_{format_value(l[2])}',
+        "SH"    : f'101001_{format_value(l[3])}_{format_value(l[1])}_{format_value(l[2])}',
+        "SW"    : f'101011_{format_value(l[3])}_{format_value(l[1])}_{format_value(l[2])}',
+        "ADDI"  : f'001000_{format_value(l[2])}_{format_value(l[1])}_{format_value(l[3])}',   # ADDI rt, rs, inmediate
+        "ANDI"  : f'001100_{format_value(l[2])}_{format_value(l[1])}_{format_value(l[3])}',
+        "ORI"   : f'001101_{format_value(l[2])}_{format_value(l[1])}_{format_value(l[3])}',
+        "XORI"  : f'001110_{format_value(l[2])}_{format_value(l[1])}_{format_value(l[3])}',
+        "LUI"   : f'001111_00000_{format_value(l[1])}_{format_value(l[2])}', # LUI rt, inmediate
+        "SLTI"  : f'001010_{format_value(l[2])}_{format_value(l[1])}_{format_value(l[3])}',   # SLTI rt, rs, inmediate
+        "BEQ"   : f'000100_{format_value(l[1])}_{format_value(l[2])}_{format_value(l[3])}',      # ADDI rs, rt, offset
+        "BNE"   : f'000101_{format_value(l[1])}_{format_value(l[2])}_{format_value(l[3])}',
         "J"     : f'000010_{format_value(l[1])}',   # J instruction_index
         "JAL"   : f'000011_{format_value(l[1])}',
 
@@ -65,6 +65,7 @@ def parser(instruction):
 
 def converter(instruction):
     instruction_list = parser(instruction)
+    print(format(instruction_list))
     bin_value = int(format(instruction_list),2)
     hex_value = hex(bin_value)
     return hex_value
