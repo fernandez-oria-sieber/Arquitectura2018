@@ -20,9 +20,9 @@ module ForwardingUnit (input inMEM_RegWrite,
         end
         else
         begin
-            if (inMEM_RegWrite && inMEM_Rd ! = 5'b0 && inMEM_Rd == inRs)
+            if (inMEM_RegWrite && inMEM_Rd != 5'b0 && inMEM_Rd == inRs)
                 isMUX_A = 2'b10;
-            else if (inWB_RegWrite && inWB_Rd ! = 5'b0 && inWB_Rd == inRs)
+            else if (inWB_RegWrite && inWB_Rd != 5'b0 && inWB_Rd == inRs)
                 isMUX_A = 2'b01;
             else
                 isMUX_A = 2'b00;
@@ -31,9 +31,9 @@ module ForwardingUnit (input inMEM_RegWrite,
     
     always @(*)
     begin
-        if (inMEM_RegWrite && inMEM_Rd ! = 5'b0 && inMEM_Rd == inRt)
+        if (inMEM_RegWrite && inMEM_Rd != 5'b0 && inMEM_Rd == inRt)
             isMUX_B = 2'b10;
-        else if (inWB_RegWrite && inWB_Rd ! = 5'b0 && inWB_Rd == inRt)
+        else if (inWB_RegWrite && inWB_Rd != 5'b0 && inWB_Rd == inRt)
             isMUX_B = 2'b01;
         else
             isMUX_B = 2'b00;

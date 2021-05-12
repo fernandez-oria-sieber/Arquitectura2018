@@ -24,7 +24,7 @@ module DataMemory #(parameter RAM_WIDTH = 32,        // Specify RAM data width
     
     // The following code either initializes the memory values to a specified file or to all zeros to match hardware
     generate
-    if (INIT_FILE ! = "") begin: use_init_file
+    if (INIT_FILE != "") begin: use_init_file
     initial
         $readmemh(INIT_FILE, ram_name, 0, RAM_DEPTH-1);
         end else begin: init_bram_to_zero

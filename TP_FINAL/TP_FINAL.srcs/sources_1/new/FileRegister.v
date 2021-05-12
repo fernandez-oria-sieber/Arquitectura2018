@@ -14,11 +14,17 @@ module FileRegister(input clk,
     reg [31:0] registros[31:0]; // Matriz de 32X32
     reg [31:0] regA;
     reg [31:0] regB;
+    integer i;
     
     // Escritura por flanco ascendente por clock y reset
     always @(posedge clk, posedge rst)
     begin
-        if (rst)   [31:0] registros[31:0]        <= 0;
+        if (rst)
+        begin          
+            for(i=0;i<32;i=i+1) registros[i] <= 0;
+            regA <= 0;
+            regB <= 0;
+        end
         else if (isWrite) registros[inWriteAddr] <= inWriteData;
     end
     

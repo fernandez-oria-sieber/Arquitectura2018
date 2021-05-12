@@ -27,7 +27,7 @@ module Execute(input clk,
                output [4:0] outFRWrReg,       // FR - Registro a escribir en ID
                output [31:0] outPCJump,
                output [31:0] outALUResult,
-               output [31:0] outRegB,
+               output [31:0] outRegB
                );
     
     // Registros
@@ -39,6 +39,8 @@ module Execute(input clk,
     reg [31:0] ALUResult;
     reg [31:0] RegB;
     reg [31:0] regB_ALU;
+    reg [31:0] outMuxA;
+    reg [31:0] outMuxB;
     
     reg [1:0] isMuxA;
     reg [1:0] isMuxB;
@@ -57,7 +59,7 @@ module Execute(input clk,
     );
     
     // Instancia de "ALUControl"
-    ALUControl alu_control0 (
+    ALU_control alu_control (
     .inALUOp(inEXE),
     .inFunc(inInstruction_ls[5:0]), // funct: selecciona la operación aritmética a realizar
     .outOp(ALUControl)
@@ -73,7 +75,7 @@ module Execute(input clk,
     .inWB_Rd(inWB_rd),
     .out_isMUX_A(isMuxA),
     .out_isMUX_B(isMuxB)
-    )
+    );
     
     always @(negedge clk, posedge rst)
     begin
@@ -96,13 +98,13 @@ module Execute(input clk,
     
     always @(*)
     begin
-        case(isMUX_A)
+        case(isMuxA)
             2'b00:      outMuxA = inRegA;
             2'b01:      outMuxA = inWB_FRWrData;
             2'b10:      outMuxA = inMEM_ALUResult;
             default:    outMuxA = inRegA;
         endcase
-        case(isMUX_B)
+        case(isMuxB)
             2'b00:      outMuxB = inRegB;
             2'b01:      outMuxB = inWB_FRWrData;
             2'b10:      outMuxB = inMEM_ALUResult;
@@ -122,7 +124,7 @@ module Execute(input clk,
         begin
             // Jump <= ((inInstruction_ls << 2) + inPC);
             // Le sacamos el << 2 porque nosotros vamos sumando de a 1 el PC
-            Jump <= inInstruction_ls + inPC:
+            Jump <= inInstruction_ls + inPC;
             casez(inEXE)
                 4'b0???: wreg <= inLD_rt;
                 4'b1???: wreg <= inRT_rd;

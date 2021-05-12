@@ -65,9 +65,8 @@ def parser(instruction):
 
 def converter(instruction):
     instruction_list = parser(instruction)
-    print(format(instruction_list))
-    bin_value = int(format(instruction_list),2)
-    hex_value = hex(bin_value)
+    value = int(format(instruction_list),2)
+    hex_value = '0x{0:08X}'.format(value)
     return hex_value
 
 def main():

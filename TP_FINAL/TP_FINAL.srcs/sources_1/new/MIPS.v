@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 module top_level(input clk,
-                 input rst,
+                 input rst
                  );
     
     //// Wires
@@ -9,15 +9,15 @@ module top_level(input clk,
     wire [31:0]	IF_outPC;             //IF:outPC -> ID:inPC
     
     // Stage Instruction Decode
-    wire ID_out_isPCWrite,            //ID:out_isPCWrite -> IF:isPCWrite
-    wire ID_out_isWrite_IF_ID,        //ID:out_isWrite_IF_ID -> IF/ID
+    wire ID_out_isPCWrite;            //ID:out_isPCWrite -> IF:isPCWrite
+    wire ID_out_isWrite_IF_ID;        //ID:out_isWrite_IF_ID -> IF/ID
     wire [1:0]	ID_outWB; 	          //ID:outWB -> EX:inWB
     wire [2:0]	ID_outMEM; 	          //ID:outMEM -> EX:inMEM
     wire [3:0]	ID_outEXE; 	          //ID:outEXE -> EX:inEXE
     wire [2:0]  ID_outLoadStoreType;  //ID:outLoadStoreType -> EX:isLoadStoreType
     wire [4:0]	ID_outLD_rt;          //ID:outLD_rt -> EX:inLD_rt
     wire [4:0]	ID_outRT_rd;          //ID:outRT_rd -> EX:inRT_rd
-    wire [4:0]  ID_outFUnit_rs,       //ID:outFUnit_rs -> EX:inFUnit_rs
+    wire [4:0]  ID_outFUnit_rs;       //ID:outFUnit_rs -> EX:inFUnit_rs
     wire [31:0]	ID_outPC;             //ID:outPC -> EX:inPC
     wire [31:0]	ID_outRegA; 	      //ID:outRegA -> EX:inRegA
     wire [31:0]	ID_outRegB; 	      //ID:outRegB -> EX:inRegB
@@ -50,7 +50,7 @@ module top_level(input clk,
     
     //// Instancias
     // Instancia del modulo Instruction Fetch
-    InstructionFetch IF(
+    InstructionFetch (
     //Clock and Reset Signals
     .clk(clk),
     .reset(rst),

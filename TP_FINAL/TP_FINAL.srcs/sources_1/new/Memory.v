@@ -26,14 +26,14 @@ module Memory(input clk,
     wire [31:0] bus_store_memory; // Store -> sale del sign_extension entra al data_memory
     wire [31:0] bus_load_memory;  // Load -> entra al sign_extension que viene del data_memory
     
-    SignExtensionMemory sign_extension_memory(
+    SignExtensionMem sign_extension_memory(
     .isLoadStoreType(isLoadStoreType),
     .inDataToMem(inRtReg),
     .inMemData(bus_load_memory),
-    .isMemWrite(isMemWrite);
+    .isMemWrite(isMemWrite),
     .outStore(bus_store_memory),
-    .outLoad(outMem),
-    )
+    .outLoad(outMem)
+    );
     
     DataMemory data_memory(
     .clk(clk),

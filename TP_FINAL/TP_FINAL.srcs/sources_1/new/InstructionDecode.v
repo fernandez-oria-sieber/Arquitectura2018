@@ -102,7 +102,7 @@ module InstructionDecode(input clk,
         else // Escritura de todos los registros de salida
         begin
             PC = inPC;
-            Instruction_ls = $signed(address)
+            Instruction_ls = $signed(address);
             LD_rt           = rt;
             RT_rd           = rd;
             FUnit_rs        = rs;
