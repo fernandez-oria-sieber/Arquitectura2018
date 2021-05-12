@@ -9,10 +9,6 @@ def format_value(value):
     return "{0:05b}".format(int(value))
 
 def format(l):
-    rd = format_value(l[1])
-    rt = format_value(l[2])
-    rs = format_value(l[3])
-    sa = format_value(l[3])
     instruction_format = {
         # R-type
         "SLL"   : f'000000_00000_{format_value(l[2])}_{format_value(l[1])}_{format_value(l[3])}_000000',    # SLL rd, rt, sa
@@ -61,6 +57,8 @@ def format(l):
 
 def parser(instruction):
     instruction_list = [value.strip(",\n)") for value in re.split(" |\(", instruction)]
+    while(len(instruction_list)<4):
+        instruction_list.append("0")
     return instruction_list
 
 def converter(instruction):
