@@ -6,13 +6,13 @@ module Execute(input clk,
                input inWB_RegWrite,           // flag de control que viene de WB y determina si se va a escribir un registro
                input [1:0] inWB,
                input [2:0] inMEM,
-               input [3:0] inEXE,
                input [2:0] isLoadStoreType,
                input [4:0] inLD_rt,
                input [4:0] inRT_rd,
                input [4:0] inFUnit_rs,
                input [4:0] inMEM_rd,
                input [4:0] inWB_rd,
+               input [5:0] inEXE,
                input [31:0] inPC,             // PC
                input [31:0] inRegA,
                input [31:0] inRegB,
@@ -50,12 +50,12 @@ module Execute(input clk,
     wire [3:0] ALUControl;
     
     // Instancia de "ALU"
-    ALU #(.bits(32)) alu0 (
-    .inOp(ALUControl),
-    .inRegA(outMuxA),
-    .inRegB(regB_ALU),
-    .outZero(ALUZero),
-    .outResult(ALUResult)
+    ALU #(.size(32)) alu0 (
+    .Op(ALUControl),
+    .A(outMuxA),
+    .B(regB_ALU),
+    .Zero(ALUZero),
+    .Result(ALUResult)
     );
     
     // Instancia de "ALUControl"
@@ -67,6 +67,7 @@ module Execute(input clk,
     
     // Instancia de "ForwardingUnit"
     ForwardingUnit forwardingUnit0 (
+    .rst(rst),
     .inMEM_RegWrite(inMEM_RegWrite),
     .inMEM_Rd(inMEM_rd),
     .inRs(inFUnit_rs),
@@ -126,13 +127,13 @@ module Execute(input clk,
             // Le sacamos el << 2 porque nosotros vamos sumando de a 1 el PC
             Jump <= inInstruction_ls + inPC;
             casez(inEXE)
-                4'b0???: wreg <= inLD_rt;
-                4'b1???: wreg <= inRT_rd;
+                6'b0XXXXX: wreg <= inLD_rt;
+                6'b1XXXXX: wreg <= inRT_rd;
                 default: wreg <= inRT_rd;
             endcase
-            casez(inEXE) // segundo mux de regB
-                4'b???1: regB_ALU <= inInstruction_ls;
-                4'b???0: regB_ALU <= outMuxB;
+            casex(inEXE) // segundo mux de regB
+                6'b00XXXX: regB_ALU <= inInstruction_ls;
+                6'b11XXXX: regB_ALU <= outMuxB;
                 default: regB_ALU <= outMuxB;
                 // regB_ALU       <= inInstruction_ls;
                 // probar esto como default, para nosotros tiene más sentido

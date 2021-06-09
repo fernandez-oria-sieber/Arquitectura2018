@@ -1,5 +1,7 @@
 `timescale 1ns / 1ps
-module ForwardingUnit (input inMEM_RegWrite,
+module ForwardingUnit (
+                       input rst,
+                       input inMEM_RegWrite,
                        input [4 : 0] inMEM_Rd,
                        input [4 : 0] inRs,
                        input [4 : 0] inRt,

@@ -13,7 +13,7 @@ module InstructionDecode(input clk,
                          output out_isWrite_IF_ID,         // Salida del HazardUnit [IF/ID]
                          output [1:0] outWB,               // Salida de la unidad de control
                          output [2:0] outMEM,              // Salida de la unidad de control
-                         output [3:0] outEXE,              // Salida de la unidad de control
+                         output [5:0] outEXE,              // Salida de la unidad de control
                          output [2:0] outLoadStoreType,    // op[2:0] se utiliza en SignExtensionMemory de MEM
                          output [4:0] outLD_rt,            // Registros rt (inInstruction[20:16])
                          output [4:0] outRT_rd,            // Registros rd (inInstruction[15:11])
@@ -26,7 +26,7 @@ module InstructionDecode(input clk,
     // Registros
     reg [1:0] WB;
     reg [2:0] MEM;
-    reg [3:0] EXE;
+    reg [5:0] EXE;
     reg [2:0] load_store_type;
     reg [4:0] LD_rt; // Para las instruccion Load - Load Doubleword[LD] rt, offset(base)
     reg [4:0] RT_rd; // Para los RType - Registro rd
@@ -35,6 +35,7 @@ module InstructionDecode(input clk,
     reg signed [31:0] Instruction_ls;
     
     // Cables
+    wire out_isMuxControl;
     wire [5:0] op;
     wire [4:0] rs;
     wire [4:0] rt;
@@ -55,6 +56,7 @@ module InstructionDecode(input clk,
     ControlUnit control_unit (
     // TODO: verificar que funcione con las salidas asignando directamente WB, MEM y EXE
     .inInstruction(op),
+    .inFunct(funct),
     .isMuxControl(out_isMuxControl),
     .outCtrlWB(WB),
     .outCtrlMEM(MEM),
@@ -91,7 +93,7 @@ module InstructionDecode(input clk,
         begin
             WB              = 2'b00;
             MEM             = 3'b010;
-            EXE             = 4'b0;
+            EXE             = 6'b0;
             PC              = 32'b0;
             Instruction_ls  = 32'b0;
             LD_rt           = 5'b0;
@@ -121,9 +123,9 @@ module InstructionDecode(input clk,
     assign outEXE            = EXE;
     assign outLD_rt          = LD_rt;
     assign outRT_rd          = RT_rd;
-    assign outFunit_rs       = FUnit_rs;
+    assign outFUnit_rs       = FUnit_rs;
     assign outPC             = PC;
-    assign outInstruction_ls = Instruction_ls >>> 16; // (-45 antes del >>>) = 1111111111010011000000000000000 >>> (-45) = 11111111111111111111111111010011
+    assign outInstruction_ls = Instruction_ls;
     assign outLoadStoreType  = load_store_type;
     
 endmodule

@@ -26,9 +26,9 @@ module WriteBack(input rst,
             FRWr    <= isWB[1];
             FRWrReg <= inFRWrReg;
             if (isWB[0])
-                FRWrData <= inFRWrData;
-            else
                 FRWrData <= inALUResult;
+            else
+                FRWrData <= inFRWrData;
         end
     end
     

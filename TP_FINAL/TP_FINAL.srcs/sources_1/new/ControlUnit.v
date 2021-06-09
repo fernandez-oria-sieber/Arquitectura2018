@@ -2,30 +2,38 @@
 
 module ControlUnit(input isMuxControl,
                    input [5:0] inInstruction,
-                   output [1:0] outCtrl_WB,
-                   output [2:0] outCtrl_MEM,
-                   output [3:0] outCtrl_EXE);
+                   input [5:0] inFunct,
+                   output [1:0] outCtrl_WB,   // RegWr, MemToReg
+                   output [2:0] outCtrl_MEM,  // MemRd, MemWr, Branch
+                   output [5:0] outCtrl_EXE); // RegDst, ALUSrc, ALUop, shamt, Jump
     
     // Registros
-    reg [8:0] ctrl;
+    reg [10:0] ctrl;
     
     always @(*)
     begin
         if (isMuxControl)
-            case(inInstruction)     // EXE_MEM_WB
-                6'b00_0000: ctrl = 9'b1100_000_10; // d'00 - RType
-                6'b10_0011: ctrl = 9'b0001_010_11; // d'35 - Load Word [LW]
-                6'b10_1011: ctrl = 9'bX001_001_0X; // d'43 - Store Word [SW]
-                6'b00_0100: ctrl = 9'bX010_100_0X; // d'04 - Branch on Equal [BEQ]
+            casex(inInstruction)     // EXE_MEM_WB
+                6'b00_0000:
+                    begin 
+                        casex(inFunct)
+                            6'b0000XX: ctrl = 11'b110010_000_11; // d'00 - RType with shamt
+                            6'b00100X: ctrl = 11'b110011_000_11; // d'00 - JType
+                            default:   ctrl = 11'b110000_000_11; // d'00 - RType
+                        endcase
+                    end
+                6'b10_0XXX: ctrl = 11'b000100_010_10; // d'35 - Load [L]
+                6'b10_1XXX: ctrl = 11'bX00100_001_0X; // d'43 - Store [S]
+                6'b00_010X: ctrl = 11'bX01000_100_0X; // d'04 - Branch on Equal [BEQ]
                 // 00_1000
-                default:    ctrl = 9'bXXXX_XXX_XX; // IType?
+                default:    ctrl = {inInstruction[5:0],5'b000_11}; // IType
             endcase
         else
-            ctrl = 9'b0;
+            ctrl = 11'b0;
     end
     
     // Asignaciones de salida
     assign outCtrl_WB  = ctrl[1:0];
     assign outCtrl_MEM = ctrl[4:2];
-    assign outCtrl_EXE = ctrl[8:5];
+    assign outCtrl_EXE = ctrl[10:5];
 endmodule

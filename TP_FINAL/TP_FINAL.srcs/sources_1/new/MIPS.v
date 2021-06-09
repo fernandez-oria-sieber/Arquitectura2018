@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 module MIPS(
     input clk,
-    input rst,
+    input rst
     );
 
     /////////
@@ -15,7 +15,7 @@ module MIPS(
     wire 		ID_out_isWrite_IF_ID; //ID:out_isWrite_IF_ID -> IF/ID
     wire [1:0]	ID_outWB; 	          //ID:outWB -> EX:inWB
     wire [2:0]	ID_outMEM; 	          //ID:outMEM -> EX:inMEM
-    wire [3:0]	ID_outEXE; 	          //ID:outEXE -> EX:inEXE
+    wire [4:0]	ID_outEXE; 	          //ID:outEXE -> EX:inEXE
     wire [2:0]  ID_outLoadStoreType;  //ID:outLoadStoreType -> EX:isLoadStoreType
     wire [4:0]	ID_outLD_rt;          //ID:outLD_rt -> EX:inLD_rt
     wire [4:0]	ID_outRT_rd;          //ID:outRT_rd -> EX:inRT_rd
@@ -66,13 +66,13 @@ module MIPS(
     .reset(rst),
     
     //Input Signals
-    .inPCSel(EX_MEM_osPC),
+    .inPCSel(MEM_osPC),
     .isPCWrite(ID_out_isPCWrite),
     .inPCJump(MEM_outPCJump),
     
     //Output Signals
-    .outInstruction(IF_outInstruction)
-    .outPC(IF_outPC),
+    .outInstruction(IF_outInstruction),
+    .outPC(IF_outPC)
     );
     
     
@@ -92,8 +92,8 @@ module MIPS(
     .inFRWrData(WB_outFRWrData),
     
     //Output Signals
-    .out_isPCWrite(ID_out_isPCWrite)
-    .out_isWrite_IF_ID(ID_out_isWrite_IF_ID)
+    .out_isPCWrite(ID_out_isPCWrite),
+    .out_isWrite_IF_ID(ID_out_isWrite_IF_ID),
     .outWB(ID_outWB),
     .outMEM(ID_outMEM),
     .outEXE(ID_outEXE),
@@ -104,7 +104,7 @@ module MIPS(
     .outPC(ID_outPC),
     .outRegA(ID_outRegA),
     .outRegB(ID_outRegB),
-    .outInstruction_ls(ID_outInstruction_ls),
+    .outInstruction_ls(ID_outInstruction_ls)
     );
 
     // Instancia del modulo Execute
@@ -138,10 +138,10 @@ module MIPS(
     .outMEM(EX_outMEM),
     .outLoadStoreType(EX_outLoadStoreType),
     .outEX_Rt(EX_outEX_Rt),
-    .outFRWrReg(EX_outFRWrReg) //4:0
+    .outFRWrReg(EX_outFRWrReg), //4:0
     .outPCJump(EX_outPCJump),
     .outALUResult(EX_outALUResult),
-    .outRegB(EX_outRegB),
+    .outRegB(EX_outRegB)
     );
 
     // Instancia del modulo memAccess
@@ -151,7 +151,7 @@ module MIPS(
     .rst(rst),
     
     //Input Signals
-    .inALUZero(EX_outALUZero),
+    .isALUZero(EX_outALUZero),
     .isMemWrite(EX_outMEM[0]), // funciona asi [0]???
     .isMemRead(EX_outMEM[1]), // ? va asi [1]?
     .isBranch(EX_outMEM[2]), // ? va asi con [2]?
@@ -159,8 +159,8 @@ module MIPS(
     .isLoadStoreType(EX_outLoadStoreType),
     .inFRWrReg(EX_outFRWrReg),
     .inALUResult(EX_outALUResult),
-    .inRegB(EX_outRegB), // este no esta en memory
-    .inRtReg(), // este esta pero no se donde va
+    //.inRegB(EX_outRegB), // este no esta en memory
+    .inRtReg(EX_outRegB), // este esta pero no se donde va
     .inPCJump(EX_outPCJump),
     
     //Output Signals
@@ -169,7 +169,7 @@ module MIPS(
     .outFRWrReg(MEM_outFRWrReg), //31:0
     .outMem(MEM_outMem),
     .outALUResult(MEM_outALUResult),
-    .outPCJump(MEM_outPCJump),
+    .outPCJump(MEM_outPCJump)
     );
     
     // Instancia del modulo Write Back

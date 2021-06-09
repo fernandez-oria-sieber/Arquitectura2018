@@ -3,9 +3,9 @@ module HazardUnit(input isEX_MemRead,
                   input [4:0] inEX_Rt,
                   input [4:0] inRs,
                   input [4:0] inRt,
-                  output out_isPCWrite,
-                  output out_isWrite_IF_ID,
-                  output out_isMuxControl);
+                  output reg out_isPCWrite,
+                  output reg out_isWrite_IF_ID,
+                  output reg out_isMuxControl);
     
     always@(*)
     begin
