@@ -50,7 +50,8 @@ begin
         6'b001110: aux_op = XOR; // XORI
         6'b001010: aux_op = SLT; // SLTI
         6'b001111: aux_op = LUI;
-        default: aux_op = 4'b0000;
+        6'b000100: aux_op = ADD; // LOAD & STORE 
+        default: aux_op = ADD;
     endcase
 end
 

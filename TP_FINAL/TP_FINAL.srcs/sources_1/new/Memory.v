@@ -37,6 +37,7 @@ module Memory(input clk,
     
     DataMemory data_memory(
     .clk(clk),
+    .ena(1'b1),
     .inWrEnable(isMemWrite),
     .inAddress(inALUResult),
     .inData(bus_store_memory),

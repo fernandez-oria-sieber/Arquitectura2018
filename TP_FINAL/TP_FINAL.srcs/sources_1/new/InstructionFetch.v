@@ -14,6 +14,7 @@ module InstructionFetch(input clk,
     
     DataMemory #(.INIT_FILE("~/Arquitectura2018/TP_FINAL/datos.txt")) data_memory(
     .clk(clk),
+    .ena(1'b1),
     .inWrEnable(0),
     .inAddress(pc),
     .inData(0),
@@ -24,7 +25,7 @@ module InstructionFetch(input clk,
     always @(negedge clk, posedge reset)
     begin
         if (reset)
-            pc <= 32'd0;
+            pc <= 32'b0;
         else
             if (isPCWrite) pc <= (isPCSel) ? inPCJump : pc + 1;
     end
