@@ -30,6 +30,7 @@ module Memory(input clk,
     .isLoadStoreType(isLoadStoreType),
     .inDataToMem(inRtReg),
     .inMemData(bus_load_memory),
+    .isMemRead(isMemRead),
     .isMemWrite(isMemWrite),
     .outStore(bus_store_memory),
     .outLoad(outMem)

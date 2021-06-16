@@ -3,6 +3,7 @@
 module SignExtensionMem(input [31:0] inDataToMem,
                         input [31:0] inMemData,
                         input isMemWrite,
+                        input isMemRead,
                         input [2:0] isLoadStoreType,
                         output reg [31:0] outLoad,
                         output reg [31:0] outStore);
@@ -21,7 +22,7 @@ begin
             default: outStore = 0;
         endcase
     end
-    else
+    else if (isMemRead)
     begin
         case(isLoadStoreType)
             //load bytesigned [LB]
