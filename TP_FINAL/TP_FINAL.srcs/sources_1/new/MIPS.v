@@ -6,11 +6,15 @@ module MIPS(
 
     /////////
     //// Wires
-    // Stage Instruction Fetch
+    // Stage Instruction Fetch/Decode Latch
+    // INPUTS
     wire [31:0]	IF_outInstruction;    //IF:outInstruction -> ID:inInstruction
     wire [31:0]	IF_outPC;             //IF:outPC -> ID:inPC
-
-    // Stage Instruction Decode
+    // OUTPUTS
+    wire [31:0] ID_inInstruction;
+    wire [31:0] ID_inPC;
+    // Stage Instruction Decode/Execute latch
+    //INPUTS
     wire 		ID_out_isPCWrite;     //ID:out_isPCWrite -> IF:isPCWrite
     wire 		ID_out_isWrite_IF_ID; //ID:out_isWrite_IF_ID -> IF/ID
     wire [1:0]	ID_outWB; 	          //ID:outWB -> EX:inWB
@@ -24,8 +28,24 @@ module MIPS(
     wire [31:0]	ID_outRegA; 	      //ID:outRegA -> EX:inRegA
     wire [31:0]	ID_outRegB; 	      //ID:outRegB -> EX:inRegB
     wire [31:0]	ID_outInstruction_ls; //ID:outInstruction_ls -> EX:inInstruction_ls
+    //OUTPUTS
+    wire 		EX_in_isPCWrite;     
+    wire         EX_in_isWrite_IF_ID; 
+    wire [1:0]    EX_inWB;            
+    wire [2:0]    EX_inMEM;           
+    wire [4:0]    EX_inEXE;          
+    wire [2:0]  EX_inLoadStoreType;  
+    wire [4:0]    EX_inLD_rt;        
+    wire [4:0]    EX_inRT_rd;        
+    wire [4:0]  EX_inFUnit_rs;       
+    wire [31:0]    EX_inPC;          
+    wire [31:0]    EX_inRegA;        
+    wire [31:0]    EX_inRegB;        
+    wire [31:0]    EX_inInstruction_ls;
+    
 
-    // Stage Execute
+    // Stage Execute/Memory latch
+    //INPUTS
     wire 		EX_outALUZero; 	     //EX:outALUZero -> MEM:isALUZero
     wire [2:0]	EX_outMEM; 		     //EX:outMEM -> MEM:isMemWrite, isMemRead, isBranch
     wire [1:0]	EX_outWB; 		     //EX:outWB -> MEM:inWB
@@ -35,14 +55,31 @@ module MIPS(
     wire [31:0]	EX_outPCJump; 	     //EX:outPCJump -> MEM:inPCJump
     wire [31:0]	EX_outALUResult;     //EX:outALUResult -> MEM:inALUResult
     wire [31:0] EX_outRegB; 	     //EX:outRegB -> MEM:inRegB
+    //OUTPUTS
+    wire 		MEM_inALUZero; 	   
+    wire [2:0]  MEM_inMEM;       
+    wire [1:0]  MEM_inWB;        
+    wire [2:0]  MEM_inLoadStoreType;
+    wire [4:0]  MEM_inEX_Rt;     
+    wire [4:0]  MEM_inFRWrReg;   
+    wire [31:0] MEM_inPCJump;   
+    wire [31:0] MEM_inALUResult;
+    wire [31:0] MEM_inRegB;        
 
-    // Stage Memory
+    // Stage Memory/WriteBack latch
     wire 		MEM_osPC; 	      //MEM:osPC -> IF:inPCSel
     wire [1:0]	MEM_outWB; 		  //MEM:outWB -> WB:isWB
     wire [4:0]	MEM_outFRWrReg;   //MEM:outFRWrReg -> WB:inFRWrReg
     wire [31:0] MEM_outMem;       //MEM:outMem -> WB:inFRWrData
     wire [31:0] MEM_outALUResult; //MEM:outALUResult -> WB:inALUResult
     wire [31:0]	MEM_outPCJump; 	  //MEM:outPCJump -> IF:inPCJump
+    
+    wire 		WB_osPC;
+    wire [1:0]  WB_inWB;
+    wire [4:0]  WB_inFRWrReg;
+    wire [31:0] WB_inMem;
+    wire [31:0] WB_inALUResult;
+    wire [31:0] WB_inPCJump;
     
     // Stage Write Back
     wire 		WB_osFRWr;      // WB:osFRWr -> ID:isFRWr
@@ -75,6 +112,18 @@ module MIPS(
     .outPC(IF_outPC)
     );
     
+    // IF ID LATCH
+    IF_ID_latch IF_ID(
+    .clk(clk),
+    .rst(rst),
+    //INPUTS
+    .inInstruction(IF_outInstruction),
+    .inPc(IF_outPC),
+    //OUTPUT
+    .outInstruction(ID_inInstruction),
+    .outPc(ID_inPC)
+    );
+    
     
     // Instancia del modulo Instruction Decode
     InstructionDecode ID( // STAGE 2
@@ -87,8 +136,8 @@ module MIPS(
     .isEX_MemRead(), // ???
     .inFRWrAddr(WB_outFRWrReg),
     .inEX_Rt(EX_outEX_Rt),
-    .inPC(IF_outPC),
-    .inInstruction(IF_outInstruction),
+    .inPC(ID_inPC),
+    .inInstruction(ID_inInstruction),
     .inFRWrData(WB_outFRWrData),
     
     //Output Signals
@@ -106,6 +155,42 @@ module MIPS(
     .outRegB(ID_outRegB),
     .outInstruction_ls(ID_outInstruction_ls)
     );
+    
+    //ID EX LATCH
+    
+    ID_EX_latch ID_EX(
+    .clk(clk),
+    .rst(rst),
+    //INPUTS
+    .in_isPCWrite(ID_out_isPCWrite),
+    .in_isWrite_IF_ID(ID_out_isWrite_IF_ID),
+    .inWB(ID_outWB),
+    .inMEM(ID_outMEM),
+    .inEXE(ID_outEXE),
+    .inLoadStoreType(ID_outLoadStoreType),
+    .inLD_rt(ID_outLD_rt),
+    .inRT_rd(ID_outRT_rd),
+    .inFUnit_rs(ID_outFUnit_rs),
+    .inPC(ID_outPC),
+    .inRegA(ID_outRegA),
+    .inRegB(ID_outRegB),
+    .inInstruction_ls(ID_outInstruction_ls),
+    //OUTPUTS
+    .out_isPCWrite(EX_in_isPCWrite),
+    .out_isWrite_IF_ID(EX_in_isWrite_IF_ID),
+    .outWB(EX_inWB),
+    .outMEM(EX_inMEM),
+    .outEXE(EX_inEXE),
+    .outLoadStoreType(EX_inLoadStoreType),
+    .outLD_rt(EX_inLD_rt),
+    .outRT_rd(EX_inRT_rd),
+    .outFUnit_rs(EX_inFUnit_rs),
+    .outPC(EX_inPC),
+    .outRegA(EX_inRegA),
+    .outRegB(EX_inRegB),
+    .outInstruction_ls(EX_inInstruction_ls)
+    );
+    
 
     // Instancia del modulo Execute
     Execute EX( // STAGE 3
@@ -116,19 +201,19 @@ module MIPS(
     //Input Signals
     .inMEM_RegWrite(),
     .inWB_RegWrite(),
-    .inWB(ID_outWB),
-    .inMEM(ID_outMEM),
-    .inEXE(ID_outEXE),
-    .isLoadStoreType(ID_outLoadStoreType),
-    .inLD_rt(ID_outLD_rt),
-    .inRT_rd(ID_outRT_rd),
-    .inFUnit_rs(ID_outFUnit_rs),
+    .inWB(EX_inWB),
+    .inMEM(EX_inMEM),
+    .inEXE(EX_inEXE),
+    .isLoadStoreType(EX_inLoadStoreType),
+    .inLD_rt(EX_inLD_rt),
+    .inRT_rd(EX_inRT_rd),
+    .inFUnit_rs(EX_inFUnit_rs),
     .inMEM_rd(), // ??
     .inWB_rd(), // ??
-    .inPC(ID_outPC),
-    .inRegA(ID_outRegA),
-    .inRegB(ID_outRegB),
-    .inInstruction_ls(ID_outInstruction_ls),
+    .inPC(EX_inPC),
+    .inRegA(EX_inRegA),
+    .inRegB(EX_inRegB),
+    .inInstruction_ls(EX_inInstruction_ls),
     .inMEM_ALUResult(),
     .inWB_FRWrData(),
 
@@ -143,7 +228,34 @@ module MIPS(
     .outALUResult(EX_outALUResult),
     .outRegB(EX_outRegB)
     );
-
+    
+    // EX MEM LATCH
+    
+    EX_MEM_latch EX_MEM(
+    .clk(clk),
+    //INPUTS
+    .inALUZero(EX_outALUZero),
+    .inWB(EX_outWB),
+    .inMEM(EX_outMEM),
+    .inLoadStoreType(EX_outLoadStoreType),
+    .inEX_Rt(EX_outEX_Rt),
+    .inFRWrReg(EX_outFRWrReg), //4:0
+    .inPCJump(EX_outPCJump),
+    .inALUResult(EX_outALUResult),
+    .inRegB(EX_outRegB),
+    //OUTPUTS
+    .outALUZero(MEM_inALUZero),
+    .outWB(MEM_inWB),
+    .outMEM(MEM_inMEM),
+    .outLoadStoreType(MEM_inLoadStoreType),
+    .outEX_Rt(MEM_inEX_Rt),
+    .outFRWrReg(MEM_inFRWrReg), //4:0
+    .outPCJump(MEM_inPCJump),
+    .outALUResult(MEM_inALUResult),
+    .outRegB(MEM_inRegB)
+    );
+    
+    
     // Instancia del modulo memAccess
     Memory MEM( // STAGE 4
     //Clock and Reset Signals
@@ -151,17 +263,17 @@ module MIPS(
     .rst(rst),
     
     //Input Signals
-    .isALUZero(EX_outALUZero),
-    .isMemWrite(EX_outMEM[0]), // funciona asi [0]???
-    .isMemRead(EX_outMEM[1]), // ? va asi [1]?
-    .isBranch(EX_outMEM[2]), // ? va asi con [2]?
-    .inWB(EX_outWB),
-    .isLoadStoreType(EX_outLoadStoreType),
-    .inFRWrReg(EX_outFRWrReg),
-    .inALUResult(EX_outALUResult),
+    .isALUZero(MEM_inALUZero),
+    .isMemWrite(MEM_inMEM[0]), // funciona asi [0]???
+    .isMemRead(MEM_inMEM[1]), // ? va asi [1]?
+    .isBranch(MEM_inMEM[2]), // ? va asi con [2]?
+    .inWB(MEM_inWB),
+    .isLoadStoreType(MEM_inLoadStoreType),
+    .inFRWrReg(MEM_inFRWrReg),
+    .inALUResult(MEM_inALUResult),
     //.inRegB(EX_outRegB), // este no esta en memory
-    .inRtReg(EX_outRegB), // este esta pero no se donde va
-    .inPCJump(EX_outPCJump),
+    .inRtReg(MEM_inRegB), // este esta pero no se donde va
+    .inPCJump(MEM_inPCJump),
     
     //Output Signals
     .osPC(MEM_osPC),
@@ -172,14 +284,32 @@ module MIPS(
     .outPCJump(MEM_outPCJump)
     );
     
+    MEM_WB_latch MEM_WB(
+    .clk(clk),
+    //INPUTS
+    .in_osPC(MEM_osPC),
+    .inWB(MEM_outWB),
+    .inFRWrReg(MEM_outFRWrReg), //31:0
+    .inMem(MEM_outMem),
+    .inALUResult(MEM_outALUResult),
+    .inPCJump(MEM_outPCJump),
+    //OUTPUTS
+    .out_osPC(WB_osPC),
+    .outWB(WB_inWB),
+    .outFRWrReg(WB_inFRWrReg), //31:0
+    .outMem(WB_inMem),
+    .outALUResult(WB_inALUResult),
+    .outPCJump(WB_inPCJump)
+    );
+    
     // Instancia del modulo Write Back
     WriteBack WB( // STAGE 5
     //Input Signals
     .rst(rst),
-    .isWB(MEM_outWB),
-    .inFRWrReg(MEM_outFRWrReg),
-    .inFRWrData(MEM_outMem),
-    .inALUResult(MEM_outALUResult),
+    .isWB(WB_inWB),
+    .inFRWrReg(WB_inFRWrReg),
+    .inFRWrData(WB_inMem),
+    .inALUResult(WB_inALUResult),
     
     //Output Signals
     .osFRWr(WB_osFRWr),     // WB_outRegF_wr
