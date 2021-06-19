@@ -95,7 +95,10 @@ module MIPS(
 
     // Top_UART uart(.clk(clk),.reset(rst),.TX_start(tx_start),.UART_data(execute0_outALUResult),.RX(RX),.MIPS_enable(MIPS_enable),.TX(TX));
 
-    //// Instancias
+    ///////////////////////////////////////////////////////////////////////////
+    //// Instancias ///////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
+
     // Instancia del modulo Instruction Fetch
     InstructionFetch IF( // STAGE 1
     //Clock and Reset Signals
@@ -133,7 +136,7 @@ module MIPS(
     
     //Input Signals
     .isFRWr(WB_osFRWr),
-    .isEX_MemRead(), // ???
+    .isEX_MemRead(EX_inMEM[2]),
     .inFRWrAddr(WB_outFRWrReg),
     .inEX_Rt(EX_outEX_Rt),
     .inPC(ID_inPC),
@@ -199,8 +202,8 @@ module MIPS(
     .rst(rst),
     
     //Input Signals
-    .inMEM_RegWrite(),
-    .inWB_RegWrite(),
+    .inMEM_RegWrite(MEM_inWB[1]),
+    .inWB_RegWrite(WB_osFRWr),
     .inWB(EX_inWB),
     .inMEM(EX_inMEM),
     .inEXE(EX_inEXE),
@@ -208,22 +211,21 @@ module MIPS(
     .inLD_rt(EX_inLD_rt),
     .inRT_rd(EX_inRT_rd),
     .inFUnit_rs(EX_inFUnit_rs),
-    .inMEM_rd(), // ??
-    .inWB_rd(), // ??
+    .inMEM_rd(MEM_inFRWrReg),
+    .inWB_rd(WB_outFRWrReg),
     .inPC(EX_inPC),
     .inRegA(EX_inRegA),
     .inRegB(EX_inRegB),
     .inInstruction_ls(EX_inInstruction_ls),
-    .inMEM_ALUResult(),
-    .inWB_FRWrData(),
-
+    .inMEM_ALUResult(MEM_inALUResult),
+    .inWB_FRWrData(WB_outFRWrData),
     //Output Signals
     .outALUZero(EX_outALUZero),
     .outWB(EX_outWB),
     .outMEM(EX_outMEM),
     .outLoadStoreType(EX_outLoadStoreType),
     .outEX_Rt(EX_outEX_Rt),
-    .outFRWrReg(EX_outFRWrReg), //4:0
+    .outFRWrReg(EX_outFRWrReg),
     .outPCJump(EX_outPCJump),
     .outALUResult(EX_outALUResult),
     .outRegB(EX_outRegB)
@@ -233,6 +235,7 @@ module MIPS(
     
     EX_MEM_latch EX_MEM(
     .clk(clk),
+    .rst(rst),
     //INPUTS
     .inALUZero(EX_outALUZero),
     .inWB(EX_outWB),
@@ -264,9 +267,9 @@ module MIPS(
     
     //Input Signals
     .isALUZero(MEM_inALUZero),
-    .isMemWrite(MEM_inMEM[0]), // funciona asi [0]???
-    .isMemRead(MEM_inMEM[1]), // ? va asi [1]?
-    .isBranch(MEM_inMEM[2]), // ? va asi con [2]?
+    .isMemRead(MEM_inMEM[2]),
+    .isMemWrite(MEM_inMEM[1]),
+    .isBranch(MEM_inMEM[0]),
     .inWB(MEM_inWB),
     .isLoadStoreType(MEM_inLoadStoreType),
     .inFRWrReg(MEM_inFRWrReg),
@@ -278,7 +281,7 @@ module MIPS(
     //Output Signals
     .osPC(MEM_osPC),
     .outWB(MEM_outWB),
-    .outFRWrReg(MEM_outFRWrReg), //31:0
+    .outFRWrReg(MEM_outFRWrReg), // 4:0
     .outMem(MEM_outMem),
     .outALUResult(MEM_outALUResult),
     .outPCJump(MEM_outPCJump)
@@ -286,17 +289,18 @@ module MIPS(
     
     MEM_WB_latch MEM_WB(
     .clk(clk),
+    .rst(rst),
     //INPUTS
     .in_osPC(MEM_osPC),
     .inWB(MEM_outWB),
-    .inFRWrReg(MEM_outFRWrReg), //31:0
+    .inFRWrReg(MEM_outFRWrReg),
     .inMem(MEM_outMem),
     .inALUResult(MEM_outALUResult),
     .inPCJump(MEM_outPCJump),
     //OUTPUTS
     .out_osPC(WB_osPC),
     .outWB(WB_inWB),
-    .outFRWrReg(WB_inFRWrReg), //31:0
+    .outFRWrReg(WB_inFRWrReg),
     .outMem(WB_inMem),
     .outALUResult(WB_inALUResult),
     .outPCJump(WB_inPCJump)

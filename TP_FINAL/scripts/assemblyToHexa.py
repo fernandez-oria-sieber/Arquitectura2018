@@ -52,7 +52,7 @@ def main():
         assembly_file.close()
         print("Conversion finalizada.")
     else:
-        print("File doasn't exist.")
+        print("File doesn't exist.")
 
 
 if __name__ == "__main__":

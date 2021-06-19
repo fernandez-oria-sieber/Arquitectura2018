@@ -21,6 +21,55 @@
 
 
 module MEM_WB_latch(
-
+    // Stage Memory/WriteBack latch
+    input in_osPC;
+    input [1:0] inWB;
+    input [4:0] inFRWrReg;
+    input [31:0] inMem;
+    input [31:0] inALUResult;
+    input [31:0] inPCJump;
+    output out_osPC;
+    output [1:0] outWB;
+    output [4:0] outFRWrReg;
+    output [31:0] outMem;
+    output [31:0] outALUResult;
+    output [31:0] outPCJump;
     );
+
+    reg osPC;
+    reg [1:0] WB;
+    reg [4:0] FRWrReg;
+    reg [31:0] Mem;
+    reg [31:0] ALUResult;
+    reg [31:0] PCJump;
+
+    always @(posedge rst, posedge clk)
+    begin
+        if(rst)
+        begin
+            osPC <= 1'b0;
+            WB <= 2'b0;
+            FRWrReg <= 5'b0;
+            Mem <= 32'b0;
+            ALUResult <= 32'b0;
+            PCJump <= 32'b0;
+        end
+        else
+        begin
+            osPC <= in_osPC;
+            WB <= inWB;
+            FRWrReg <= inFRWrReg;
+            Mem <= inMem;
+            ALUResult <= inALUResult;
+            PCJump <= inPCJump;
+        end
+    end
+    
+    assign out_osPC = osPC;
+    assign outWB = WB;
+    assign outFRWrReg = FRWrReg;
+    assign outMem = Mem;
+    assign outALUResult = ALUResult;
+    assign outPCJump = PCJump;
+
 endmodule
