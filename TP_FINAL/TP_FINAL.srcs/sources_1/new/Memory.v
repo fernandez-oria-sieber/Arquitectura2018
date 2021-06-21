@@ -2,9 +2,9 @@
 module Memory(input clk,
               input rst,
               input isALUZero,             // Si es 0, entonces BEQ hace el Branch
-              input isMemWrite,            // MEM[0]?
-              input isMemRead,             // MEM[1]?
-              input isBranch,              // MEM[2]
+              input isMemRead,             // MEM[2]
+              input isMemWrite,            // MEM[1]
+              input isBranch,              // MEM[0]
               input [1:0] inWB,            // ControlUnit_WB [RegWrite, MemToReg]
               input [2:0] isLoadStoreType, // Viene de ID -> op[2:0]
               input [4:0] inFRWrReg,       // FR - Registro a escribir en ID [EX]

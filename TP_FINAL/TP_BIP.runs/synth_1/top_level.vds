@@ -1,0 +1,31 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Sat May 15 18:35:31 2021
+# Process ID: 3930
+# Current directory: /home/vlad/Arquitectura2018/TP_FINAL/TP_BIP.runs/synth_1
+# Command line: vivado -log top_level.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_level.tcl
+# Log file: /home/vlad/Arquitectura2018/TP_FINAL/TP_BIP.runs/synth_1/top_level.vds
+# Journal file: /home/vlad/Arquitectura2018/TP_FINAL/TP_BIP.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source top_level.tcl -notrace
+Command: synth_design -top top_level -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 3940 
+ERROR: [Synth 8-2576] procedural assignment to a non-register out_isPCWrite is not permitted [/home/vlad/Arquitectura2018/TP_FINAL/TP_FINAL.srcs/sources_1/new/HazardUnit.v:14]
+ERROR: [Synth 8-2576] procedural assignment to a non-register out_isWrite_IF_ID is not permitted [/home/vlad/Arquitectura2018/TP_FINAL/TP_FINAL.srcs/sources_1/new/HazardUnit.v:15]
+ERROR: [Synth 8-2576] procedural assignment to a non-register out_isMuxControl is not permitted [/home/vlad/Arquitectura2018/TP_FINAL/TP_FINAL.srcs/sources_1/new/HazardUnit.v:16]
+ERROR: [Synth 8-2576] procedural assignment to a non-register out_isPCWrite is not permitted [/home/vlad/Arquitectura2018/TP_FINAL/TP_FINAL.srcs/sources_1/new/HazardUnit.v:20]
+ERROR: [Synth 8-2576] procedural assignment to a non-register out_isWrite_IF_ID is not permitted [/home/vlad/Arquitectura2018/TP_FINAL/TP_FINAL.srcs/sources_1/new/HazardUnit.v:21]
+ERROR: [Synth 8-2576] procedural assignment to a non-register out_isMuxControl is not permitted [/home/vlad/Arquitectura2018/TP_FINAL/TP_FINAL.srcs/sources_1/new/HazardUnit.v:22]
+INFO: [Synth 8-2350] module HazardUnit ignored due to previous errors [/home/vlad/Arquitectura2018/TP_FINAL/TP_FINAL.srcs/sources_1/new/HazardUnit.v:2]
+Failed to read verilog '/home/vlad/Arquitectura2018/TP_FINAL/TP_FINAL.srcs/sources_1/new/HazardUnit.v'
+INFO: [Common 17-83] Releasing license: Synthesis
+3 Infos, 0 Warnings, 0 Critical Warnings and 7 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Sat May 15 18:35:47 2021...

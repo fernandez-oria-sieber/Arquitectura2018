@@ -1,0 +1,23 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Wed Jun  9 20:45:11 2021
+# Process ID: 3382
+# Current directory: /home/vlad/Documents/Arquitectura2018
+# Command line: vivado
+# Log file: /home/vlad/Documents/Arquitectura2018/vivado.log
+# Journal file: /home/vlad/Documents/Arquitectura2018/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/vlad/Documents/Arquitectura2018/TP_FINAL/TP_BIP.xpr
+INFO: [Project 1-313] Project file moved from '/home/vlad/Arquitectura2018/TP_FINAL' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/Xilinx/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:05 . Memory (MB): peak = 6077.328 ; gain = 115.430 ; free physical = 13127 ; free virtual = 18704
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Jun  9 20:48:06 2021...

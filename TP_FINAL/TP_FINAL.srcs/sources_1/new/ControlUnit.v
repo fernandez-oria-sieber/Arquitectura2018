@@ -22,9 +22,9 @@ module ControlUnit(input isMuxControl,
                             default:   ctrl = 11'b110000_000_11; // d'00 - RType
                         endcase
                     end
-                6'b10_0XXX: ctrl = 11'b000100_010_10; // d'35 - Load [L]
-                6'b10_1XXX: ctrl = 11'b000100_001_0X; // d'43 - Store [S]
-                6'b00_010X: ctrl = 11'bX01000_100_0X; // d'04 - Branch on Equal [BEQ]
+                6'b10_0XXX: ctrl = 11'b000100_100_10; // d'35 - Load [L]
+                6'b10_1XXX: ctrl = 11'b000100_010_0X; // d'43 - Store [S]
+                6'b00_010X: ctrl = 11'bX01000_001_0X; // d'04 - Branch on Equal [BEQ]
                 // 00_1000
                 default:    ctrl = {inInstruction[5:0],5'b000_11}; // IType
             endcase

@@ -1,0 +1,204 @@
+/*
+
+Xilinx Vivado v2018.2 (64-bit) [Major: 2018, Minor: 2]
+SW Build: 2258646 on Thu Jun 14 20:02:38 MDT 2018
+IP Build: 2256618 on Thu Jun 14 22:10:49 MDT 2018
+
+Process ID: 1829
+License: Customer
+
+Current time: 	Mon Jun 21 10:45:22 ART 2021
+Time zone: 	Argentine Time (America/Argentina/Cordoba)
+
+OS: LSB_VERSION=1.4
+OS Version: 5.12.3-arch1-1
+OS Architecture: amd64
+Available processors (cores): 4
+
+Display: :0
+Screen size: 1366x768
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 23 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	/home/Xilinx/Vivado/2018.2/tps/lnx64/jre
+Java executable location: 	/home/Xilinx/Vivado/2018.2/tps/lnx64/jre/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 2 GB
+
+
+User name: 	root
+User home directory: /root
+User working directory: /home/vlad/Documents/Arquitectura2018
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /home/Xilinx/Vivado
+HDI_APPROOT: /home/Xilinx/Vivado/2018.2
+RDI_DATADIR: /home/Xilinx/Vivado/2018.2/data
+RDI_BINDIR: /home/Xilinx/Vivado/2018.2/bin
+
+Vivado preferences file location: /root/.Xilinx/Vivado/2018.2/vivado.xml
+Vivado preferences directory: /root/.Xilinx/Vivado/2018.2/
+Vivado layouts directory: /root/.Xilinx/Vivado/2018.2/layouts
+PlanAhead jar file location: 	/home/Xilinx/Vivado/2018.2/lib/classes/planAhead.jar
+Vivado log file location: 	/home/vlad/Documents/Arquitectura2018/vivado.log
+Vivado journal file location: 	/home/vlad/Documents/Arquitectura2018/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-1829-vlad-putin
+
+Xilinx Environment Variables
+----------------------------
+XILINX: /home/Xilinx/Vivado/2018.2/ids_lite/ISE
+XILINX_DSP: /home/Xilinx/Vivado/2018.2/ids_lite/ISE
+XILINX_PLANAHEAD: /home/Xilinx/Vivado/2018.2
+XILINX_SDK: /home/Xilinx/SDK/2018.2
+XILINX_VIVADO: /home/Xilinx/Vivado/2018.2
+XILINX_VIVADO_HLS: /home/Xilinx/Vivado/2018.2
+
+
+GUI allocated memory:	180 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 831 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// [GUI Memory]: 63 MB (+63856kb) [00:00:11]
+// [Engine Memory]: 829 MB (+717294kb) [00:00:11]
+selectList(PAResourceQtoS.SyntheticaGettingStartedView_RECENT_PROJECTS, "/home/vlad/Documents/Arquitectura2018/TP_FINAL/TP_BIP.xpr", 0); // q (O, ck)
+// bx (ck):  Open Project : addNotify
+// Opening Vivado Project: /home/vlad/Documents/Arquitectura2018/TP_FINAL/TP_BIP.xpr. Version: Vivado v2018.2 
+// HMemoryUtils.trashcanNow. Engine heap size: 839 MB. GUI used memory: 32 MB. Current time: 6/21/21 10:45:25 AM ART
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project /home/vlad/Documents/Arquitectura2018/TP_FINAL/TP_BIP.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project /home/vlad/Documents/Arquitectura2018/TP_FINAL/TP_BIP.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/Xilinx/Vivado/2018.2/data/ip'. 
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 956 MB (+90703kb) [00:00:20]
+// Project name: TP_BIP; location: /home/vlad/Documents/Arquitectura2018/TP_FINAL; part: xc7a35tcpg236-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:09 . Memory (MB): peak = 6073.438 ; gain = 119.883 ; free physical = 12074 ; free virtual = 17837 
+// Elapsed time: 10 seconds
+dismissDialog("Open Project"); // bx (ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 0); // B (D, ck)
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, MIPS (MIPS.v)]", 1); // B (D, ck)
+// [Engine Memory]: 1,004 MB (+11kb) [00:00:36]
+// PAPropertyPanels.initPanels (MIPS.v) elapsed time: 0.4s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, MIPS (MIPS.v)]", 1, true); // B (D, ck) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, MIPS (MIPS.v)]", 1, true, false, false, false, false, true); // B (D, ck) - Double Click - Node
+// [GUI Memory]: 67 MB (+637kb) [00:00:45]
+// [GUI Memory]: 72 MB (+1994kb) [00:01:35]
+// Elapsed time: 55 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, InstructionFetch (InstructionFetch.v)]", 2, true); // B (D, ck) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, InstructionFetch (InstructionFetch.v)]", 2, true, false, false, false, false, true); // B (D, ck) - Double Click - Node
+selectCodeEditor("InstructionFetch.v", 381, 96); // ce (w, ck)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,026 MB. GUI used memory: 39 MB. Current time: 6/21/21 10:46:50 AM ART
+selectCodeEditor("InstructionFetch.v", 363, 97); // ce (w, ck)
+selectCodeEditor("InstructionFetch.v", 406, 107); // ce (w, ck)
+selectCodeEditor("InstructionFetch.v", 367, 102); // ce (w, ck)
+// Elapsed time: 13 seconds
+selectCodeEditor("InstructionFetch.v", 571, 103); // ce (w, ck)
+selectCodeEditor("InstructionFetch.v", 571, 103, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("InstructionFetch.v", 571, 103); // ce (w, ck)
+// Elapsed time: 19 seconds
+selectCodeEditor("InstructionFetch.v", 359, 99); // ce (w, ck)
+selectCodeEditor("InstructionFetch.v", 409, 44); // ce (w, ck)
+selectCodeEditor("InstructionFetch.v", 359, 106); // ce (w, ck)
+selectCodeEditor("InstructionFetch.v", 416, 100); // ce (w, ck)
+// Elapsed time: 40 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "MIPS.v", 1); // k (j, ck)
+// Elapsed time: 17 seconds
+selectCodeEditor("MIPS.v", 164, 123); // ce (w, ck)
+selectCodeEditor("MIPS.v", 166, 124, false, false, false, false, true); // ce (w, ck) - Double Click
+// Elapsed time: 11 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Memory (Memory.v)]", 7, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Memory (Memory.v)]", 7, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Memory.v", 3); // k (j, ck)
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, InstructionFetch (InstructionFetch.v)]", 2); // B (D, ck)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, MIPS (MIPS.v)]", 1); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, MIPS (MIPS.v), MEM : Memory (Memory.v)]", 8, true); // B (D, ck) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, MIPS (MIPS.v), MEM : Memory (Memory.v)]", 8, true, false, false, false, false, true); // B (D, ck) - Double Click - Node
+// Elapsed time: 29 seconds
+selectCodeEditor("Memory.v", 157, 197); // ce (w, ck)
+selectCodeEditor("Memory.v", 157, 197, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("Memory.v", 156, 198); // ce (w, ck)
+selectCodeEditor("Memory.v", 380, 195); // ce (w, ck)
+selectCodeEditor("Memory.v", 380, 195, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("Memory.v", 232, 203); // ce (w, ck)
+selectCodeEditor("Memory.v", 232, 203, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("Memory.v", 368, 194); // ce (w, ck)
+selectCodeEditor("Memory.v", 365, 194, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("Memory.v", 248, 207); // ce (w, ck)
+selectCodeEditor("Memory.v", 248, 207, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("Memory.v", 232, 196); // ce (w, ck)
+selectCodeEditor("Memory.v", 232, 197, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("Memory.v", 367, 192); // ce (w, ck)
+selectCodeEditor("Memory.v", 366, 191, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("Memory.v", 345, 133); // ce (w, ck)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,041 MB. GUI used memory: 40 MB. Current time: 6/21/21 10:50:05 AM ART
+// Elapsed time: 19 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "MIPS.v", 1); // k (j, ck)
+// Elapsed time: 21 seconds
+selectCodeEditor("MIPS.v", 81, 253); // ce (w, ck)
+selectCodeEditor("MIPS.v", 81, 253, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("MIPS.v", 177, 256); // ce (w, ck)
+selectCodeEditor("MIPS.v", 176, 255, false, false, false, false, true); // ce (w, ck) - Double Click
+// [GUI Memory]: 77 MB (+1147kb) [00:05:19]
+// Elapsed time: 62 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "InstructionFetch.v", 2); // k (j, ck)
+// Elapsed time: 26 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Memory.v", 3); // k (j, ck)
+// Elapsed time: 16 seconds
+selectCodeEditor("Memory.v", 131, 195); // ce (w, ck)
+selectCodeEditor("Memory.v", 131, 195, false, false, false, false, true); // ce (w, ck) - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "MIPS.v", 1); // k (j, ck)
+// Elapsed time: 18 seconds
+selectCodeEditor("MIPS.v", 185, 274); // ce (w, ck)
+selectCodeEditor("MIPS.v", 185, 274, false, false, false, false, true); // ce (w, ck) - Double Click
+// Elapsed time: 122 seconds
+selectCodeEditor("MIPS.v", 218, 275); // ce (w, ck)
+selectCodeEditor("MIPS.v", 218, 275, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("MIPS.v", 211, 126); // ce (w, ck)
+selectCodeEditor("MIPS.v", 211, 126, false, false, false, false, true); // ce (w, ck) - Double Click
+// [GUI Memory]: 81 MB (+517kb) [00:11:00]
+// Elapsed time: 177 seconds
+selectCodeEditor("MIPS.v", 214, 242); // ce (w, ck)
+selectCodeEditor("MIPS.v", 214, 241, false, false, false, false, true); // ce (w, ck) - Double Click
+// Elapsed time: 18 seconds
+selectCodeEditor("MIPS.v", 275, 338); // ce (w, ck)
+selectCodeEditor("MIPS.v", 290, 334); // ce (w, ck)
+selectCodeEditor("MIPS.v", 267, 197); // ce (w, ck)
+selectCodeEditor("MIPS.v", 287, 137); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// [Engine Memory]: 1,062 MB (+7307kb) [00:13:15]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,062 MB. GUI used memory: 40 MB. Current time: 6/21/21 10:58:25 AM ART
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, MIPS (MIPS.v), MEM : Memory (Memory.v)]", 8); // B (D, ck)
+// TclEventType: DG_GRAPH_GENERATED
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, MIPS (MIPS.v), MEM_WB : MEM_WB_latch (MEM_WB_latch.v)]", 9, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, MIPS (MIPS.v), MEM_WB : MEM_WB_latch (MEM_WB_latch.v)]", 9, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, MIPS (MIPS.v), EX_MEM : EX_MEM_latch (EX_MEM_latch.v)]", 7, false); // B (D, ck)
+// [GUI Memory]: 86 MB (+14kb) [00:13:23]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, MIPS (MIPS.v), EX_MEM : EX_MEM_latch (EX_MEM_latch.v)]", 7, false, false, false, false, false, true); // B (D, ck) - Double Click
+// Elapsed time: 11 seconds
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+// [GUI Memory]: 91 MB (+1231kb) [00:13:41]
