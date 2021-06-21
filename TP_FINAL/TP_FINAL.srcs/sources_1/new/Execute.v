@@ -23,7 +23,6 @@ module Execute(input clk,
                output [1:0] outWB,
                output [2:0] outMEM,           // Esto va a EX/MEM y el MEM[1] al Hazard Unit
                output [2:0] outLoadStoreType, // op[2:0] se utiliza en SignExtensionMemory de MEM
-               output [4:0] outEX_Rt,         // Reg Rt de LD que se utiliza en Hazard Unit
                output [4:0] outFRWrReg,       // FR - Registro a escribir en ID
                output [31:0] outPCJump,
                output [31:0] outALUResult,
@@ -144,7 +143,6 @@ module Execute(input clk,
     // Asignaciones de salida
     assign outWB            = inWB;
     assign outMEM           = inMEM;
-    assign outEX_Rt         = inLD_rt;
     assign outPCJump        = PCJump;
     assign outFRWrReg       = FRWrReg;
     assign outALUResult     = ALUResult;

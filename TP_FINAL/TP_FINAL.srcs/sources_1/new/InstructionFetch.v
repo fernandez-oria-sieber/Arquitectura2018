@@ -15,9 +15,9 @@ module InstructionFetch(input clk,
     DataMemory #(.INIT_FILE("~/Arquitectura2018/TP_FINAL/datos.txt")) data_memory(
     .clk(clk),
     .ena(1'b1),
-    .inWrEnable(0),
+    .inWrEnable(1'b0),
     .inAddress(pc),
-    .inData(0),
+    .inData(32'b0),
     .outData(memory_value)
     );
     
@@ -29,15 +29,6 @@ module InstructionFetch(input clk,
         else
             if (isPCWrite) pc <= (isPCSel) ? inPCJump : pc + 1;
     end
-    
-    // // MUX + ALU(ADD)
-    // always @(*)
-    // begin
-    //     if (reset)
-    //         addr <= 0;
-    //     else
-    //         addr <= pc + 1;
-    // end
     
     // Asignaciones de salida
     assign outInstruction = memory_value;

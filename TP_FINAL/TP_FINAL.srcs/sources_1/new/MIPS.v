@@ -108,7 +108,7 @@ module MIPS(
     //Input Signals
     .inPCSel(MEM_osPC),
     .isPCWrite(ID_out_isPCWrite),
-    .inPCJump(MEM_outPCJump),
+    .inPCJump(MEM_inPCJump),
     
     //Output Signals
     .outInstruction(IF_outInstruction),
@@ -138,7 +138,7 @@ module MIPS(
     .isFRWr(WB_osFRWr),
     .isEX_MemRead(EX_inMEM[2]),
     .inFRWrAddr(WB_outFRWrReg),
-    .inEX_Rt(EX_outEX_Rt),
+    .inEX_Rt(EX_inLD_rt),
     .inPC(ID_inPC),
     .inInstruction(ID_inInstruction),
     .inFRWrData(WB_outFRWrData),
@@ -165,7 +165,6 @@ module MIPS(
     .clk(clk),
     .rst(rst),
     //INPUTS
-    .in_isPCWrite(ID_out_isPCWrite),
     .in_isWrite_IF_ID(ID_out_isWrite_IF_ID),
     .inWB(ID_outWB),
     .inMEM(ID_outMEM),
@@ -179,7 +178,6 @@ module MIPS(
     .inRegB(ID_outRegB),
     .inInstruction_ls(ID_outInstruction_ls),
     //OUTPUTS
-    .out_isPCWrite(EX_in_isPCWrite),
     .out_isWrite_IF_ID(EX_in_isWrite_IF_ID),
     .outWB(EX_inWB),
     .outMEM(EX_inMEM),
@@ -224,7 +222,6 @@ module MIPS(
     .outWB(EX_outWB),
     .outMEM(EX_outMEM),
     .outLoadStoreType(EX_outLoadStoreType),
-    .outEX_Rt(EX_outEX_Rt),
     .outFRWrReg(EX_outFRWrReg),
     .outPCJump(EX_outPCJump),
     .outALUResult(EX_outALUResult),
@@ -241,7 +238,6 @@ module MIPS(
     .inWB(EX_outWB),
     .inMEM(EX_outMEM),
     .inLoadStoreType(EX_outLoadStoreType),
-    .inEX_Rt(EX_outEX_Rt),
     .inFRWrReg(EX_outFRWrReg), //4:0
     .inPCJump(EX_outPCJump),
     .inALUResult(EX_outALUResult),
@@ -251,7 +247,6 @@ module MIPS(
     .outWB(MEM_inWB),
     .outMEM(MEM_inMEM),
     .outLoadStoreType(MEM_inLoadStoreType),
-    .outEX_Rt(MEM_inEX_Rt),
     .outFRWrReg(MEM_inFRWrReg), //4:0
     .outPCJump(MEM_inPCJump),
     .outALUResult(MEM_inALUResult),
@@ -274,36 +269,29 @@ module MIPS(
     .isLoadStoreType(MEM_inLoadStoreType),
     .inFRWrReg(MEM_inFRWrReg),
     .inALUResult(MEM_inALUResult),
-    //.inRegB(EX_outRegB), // este no esta en memory
-    .inRtReg(MEM_inRegB), // este esta pero no se donde va
-    .inPCJump(MEM_inPCJump),
+    .inRtReg(MEM_inRegB),
     
     //Output Signals
     .osPC(MEM_osPC),
     .outWB(MEM_outWB),
     .outFRWrReg(MEM_outFRWrReg), // 4:0
     .outMem(MEM_outMem),
-    .outALUResult(MEM_outALUResult),
-    .outPCJump(MEM_outPCJump)
+    .outALUResult(MEM_outALUResult)
     );
     
     MEM_WB_latch MEM_WB(
     .clk(clk),
     .rst(rst),
     //INPUTS
-    .in_osPC(MEM_osPC),
     .inWB(MEM_outWB),
     .inFRWrReg(MEM_outFRWrReg),
     .inMem(MEM_outMem),
     .inALUResult(MEM_outALUResult),
-    .inPCJump(MEM_outPCJump),
     //OUTPUTS
-    .out_osPC(WB_osPC),
     .outWB(WB_inWB),
     .outFRWrReg(WB_inFRWrReg),
     .outMem(WB_inMem),
-    .outALUResult(WB_inALUResult),
-    .outPCJump(WB_inPCJump)
+    .outALUResult(WB_inALUResult)
     );
     
     // Instancia del modulo Write Back
