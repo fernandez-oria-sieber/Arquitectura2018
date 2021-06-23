@@ -28,6 +28,7 @@ module EX_MEM_latch(
     input [2:0]     inMEM,
     input [2:0]     inLoadStoreType,
     input [4:0]     inFRWrReg,
+    input [31:0]    inPCJump,
     input [31:0]    inALUResult,
     input [31:0]    inRegB,
     output          outALUZero,
@@ -35,6 +36,7 @@ module EX_MEM_latch(
     output [2:0]    outMEM,
     output [2:0]    outLoadStoreType,
     output [4:0]    outFRWrReg,
+    output [31:0]   outPCJump,
     output [31:0]   outALUResult,
     output [31:0]   outRegB
     );
@@ -44,6 +46,7 @@ module EX_MEM_latch(
     reg [2:0] MEM;
     reg [2:0] LoadStoreType;
     reg [4:0] FRWrReg;
+    reg [31:0] PCJump;
     reg [31:0] ALUResult;
     reg [31:0] RegB;
 
@@ -58,6 +61,7 @@ module EX_MEM_latch(
             FRWrReg <= 5'b0;
             ALUResult <= 32'b0;
             RegB <= 32'b0;
+            PCJump <= 32'b0;
         end
         else
         begin
@@ -68,6 +72,7 @@ module EX_MEM_latch(
             FRWrReg <= inFRWrReg;
             ALUResult <= inALUResult;
             RegB <= inRegB;
+            PCJump <= inPCJump;
         end
     end
     
@@ -78,5 +83,6 @@ module EX_MEM_latch(
     assign outFRWrReg = FRWrReg;
     assign outALUResult = ALUResult;
     assign outRegB = RegB;
+    assign outPCJump = PCJump;
 
 endmodule

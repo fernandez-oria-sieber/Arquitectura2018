@@ -85,15 +85,6 @@ module MIPS(
     wire 		WB_osFRWr;      // WB:osFRWr -> ID:isFRWr
     wire [4:0]	WB_outFRWrReg;  // WB:outFRWrReg -> ID:inFRWrAddr
     wire [31:0]	WB_outFRWrData; // WB:outFRWrData -> ID:inFRWrData
-    
-    // wire soft_rst; 
-    // wire tx_start;
-    // wire MIPS_enable;
-
-    // assign soft_rst = (rst || (!MIPS_enable));
-    // assign tx_start = (ifetch0_outInstructionAddress==32'd19)? 1'b1:1'b0;
-
-    // Top_UART uart(.clk(clk),.reset(rst),.TX_start(tx_start),.UART_data(execute0_outALUResult),.RX(RX),.MIPS_enable(MIPS_enable),.TX(TX));
 
     ///////////////////////////////////////////////////////////////////////////
     //// Instancias ///////////////////////////////////////////////////////////
@@ -106,7 +97,7 @@ module MIPS(
     .reset(rst),
     
     //Input Signals
-    .inPCSel(MEM_osPC),
+    .isPCSel(MEM_osPC),
     .isPCWrite(ID_out_isPCWrite),
     .inPCJump(MEM_inPCJump),
     

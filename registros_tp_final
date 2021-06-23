@@ -56,7 +56,7 @@ Bitacora de los capitanes:
 25/11/2020:
     - Empezamos con la implementación del TopLevel de MIPS e hicimos algunos cambios necesarios en los modulos de los Stages
 
-25/05/2020:
+25/05/2021:
     - Migramos repo de GitLab de la UNC a GitHub
     - Generamos un script que pasa los registros de assembler a Hexa
     TODO:

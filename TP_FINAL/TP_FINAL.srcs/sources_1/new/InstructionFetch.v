@@ -10,15 +10,15 @@ module InstructionFetch(input clk,
     
     // Registros
     reg [31:0] pc, addr; // dirección de acceso a la memoria, asociada al pc
-    reg [31:0] memory_value;
+    //reg [31:0] memory_value;
     
-    DataMemory #(.INIT_FILE("~/Arquitectura2018/TP_FINAL/datos.txt")) data_memory(
+    DataMemory #(.INIT_FILE("/home/vlad/Documents/Arquitectura2018/TP_FINAL/scripts/instructionsHexa.txt")) data_memory(
     .clk(clk),
     .ena(1'b1),
     .inWrEnable(1'b0),
     .inAddress(pc),
     .inData(32'b0),
-    .outData(memory_value)
+    .outData(outInstruction)
     );
     
     // Logica del bloque
@@ -31,7 +31,6 @@ module InstructionFetch(input clk,
     end
     
     // Asignaciones de salida
-    assign outInstruction = memory_value;
     assign outPC          = pc;
     
 endmodule

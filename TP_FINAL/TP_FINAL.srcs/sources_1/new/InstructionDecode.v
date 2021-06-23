@@ -24,9 +24,6 @@ module InstructionDecode(input clk,
                          output [31:0] outInstruction_ls); // Salida con extensión de signo para ¿solo I-Types?
     
     // Registros
-    reg [1:0] WB;
-    reg [2:0] MEM;
-    reg [5:0] EXE;
     reg [2:0] load_store_type;
     reg [4:0] LD_rt; // Para las instruccion Load - Load Doubleword[LD] rt, offset(base)
     reg [4:0] RT_rd; // Para los RType - Registro rd
@@ -58,9 +55,9 @@ module InstructionDecode(input clk,
     .inInstruction(op),
     .inFunct(funct),
     .isMuxControl(out_isMuxControl),
-    .outCtrlWB(WB),
-    .outCtrlMEM(MEM),
-    .outCtrlEXE(EXE)
+    .outCtrl_WB(outWB),
+    .outCtrl_MEM(outMEM),
+    .outCtrl_EXE(outEXE)
     );
     
     HazardUnit hazard_unit(
@@ -91,9 +88,6 @@ module InstructionDecode(input clk,
     begin
         if (rst)
         begin
-            WB              = 2'b00;
-            MEM             = 3'b010;
-            EXE             = 6'b0;
             PC              = 32'b0;
             Instruction_ls  = 32'b0;
             LD_rt           = 5'b0;
@@ -109,18 +103,10 @@ module InstructionDecode(input clk,
             RT_rd           = rd;
             FUnit_rs        = rs;
             load_store_type = op[2:0];
-            
-            // WB             = outCtrlWB; // Esto ahora lo estamos asignando a la salida de ControlBlock
-            // MEM            = outCtrlMEM;
-            // EXE            = outCtrlEXE;
-            // Instruction_ls = {address, 16'b0};
         end
     end
     
     //Asignaciones de salida
-    assign outWB             = WB;
-    assign outMEM            = MEM;
-    assign outEXE            = EXE;
     assign outLD_rt          = LD_rt;
     assign outRT_rd          = RT_rd;
     assign outFUnit_rs       = FUnit_rs;

@@ -21,9 +21,9 @@ module FileRegister(input clk,
     begin
         if (rst)
         begin          
-            for(i=0;i<32;i=i+1) registros[i] <= 0;
-            regA <= 0;
-            regB <= 0;
+            for(i=0;i<32;i=i+1) registros[i] <= 32'b0;
+            regA <= 32'b0;
+            regB <= 32'b0;
         end
         else if (isWrite) registros[inWriteAddr] <= inWriteData;
     end

@@ -30,7 +30,6 @@ module Execute(input clk,
                );
     
     // Registros
-    reg ALUZero;
     reg [4:0] FRWrReg;
     reg [4:0] wreg;
     reg [31:0] PCJump;
@@ -41,20 +40,18 @@ module Execute(input clk,
     reg [31:0] outMuxA;
     reg [31:0] outMuxB;
     
-    reg [1:0] isMuxA;
-    reg [1:0] isMuxB;
-    
-    
     // Cables
+    wire [1:0] isMuxA;
+    wire [1:0] isMuxB;
     wire [3:0] ALUControl;
     
     // Instancia de "ALU"
     ALU #(.size(32)) alu0 (
-    .Op(ALUControl),
-    .A(outMuxA),
-    .B(regB_ALU),
-    .Zero(ALUZero),
-    .Result(ALUResult)
+    .inOp(ALUControl),
+    .inRegA(outMuxA),
+    .inRegB(regB_ALU),
+    .outZero(outALUZero),
+    .outResult(outALUResult)
     );
     
     // Instancia de "ALUControl"
@@ -83,8 +80,6 @@ module Execute(input clk,
         begin
             PCJump     <= 32'b0;
             FRWrReg    <= 5'b0;
-            ALUResult  <= 32'b0;
-            ALUZero    <= 1'b0;
             RegB       <= 32'b0;
             // FRWrReg <= 5'bZZZZZ; // FIXME
         end
@@ -134,7 +129,6 @@ module Execute(input clk,
                 6'b00XXXX: regB_ALU <= inInstruction_ls;
                 6'b11XXXX: regB_ALU <= outMuxB;
                 default: regB_ALU <= outMuxB;
-                // regB_ALU       <= inInstruction_ls;
                 // probar esto como default, para nosotros tiene más sentido
             endcase
         end
@@ -145,8 +139,6 @@ module Execute(input clk,
     assign outMEM           = inMEM;
     assign outPCJump        = PCJump;
     assign outFRWrReg       = FRWrReg;
-    assign outALUResult     = ALUResult;
-    assign outALUZero       = ALUZero;
     assign outRegB          = RegB;
     assign outLoadStoreType = isLoadStoreType;
     
