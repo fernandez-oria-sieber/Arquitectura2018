@@ -1,6 +1,5 @@
 `timescale 1ns / 1ps
 module ForwardingUnit (
-                       input rst,
                        input inMEM_RegWrite,
                        input [4 : 0] inMEM_Rd,
                        input [4 : 0] inRs,
@@ -15,20 +14,12 @@ module ForwardingUnit (
     
     always @(*)
     begin
-        if (rst)
-        begin
-            isMUX_A <= 2'b0;
-            isMUX_B <= 2'b0;
-        end
+        if (inMEM_RegWrite && inMEM_Rd != 5'b0 && inMEM_Rd == inRs)
+            isMUX_A = 2'b10;
+        else if (inWB_RegWrite && inWB_Rd != 5'b0 && inWB_Rd == inRs)
+            isMUX_A = 2'b01;
         else
-        begin
-            if (inMEM_RegWrite && inMEM_Rd != 5'b0 && inMEM_Rd == inRs)
-                isMUX_A = 2'b10;
-            else if (inWB_RegWrite && inWB_Rd != 5'b0 && inWB_Rd == inRs)
-                isMUX_A = 2'b01;
-            else
-                isMUX_A = 2'b00;
-        end
+            isMUX_A = 2'b00;
     end
     
     always @(*)

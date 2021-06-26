@@ -10,6 +10,8 @@ module SignExtensionMem(input [31:0] inDataToMem,
 
 always@(*)
 begin
+    outStore = 32'b0; // inferring latch for variable 'outLoad_reg'
+    outLoad = 32'b0;
     if (isMemWrite)
     begin
         case(isLoadStoreType[1:0])
@@ -19,7 +21,7 @@ begin
             2'b01: outStore = $signed(inDataToMem[15:0]);   // rellena del [31:16] con el valor del bit 15
             // store word [SW]
             2'b11: outStore   = inDataToMem;
-            default: outStore = 0;
+            default: outStore = 32'b0;
         endcase
     end
     else if (isMemRead)
@@ -37,9 +39,10 @@ begin
             3'b101: outLoad = {{16'b0},inMemData[15:0]};
             //load word unsigned [LWU]
             3'b111: outLoad  = inMemData;
-            default: outLoad = 0;
+            default: outLoad = 32'b0;
         endcase
     end
+    
 end
 
 endmodule

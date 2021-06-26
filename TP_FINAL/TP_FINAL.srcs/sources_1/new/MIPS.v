@@ -19,7 +19,7 @@ module MIPS(
     wire 		ID_out_isWrite_IF_ID; //ID:out_isWrite_IF_ID -> IF/ID
     wire [1:0]	ID_outWB; 	          //ID:outWB -> EX:inWB
     wire [2:0]	ID_outMEM; 	          //ID:outMEM -> EX:inMEM
-    wire [4:0]	ID_outEXE; 	          //ID:outEXE -> EX:inEXE
+    wire [5:0]	ID_outEXE; 	          //ID:outEXE -> EX:inEXE
     wire [2:0]  ID_outLoadStoreType;  //ID:outLoadStoreType -> EX:isLoadStoreType
     wire [4:0]	ID_outLD_rt;          //ID:outLD_rt -> EX:inLD_rt
     wire [4:0]	ID_outRT_rd;          //ID:outRT_rd -> EX:inRT_rd
@@ -33,7 +33,7 @@ module MIPS(
     wire         EX_in_isWrite_IF_ID; 
     wire [1:0]    EX_inWB;            
     wire [2:0]    EX_inMEM;           
-    wire [4:0]    EX_inEXE;          
+    wire [5:0]    EX_inEXE;          
     wire [2:0]  EX_inLoadStoreType;  
     wire [4:0]    EX_inLD_rt;        
     wire [4:0]    EX_inRT_rd;        
@@ -91,7 +91,7 @@ module MIPS(
     ///////////////////////////////////////////////////////////////////////////
 
     // Instancia del modulo Instruction Fetch
-    InstructionFetch IF( // STAGE 1
+    InstructionFetch ( // STAGE 1
     //Clock and Reset Signals
     .clk(clk),
     .reset(rst),
@@ -111,6 +111,7 @@ module MIPS(
     .clk(clk),
     .rst(rst),
     //INPUTS
+    .in_isWrite_IF_ID(ID_out_isWrite_IF_ID),
     .inInstruction(IF_outInstruction),
     .inPc(IF_outPC),
     //OUTPUT
@@ -156,7 +157,6 @@ module MIPS(
     .clk(clk),
     .rst(rst),
     //INPUTS
-    .in_isWrite_IF_ID(ID_out_isWrite_IF_ID),
     .inWB(ID_outWB),
     .inMEM(ID_outMEM),
     .inEXE(ID_outEXE),
@@ -169,7 +169,6 @@ module MIPS(
     .inRegB(ID_outRegB),
     .inInstruction_ls(ID_outInstruction_ls),
     //OUTPUTS
-    .out_isWrite_IF_ID(EX_in_isWrite_IF_ID),
     .outWB(EX_inWB),
     .outMEM(EX_inMEM),
     .outEXE(EX_inEXE),

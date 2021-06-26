@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module ALU #(parameter size = 8)
+module ALU #(parameter size = 32)
             (input [3:0] inOp,
              input signed [size-1:0] inRegA,
              input signed [size-1:0] inRegB,

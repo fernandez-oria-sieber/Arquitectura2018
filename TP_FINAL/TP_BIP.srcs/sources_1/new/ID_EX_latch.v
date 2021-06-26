@@ -23,7 +23,6 @@
 module ID_EX_latch(
     input clk,
     input rst,
-    input in_isWrite_IF_ID,
     input [1:0] inWB,
     input [2:0] inMEM,
     input [5:0] inEXE,
@@ -35,7 +34,6 @@ module ID_EX_latch(
     input [31:0] inRegA,
     input [31:0] inRegB,
     input [31:0] inInstruction_ls,
-    output out_isWrite_IF_ID,
     output [1:0] outWB,
     output [2:0] outMEM,
     output [5:0] outEXE,
@@ -49,7 +47,6 @@ module ID_EX_latch(
     output [31:0] outInstruction_ls
     );
     
-    reg isWrite_IF_ID;
     reg [1:0] WB;
     reg [2:0] MEM;
     reg [5:0] EXE;
@@ -66,7 +63,6 @@ module ID_EX_latch(
     begin
         if(rst)
         begin
-            isWrite_IF_ID <= 1'b0;
             WB <= 2'b0;
             MEM <= 3'b0;
             EXE <= 6'b0;
@@ -81,7 +77,6 @@ module ID_EX_latch(
         end
         else
         begin
-            isWrite_IF_ID <= in_isWrite_IF_ID;
             WB <= inWB;
             MEM <= inMEM;
             EXE <= inEXE;
@@ -96,7 +91,6 @@ module ID_EX_latch(
         end
     end
     
-    assign out_isWrite_IF_ID = isWrite_IF_ID;
     assign outWB = WB;
     assign outMEM = MEM;
     assign outEXE = EXE;

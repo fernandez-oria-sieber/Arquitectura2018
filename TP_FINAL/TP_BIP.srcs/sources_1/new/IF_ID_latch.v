@@ -24,6 +24,7 @@ module IF_ID_latch(
     input clk,
     input rst,
     //INPUTS
+    input in_isWrite_IF_ID,
     input [31:0] inInstruction,
     input [31:0] inPc,
     //OUTPUT
@@ -41,7 +42,7 @@ begin
         instruction <= 32'b0;
         pc <= 32'b0;
     end
-    else
+    else if (in_isWrite_IF_ID)
     begin
         instruction <= inInstruction;
         pc <= inPc;

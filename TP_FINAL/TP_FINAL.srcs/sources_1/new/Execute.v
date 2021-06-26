@@ -34,7 +34,6 @@ module Execute(input clk,
     reg [4:0] wreg;
     reg [31:0] PCJump;
     reg [31:0] Jump;
-    reg [31:0] ALUResult;
     reg [31:0] RegB;
     reg [31:0] regB_ALU;
     reg [31:0] outMuxA;
@@ -63,7 +62,6 @@ module Execute(input clk,
     
     // Instancia de "ForwardingUnit"
     ForwardingUnit forwardingUnit0 (
-    .rst(rst),
     .inMEM_RegWrite(inMEM_RegWrite),
     .inMEM_Rd(inMEM_rd),
     .inRs(inFUnit_rs),
@@ -79,9 +77,13 @@ module Execute(input clk,
         if (rst)
         begin
             PCJump     <= 32'b0;
+            Jump       <= 32'b0;
             FRWrReg    <= 5'b0;
             RegB       <= 32'b0;
-            // FRWrReg <= 5'bZZZZZ; // FIXME
+            wreg       <= 5'b0;
+            regB_ALU   <= 32'b0;
+            outMuxA    <= 32'b0;
+            outMuxB    <= 32'b0;
         end
         else
         begin
@@ -110,28 +112,19 @@ module Execute(input clk,
     
     always @(*)
     begin
-        if (rst)
-        begin
-            wreg     <= 0;
-            regB_ALU <= 0;
-        end
-        else
-        begin
-            // Jump <= ((inInstruction_ls << 2) + inPC);
-            // Le sacamos el << 2 porque nosotros vamos sumando de a 1 el PC
-            Jump <= inInstruction_ls + inPC;
-            casez(inEXE)
-                6'b0XXXXX: wreg <= inLD_rt;
-                6'b1XXXXX: wreg <= inRT_rd;
-                default: wreg <= inRT_rd;
-            endcase
-            casex(inEXE) // segundo mux de regB
-                6'b00XXXX: regB_ALU <= inInstruction_ls;
-                6'b11XXXX: regB_ALU <= outMuxB;
-                default: regB_ALU <= outMuxB;
-                // probar esto como default, para nosotros tiene más sentido
-            endcase
-        end
+        Jump = inInstruction_ls + inPC;
+        casex(inEXE)
+            6'b0XXXXX: wreg <= inLD_rt;
+            6'b1XXXXX: wreg <= inRT_rd;
+            default: wreg <= inRT_rd;
+        endcase
+        casex(inEXE) // segundo mux de regB
+            6'b00XXXX: regB_ALU <= inInstruction_ls;
+            6'b11XXXX: regB_ALU <= outMuxB;
+            default: regB_ALU <= outMuxB;
+            // probar esto como default, para nosotros tiene más sentido
+        endcase
+        //end
     end
     
     // Asignaciones de salida
