@@ -201,6 +201,7 @@
         </FileInfo>
       </File>
       <Config>
+        <Option Name="TargetConstrsFile" Val="$PPRDIR/../TP_BIP/TP_BIP.srcs/constrs_1/new/basys3_constrain.xdc"/>
         <Option Name="ConstrsType" Val="XDC"/>
       </Config>
     </FileSet>

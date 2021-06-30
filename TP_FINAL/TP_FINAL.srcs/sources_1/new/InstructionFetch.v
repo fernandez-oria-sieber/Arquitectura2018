@@ -16,7 +16,7 @@ module InstructionFetch(input clk,
     .clk(clk),
     .ena(1'b1),
     .inWrEnable(1'b0),
-    .inAddress(pc),
+    .inAddress(pc[10:0]),
     .inData(32'b0),
     .outData(outInstruction)
     );

@@ -17,22 +17,25 @@ module FileRegister(input clk,
     integer i;
     
     // Escritura por flanco ascendente por clock y reset
-    always @(posedge clk, posedge rst)
+    always @(posedge clk)
     begin
-        if (rst)
-        begin          
-            for(i=0;i<32;i=i+1) registros[i] <= 32'b0;
-            regA <= 32'b0;
-            regB <= 32'b0;
-        end
+        if (rst) for(i=0;i<32;i=i+1) registros[i] <= 32'b0;
         else if (isWrite) registros[inWriteAddr] <= inWriteData;
     end
     
     // Lectura por flanco descendente del clock
-    always @(negedge clk)
+    always @(negedge clk, negedge rst)
     begin
-        regA <= registros[inReadRegA];
-        regB <= registros[inReadRegB];
+        if (rst)
+        begin
+            regA <= 32'b0;
+            regB <= 32'b0;
+        end
+        else
+        begin
+            regA <= registros[inReadRegA];
+            regB <= registros[inReadRegB];
+        end
     end
     
     // Asignaciones de salida

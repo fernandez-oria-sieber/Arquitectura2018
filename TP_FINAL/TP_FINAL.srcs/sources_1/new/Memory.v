@@ -39,7 +39,7 @@ module Memory(input clk,
     .clk(clk),
     .ena(1'b1),
     .inWrEnable(isMemWrite),
-    .inAddress(inALUResult),
+    .inAddress(inALUResult[10:0]),
     .inData(bus_store_memory),
     .outData(bus_load_memory)
     );
