@@ -1,5 +1,6 @@
 import json
 import os
+import pdb
 import re
 
 from Config import Instruction
@@ -13,12 +14,18 @@ def format_list(l):
     return [value if i == 0 else format_value(value) for i, value in enumerate(l)]
 
 
+def extend(instructions_format, l, nro, lenght):
+    inmediate = instructions_format.get(l[0]).get("inmediate", None)
+    return l[nro].zfill(lenght) if inmediate == f"l{nro}" else l[nro]
+
+
 def format(l):
     return (
         instructions_format.get(l[0])
-        .replace("{l1}", l[1])
-        .replace("{l2}", l[2])
-        .replace("{l3}", l[3])
+        .get("instruction")
+        .replace("{l1}", extend(instructions_format, l, 1, 26))
+        .replace("{l2}", extend(instructions_format, l, 2, 16))
+        .replace("{l3}", extend(instructions_format, l, 3, 16))
     )
 
 
