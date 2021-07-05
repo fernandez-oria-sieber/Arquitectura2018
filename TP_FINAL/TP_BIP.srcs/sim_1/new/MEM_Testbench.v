@@ -5,58 +5,77 @@ module MEM_Testbench(
     );
     
     
- reg    clk, flagJump, reset, mem_enable, pc_enable;  
- reg    [31:0] addrJump;
- wire   [31:0] o_instruction, o_pc; 
+ reg 		MEM_inALUZero, clk, rst; 	   
+ reg [2:0]  MEM_inMEM;       
+ reg [1:0]  MEM_inWB;        
+ reg [2:0]  MEM_inLoadStoreType;    
+ reg [4:0]  MEM_inFRWrReg; 
+ reg [31:0] MEM_inALUResult;
+ reg [31:0] MEM_inRegB;        
+
+ // Stage Memory/WriteBack latch
+ wire         MEM_osPC;           //MEM:osPC -> IF:inPCSel
+ wire [1:0]    MEM_outWB;           //MEM:outWB -> WB:isWB
+ wire [4:0]    MEM_outFRWrReg;   //MEM:outFRWrReg -> WB:inFRWrReg
+ wire [31:0] MEM_outMem;       //MEM:outMem -> WB:inFRWrData
+ wire [31:0] MEM_outALUResult; //MEM:outALUResult -> WB:inALUResult
+
     
-    
- InstructionFetch
- instfetch(
-    .clk(clk),
-    .reset(reset),
-    .Ex_flagJump(flagJump),
-    .i_mem_enable(mem_enable),
-    .PC_enable(pc_enable),
-    .Ex_AddrJump(addrJump),
-    .Out_Instruction(o_instruction),
-    .Out_PC(o_pc) 
+    Memory MEM( // STAGE 4
+ //Clock and Reset Signals
+ .clk(clk),
+ .rst(rst),
+ 
+ //Input Signals
+ .isALUZero(MEM_inALUZero),
+ .isMemRead(MEM_inMEM[2]),
+ .isMemWrite(MEM_inMEM[1]),
+ .isBranch(MEM_inMEM[0]),
+ .inWB(MEM_inWB),
+ .isLoadStoreType(MEM_inLoadStoreType),
+ .inFRWrReg(MEM_inFRWrReg),
+ .inALUResult(MEM_inALUResult),
+ .inRtReg(MEM_inRegB),
+ 
+ //Output Signals
+ .osPC(MEM_osPC),
+ .outWB(MEM_outWB),
+ .outFRWrReg(MEM_outFRWrReg), // 4:0
+ .outMem(MEM_outMem),
+ .outALUResult(MEM_outALUResult)
  );
 
     
     initial begin
     // PARTE 1 Cada ciclo de clock aumenta el PC y entrega la instruccion.
-      clk           =   1'b0;
-      reset         =   1'b1;
-      #20  
-      reset         =   1'b0;
-      flagJump      =   1'b0;  // No es una instruccion de salto
-      mem_enable    =   1'b1;
-      pc_enable     =   1'b1;  // Va a cambiar con cada ciclo de clock. Si es cero es por que viene un stall.
-      addrJump      =   32'b0; // No hay direccion de salto asi que no importa el valor.
-
-    // PARTE 2 Viene instruccion de Salto.
-      #50
-      flagJump      =   1'b1;
-      addrJump      =   32'b1010;
-      #20
-      flagJump      =   1'b0;
-      #30
-      flagJump      =   1'b1;
-      addrJump      =   32'b10;
-      #20
-      flagJump      =   1'b0;
-      
-    // PARTE 3 Flag de stall del hazzard unit
-      #50
-      pc_enable     =   1'b0; // viene el stall
-      addrJump      =   32'b0;
-      // Genero Burbuja
-      #50
-      // Retoma 
-      pc_enable     =   1'b1;
+      clk         =   1'b0;
+      rst         =   1'b1;     
+      MEM_inALUZero = 1'b0;
+      MEM_inMEM = 3'b0; // MemRd, MemWr, Branch
+      MEM_inWB = 2'b0;
+      MEM_inLoadStoreType = 3'b0;
+      MEM_inFRWrReg = 5'b0;
+      MEM_inALUResult = 32'b0;
+      MEM_inRegB = 32'b0;
+      // STORE   
+      #20 rst =   1'b0;
+      MEM_inMEM = 3'b010;
+      MEM_inLoadStoreType = 3'b011; // STORE WORD
+      MEM_inALUResult = 32'b0;
+      MEM_inRegB = 32'd45;
+      #100 
+      MEM_inALUResult = 32'd1;
+      MEM_inLoadStoreType = 3'b000; // STORE BYTE SIGNED
+      MEM_inRegB = 32'd85220; // byte = 1110 0100 = 228
+      #100
+      MEM_inALUResult = 32'd2;
+      MEM_inLoadStoreType = 3'b001; // STORE HALF WORD SIGNED
+      MEM_inRegB = 32'd85220; // half word = 0100 1100 1110 0100 = 19684
       
       
       
+      
+         
     end
     
     

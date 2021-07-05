@@ -74,16 +74,13 @@ module Execute(input clk,
     
     always @(negedge clk, posedge rst)
     begin
+        // Separamos la inicializacion de las variables en los bloques donde se usan por el
+        // siguiente warning: multi-driven net on pin Q with 2st driver GND
         if (rst)
         begin
             PCJump     <= 32'b0;
-            Jump       <= 32'b0;
             FRWrReg    <= 5'b0;
             RegB       <= 32'b0;
-            wreg       <= 5'b0;
-            regB_ALU   <= 32'b0;
-            outMuxA    <= 32'b0;
-            outMuxB    <= 32'b0;
         end
         else
         begin
@@ -95,36 +92,52 @@ module Execute(input clk,
     
     always @(*)
     begin
-        case(isMuxA)
-            2'b00:      outMuxA = inRegA;
-            2'b01:      outMuxA = inWB_FRWrData;
-            2'b10:      outMuxA = inMEM_ALUResult;
-            default:    outMuxA = inRegA;
-        endcase
-        case(isMuxB)
-            2'b00:      outMuxB = inRegB;
-            2'b01:      outMuxB = inWB_FRWrData;
-            2'b10:      outMuxB = inMEM_ALUResult;
-            default:    outMuxB = inRegB;
-        endcase
+        if (rst)
+        begin
+            outMuxA    <= 32'b0;
+            outMuxB    <= 32'b0;
+        end
+        else
+        begin
+            case(isMuxA)
+                2'b00:      outMuxA <= inRegA;
+                2'b01:      outMuxA <= inWB_FRWrData;
+                2'b10:      outMuxA <= inMEM_ALUResult;
+                default:    outMuxA <= inRegA;
+            endcase
+            case(isMuxB)
+                2'b00:      outMuxB <= inRegB;
+                2'b01:      outMuxB <= inWB_FRWrData;
+                2'b10:      outMuxB <= inMEM_ALUResult;
+                default:    outMuxB <= inRegB;
+            endcase
+        end
         
     end
     
     always @(*)
     begin
-        Jump = inInstruction_ls + inPC;
-        casex(inEXE)
-            6'b0XXXXX: wreg <= inLD_rt;
-            6'b1XXXXX: wreg <= inRT_rd;
-            default: wreg <= inRT_rd;
-        endcase
-        casex(inEXE) // segundo mux de regB
-            6'b00XXXX: regB_ALU <= inInstruction_ls;
-            6'b11XXXX: regB_ALU <= outMuxB;
-            default: regB_ALU <= outMuxB;
-            // probar esto como default, para nosotros tiene más sentido
-        endcase
-        //end
+        if(rst)
+        begin
+            Jump       <= 32'b0;
+            wreg       <= 5'b0;
+            regB_ALU   <= 32'b0;
+        end
+        else
+        begin
+            Jump <= inInstruction_ls + inPC;
+            casex(inEXE)
+                6'b0XXXXX: wreg <= inLD_rt;
+                6'b1XXXXX: wreg <= inRT_rd;
+                default: wreg <= inRT_rd;
+            endcase
+            casex(inEXE) // segundo mux de regB
+                6'b00XXXX: regB_ALU <= inInstruction_ls;
+                6'b11XXXX: regB_ALU <= outMuxB;
+                default: regB_ALU <= outMuxB;
+                // probar esto como default, para nosotros tiene más sentido
+            endcase
+        end
     end
     
     // Asignaciones de salida
