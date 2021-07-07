@@ -16,9 +16,9 @@ begin
     begin
         case(isLoadStoreType[1:0])
             // store bytesigned [SB]
-            2'b00: outStore = {24'b0,inDataToMem[7:0]};
+            2'b00: outStore = $unsigned(inDataToMem[7:0]);
             // store half [SH]
-            2'b01: outStore = {16'b0,inDataToMem[15:0]};
+            2'b01: outStore = $unsigned(inDataToMem[15:0]);
             // store word [SW]
             2'b11: outStore   = inDataToMem;
             default: outStore = 32'b0;

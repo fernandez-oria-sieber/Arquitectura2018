@@ -65,11 +65,11 @@ module MEM_Testbench(
       MEM_inRegB = 32'd45;
       #100 
       MEM_inALUResult = 32'd1;
-      MEM_inLoadStoreType = 3'b000; // STORE BYTE SIGNED
+      MEM_inLoadStoreType = 3'b000; // STORE BYTE
       MEM_inRegB = 32'd85220; // byte = 1110 0100 = 228
       #100
       MEM_inALUResult = 32'd2;
-      MEM_inLoadStoreType = 3'b001; // STORE HALF WORD SIGNED
+      MEM_inLoadStoreType = 3'b001; // STORE HALF WORD
       MEM_inRegB = 32'd85220; // half word = 0100 1100 1110 0100 = 19684
       
       
