@@ -23,8 +23,10 @@ module tx_interface
 	
 	// signal declaration
 	reg rd_aux, tx_start_aux, zflag;
+	reg [1:0] j;
 	reg [2:0] state_reg, i;
-	reg signed [7:0] aux, div;
+	reg signed [7:0] aux;
+	reg signed [6:0] div [3:0];
 	reg [7:0] dig, salida;
 	// body
 	// FSMD next-state logic
@@ -33,20 +35,35 @@ module tx_interface
         if (reset)
             begin
                 state_reg <= transmit_init;
-                i = 1;
+                i <= 3'b001;
+                j <= 3'b0;
+                rd_aux <= 1'b0;
+                tx_start_aux <= 1'b0;
+                zflag <= 1'b0;
+                aux <= 8'b0;
+                div[0] <= 7'b0;
+                div[1] <= 7'b0;
+                div[2] <= 7'b0;
+                div[3] <= 7'b0;
+                dig <= 8'b0;
+                salida <= 8'b0;
             end
         else
             begin
                 case (state_reg)
                     idle :
-                        if (rx_empty )  // Es 1 si rx_interface recibio una 'd', else 0
+                        if (rx_empty)  // Es 1 si rx_interface recibio una 'd', else 0
                         begin
                             state_reg = operate;
                             aux = leds;
-                            if (aux<0) state_reg=negative;
-                            div = 100;
-                            dig = 0;
-                            rd_aux = 1'b0; // Seteo en 0 para que rx_interface no vuelva a tomar datos
+                            if (aux<0) state_reg = negative;
+                            div[0] <= 100;
+                            div[1] <=  10;
+                            div[2] <=   1;
+                            div[3] <=   0;
+                            j <= 3'b0;
+                            dig <= 8'b0;
+                            rd_aux <= 1'b0; // Seteo en 0 para que rx_interface no vuelva a tomar datos
                         end
                     negative :
                         begin 
@@ -61,9 +78,9 @@ module tx_interface
                         end
                     operate :
                         begin
-                            if ((aux-div)>=0)
+                            if ((aux-div[j])>=0)
                                 begin
-                                    aux <= aux - div;
+                                    aux <= aux - div[j];
                                     dig <= dig + 1;
                                 end
                             else
@@ -71,15 +88,11 @@ module tx_interface
                                     if (dig || zflag)
                                         begin
                                             state_reg = transmit;
-                                            div = div / 10;  // Divido por 10 para en la sig iteración obtener el sig digito (100/10=10)
+                                            j = j + 1; 
                                             salida = dig+48; // Sumo 48 al digito enviado para transmitir en ascii
                                         end
-                                    else div = div / 10;
+                                    else j = j +1;
                                 end
-                            //dig = aux / div;    // divido para obtener el digito a transmitir (ej, 123/100 - obtengo 1 en it. 1)
-                            //div = div / 10;     // Divido por 10 para en la sig iteración obtener el sig digito (100/10=10)
-                            //if(dig || zflag == 1) state_reg = transmit; // Entro si dig != 0 ó zflag = 1 si ya transmiti un valor y tengo que mandar un 0
-                            //salida = dig+48; // Sumo 48 al digito enviado para transmitir en ascii
                         end
                     transmit :
                        begin
@@ -90,7 +103,7 @@ module tx_interface
                                 state_reg = operate ;
                                 tx_start_aux = 1'b0;
                                 dig = 0;
-                                if (div == 0) // Resetamos todos los parametros y le decimos a rx_int que puede volver a recibir
+                                if (div[j] == 0) // Resetamos todos los parametros y le decimos a rx_int que puede volver a recibir
                                     begin
                                         rd_aux = 1'b1; // rx_int puede recibir
                                         zflag = 1'b0;

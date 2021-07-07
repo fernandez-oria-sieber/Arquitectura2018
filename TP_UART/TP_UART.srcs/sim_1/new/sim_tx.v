@@ -13,19 +13,19 @@ module interfaceTestTx;
         begin
             #5 clk = ~clk;            
         end
-     initial
-        begin
-            clk = 0;
-            reset = 1;
-            tx_done_tick = 0;
-            leds = 127;
-            rx_empty = 0;
-            #20 reset = 0;          //#20
-            
-            #20 rx_empty = 1;          // 5 #40
-            
-            #20 tx_done_tick = 1;   // #60
-            
-        end
+    initial
+    begin
+        clk = 0;
+        reset = 1;
+        tx_done_tick = 0;
+        leds = -107;
+        rx_empty = 0;
+        #20 reset = 0;          //#20
+        
+        #20 rx_empty = 1;          // 5 #40
+        
+        #20 tx_done_tick = 1;   // #60
+        
+    end
 
 endmodule

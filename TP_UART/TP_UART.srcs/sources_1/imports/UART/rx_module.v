@@ -27,7 +27,7 @@ module rx_module
 	(
 	 input wire clk, reset, rx, s_tick,
 	 output reg rx_done_tick,
-	 output wire [7:0] dout		
+	 output wire [DBIT-1:0] dout		
 	);
 	
 	// symbolic state declaration
@@ -41,7 +41,7 @@ module rx_module
 	reg [1:0] state_reg , state_next ;
 	reg [3:0] s_reg , s_next ;
 	reg [2:0] n_reg , n_next ;
-	reg [7:0] b_reg , b_next ;
+	reg [DBIT-1:0] b_reg , b_next ;
 	
 	// body
 	// FSMD state & data registers
@@ -91,7 +91,7 @@ module rx_module
 					if (s_reg==15)
 						begin
 							s_next = 0;
-							b_next = {rx , b_reg[7:1]} ;
+							b_next = {rx , b_reg[DBIT-1:1]} ; // Los bits se van desplazando hasta llegar a ocho
 							if (n_reg==(DBIT-1))
 								state_next = stop ;
 							else
