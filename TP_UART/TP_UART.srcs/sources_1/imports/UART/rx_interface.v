@@ -85,9 +85,9 @@ module rx_interface
                             default: // Actualizo los numeros que voy ingresando
                             //TODO VERIFICAR QUE NO SE MANDEN LETRAS EN 'aux'
                             begin
-                                    aux2 <= aux1;//se púede hacer mejor x10
-                                    aux1 <= aux; 
-                                    aux  <= dout;
+                                    aux2 = aux1;//se púede hacer mejor x10
+                                    aux1 = aux; 
+                                    aux  = dout;
                                 end
                         endcase
                          if (dout!=100) state_reg = idle; // si no siempre vuelve a idle y nunca va a transmit
