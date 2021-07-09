@@ -20,7 +20,7 @@ module Main #(parameter size = 8)
 	
 	br_generator br_g (clk, s_tick);
 
-	rx_module #(size, 16) rx_mod (clk, reset, rx, s_tick, rx_done_tick, dout);
+	rx_module #(size, 2, 16) rx_mod (clk, reset, rx, s_tick, rx_done_tick, dout);
 
 	rx_interface #(size) int_rx (clk, reset,rx_done_tick, rd, dout, a, b, op, rx_empty);
 

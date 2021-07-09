@@ -12,7 +12,7 @@ module InstructionFetch(input clk,
     reg [31:0] pc, addr; // dirección de acceso a la memoria, asociada al pc
     //reg [31:0] memory_value;
     
-    DataMemory #(.INIT_FILE("/home/vlad/Documents/Arquitectura2018/TP_FINAL/scripts/instructionsHexa.txt")) data_memory(
+    DataMemory #(.INIT_FILE("/home/vlad/Documents/Arquitectura2018/TP_FINAL/scripts/instructionsHexa.txt")) instruction_memory(
     .clk(clk),
     .ena(1'b1),
     .inWrEnable(1'b0),

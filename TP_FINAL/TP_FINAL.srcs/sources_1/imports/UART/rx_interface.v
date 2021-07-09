@@ -1,140 +1,120 @@
 `timescale 1ns / 1ps
 
-module interface
+module rx_interface
 	#(
-	   parameter DBIT = 8			// # data bits
+        parameter DBIT = 32,    // # data bits 
+				  NREG = 4,	    // # bits to count data bits
+			      SB_TICK = 16  // # ticks for stop bits
     )
 	(
-	   input wire clk, reset, rx_done_tick, rd, finish_program, tx_done_tick,
-	   input wire [7:0] dout,
-	   input wire [31:0] out_Acc_Count,
-	   output wire [7:0] din,
-	   output reg rx_empty, // Es 1 cuando llega una 'd', else 0
-	   output wire BIP_enable, tx_start
+	   input wire clk, reset,rx_done_tick, rd,
+	   input wire [DBIT-1:0] instruction,
+	   output wire [7:0] A, B,
+	   output wire [5:0] Op,
+	   output reg rx_empty      // Es 1 cuando llega una 'd', else 0
 	);
 	
 	// symbolic state declaration
-	localparam [2:0]
-	idle_rx = 3'b000,
-	receive = 3'b001,
-	idle_tx = 3'b010,
-	operate = 3'b011,
-	transmit = 3'b100;
+	localparam [1:0]
+        idle = 2'b00,
+        receive = 2'b01,
+        transmit = 2'b10,
+        clean = 2'b11;
 	
 	// signal declaration
 	reg [1:0] state_reg;
-	reg [31:0] aux_Acc_Count;//
-	reg [15:0] aux_Acc, aux_Count; // solo usa 6 bits, da un warning si le ponemos 8 bits
-	reg is_s, aux_BIP, z_flag, acc_sended, tx_start_aux;
-	reg [13:0] div; //puede ser integer también, pero así no da warning;
-	reg [7:0] dig, out;
-	
+	reg [7:0] first_op, second_op,aux;
+	reg [5:0] aux2; // solo usa 6 bits, da un warning si le ponemos 8 bits
+	reg [6:0] aux1; // solo usa 7 bits, da un warning si le ponemos 8 bits
+	reg [5:0] op;
+        
 	// body
 	// FSMD next-state logic
 	always @(posedge clk , posedge reset)
 	begin
         if (reset) 
             begin
-                state_reg <= idle_rx;
-                aux_Acc_Count <= 0; // aux lo inicializamos en 0
-                aux_Acc <= 0;
-                aux_Count <= 0;
+                state_reg <= idle;
+                first_op <= 0;
+                second_op <= 0;
+                op <= 0;
+                aux <= 48; // aux, aux1 y aux2 los inicializamos en 0 (ascii=48)
+                aux1 <= 48;
+                aux2 <= 48;
                 rx_empty <= 1'b0;
-                is_s <= 0;
-                acc_sended <= 0;
-                out <= 0;
-                z_flag <= 0;
-                dig <= 0;
-                aux_BIP <= 0;
             end
         else
             begin
                 case (state_reg)
-                    idle_rx :
+                    idle :
                       if (rx_done_tick) state_reg = receive;
                     receive :
                       begin
-                        case (dout)
-                            115:           // 115: 's' en ascii (second operand)
-                                is_s <= 1;
-                            13:            // 13: 'Enter' en ascii (operation)  
-                                begin
-                                    if (is_s) 
-                                        begin
-                                            aux_BIP <= 1;
-                                            is_s <= 0;
-                                            state_reg = idle_tx;
-                                        end
+                        case (instruction)
+                            102:                        //102: 'f' en ascii (first operand)
+                                begin 
+                                    first_op = (aux2-48)*100 + (aux1-48)*10 + aux-48; 
+                                    aux  <= 48;
+                                    aux1 <= 48;
+                                    aux2 <= 48;
                                 end
-                            default: is_s <= 0; // Seteo en 0 el is_s
-                        endcase //endcase (dout)
-                         if (dout!=13) state_reg = idle_rx; // si no siempre vuelve a idle_rx y nunca va a idle_tx
-                      end //end recive
-                  idle_tx:
-                    if(finish_program)  // Es 1 si termino el programa, else 0
-                        begin
-                            state_reg = operate;
-                            aux_BIP = 0;
-                            aux_Count = out_Acc_Count[31:16];
-                            aux_Acc = out_Acc_Count[15:0];
-                            aux_Acc_Count = aux_Acc;
-                            div = 10000;
-                        end
-                  operate:
-                    begin
-                        dig = aux_Acc_Count / div;    // divido para obtener el digito a transmitir (ej, 123/100 - obtengo 1 en it. 1)
-                        div = div / 10;     // Divido por 10 para en la sig iteración obtener el sig digito (100/10=10)
-                        if(dig || z_flag == 1) state_reg = transmit; // Entro si dig != 0 ó zflag = 1 si ya transmiti un valor y tengo que mandar un 0
-                    end 
+                            115:                        //115: 's' en ascii (second operand)
+                                 begin
+                                     second_op = (aux2-48)*100 + (aux1-48)*10 + aux-48;
+                                     aux <= 48;
+                                     aux1 <= 48;
+                                     aux2 <= 48;
+                                end
+                            111:                        //111: 'o' en ascii (operation)  
+                                begin                  
+                                    case (aux)
+                                        43: op = 32;     // + (suma)
+                                        45: op = 34;     // -  (resta)
+                                        38: op = 36;     // & (and)
+                                        124: op = 37;    // | (or)
+                                        120: op = 38;    // 'x' (xor)
+                                        97: op = 3;      // 'a' (sra)
+                                        108: op = 2;     // 'l' (srl)
+                                        110: op = 39;    // 'n' (nor)
+                                        default: op = -1;
+                                    endcase
+                                    aux <= 48;
+                                    aux1 <= 48;
+                                    aux2 <= 48;
+                                end
+                            100: state_reg = transmit; //100: 'd' en ascii (done)
+                            default: // Actualizo los numeros que voy ingresando
+                            //TODO VERIFICAR QUE NO SE MANDEN LETRAS EN 'aux'
+                            begin
+                                    aux2 <= aux1;//se púede hacer mejor x10
+                                    aux1 <= aux; 
+                                    aux  <= instruction;
+                                end
+                        endcase
+                         if (instruction!=100) state_reg = idle; // si no siempre vuelve a idle y nunca va a transmit
+                      end
                   transmit :
                       begin
-                         out = dig+48; // Sumo 48 al digito enviado para transmitir en ascii
-                         tx_start_aux = 1'b1;
-                         if (tx_done_tick)
-                           begin
-                               z_flag= 1'b1;
-                               state_reg = operate ;
-                               tx_start_aux = 1'b0;
-                               if (div == 0) // Resetamos todos los parametros y le decimos a rx_int que puede volver a recibir
-                                   begin
-                                       //rd_aux = 1'b1; // rx_int puede recibir
-                                       z_flag = 1'b0;
-                                       div = 10000;
-                                       if (acc_sended==1) state_reg = idle_rx;
-                                       acc_sended = 1;
-                                       out = 0;
-                                       dig = 0;
-                                       aux_Acc_Count = aux_Count;
-                                   end
-                               else aux_Acc_Count = aux_Acc_Count % (div*10);
-                           end
-                       end  
+                          rx_empty = 1'b1;
+                          if (rd) // Es 1 cuando tx_interface termina de transmitir, else 0
+                            begin
+                                state_reg = idle ;
+                                rx_empty = 1'b0;
+                                first_op = 0;
+                                second_op = 0;
+                                op = 0;
+                                aux = 48; // aux, aux1 y aux2 los inicializamos en 0 (ascii=48)
+                                aux1 = 48;
+                                aux2 = 48;
+                            end
+                      end 
 		        endcase //end case (state_reg)
 		    end //end else
 	end //end always
-/*	
-           transmit_reset :
-              begin
-                 out = 13; // enter en ascii (reset)
-                 
-                 tx_start_aux = 1'b1; 
-                 if (tx_done_tick) 
-                   begin
-                       out = 0;
-                       rd_aux = 1'b0;
-                       zflag = 1'b0;
-                       tx_start_aux = 1'b0;
-                       dig = 0;
-                       aux =0;
-                       state_reg = idle;
-                   end
-               end     
-       endcase //end case (state_reg)
-*/
 
 	// output
-	assign BIP_enable = aux_BIP;
-	assign din = out;
-    assign tx_start = tx_start_aux;
+	assign A = first_op;
+	assign B = second_op;
+	assign Op = op;
 	
 endmodule
