@@ -34,7 +34,7 @@ module read_write_file_tb();
         #10
         for(i=0; i < 30; i= i+1)
         begin
-            $display("%b", mem[i]);
+            $display("%d: %b", i, mem[i]);
             $sformat(filename, "/home/vlad/Documents/Arquitectura2018/TP_FINAL/scripts/ciclos/cycle_%0d.out", i);
             cycle_file = $fopen(filename,"w");
             $fwrite(cycle_file, "%d: %b", i, mem[i]);

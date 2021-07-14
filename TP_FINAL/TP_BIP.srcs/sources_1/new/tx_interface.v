@@ -1,31 +1,49 @@
 `timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 07/14/2021 09:57:26 AM
+// Design Name: 
+// Module Name: tx_interface
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
 
-module rx_interface
-	#(
-        parameter DBIT = 32    // # data bits
-    )
-	(
-	   input wire clk, reset,rx_done_tick,
-	   input wire [DBIT-1:0] instruction,
-	   output reg start,   // Es 1 cuando llega una HALT
-	   output reg wr_enable,   // En 1 para escribir cada instruccion en memoria
-	   output reg [1:0] mode // Puede ser 1:MODO CONTINUO ó 2: MODO PASO A PASO
-	);
+
+module tx_interface(
+        input clk,
+        input rst,
+        input start,
+        input tx_done_tick,
+        input [1:0] mode,
+        output stop,
+        output tx_start      
+    );
 	
-	// symbolic state declaration
-	localparam [1:0]
-	    init = 2'b00,
+    // symbolic state declaration
+    localparam [1:0]
+        init = 2'b00,
         idle = 2'b01,
         receive = 2'b10;
-	
-	// signal declaration
-	reg [1:0] state_reg;
-	
-	// body
-	// FSMD next-state logic
-	always @(posedge clk , posedge reset)
-	begin
-        if (reset) 
+    
+    // signal declaration
+    reg [1:0] state_reg;
+    
+    // body
+    // FSMD next-state logic
+    always @(posedge clk , posedge rst)
+    begin
+        if (rst) 
             begin
                 state_reg <= init;
             end
@@ -59,7 +77,8 @@ module rx_interface
                         endcase
                         state_reg <= init;
                       end 
-		        endcase //end case (state_reg)
-		    end //end else
-	end //end always
+                endcase //end case (state_reg)
+            end //end else
+    end //end always
+
 endmodule

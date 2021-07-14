@@ -12,7 +12,7 @@ module tx_module
 	output wire tx
 	);
 	
-	// synlbolic state declaration
+	// symbolic state declaration
 	localparam [1:0]
 	idle = 2'b00,
 	start = 2'b01,
