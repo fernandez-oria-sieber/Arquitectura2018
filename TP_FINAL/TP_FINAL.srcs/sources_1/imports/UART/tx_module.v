@@ -2,12 +2,13 @@
 module tx_module
 	#(
 	parameter DBIT = 8, 	// # data bits
+	NREG = 2,		// # bits to count data bits
 	SB_TICK = 16 			// # ticks for stop bits
 	)
 	(
 	input wire clk, reset,
 	input wire tx_start , s_tick,
-	input wire [7:0] din,
+	input wire [DBIT-1:0] din,
 	output reg tx_done_tick ,
 	output wire tx
 	);
@@ -22,8 +23,8 @@ module tx_module
 	// signal declaration
 	reg [1:0] state_reg , state_next ;
 	reg [3:0] s_reg , s_next;
-	reg [2:0] n_reg, n_next;
-	reg [7:0] b_reg , b_next;
+	reg [NREG-1:0] n_reg, n_next;
+	reg [DBIT-1:0] b_reg , b_next;
 	reg tx_reg , tx_next ;
 	
 	// body

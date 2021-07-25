@@ -24,6 +24,7 @@ module EX_MEM_latch(
     input           clk,
     input           rst,
     input           inALUZero,
+    input           inFinish,
     input [1:0]     inWB,
     input [2:0]     inMEM,
     input [2:0]     inLoadStoreType,
@@ -32,6 +33,7 @@ module EX_MEM_latch(
     input [31:0]    inALUResult,
     input [31:0]    inRegB,
     output          outALUZero,
+    output          outFinish,
     output [1:0]    outWB,
     output [2:0]    outMEM,
     output [2:0]    outLoadStoreType,
@@ -40,7 +42,8 @@ module EX_MEM_latch(
     output [31:0]   outALUResult,
     output [31:0]   outRegB
     );
-
+    
+    reg finish;
     reg  ALUZero;
     reg [1:0] WB;
     reg [2:0] MEM;
@@ -54,6 +57,7 @@ module EX_MEM_latch(
     begin
         if(rst)
         begin
+            finish <= 1'b0;
             ALUZero <= 1'b0;
             WB <= 2'b0;
             MEM <= 3'b0;
@@ -65,6 +69,7 @@ module EX_MEM_latch(
         end
         else
         begin
+            finish <= inFinish;
             ALUZero <= inALUZero;
             WB <= inWB;
             MEM <= inMEM;
@@ -76,6 +81,7 @@ module EX_MEM_latch(
         end
     end
     
+    assign outFinish = finish;
     assign outALUZero = ALUZero;
     assign outWB = WB;
     assign outMEM = MEM;

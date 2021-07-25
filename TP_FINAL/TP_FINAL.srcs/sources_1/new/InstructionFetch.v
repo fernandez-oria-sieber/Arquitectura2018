@@ -5,10 +5,12 @@ module InstructionFetch(input clk,
                         input isPCSel,                // Selector del MUX que viene de una AND en la etapa MEM, entre Branch y Zero
                         input isPCWrite,              // Selector que viene desde el Hazard Unit
                         input [31:0] inPCJump,        // Salida del sumador en la etapa EX
+                        output outFinish,
                         output [31:0] outInstruction, //
                         output [31:0] outPC);
     
     // Registros
+    reg finish;
     reg [31:0] pc, addr; // dirección de acceso a la memoria, asociada al pc
     //reg [31:0] memory_value;
     
@@ -28,9 +30,11 @@ module InstructionFetch(input clk,
             pc <= 32'b0;
         else
             if (isPCWrite) pc <= (isPCSel) ? inPCJump : pc + 1;
+            if (outInstruction && 32'b0) finish = 1'b1;
     end
     
     // Asignaciones de salida
     assign outPC          = pc;
+    assign outFinish      = finish;
     
 endmodule

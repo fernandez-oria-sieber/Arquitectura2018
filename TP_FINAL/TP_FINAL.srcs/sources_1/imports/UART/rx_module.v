@@ -22,7 +22,7 @@
 module rx_module 
 	#(
 		parameter DBIT = 8,		// # data bits 
-				  NREG = 2,		// # bits to count data bits
+				  NREG = 3,		// # bits to count data bits
 			      SB_TICK = 16	// # ticks for stop bits
     )
 	(
@@ -41,7 +41,7 @@ module rx_module
 	// signal declaration
 	reg [1:0] state_reg , state_next ;
 	reg [3:0] s_reg , s_next ;
-	reg [NREG:0] n_reg , n_next ;
+	reg [NREG-1:0] n_reg , n_next ;
 	reg [DBIT-1:0] b_reg , b_next ;
 	
 	// body

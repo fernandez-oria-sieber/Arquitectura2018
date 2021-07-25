@@ -1,16 +1,19 @@
 `timescale 1ns / 1ps
 module MIPS(
     input clk,
-    input rst
+    input rst,
+    output finish
     );
 
     /////////
     //// Wires
     // Stage Instruction Fetch/Decode Latch
     // INPUTS
+    wire        IF_outFinish;         //HALT instruction: Finish program
     wire [31:0]	IF_outInstruction;    //IF:outInstruction -> ID:inInstruction
     wire [31:0]	IF_outPC;             //IF:outPC -> ID:inPC
     // OUTPUTS
+    wire        ID_inFinish;         //HALT instruction: Finish program
     wire [31:0] ID_inInstruction;
     wire [31:0] ID_inPC;
     // Stage Instruction Decode/Execute latch
@@ -29,6 +32,7 @@ module MIPS(
     wire [31:0]	ID_outRegB; 	      //ID:outRegB -> EX:inRegB
     wire [31:0]	ID_outInstruction_ls; //ID:outInstruction_ls -> EX:inInstruction_ls
     //OUTPUTS
+    wire        EX_inFinish;         //HALT instruction: Finish program
     wire 		EX_in_isPCWrite;     
     wire         EX_in_isWrite_IF_ID; 
     wire [1:0]    EX_inWB;            
@@ -56,6 +60,7 @@ module MIPS(
     wire [31:0]	EX_outALUResult;     //EX:outALUResult -> MEM:inALUResult
     wire [31:0] EX_outRegB; 	     //EX:outRegB -> MEM:inRegB
     //OUTPUTS
+    wire        MEM_inFinish;         //HALT instruction: Finish program
     wire 		MEM_inALUZero; 	   
     wire [2:0]  MEM_inMEM;       
     wire [1:0]  MEM_inWB;        
@@ -67,13 +72,15 @@ module MIPS(
     wire [31:0] MEM_inRegB;        
 
     // Stage Memory/WriteBack latch
+    //INPUT
     wire 		MEM_osPC; 	      //MEM:osPC -> IF:inPCSel
     wire [1:0]	MEM_outWB; 		  //MEM:outWB -> WB:isWB
     wire [4:0]	MEM_outFRWrReg;   //MEM:outFRWrReg -> WB:inFRWrReg
     wire [31:0] MEM_outMem;       //MEM:outMem -> WB:inFRWrData
     wire [31:0] MEM_outALUResult; //MEM:outALUResult -> WB:inALUResult
     wire [31:0]	MEM_outPCJump; 	  //MEM:outPCJump -> IF:inPCJump
-    
+    //OUTPUT
+    wire        WB_inFinish;         //HALT instruction: Finish program
     wire 		WB_osPC;
     wire [1:0]  WB_inWB;
     wire [4:0]  WB_inFRWrReg;
@@ -102,6 +109,7 @@ module MIPS(
     .inPCJump(MEM_inPCJump),
     
     //Output Signals
+    .outFinish(IF_outFinish),
     .outInstruction(IF_outInstruction),
     .outPC(IF_outPC)
     );
@@ -111,10 +119,12 @@ module MIPS(
     .clk(clk),
     .rst(rst),
     //INPUTS
+    .inFinish(IF_outFinish),
     .in_isWrite_IF_ID(ID_out_isWrite_IF_ID),
     .inInstruction(IF_outInstruction),
     .inPc(IF_outPC),
     //OUTPUT
+    .outFinish(ID_inFinish),
     .outInstruction(ID_inInstruction),
     .outPc(ID_inPC)
     );
@@ -157,6 +167,7 @@ module MIPS(
     .clk(clk),
     .rst(rst),
     //INPUTS
+    .inFinish(ID_inFinish),
     .inWB(ID_outWB),
     .inMEM(ID_outMEM),
     .inEXE(ID_outEXE),
@@ -169,6 +180,7 @@ module MIPS(
     .inRegB(ID_outRegB),
     .inInstruction_ls(ID_outInstruction_ls),
     //OUTPUTS
+    .outFinish(EX_inFinish),
     .outWB(EX_inWB),
     .outMEM(EX_inMEM),
     .outEXE(EX_inEXE),
@@ -224,6 +236,7 @@ module MIPS(
     .clk(clk),
     .rst(rst),
     //INPUTS
+    .inFinish(EX_inFinish),
     .inALUZero(EX_outALUZero),
     .inWB(EX_outWB),
     .inMEM(EX_outMEM),
@@ -233,6 +246,7 @@ module MIPS(
     .inALUResult(EX_outALUResult),
     .inRegB(EX_outRegB),
     //OUTPUTS
+    .outFinish(MEM_inFinish),
     .outALUZero(MEM_inALUZero),
     .outWB(MEM_inWB),
     .outMEM(MEM_inMEM),
@@ -273,11 +287,13 @@ module MIPS(
     .clk(clk),
     .rst(rst),
     //INPUTS
+    .inFinish(MEM_inFinish),
     .inWB(MEM_outWB),
     .inFRWrReg(MEM_outFRWrReg),
     .inMem(MEM_outMem),
     .inALUResult(MEM_outALUResult),
     //OUTPUTS
+    .outFinish(WB_inFinish),
     .outWB(WB_inWB),
     .outFRWrReg(WB_inFRWrReg),
     .outMem(WB_inMem),
@@ -298,5 +314,7 @@ module MIPS(
     .outFRWrReg(WB_outFRWrReg),
     .outFRWrData(WB_outFRWrData) // WB_outRegF_wd
     );
+    
+    assign finish = WB_inFinish;
 
 endmodule

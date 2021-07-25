@@ -23,18 +23,20 @@
 module tx_interface(
         input clk,
         input rst,
-        input start,
+        input start, 
+        input finish,
         input tx_done_tick,
         input [1:0] mode,
-        output stop,
-        output tx_start      
+        output reg stop,
+        output reg tx_start      
     );
 	
     // symbolic state declaration
     localparam [1:0]
-        init = 2'b00,
         idle = 2'b01,
-        receive = 2'b10;
+        stop_pipe = 2'b10,
+        send = 2'b11;
+        
     
     // signal declaration
     reg [1:0] state_reg;
@@ -45,38 +47,29 @@ module tx_interface(
     begin
         if (rst) 
             begin
-                state_reg <= init;
+                state_reg <= idle;
+                stop = 1'b0;
+                tx_start = 1'b0;
             end
         else
             begin
-                case (state_reg)
-                    init:
-                        wr_enable = 1'b0;
-                    idle :
-                      if (rx_done_tick) state_reg = receive;
-                    receive :
-                      begin
-                        case (instruction)
-                            0:                        // HALT
-                                begin 
-                                    start = 1'b1;
-                                    wr_enable = 1'b1;
-                                end
-                            1:                        // MODO CONTINUO
-                                 begin
-                                    mode = 2'b01;
-                                end
-                            2:                        // MODO PASO A PASO 
-                                begin                  
-                                    mode = 2'b10;
-                                end
-                            default:
-                                begin
-                                    wr_enable = 1'b1;
-                                end
-                        endcase
-                        state_reg <= init;
-                      end 
+                case (state_reg) // mode = [0,1] STEP BY STEP finish = 1 HALT INSTRUCTION
+                    idle:
+                        if (start)
+                            if (mode[0] || finish) state_reg = stop_pipe;
+                    stop_pipe:
+                    begin
+                        stop = 1'b1;
+                        state_reg = send;
+                        tx_start = 1'b1;
+                    end
+                    send:
+                        if (tx_done_tick)
+                        begin
+                            state_reg = idle;
+                            stop = 1'b0;
+                            tx_start = 1'b0;
+                        end
                 endcase //end case (state_reg)
             end //end else
     end //end always

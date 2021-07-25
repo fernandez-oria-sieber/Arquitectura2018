@@ -33,7 +33,10 @@ module rx_interface
             begin
                 case (state_reg)
                     init:
+                    begin
                         wr_enable = 1'b0;
+                        state_reg = idle;
+                    end
                     idle :
                       if (rx_done_tick) state_reg = receive;
                     receive :
