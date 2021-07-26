@@ -23,6 +23,7 @@
 module ID_EX_latch(
     input clk,
     input rst,
+    input start,
     input inFinish,
     input [1:0] inWB,
     input [2:0] inMEM,
@@ -79,7 +80,7 @@ module ID_EX_latch(
             RegB <= 32'b0;
             Instruction_ls <= 32'b0;
         end
-        else
+        else if(start)
         begin
             finish <= inFinish;
             WB <= inWB;

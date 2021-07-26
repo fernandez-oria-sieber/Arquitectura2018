@@ -8,7 +8,8 @@ module FileRegister(input clk,
                     input [4:0] inWriteAddr,
                     input [31:0] inWriteData,
                     output [31:0] outRegA,
-                    output [31:0] outRegB);
+                    output [31:0] outRegB,
+                    output [1023:0] values);
     
     // Registros
     reg [31:0] registros[31:0]; // Matriz de 32X32
@@ -41,5 +42,12 @@ module FileRegister(input clk,
     // Asignaciones de salida
     assign outRegA = regA;
     assign outRegB = regB;
+    assign values = {registros[0],registros[1],registros[2],registros[3],registros[4],
+                     registros[5],registros[6],registros[7],registros[8],registros[9],
+                     registros[10],registros[11],registros[12],registros[13],registros[14],
+                     registros[15],registros[16],registros[17],registros[18],registros[19],
+                     registros[20],registros[21],registros[22],registros[23],registros[24],
+                     registros[25],registros[26],registros[27],registros[28],registros[29],
+                     registros[30],registros[31]};
     
 endmodule

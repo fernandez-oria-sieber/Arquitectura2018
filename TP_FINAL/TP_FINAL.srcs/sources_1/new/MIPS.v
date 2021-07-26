@@ -1,8 +1,13 @@
 `timescale 1ns / 1ps
-module MIPS(
+module MIPS #(DATA_BUFFER = 1814)(
     input clk,
     input rst,
-    output finish
+    input wr_enable,
+    input start,
+    input [10:0] IMEM_addr,
+    input [31:0] instruction,
+    output finish,
+    output [DATA_BUFFER-1:0] values
     );
 
     /////////
@@ -92,6 +97,11 @@ module MIPS(
     wire 		WB_osFRWr;      // WB:osFRWr -> ID:isFRWr
     wire [4:0]	WB_outFRWrReg;  // WB:outFRWrReg -> ID:inFRWrAddr
     wire [31:0]	WB_outFRWrData; // WB:outFRWrData -> ID:inFRWrData
+    
+    //DEBUG
+    wire [31:0] clk_counter;
+    wire [319:0] MEM_values;
+    wire [1023:0] FR_values;
 
     ///////////////////////////////////////////////////////////////////////////
     //// Instancias ///////////////////////////////////////////////////////////
@@ -103,13 +113,18 @@ module MIPS(
     .clk(clk),
     .reset(rst),
     
+    //Debug signals
+    .write_enable(wr_enable),
+    .IMEM_addr(IMEM_addr),
+    
     //Input Signals
     .isPCSel(MEM_osPC),
-    .isPCWrite(ID_out_isPCWrite),
+    .isPCWrite(ID_out_isPCWrite && start), // Tiene que estar el start y ademas habilitado por la HazardUnit
     .inPCJump(MEM_inPCJump),
     
     //Output Signals
     .outFinish(IF_outFinish),
+    .out_clk_counter(clk_counter),
     .outInstruction(IF_outInstruction),
     .outPC(IF_outPC)
     );
@@ -119,6 +134,7 @@ module MIPS(
     .clk(clk),
     .rst(rst),
     //INPUTS
+    .start(start),
     .inFinish(IF_outFinish),
     .in_isWrite_IF_ID(ID_out_isWrite_IF_ID),
     .inInstruction(IF_outInstruction),
@@ -158,7 +174,8 @@ module MIPS(
     .outPC(ID_outPC),
     .outRegA(ID_outRegA),
     .outRegB(ID_outRegB),
-    .outInstruction_ls(ID_outInstruction_ls)
+    .outInstruction_ls(ID_outInstruction_ls),
+    .FR_values(FR_values)
     );
     
     //ID EX LATCH
@@ -167,6 +184,7 @@ module MIPS(
     .clk(clk),
     .rst(rst),
     //INPUTS
+    .start(start),
     .inFinish(ID_inFinish),
     .inWB(ID_outWB),
     .inMEM(ID_outMEM),
@@ -236,6 +254,7 @@ module MIPS(
     .clk(clk),
     .rst(rst),
     //INPUTS
+    .start(start),
     .inFinish(EX_inFinish),
     .inALUZero(EX_outALUZero),
     .inWB(EX_outWB),
@@ -280,13 +299,15 @@ module MIPS(
     .outWB(MEM_outWB),
     .outFRWrReg(MEM_outFRWrReg), // 4:0
     .outMem(MEM_outMem),
-    .outALUResult(MEM_outALUResult)
+    .outALUResult(MEM_outALUResult),
+    .MEM_values(MEM_values)
     );
     
     MEM_WB_latch MEM_WB(
     .clk(clk),
     .rst(rst),
     //INPUTS
+    .start(start),
     .inFinish(MEM_inFinish),
     .inWB(MEM_outWB),
     .inFRWrReg(MEM_outFRWrReg),
@@ -316,5 +337,55 @@ module MIPS(
     );
     
     assign finish = WB_inFinish;
+    
+    assign values = {   // Contenido de los 32 registros del FileRegister
+                        FR_values,
+                        // IF_ID latch
+                        IF_outFinish,
+                        ID_out_isWrite_IF_ID,
+                        IF_outInstruction,
+                        IF_outPC,
+                        // ID_EX latch
+                        ID_inFinish,
+                        ID_outWB,
+                        ID_outMEM,
+                        ID_outEXE,
+                        ID_outLoadStoreType,
+                        ID_outLD_rt,
+                        ID_outRT_rd,
+                        ID_outFUnit_rs,
+                        ID_outPC,
+                        ID_outRegA,
+                        ID_outRegB,
+                        ID_outInstruction_ls,
+                        // EX_MEM latch
+                        EX_inFinish,
+                        EX_outALUZero,
+                        EX_outWB,
+                        EX_outMEM,
+                        EX_outLoadStoreType,
+                        EX_outFRWrReg,
+                        EX_outPCJump,
+                        EX_outALUResult,
+                        EX_outRegB,
+                        // MEM_WB latch
+                        MEM_inFinish,
+                        MEM_outWB,
+                        MEM_outFRWrReg,
+                        MEM_outMem,
+                        MEM_outALUResult,
+                        // Program Counter
+                        IF_outPC,
+                        // Data Memory
+                        MEM_values,
+                        // Clock counter
+                        clk_counter
+                        
+                    };
+                        
+                        
+                        
+                        
+                    
 
 endmodule

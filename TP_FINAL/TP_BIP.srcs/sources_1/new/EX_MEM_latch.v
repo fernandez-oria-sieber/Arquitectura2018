@@ -24,6 +24,7 @@ module EX_MEM_latch(
     input           clk,
     input           rst,
     input           inALUZero,
+    input           start,
     input           inFinish,
     input [1:0]     inWB,
     input [2:0]     inMEM,
@@ -67,7 +68,7 @@ module EX_MEM_latch(
             RegB <= 32'b0;
             PCJump <= 32'b0;
         end
-        else
+        else if (start)
         begin
             finish <= inFinish;
             ALUZero <= inALUZero;

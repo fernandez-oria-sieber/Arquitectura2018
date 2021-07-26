@@ -21,7 +21,8 @@ module InstructionDecode(input clk,
                          output [31:0] outPC,              // Program Counter
                          output [31:0] outRegA,            // Salida A del Banco de registros
                          output [31:0] outRegB,            // Salida B del Banco de registros
-                         output [31:0] outInstruction_ls); // Salida con extensión de signo para ¿solo I-Types?
+                         output [31:0] outInstruction_ls,  // Salida con extensión de signo para ¿solo I-Types?
+                         output [1023:0] FR_values); 
     
     // Registros
     reg [2:0] load_store_type;
@@ -80,7 +81,8 @@ module InstructionDecode(input clk,
     .inWriteAddr(inFRWrAddr),
     .inWriteData(inFRWrData),
     .outRegA(outRegA),
-    .outRegB(outRegB)
+    .outRegB(outRegB),
+    .values(FR_values)
     );
     
     //Logica del Bloque

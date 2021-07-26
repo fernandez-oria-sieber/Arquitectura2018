@@ -9,7 +9,9 @@ module DataMemory #(parameter RAM_WIDTH = 32,        // Specify RAM data width
                     ena,
                     input [ADDR_WIDTH-1:0] inAddress,
                     input [RAM_WIDTH-1:0] inData,
-                    output [RAM_WIDTH-1:0] outData);
+                    output [RAM_WIDTH-1:0] outData,
+                    output [319:0] values // valores de los primeros diez registros de la memoria
+                    );
     
     
     //  Xilinx Single Port Read First RAM
@@ -47,5 +49,9 @@ module DataMemory #(parameter RAM_WIDTH = 32,        // Specify RAM data width
         end
     
     assign outData = ram_data;
+    assign values = {
+                     ram_name[0], ram_name[1], ram_name[2], ram_name[3], ram_name[4],
+                     ram_name[5], ram_name[6], ram_name[7], ram_name[8], ram_name[9]
+                     };
     
 endmodule

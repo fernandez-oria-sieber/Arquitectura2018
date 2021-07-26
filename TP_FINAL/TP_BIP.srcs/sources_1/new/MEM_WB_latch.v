@@ -24,6 +24,7 @@ module MEM_WB_latch(
     // Stage Memory/WriteBack latch
     input clk,
     input rst,
+    input start,
     input inFinish,
     input [1:0] inWB,
     input [4:0] inFRWrReg,
@@ -52,7 +53,7 @@ module MEM_WB_latch(
             Mem <= 32'b0;
             ALUResult <= 32'b0;
         end
-        else
+        else if (start)
         begin
             finish <= inFinish;
             WB <= inWB;
