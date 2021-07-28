@@ -121,6 +121,7 @@ module MIPS #(DATA_BUFFER = 1814)(
     .isPCSel(MEM_osPC),
     .isPCWrite(ID_out_isPCWrite && start), // Tiene que estar el start y ademas habilitado por la HazardUnit
     .inPCJump(MEM_inPCJump),
+    .inInstruction(instruction),
     
     //Output Signals
     .outFinish(IF_outFinish),

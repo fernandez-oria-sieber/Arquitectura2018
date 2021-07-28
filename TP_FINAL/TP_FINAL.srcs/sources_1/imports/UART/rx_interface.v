@@ -9,7 +9,7 @@ module rx_interface
 	   input wire [DBIT-1:0] instruction,
 	   output start,   // Es 1 cuando llega una HALT
 	   output reg wr_enable,   // En 1 para escribir cada instruccion en memoria
-	   output reg [1:0] mode, // Puede ser 1:MODO CONTINUO ó 2: MODO PASO A PASO
+	   output reg mode, // Puede ser 0:MODO CONTINUO ó 1: MODO PASO A PASO
 	   output [10:0] out_addr// Direccion de memoria donde escribimos la instruccion
 	);
 	
@@ -29,14 +29,15 @@ module rx_interface
 	
 	// body
 	// FSMD next-state logic
-	always @(posedge clk , posedge reset)
+	always @(negedge clk , negedge reset)
 	begin
         if (reset) 
             begin
                 state_reg <= init;
                 addr <= 11'b0;
                 aux_start <= 1'b0;
-                
+                wr_enable <= 1'b0;
+                mode <= 1'b0;
             end
         else
             begin
@@ -56,13 +57,13 @@ module rx_interface
                                 begin 
                                     aux_start <= 1'b1;
                                 end
-                            1:                        // MODO CONTINUO
+                            1:                        // MODO PASO A PASO
                                  begin
-                                    mode <= 2'b01;
+                                    mode <= 1'b1;
                                 end
-                            2:                        // MODO PASO A PASO 
+                            2:                        // MODO CONTINUO
                                 begin                  
-                                    mode <= 2'b10;
+                                    mode <= 1'b0;
                                 end
                             default:
                                 begin

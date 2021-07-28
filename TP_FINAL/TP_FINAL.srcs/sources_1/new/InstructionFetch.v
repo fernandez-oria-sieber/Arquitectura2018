@@ -7,6 +7,7 @@ module InstructionFetch(input clk,
                         input write_enable,
                         input [10:0] IMEM_addr,
                         input [31:0] inPCJump,        // Salida del sumador en la etapa EX
+                        input [31:0] inInstruction,
                         output outFinish,
                         output [31:0] out_clk_counter,
                         output [31:0] outInstruction, //
@@ -16,6 +17,7 @@ module InstructionFetch(input clk,
     reg finish;
     reg [10:0] memory_address;
     reg [31:0] pc, addr, clk_counter; // dirección de acceso a la memoria, asociada al pc
+    wire [319:0] values;
     //reg [31:0] memory_value;
     
     DataMemory instruction_memory(
@@ -23,8 +25,9 @@ module InstructionFetch(input clk,
     .ena(1'b1),
     .inWrEnable(write_enable),
     .inAddress(memory_address),
-    .inData(32'b0),
-    .outData(outInstruction)
+    .inData(inInstruction),
+    .outData(outInstruction),
+    .values(values)
     );
     
     // Logica del bloque
@@ -35,6 +38,7 @@ module InstructionFetch(input clk,
             pc <= 32'b0;
             finish <= 1'b0;
             clk_counter <= 32'b0;
+            memory_address <= 11'b0;
         end
         else
         begin
