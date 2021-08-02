@@ -1,5 +1,6 @@
 `timescale 1ns / 1ps
-module Memory(input clk,
+module Memory #(parameter DATA_FILE = "")
+             (input clk,
               input rst,
               input isALUZero,             // Si es 0, entonces BEQ hace el Branch
               input isMemRead,             // MEM[2]
@@ -36,7 +37,7 @@ module Memory(input clk,
     .outLoad(outMem)
     );
     
-    DataMemory data_memory(
+    DataMemory #(.INIT_FILE(DATA_FILE)) data_memory(
     .clk(clk),
     .ena(1'b1),
     .inWrEnable(isMemWrite),

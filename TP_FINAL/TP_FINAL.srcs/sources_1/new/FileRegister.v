@@ -18,7 +18,7 @@ module FileRegister(input clk,
     integer i;
     
     // Escritura por flanco ascendente por clock y reset
-    always @(posedge clk)
+    always @(posedge clk, posedge rst)
     begin
         if (rst) for(i=0;i<32;i=i+1) registros[i] <= 32'b0;
         else if (isWrite) registros[inWriteAddr] <= inWriteData;

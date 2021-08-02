@@ -1,5 +1,7 @@
 `timescale 1ns / 1ps
-module MIPS #(DATA_BUFFER = 1814)(
+module MIPS #(parameter DATA_BUFFER = 1814,
+              parameter INSTRUCTION_FILE = "",
+              parameter DATA_FILE = "")(
     input clk,
     input rst,
     input wr_enable,
@@ -108,7 +110,7 @@ module MIPS #(DATA_BUFFER = 1814)(
     ///////////////////////////////////////////////////////////////////////////
 
     // Instancia del modulo Instruction Fetch
-    InstructionFetch ( // STAGE 1
+    InstructionFetch #(INSTRUCTION_FILE) IF ( // STAGE 1
     //Clock and Reset Signals
     .clk(clk),
     .reset(rst),
@@ -279,7 +281,7 @@ module MIPS #(DATA_BUFFER = 1814)(
     
     
     // Instancia del modulo memAccess
-    Memory MEM( // STAGE 4
+    Memory #(DATA_FILE) MEM( // STAGE 4
     //Clock and Reset Signals
     .clk(clk),
     .rst(rst),

@@ -26,7 +26,7 @@ module InstructionDecode(input clk,
     
     // Registros
     reg [2:0] load_store_type;
-    reg [4:0] LD_rt; // Para las instruccion Load - Load Doubleword[LD] rt, offset(base)
+    reg [4:0] LD_rt; // Para las instruccion Load rt, offset(base)
     reg [4:0] RT_rd; // Para los RType - Registro rd
     reg [4:0] FUnit_rs;
     reg [31:0] PC;
@@ -52,7 +52,6 @@ module InstructionDecode(input clk,
     
     // Instancia de "Control Unit"
     ControlUnit control_unit (
-    // TODO: verificar que funcione con las salidas asignando directamente WB, MEM y EXE
     .inInstruction(op),
     .inFunct(funct),
     .isMuxControl(out_isMuxControl),
