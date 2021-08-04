@@ -62,6 +62,7 @@ module InstructionDecode(input clk,
     
     HazardUnit hazard_unit(
     .isEX_MemRead(isEX_MemRead),
+    .isMemRead(outMEM[2]),
     .inEX_Rt(inEX_Rt),
     .inRs(rs),
     .inRt(rt),
@@ -85,7 +86,7 @@ module InstructionDecode(input clk,
     );
     
     //Logica del Bloque
-    always @(negedge clk, posedge rst)
+    always @(negedge clk)
     begin
         if (rst)
         begin

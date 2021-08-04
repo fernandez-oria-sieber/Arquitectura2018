@@ -72,7 +72,7 @@ module Execute(input clk,
     .out_isMUX_B(isMuxB)
     );
     
-    always @(negedge clk, posedge rst)
+    always @(negedge clk)
     begin
         // Separamos la inicializacion de las variables en los bloques donde se usan por el
         // siguiente warning: multi-driven net on pin Q with 2st driver GND

@@ -54,7 +54,7 @@ module EX_MEM_latch(
     reg [31:0] ALUResult;
     reg [31:0] RegB;
 
-    always @(posedge rst, posedge clk)
+    always @(posedge clk)
     begin
         if(rst)
         begin

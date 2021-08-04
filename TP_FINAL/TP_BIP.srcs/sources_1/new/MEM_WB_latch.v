@@ -43,7 +43,7 @@ module MEM_WB_latch(
     reg [31:0] Mem;
     reg [31:0] ALUResult;
     
-    always @(posedge rst, posedge clk)
+    always @(posedge clk)
     begin
         if(rst)
         begin

@@ -1,5 +1,6 @@
 `timescale 1ns / 1ps
 module HazardUnit(input isEX_MemRead,
+                  input isMemRead, // Agregamos la flag de memRead de la instruccion actual
                   input [4:0] inEX_Rt,
                   input [4:0] inRs,
                   input [4:0] inRt,
@@ -9,7 +10,7 @@ module HazardUnit(input isEX_MemRead,
     
     always@(*)
     begin
-        if (isEX_MemRead && ((inEX_Rt == inRs) || (inEX_Rt == inRt)))
+        if (~isMemRead && isEX_MemRead && ((inEX_Rt == inRs) || (inEX_Rt == inRt)))
         begin
             out_isPCWrite     = 0; // no escribo el PC
             out_isWrite_IF_ID = 0; // no escribo el latch

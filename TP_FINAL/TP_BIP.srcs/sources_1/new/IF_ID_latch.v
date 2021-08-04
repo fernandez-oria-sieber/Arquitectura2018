@@ -39,7 +39,7 @@ reg finish;
 reg [31:0] instruction;
 reg [31:0] pc;
 
-always @(posedge clk, posedge rst)
+always @(posedge clk)
 begin
     if(rst)
     begin

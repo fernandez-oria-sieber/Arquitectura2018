@@ -63,7 +63,7 @@ module ID_EX_latch(
     reg [31:0] RegB;
     reg [31:0] Instruction_ls;
     
-    always @(posedge rst, posedge clk)
+    always @(posedge clk)
     begin
         if(rst)
         begin

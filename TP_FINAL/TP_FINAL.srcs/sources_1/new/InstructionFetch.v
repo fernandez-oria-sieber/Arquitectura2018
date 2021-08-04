@@ -31,26 +31,36 @@ module InstructionFetch #(parameter INSTRUCTION_FILE = "")
     );
     
     // Logica del bloque
-    always @(negedge clk)
+    always @(negedge clk) // sacamos el reset para que entre una sola vez. Solucionó un error de simulación
     begin
         if (reset)
         begin
             pc <= 32'b0;
-            finish <= 1'b0;
             clk_counter <= 32'b0;
-            memory_address <= 11'b0;
         end
         else
         begin
-            memory_address <= (write_enable) ? IMEM_addr: pc[10:0]; 
             if (isPCWrite) 
             begin
                 pc <= (isPCSel) ? inPCJump : pc + 1;
                 clk_counter <= clk_counter + 1'b1;  // TODO: esto debería sumar siempre que funcione el MIPS
             end
-            if (outInstruction == 32'b0) finish <= 1'b1;
         end
             
+    end
+    
+    always @(*) // Sacamos el calculo del address fuera de bloque always clock por problemas de sincronizacion.
+    begin
+        if (reset)
+        begin
+            finish = 1'b0;
+            memory_address = 11'b0;
+        end
+        else
+        begin
+            memory_address = (write_enable) ? IMEM_addr: pc[10:0];
+            if (outInstruction == 32'b0) finish = 1'b1;
+        end
     end
     
     // Asignaciones de salida
