@@ -40,11 +40,8 @@ module InstructionFetch #(parameter INSTRUCTION_FILE = "")
         end
         else
         begin
-            if (isPCWrite) 
-            begin
-                pc <= (isPCSel) ? inPCJump : pc + 1;
-                clk_counter <= clk_counter + 1'b1;  // TODO: esto debería sumar siempre que funcione el MIPS
-            end
+            if (isPCWrite) pc <= (isPCSel) ? inPCJump : pc + 1;
+            clk_counter <= clk_counter + 1'b1;  // TODO: esto debería sumar siempre que funcione el MIPS
         end
             
     end
@@ -60,6 +57,7 @@ module InstructionFetch #(parameter INSTRUCTION_FILE = "")
         begin
             memory_address = (write_enable) ? IMEM_addr: pc[10:0];
             if (outInstruction == 32'b0) finish = 1'b1;
+            else finish = 1'b0;
         end
     end
     

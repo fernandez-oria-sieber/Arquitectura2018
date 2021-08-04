@@ -6,7 +6,7 @@ ADDI 5, 5, 10
 ADDI 6, 6, 20
 ADDU 7, 1, 2
 ADDU 8, 2, 3
-LW 9, 4(0)
+LW 9, 3(0)
 ADDI 10, 9, 20
 HALT
 HALT

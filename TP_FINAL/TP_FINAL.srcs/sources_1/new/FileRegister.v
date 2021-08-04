@@ -48,6 +48,6 @@ module FileRegister(input clk,
                      registros[15],registros[16],registros[17],registros[18],registros[19],
                      registros[20],registros[21],registros[22],registros[23],registros[24],
                      registros[25],registros[26],registros[27],registros[28],registros[29],
-                     registros[30],registros[31]};
+                     registros[30],registros[31]}; // TODO invertir orden de registros
     
 endmodule
