@@ -43,6 +43,11 @@ module Execute(input clk,
     wire [1:0] isMuxA;
     wire [1:0] isMuxB;
     wire [3:0] ALUControl;
+    wire [5:0] funct;
+    
+    // Asignaciones internas
+    
+    assign funct = inInstruction_ls[5:0];
     
     // Instancia de "ALU"
     ALU #(.size(32)) alu0 (
@@ -56,7 +61,7 @@ module Execute(input clk,
     // Instancia de "ALUControl"
     ALU_control alu_control (
     .inALUOp(inEXE),
-    .inFunc(inInstruction_ls[5:0]), // funct: selecciona la operación aritmética a realizar
+    .inFunc(funct), // funct: selecciona la operación aritmética a realizar
     .outOp(ALUControl)
     );
     
