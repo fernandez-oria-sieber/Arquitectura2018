@@ -51,7 +51,7 @@ module rx_module
 		begin
 			state_reg <= idle;
 			s_reg <= 0;
-			n_reg <= 0;
+			n_reg <= {NREG{1'b0}};
 			b_reg <= 0;
 		end
 	else

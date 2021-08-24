@@ -6,39 +6,42 @@ module InstructionDecode(input clk,
                          input isEX_MemRead,               // Flag MemRead [EX]
                          input [4:0] inFRWrAddr,           // Direccion de memoria en registro a escribir [WB]
                          input [4:0] inEX_Rt,              // Reg Rt de LD que se utiliza en Hazard Unit [EX]
-                         input [31:0] inPC,                // direccion de la instrucción (PC) [IF]
+                         input [10:0] inPC,                // direccion de la instrucción (PC) [IF]
                          input [31:0] inInstruction,       // valor del PC - instrucción [IF]
                          input [31:0] inFRWrData,          // Data value a escribir [WB]
                          output out_isPCWrite,             // Salida del HazardUnit [IF]
                          output out_isWrite_IF_ID,         // Salida del HazardUnit [IF/ID]
-                         output [1:0] outWB,               // Salida de la unidad de control
-                         output [2:0] outMEM,              // Salida de la unidad de control
-                         output [5:0] outEXE,              // Salida de la unidad de control
+                         output reg [1:0] outWB,               // Salida de la unidad de control. REG para evitar timing loop
+                         output reg [2:0] outMEM,              // Salida de la unidad de control
+                         output reg [5:0] outEXE,              // Salida de la unidad de control
                          output [2:0] outLoadStoreType,    // op[2:0] se utiliza en SignExtensionMemory de MEM
                          output [4:0] outLD_rt,            // Registros rt (inInstruction[20:16])
                          output [4:0] outRT_rd,            // Registros rd (inInstruction[15:11])
                          output [4:0] outFUnit_rs,         // Registros rs (inInstruction[25:21])
-                         output [31:0] outPC,              // Program Counter
+                         output [10:0] outPC,              // Program Counter
                          output [31:0] outRegA,            // Salida A del Banco de registros
                          output [31:0] outRegB,            // Salida B del Banco de registros
-                         output [31:0] outInstruction_ls,  // Salida con extensión de signo para ¿solo I-Types?
-                         output [1023:0] FR_values); 
+                         output [31:0] outInstruction_ls/*,  // Salida con extensión de signo para ¿solo I-Types?
+                         output [1023:0] FR_values*/); 
     
     // Registros
     reg [2:0] load_store_type;
     reg [4:0] LD_rt; // Para las instruccion Load rt, offset(base)
     reg [4:0] RT_rd; // Para los RType - Registro rd
     reg [4:0] FUnit_rs;
-    reg [31:0] PC;
+    reg [10:0] PC;
     reg signed [31:0] Instruction_ls;
     
     // Cables
     wire out_isMuxControl;
+    wire [1:0] WB;
+    wire [2:0] MEM;
     wire [5:0] op;
     wire [4:0] rs;
     wire [4:0] rt;
     wire [4:0] rd;
     wire [5:0] funct;
+    wire [5:0] EXE;
     wire [15:0] address;
     
     
@@ -54,10 +57,9 @@ module InstructionDecode(input clk,
     ControlUnit control_unit (
     .inInstruction(op),
     .inFunct(funct),
-    .isMuxControl(out_isMuxControl),
-    .outCtrl_WB(outWB),
-    .outCtrl_MEM(outMEM),
-    .outCtrl_EXE(outEXE)
+    .outCtrl_WB(WB),
+    .outCtrl_MEM(MEM),
+    .outCtrl_EXE(EXE)
     );
     
     HazardUnit hazard_unit(
@@ -81,8 +83,8 @@ module InstructionDecode(input clk,
     .inWriteAddr(inFRWrAddr),
     .inWriteData(inFRWrData),
     .outRegA(outRegA),
-    .outRegB(outRegB),
-    .values(FR_values)
+    .outRegB(outRegB)/*,
+    .values(FR_values)*/
     );
     
     //Logica del Bloque
@@ -90,21 +92,33 @@ module InstructionDecode(input clk,
     begin
         if (rst)
         begin
-            PC              = 32'b0;
-            Instruction_ls  = 32'b0;
-            LD_rt           = 5'b0;
-            RT_rd           = 5'b0;
-            FUnit_rs        = 5'b0;
-            load_store_type = 3'b0;
+            PC              <= 11'b0;
+            Instruction_ls  <= 32'b0;
+            LD_rt           <= 5'b0;
+            RT_rd           <= 5'b0;
+            FUnit_rs        <= 5'b0;
+            load_store_type <= 3'b0;
         end
         else // Escritura de todos los registros de salida
         begin
-            PC = inPC;
-            Instruction_ls = $signed(address);
-            LD_rt           = rt;
-            RT_rd           = rd;
-            FUnit_rs        = rs;
-            load_store_type = op[2:0];
+            PC <= inPC;
+            Instruction_ls <= $signed(address);
+            LD_rt           <= rt;
+            RT_rd           <= rd;
+            FUnit_rs        <= rs;
+            load_store_type <= op[2:0];
+            if (out_isMuxControl)
+            begin
+               outWB <= WB;
+               outMEM <= MEM;
+               outEXE <= EXE; 
+            end
+            else
+            begin
+               outWB <= 2'b0;
+               outMEM <= 3'b0;
+               outEXE <= 5'b0;
+            end    
         end
     end
     

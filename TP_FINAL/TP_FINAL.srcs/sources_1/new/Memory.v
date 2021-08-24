@@ -15,8 +15,8 @@ module Memory #(parameter DATA_FILE = "")
               output [1:0] outWB,
               output [4:0] outFRWrReg,     // FR - Registro a escribir en ID [EX]
               output [31:0] outMem,        // Salida del data_memory para un Load
-              output [31:0] outALUResult,  // Va hacia Forwarding Unit? y hacia WB
-              output [319:0] MEM_values
+              output [31:0] outALUResult//,  // Va hacia Forwarding Unit? y hacia WB
+              //output [319:0] MEM_values
               );
     
     // Registros
@@ -43,8 +43,8 @@ module Memory #(parameter DATA_FILE = "")
     .inWrEnable(isMemWrite),
     .inAddress(inALUResult[10:0]),
     .inData(bus_store_memory),
-    .outData(bus_load_memory),
-    .values(MEM_values)
+    .outData(bus_load_memory)//,
+    //.values(MEM_values)
     );
     
     always @(*)

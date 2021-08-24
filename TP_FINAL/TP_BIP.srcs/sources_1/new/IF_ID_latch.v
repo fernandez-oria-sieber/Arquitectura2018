@@ -27,17 +27,17 @@ module IF_ID_latch(
     input inFinish,
     input start,
     input in_isWrite_IF_ID,
+    input [10:0] inPc,
     input [31:0] inInstruction,
-    input [31:0] inPc,
     //OUTPUT
     output outFinish,
-    output [31:0] outInstruction,
-    output [31:0] outPc
+    output [10:0] outPc,
+    output [31:0] outInstruction
     );
 
 reg finish;   
 reg [31:0] instruction;
-reg [31:0] pc;
+reg [10:0] pc;
 
 always @(posedge clk)
 begin
@@ -45,13 +45,19 @@ begin
     begin
         finish <= 1'b0;
         instruction <= 32'b0;
-        pc <= 32'b0;
+        pc <= 11'b0;
     end
     else if (in_isWrite_IF_ID && start)
     begin
         finish <= inFinish;
         instruction <= inInstruction;
         pc <= inPc;
+    end
+    else
+    begin
+        finish <= finish;
+        instruction <= instruction;
+        pc <= pc;
     end
 end
 

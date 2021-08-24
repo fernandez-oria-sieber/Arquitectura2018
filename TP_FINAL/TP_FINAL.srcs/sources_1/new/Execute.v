@@ -13,7 +13,7 @@ module Execute(input clk,
                input [4:0] inMEM_rd,
                input [4:0] inWB_rd,
                input [5:0] inEXE,
-               input [31:0] inPC,             // PC
+               input [10:0] inPC,             // PC
                input [31:0] inRegA,
                input [31:0] inRegB,
                input [31:0] inInstruction_ls, // entrada con extension de signo de Intruction[15:0]
@@ -24,7 +24,7 @@ module Execute(input clk,
                output [2:0] outMEM,           // Esto va a EX/MEM y el MEM[1] al Hazard Unit
                output [2:0] outLoadStoreType, // op[2:0] se utiliza en SignExtensionMemory de MEM
                output [4:0] outFRWrReg,       // FR - Registro a escribir en ID
-               output [31:0] outPCJump,
+               output [10:0] outPCJump,
                output [31:0] outALUResult,
                output [31:0] outRegB
                );
@@ -32,8 +32,8 @@ module Execute(input clk,
     // Registros
     reg [4:0] FRWrReg;
     reg [4:0] wreg;
-    reg [31:0] PCJump;
-    reg [31:0] Jump;
+    reg [10:0] PCJump;
+    reg [10:0] Jump;
     reg [31:0] RegB;
     reg [31:0] regB_ALU;
     reg [31:0] outMuxA;
@@ -83,7 +83,7 @@ module Execute(input clk,
         // siguiente warning: multi-driven net on pin Q with 2st driver GND
         if (rst)
         begin
-            PCJump     <= 32'b0;
+            PCJump     <= 11'b0;
             FRWrReg    <= 5'b0;
             RegB       <= 32'b0;
         end
@@ -124,13 +124,13 @@ module Execute(input clk,
     begin
         if(rst)
         begin
-            Jump       <= 32'b0;
+            Jump       <= 11'b0;
             wreg       <= 5'b0;
             regB_ALU   <= 32'b0;
         end
         else
         begin
-            Jump <= inInstruction_ls + inPC;
+            Jump <= inInstruction_ls[10:0] + inPC;
             casex(inEXE)
                 6'b0XXXXX: wreg <= inLD_rt;
                 6'b1XXXXX: wreg <= inRT_rd;

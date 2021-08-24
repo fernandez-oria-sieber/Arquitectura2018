@@ -7,18 +7,18 @@ module InstructionFetch #(parameter INSTRUCTION_FILE = "")
                          input isPCWrite,               // Selector que viene desde el Hazard Unit
                          input write_enable,            // UART
                          input [10:0] IMEM_addr,        // UART -> Dirección donde se va a escribir el dato
-                         input [31:0] inPCJump,         // Salida del sumador en la etapa EX
+                         input [10:0] inPCJump,         // Salida del sumador en la etapa EX
                          input [31:0] inInstruction,    // UART
                          output outFinish,              // bit para finalizar el MIPS
+                         output [10:0] outPC,
                          output [31:0] out_clk_counter, // Cantidad de ciclos de clock desde el inicio
-                         output [31:0] outInstruction,
-                         output [31:0] outPC);
+                         output [31:0] outInstruction);
     
     // Registros
     reg finish;
-    reg [10:0] memory_address;
-    reg [31:0] pc, addr, clk_counter;   // dirección de acceso a la memoria, asociada al pc
-    wire [319:0] values;                // no interesan estos valores
+    reg [10:0] memory_address, pc;
+    reg [31:0] addr, clk_counter;   // dirección de acceso a la memoria, asociada al pc
+    //wire [319:0] values;                // no interesan estos valores
     
     DataMemory #(.INIT_FILE(INSTRUCTION_FILE)) instruction_memory(
     .clk(clk),
@@ -26,8 +26,8 @@ module InstructionFetch #(parameter INSTRUCTION_FILE = "")
     .inWrEnable(write_enable),
     .inAddress(memory_address),
     .inData(inInstruction),
-    .outData(outInstruction),
-    .values(values)
+    .outData(outInstruction)//,
+    //.values(values)
     );
     
     // Logica del bloque
@@ -35,12 +35,12 @@ module InstructionFetch #(parameter INSTRUCTION_FILE = "")
     begin
         if (reset)
         begin
-            pc <= 32'b0;
+            pc <= 11'b0;
             clk_counter <= 32'b0;
         end
         else
         begin
-            if (isPCWrite) pc <= (isPCSel) ? inPCJump : pc + 1;
+            if (isPCWrite) pc <= (isPCSel) ? inPCJump : pc + 11'b1;
             clk_counter <= clk_counter + 1'b1;  // TODO: esto debería sumar siempre que funcione el MIPS
         end
             
@@ -55,7 +55,7 @@ module InstructionFetch #(parameter INSTRUCTION_FILE = "")
         end
         else
         begin
-            memory_address = (write_enable) ? IMEM_addr: pc[10:0];
+            memory_address = (write_enable) ? IMEM_addr: pc;
             if (outInstruction == 32'b0) finish = 1'b1;
             else finish = 1'b0;
         end

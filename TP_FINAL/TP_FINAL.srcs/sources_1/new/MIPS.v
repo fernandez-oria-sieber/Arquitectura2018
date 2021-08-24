@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-module MIPS #(parameter DATA_BUFFER = 1814,
+module MIPS #(//parameter DATA_BUFFER = 1814,
               parameter INSTRUCTION_FILE = "",
               parameter DATA_FILE = "")(
     input clk,
@@ -8,8 +8,8 @@ module MIPS #(parameter DATA_BUFFER = 1814,
     input start,
     input [10:0] IMEM_addr,
     input [31:0] instruction,
-    output finish,
-    output [DATA_BUFFER-1:0] values
+    output finish//,
+    //output [DATA_BUFFER-1:0] values
     );
 
     /////////
@@ -17,12 +17,12 @@ module MIPS #(parameter DATA_BUFFER = 1814,
     // Stage Instruction Fetch/Decode Latch
     // INPUTS
     wire        IF_outFinish;         //HALT instruction: Finish program
+    wire [10:0]	IF_outPC;             //IF:outPC -> ID:inPC
     wire [31:0]	IF_outInstruction;    //IF:outInstruction -> ID:inInstruction
-    wire [31:0]	IF_outPC;             //IF:outPC -> ID:inPC
     // OUTPUTS
     wire        ID_inFinish;         //HALT instruction: Finish program
+    wire [10:0] ID_inPC;
     wire [31:0] ID_inInstruction;
-    wire [31:0] ID_inPC;
     // Stage Instruction Decode/Execute latch
     //INPUTS
     wire 		ID_out_isPCWrite;     //ID:out_isPCWrite -> IF:isPCWrite
@@ -34,7 +34,7 @@ module MIPS #(parameter DATA_BUFFER = 1814,
     wire [4:0]	ID_outLD_rt;          //ID:outLD_rt -> EX:inLD_rt
     wire [4:0]	ID_outRT_rd;          //ID:outRT_rd -> EX:inRT_rd
     wire [4:0]  ID_outFUnit_rs;       //ID:outFUnit_rs -> EX:inFUnit_rs
-    wire [31:0]	ID_outPC;             //ID:outPC -> EX:inPC
+    wire [10:0]	ID_outPC;             //ID:outPC -> EX:inPC
     wire [31:0]	ID_outRegA; 	      //ID:outRegA -> EX:inRegA
     wire [31:0]	ID_outRegB; 	      //ID:outRegB -> EX:inRegB
     wire [31:0]	ID_outInstruction_ls; //ID:outInstruction_ls -> EX:inInstruction_ls
@@ -49,7 +49,7 @@ module MIPS #(parameter DATA_BUFFER = 1814,
     wire [4:0]    EX_inLD_rt;        
     wire [4:0]    EX_inRT_rd;        
     wire [4:0]  EX_inFUnit_rs;       
-    wire [31:0]    EX_inPC;          
+    wire [10:0]    EX_inPC;          
     wire [31:0]    EX_inRegA;        
     wire [31:0]    EX_inRegB;        
     wire [31:0]    EX_inInstruction_ls;
@@ -63,7 +63,7 @@ module MIPS #(parameter DATA_BUFFER = 1814,
     wire [2:0]  EX_outLoadStoreType; //EX:outLoadStoreType -> MEM:isLoadStoreType
     wire [4:0]	EX_outEX_Rt;         //EX:outEX_Rt -> ID: HazardUnit
     wire [4:0]	EX_outFRWrReg;       //EX:outFRWrReg -> MEM:inFRWrReg
-    wire [31:0]	EX_outPCJump; 	     //EX:outPCJump -> MEM:inPCJump
+    wire [10:0]	EX_outPCJump; 	     //EX:outPCJump -> MEM:inPCJump
     wire [31:0]	EX_outALUResult;     //EX:outALUResult -> MEM:inALUResult
     wire [31:0] EX_outRegB; 	     //EX:outRegB -> MEM:inRegB
     //OUTPUTS
@@ -74,7 +74,7 @@ module MIPS #(parameter DATA_BUFFER = 1814,
     wire [2:0]  MEM_inLoadStoreType;
     wire [4:0]  MEM_inEX_Rt;     
     wire [4:0]  MEM_inFRWrReg;   
-    wire [31:0] MEM_inPCJump;   
+    wire [10:0] MEM_inPCJump;   
     wire [31:0] MEM_inALUResult;
     wire [31:0] MEM_inRegB;        
 
@@ -83,17 +83,17 @@ module MIPS #(parameter DATA_BUFFER = 1814,
     wire 		MEM_osPC; 	      //MEM:osPC -> IF:inPCSel
     wire [1:0]	MEM_outWB; 		  //MEM:outWB -> WB:isWB
     wire [4:0]	MEM_outFRWrReg;   //MEM:outFRWrReg -> WB:inFRWrReg
+    wire [10:0]	MEM_outPCJump; 	  //MEM:outPCJump -> IF:inPCJump
     wire [31:0] MEM_outMem;       //MEM:outMem -> WB:inFRWrData
     wire [31:0] MEM_outALUResult; //MEM:outALUResult -> WB:inALUResult
-    wire [31:0]	MEM_outPCJump; 	  //MEM:outPCJump -> IF:inPCJump
     //OUTPUT
     wire        WB_inFinish;         //HALT instruction: Finish program
     wire 		WB_osPC;
     wire [1:0]  WB_inWB;
     wire [4:0]  WB_inFRWrReg;
+    wire [10:0] WB_inPCJump;
     wire [31:0] WB_inMem;
     wire [31:0] WB_inALUResult;
-    wire [31:0] WB_inPCJump;
     
     // Stage Write Back
     wire 		WB_osFRWr;      // WB:osFRWr -> ID:isFRWr
@@ -102,8 +102,8 @@ module MIPS #(parameter DATA_BUFFER = 1814,
     
     //DEBUG
     wire [31:0] clk_counter;
-    wire [319:0] MEM_values;
-    wire [1023:0] FR_values;
+    //wire [319:0] MEM_values;
+    //wire [1023:0] FR_values;
 
     ///////////////////////////////////////////////////////////////////////////
     //// Instancias ///////////////////////////////////////////////////////////
@@ -177,8 +177,8 @@ module MIPS #(parameter DATA_BUFFER = 1814,
     .outPC(ID_outPC),
     .outRegA(ID_outRegA),
     .outRegB(ID_outRegB),
-    .outInstruction_ls(ID_outInstruction_ls),
-    .FR_values(FR_values)
+    .outInstruction_ls(ID_outInstruction_ls)//,
+    //.FR_values(FR_values)
     );
     
     //ID EX LATCH
@@ -302,8 +302,8 @@ module MIPS #(parameter DATA_BUFFER = 1814,
     .outWB(MEM_outWB),
     .outFRWrReg(MEM_outFRWrReg), // 4:0
     .outMem(MEM_outMem),
-    .outALUResult(MEM_outALUResult),
-    .MEM_values(MEM_values)
+    .outALUResult(MEM_outALUResult)//,
+    //.MEM_values(MEM_values)
     );
     
     MEM_WB_latch MEM_WB(
@@ -341,7 +341,7 @@ module MIPS #(parameter DATA_BUFFER = 1814,
     
     assign finish = WB_inFinish;
     
-    assign values = {   // Contenido de los 32 registros del FileRegister
+    /*assign values = {   // Contenido de los 32 registros del FileRegister
                         FR_values,
                         // IF_ID latch
                         IF_outFinish,
@@ -380,11 +380,11 @@ module MIPS #(parameter DATA_BUFFER = 1814,
                         // Program Counter
                         IF_outPC,
                         // Data Memory
-                        MEM_values,
+                        //MEM_values,
                         // Clock counter
                         clk_counter
                         
-                    };
+                    };*/
                         
                         
                         

@@ -32,7 +32,7 @@ module ID_EX_latch(
     input [4:0] inLD_rt,
     input [4:0] inRT_rd,
     input [4:0] inFUnit_rs,
-    input [31:0] inPC,
+    input [10:0] inPC,
     input [31:0] inRegA,
     input [31:0] inRegB,
     input [31:0] inInstruction_ls,
@@ -44,7 +44,7 @@ module ID_EX_latch(
     output [4:0] outLD_rt,
     output [4:0] outRT_rd,
     output [4:0] outFUnit_rs,
-    output [31:0] outPC,
+    output [10:0] outPC,
     output [31:0] outRegA,
     output [31:0] outRegB,
     output [31:0] outInstruction_ls
@@ -58,7 +58,7 @@ module ID_EX_latch(
     reg [4:0] LD_rt;
     reg [4:0] RT_rd;
     reg [4:0] FUnit_rs;
-    reg [31:0] PC;
+    reg [10:0] PC;
     reg [31:0] RegA;
     reg [31:0] RegB;
     reg [31:0] Instruction_ls;
@@ -75,7 +75,7 @@ module ID_EX_latch(
             LD_rt <= 5'b0;
             RT_rd <= 5'b0;
             FUnit_rs <= 5'b0;
-            PC <= 32'b0;
+            PC <= 11'b0;
             RegA <= 32'b0;
             RegB <= 32'b0;
             Instruction_ls <= 32'b0;

@@ -9,8 +9,8 @@ module DataMemory #(parameter RAM_WIDTH = 32,        // Specify RAM data width
                     ena,
                     input [ADDR_WIDTH-1:0] inAddress,
                     input [RAM_WIDTH-1:0] inData,
-                    output [RAM_WIDTH-1:0] outData,
-                    output [319:0] values // valores de los primeros diez registros de la memoria
+                    output [RAM_WIDTH-1:0] outData//,
+                    //output [319:0] values // valores de los primeros diez registros de la memoria
                     );
     
     
@@ -24,6 +24,7 @@ module DataMemory #(parameter RAM_WIDTH = 32,        // Specify RAM data width
     
     reg [RAM_WIDTH-1:0] ram_name [RAM_DEPTH-1:0];
     reg [RAM_WIDTH-1:0] ram_data = {RAM_WIDTH{1'b0}};
+    //reg [319:0] aux_values = {320{1'b0}};
     
     // The following code either initializes the memory values to a specified file or to all zeros to match hardware
     generate
@@ -41,6 +42,8 @@ module DataMemory #(parameter RAM_WIDTH = 32,        // Specify RAM data width
     always @(negedge clk)
         if (ena) begin
             ram_data <= ram_name[inAddress];
+            //aux_values <= { ram_name[9], ram_name[8], ram_name[7], ram_name[6], ram_name[5],
+            //            ram_name[4], ram_name[3], ram_name[2], ram_name[1], ram_name[0] };
         end
     
     always @(posedge clk)
@@ -49,9 +52,6 @@ module DataMemory #(parameter RAM_WIDTH = 32,        // Specify RAM data width
         end
     
     assign outData = ram_data;
-    assign values = {
-                     ram_name[0], ram_name[1], ram_name[2], ram_name[3], ram_name[4],
-                     ram_name[5], ram_name[6], ram_name[7], ram_name[8], ram_name[9]
-                     };
+    //assign values = aux_values;
     
 endmodule

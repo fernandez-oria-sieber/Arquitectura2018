@@ -26,7 +26,6 @@ always @(*)
 begin
     casex(inALUOp)
         6'b11XXXX: // R-type -> ver el campo funct
-        begin
             case(inFunc)
                 6'b000000: aux_op = SLL;
                 6'b000010: aux_op = SRL;
@@ -43,15 +42,17 @@ begin
                 6'b101010: aux_op = SLT;
                 default: aux_op   = 4'b0000;
             endcase
-        end
-        6'b001000: aux_op = ADD; // ADDI
-        6'b001100: aux_op = AND; // ANDI
-        6'b001101: aux_op = OR; // ORI
-        6'b001110: aux_op = XOR; // XORI
-        6'b001010: aux_op = SLT; // SLTI
-        6'b001111: aux_op = LUI;
-        6'b000100: aux_op = ADD; // LOAD & STORE 
-        default: aux_op = ADD;
+        default:// changed due to timing loop
+            case(inALUOp[3:0])
+                4'b1000: aux_op = ADD; // ADDI
+                4'b1100: aux_op = AND; // ANDI
+                4'b1101: aux_op = OR; // ORI
+                4'b1110: aux_op = XOR; // XORI
+                4'b1010: aux_op = SLT; // SLTI
+                4'b1111: aux_op = LUI;
+                4'b0100: aux_op = ADD; // LOAD & STORE 
+                default: aux_op = ADD;
+            endcase
     endcase
 end
 

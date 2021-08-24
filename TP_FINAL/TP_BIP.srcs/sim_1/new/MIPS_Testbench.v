@@ -26,24 +26,24 @@ module MIPS_Testbench(
     
     reg [31:0] instruction;
     reg [10:0] IMEM_addr;
-    wire [1813:0] values;
+    //wire [1813:0] values;
     reg wr_enable, start, clk, rst; 
     wire finish;
     
     MIPS #(.INSTRUCTION_FILE("/home/vlad/Documents/Arquitectura2018/TP_FINAL/scripts/instructionsHexa.txt"),
            .DATA_FILE("/home/vlad/Documents/Arquitectura2018/TP_FINAL/scripts/datos.txt")) 
-            int_mips(clk, rst, wr_enable, start, IMEM_addr, instruction, finish, values);
+            int_mips(clk, rst, wr_enable, start, IMEM_addr, instruction, finish/*, values*/);
      
     initial
     begin
     clk         =   1'b0;
     rst         =   1'b1;
     wr_enable   =   1'b0;
-    start       =   1'b1;
     IMEM_addr   =   11'b0;
     instruction =   32'b0;
     #10 
     rst         =   1'b0;
+    start       =   1'b1;
     end
     
     always @(posedge clk)
@@ -51,8 +51,9 @@ module MIPS_Testbench(
         if(finish)
         begin
             $display("TERMINOOOOO!!!!!!!");
-            $display("VALUES: %b", values);
+            //$display("VALUES: %b", values);
             start = 1'b0;
+            $finish;
         end
     end
     
