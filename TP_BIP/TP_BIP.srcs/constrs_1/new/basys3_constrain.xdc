@@ -295,4 +295,27 @@
 #set_property IOSTANDARD LVCMOS33 [get_ports {QspiDB[1]}]
 #set_property PACKAGE_PIN G18 [get_ports {QspiDB[2]}]
 
-create_clock -period 20.000 -name clk -waveform {0.000 10.000} [get_ports clk]
+
+
+
+create_clock -period 20.000 -name clk -waveform {0.000 10.000} -add [get_ports clk]
+set_input_delay -clock [get_clocks clk] -clock_fall -min -add_delay 1.000 [get_ports {IMEM_addr[*]}]
+set_input_delay -clock [get_clocks clk] -clock_fall -max -add_delay 1.000 [get_ports {IMEM_addr[*]}]
+set_input_delay -clock [get_clocks clk] -clock_fall -min -add_delay 1.000 [get_ports {IMEM_addr[*]}]
+set_input_delay -clock [get_clocks clk] -clock_fall -max -add_delay 1.000 [get_ports {IMEM_addr[*]}]
+set_input_delay -clock [get_clocks clk] -clock_fall -min -add_delay 1.000 [get_ports {instruction[*]}]
+set_input_delay -clock [get_clocks clk] -clock_fall -max -add_delay 1.000 [get_ports {instruction[*]}]
+set_input_delay -clock [get_clocks clk] -clock_fall -min -add_delay 1.000 [get_ports rst]
+set_input_delay -clock [get_clocks clk] -clock_fall -max -add_delay 1.000 [get_ports rst]
+set_input_delay -clock [get_clocks clk] -clock_fall -min -add_delay 1.000 [get_ports rst]
+set_input_delay -clock [get_clocks clk] -clock_fall -max -add_delay 1.000 [get_ports rst]
+set_input_delay -clock [get_clocks clk] -clock_fall -min -add_delay 1.000 [get_ports start]
+set_input_delay -clock [get_clocks clk] -clock_fall -max -add_delay 1.000 [get_ports start]
+set_input_delay -clock [get_clocks clk] -clock_fall -min -add_delay 1.000 [get_ports start]
+set_input_delay -clock [get_clocks clk] -clock_fall -max -add_delay 1.000 [get_ports start]
+set_input_delay -clock [get_clocks clk] -clock_fall -min -add_delay 1.000 [get_ports wr_enable]
+set_input_delay -clock [get_clocks clk] -clock_fall -max -add_delay 1.000 [get_ports wr_enable]
+set_input_delay -clock [get_clocks clk] -clock_fall -min -add_delay 1.000 [get_ports wr_enable]
+set_input_delay -clock [get_clocks clk] -clock_fall -max -add_delay 1.000 [get_ports wr_enable]
+set_output_delay -clock [get_clocks clk] -min -add_delay 0.000 [get_ports finish]
+set_output_delay -clock [get_clocks clk] -max -add_delay 0.000 [get_ports finish]
