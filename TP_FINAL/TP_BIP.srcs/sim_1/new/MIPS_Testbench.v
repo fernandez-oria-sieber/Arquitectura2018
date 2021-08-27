@@ -29,8 +29,8 @@ module MIPS_Testbench(
     //wire [1813:0] values;
     reg wr_enable, start, clk, rst; 
     wire finish;
-    reg [31:0] instructionMem [20:0];
-    reg [31:0] dataMem [20:0];
+    integer i;
+    reg [31:0] instructionMem [21:0];
     
     
     
@@ -39,17 +39,27 @@ module MIPS_Testbench(
     initial
     begin
     $readmemh("/home/vlad/Documents/Arquitectura2018/TP_FINAL/scripts/instructionsHexa.txt", instructionMem);
-    $readmemh("/home/vlad/Documents/Arquitectura2018/TP_FINAL/scripts/datos.txt", dataMem);
     clk         =   1'b0;
     rst         =   1'b1;
     wr_enable   =   1'b0;
     IMEM_addr   =   11'b0;
     instruction =   32'b0;
+    start       =   1'b0;
     #10 
     rst         =   1'b0;
+    wr_enable = 1'b1;
+    for(i=0; i < 22; i= i+1)
+    begin
+        #10
+        instruction = instructionMem[i];
+        IMEM_addr = i;
+    end
+    
+    #10
+    wr_enable = 1'b0;
     start       =   1'b1;
     end
-    /*
+    
     always @(posedge clk)
     begin
         if(finish)
@@ -60,7 +70,6 @@ module MIPS_Testbench(
             $finish;
         end
     end
-    */
     
     
     always #5 clk=~clk;  // Genero los ciclos de reloj
