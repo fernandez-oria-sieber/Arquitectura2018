@@ -22,8 +22,8 @@ module Top_level(input rx,
     );
     
     UART uart(rx, clk2, reset, finish_program, out_Acc_Counter, tx, BIP_enable);
-    Data_memory #(.INIT_FILE("/home/vlad/Arquitectura2018/datos.txt")) Data_memory(.Wr(WrRAM),.Rd(RdRAM),.clk(clk2),.ena(BIP_enable), .Addr(Addr), .In_Data(In_Data), .Out_Data(Out_Data));
-    Program_memory #(.INIT_FILE("/home/vlad/Arquitectura2018/instrucciones.txt")) Program_memory (0, clk2, BIP_enable, PC, 0, Program_Data);
+    Data_memory #(.INIT_FILE("/home/vlad/Documents/Arquitectura2018/datos.txt")) Data_memory(.Wr(WrRAM),.Rd(RdRAM),.clk(clk2),.ena(BIP_enable), .Addr(Addr), .In_Data(In_Data), .Out_Data(Out_Data));
+    Program_memory #(.INIT_FILE("/home/vlad/Documents/Arquitectura2018/instrucciones.txt")) Program_memory (0, clk2, BIP_enable, PC, 0, Program_Data);
     CPU bip(BIP_enable, clk2, reset, Program_Data, Out_Data, In_Data, PC, WrRAM, RdRAM, finish_program);
     
     assign out_Acc_Counter[31:27] = 0;

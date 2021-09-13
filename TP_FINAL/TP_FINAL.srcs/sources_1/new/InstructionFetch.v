@@ -22,6 +22,7 @@ module InstructionFetch #(parameter INSTRUCTION_FILE = "")
     
     DataMemory #(.INIT_FILE(INSTRUCTION_FILE)) instruction_memory(
     .clk(clk),
+    //.rst(reset),
     .ena(1'b1),
     .inWrEnable(write_enable),
     .inAddress(memory_address),

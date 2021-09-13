@@ -29,6 +29,7 @@ module MIPS_Testbench(
     //wire [1813:0] values;
     reg wr_enable, start, clk, rst; 
     wire finish;
+    //wire [31:0] output_instruction;
     integer i;
     reg [31:0] instructionMem [21:0];
     

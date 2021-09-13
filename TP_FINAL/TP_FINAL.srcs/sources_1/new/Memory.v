@@ -39,6 +39,7 @@ module Memory #(parameter DATA_FILE = "")
     
     DataMemory #(.INIT_FILE(DATA_FILE)) data_memory(
     .clk(clk),
+    //.rst(rst),
     .ena(1'b1),
     .inWrEnable(isMemWrite),
     .inAddress(inALUResult[10:0]),
